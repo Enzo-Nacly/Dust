@@ -1,21 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckratrq8jvnm8"]
+[gd_scene load_steps=5 format=3 uid="uid://ckratrq8jvnm8"]
 
-[ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://assets/entities/player.tscn" id="1_37sec"]
-[ext_resource type="Texture2D" uid="uid://dw2lmamnyxlg3" path="res://assets/sprites/icon.svg" id="1_k6qxa"]
+[ext_resource type="Script" uid="uid://bmrhwgqqhoblv" path="res://scripts/purple_planet.gd" id="1_k6qxa"]
+[ext_resource type="PackedScene" uid="uid://dhw1utyfd0bgl" path="res://assets/components/gravity_component.tscn" id="2_2jy7m"]
+[ext_resource type="Texture2D" uid="uid://dw2lmamnyxlg3" path="res://assets/sprites/icon.svg" id="2_vb3mt"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qh0ap"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vb3mt"]
+radius = 397.5437
 
-[node name="purple_planet" type="Node2D"]
+[node name="Purple_Planet" type="StaticBody2D" groups=["planets"]]
+script = ExtResource("1_k6qxa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(25.49997, 139.50002)
-scale = Vector2(12.9453125, 2.1640627)
-texture = ExtResource("1_k6qxa")
+position = Vector2(7.6293945e-06, 5)
+rotation = -0.8078749
+scale = Vector2(5.2832084, 5.3841004)
+texture = ExtResource("2_vb3mt")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vb3mt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("WorldBoundaryShape2D_qh0ap")
+[node name="Gravity_Component" parent="." instance=ExtResource("2_2jy7m")]
+influence_radius = 7.0
+draw_influence_circle = true
 
-[node name="Player" parent="." instance=ExtResource("1_37sec")]
-position = Vector2(-1, -66)
+[node name="Gravity_Component2" parent="." instance=ExtResource("2_2jy7m")]
+influence_radius = 7.0
+draw_influence_circle = true

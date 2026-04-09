@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="Dust"
-run/main_scene="uid://ckratrq8jvnm8"
+run/main_scene="uid://cly7rhvtfsjiw"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/sprites/icon.svg"
