@@ -1,12 +1,13 @@
 class_name Rotation_Component
 extends Node2D
 
-var entity : Node2D
+var entidade : Node2D 
 
-# just to make sure the entity exists
-func setup(_entity : Node2D) -> void:
-	entity = _entity
+# apenas para ter certeza que existe uma entidade, um pai (parent)
+func setup(_entidade : Node2D) -> void:
+	entidade = _entidade
 	
-# rotating the entity to the center
-func update_rotation(vector_to_center : Vector2) -> void:
-	entity.rotation = vector_to_center.angle() - PI/2
+# rotacionando a entidade para ficar perendicular ao centro
+func atualizar_rotacao(vetor_centro : Vector2) -> void:
+	const AJUSTE_ORIENTACAO_SPRITE : float = PI/2
+	entidade.rotation = vetor_centro.angle() - AJUSTE_ORIENTACAO_SPRITE

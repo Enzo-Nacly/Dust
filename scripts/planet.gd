@@ -6,5 +6,5 @@ extends StaticBody2D
 func _ready() -> void:
 	gravity_component.setup(self)
 
-func get_gravity_at(particle_position : Vector2) -> Vector2:
-	return gravity_component.get_gravity_at(particle_position)
+func pegar_gravidade_em(posicao_particula : Vector2) -> Vector2:
+	return gravity_component.pegar_gravidade_em(posicao_particula)

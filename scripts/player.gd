@@ -13,26 +13,26 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	movement_component.move(delta)
+	movement_component.mover()
 	
-	var gravity_force : Vector2 = planet.get_gravity_at(self.global_position)
+	var forca_gravitacional : Vector2 = planet.pegar_gravidade_em(self.global_position)
 	
-	# if explorer isn't out of the planet
-	if gravity_force != Vector2.ZERO:
-		var vector_to_center: Vector2 = gravity_force.normalized()
+	# se o explorer não está fora de um corpo celeste
+	if forca_gravitacional != Vector2.ZERO:
+		var vetor_centro : Vector2 = forca_gravitacional.normalized()
+		rotation_component.atualizar_rotacao(vetor_centro)
 		
-		rotation_component.update_rotation(vector_to_center)
+		# settando corretamente em relação ao planeta
+		self.up_direction = -vetor_centro
 		
-		# setting correctly the up_direction in relation to the planet
-		self.up_direction = -vector_to_center
-		# updating the motion_mode in order to not break the .is_on_floor() in jump_component
+		# atualizando o motion_mode para não quebrar o .is_on_floor() no jump_component
 		self.motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
-		jump_component.jump(vector_to_center)
+		jump_component.pular(vetor_centro)
 		
-		# aplying gravity to the entity
-		self.velocity += gravity_force * delta
+		# aplicando gravidade a entidade
+		self.velocity += forca_gravitacional * delta
 	else:
-			# updating the motion_mode in order to not break the .is_on_floor() in jump_component
+			# atualizando o motion_mode para não quebrar o .is_on_floor() no jump_component
 			self.motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	
 	move_and_slide()

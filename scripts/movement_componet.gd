@@ -1,33 +1,29 @@
 class_name MovementComponent
 extends Node
 
-@export var speed : float
-var angular_speed : float = 1.0/30.0
-const SPEED_MULTIPLIER : float = 10**2
+@export var velocidade : float = 5.0
 
-var entity : CharacterBody2D
+const VELOCIDADE_ANGULAR : float = 1.0/30.0
+const MULTIPLICADOR_VELOCIDADE : float = 10**2
 
-# just to make sure the entity exists
-func setup(_entity : CharacterBody2D) -> void:
-	entity = _entity
+var entidade : CharacterBody2D 
+
+# apenas para ter certeza que existe uma entidade, um pai (parent)
+func setup(_entidade : Node2D) -> void:
+	entidade = _entidade
 	
-func move(_delta : float) -> void:
-	var input : float = Input.get_axis("ui_left", "ui_right") 
-	if entity.motion_mode == CharacterBody2D.MOTION_MODE_GROUNDED:
-		# variável input pode ser -1, 0 ou 1
-		#var input : float = Input.get_axis("ui_left", "ui_right") 
-		var velocity_incresement : float = input * speed * SPEED_MULTIPLIER
+func mover() -> void:
+	var direcao : float = Input.get_axis("ui_left", "ui_right") 
+	
+	if entidade.motion_mode == CharacterBody2D.MOTION_MODE_GROUNDED:
+		var incremento_velocidade : float = direcao * velocidade * MULTIPLICADOR_VELOCIDADE
 		
-		# usa-se tranform.x pois é em relação a horizontal do personagem
-		# e este é um movimento com aceleração
-		#entity.velocity += entity.transform.x * input * speed * delta
+		var vetor_lateral : float = entidade.velocity.dot(entidade.transform.x)
 		
-		var vetor_lateral : float = entity.velocity.dot(entity.transform.x)
+		entidade.velocity -= entidade.transform.x * vetor_lateral
 		
-		entity.velocity -= entity.transform.x * vetor_lateral
-		
-		entity.velocity += entity.transform.x * velocity_incresement
+		entidade.velocity += entidade.transform.x * incremento_velocidade
 	
 	else:
-		entity.rotate(angular_speed * input)
+		entidade.rotate(VELOCIDADE_ANGULAR * direcao)
 	

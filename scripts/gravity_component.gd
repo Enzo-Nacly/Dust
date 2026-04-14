@@ -1,35 +1,36 @@
 class_name Gravity_Component
 extends Node2D
 
-@export var gravity_strength : float = 9.8
-@export var influence_radius : float = 6.0
-@export var draw_influence_circle : bool = false
+@export var forca_gravidade : float = 9.8
+@export var raio_influencia : float = 6.0
+@export var desenhar_circulo_influencia : bool = false
 
-# two constants to not make us write large numbers
-const INFLUENCE_RADIUS_MULTIPLIER : float = 10**2
-const GRAVITY_MULTIPLIER : float = 10**2
+# duas constantes para não ter que escrever números grandes
+const MULTIPLICADOR_RAIO_INFLUENCIA : float = 10**2
+const MULTIPLICADOR_FORCA_GRAVIDADE : float = 10**2
 
-var entity : Node2D 
+var entidade : Node2D 
 
-# just to make sure the entity exists
-func setup(_entity : Node2D) -> void:
-	entity = _entity
+# apenas para ter certeza que existe uma entidade, um pai (parent)
+func setup(_entidade : Node2D) -> void:
+	entidade = _entidade
 
-func get_gravity_at(particle_position : Vector2) -> Vector2:
-	# creating a vector that points to the center in relation of the particle's position
-	var vector_to_center : Vector2 = entity.global_position - particle_position
+func pegar_gravidade_em(posicao_particula : Vector2) -> Vector2:
 	
-	# getting the module of the vector
-	var distance : float = vector_to_center.length()
+	# criando vetor que aponta da posição da particula para o centro do corpo celeste
+	var vetor_centro : Vector2 = entidade.global_position - posicao_particula
 	
-	if distance > influence_radius * INFLUENCE_RADIUS_MULTIPLIER:
+	# pegando o módulo do vetor
+	var distancia : float = vetor_centro.length()
+	
+	if distancia > raio_influencia * MULTIPLICADOR_RAIO_INFLUENCIA:
 		return Vector2.ZERO
 	
-	# get the direction of the center and strengthen it with the gravity_strength
-	var gravity_force : Vector2 = vector_to_center.normalized() * gravity_strength * GRAVITY_MULTIPLIER
-	return gravity_force
+	# pega a direção para o centro e aplica a forca da gravidade
+	var forca_gravitacional : Vector2 = vetor_centro.normalized() * forca_gravidade * MULTIPLICADOR_FORCA_GRAVIDADE
+	return forca_gravitacional
 
-# function to debug/visualize the influence raidius. I gotta improve this function **
+# tem que sumir com esses magic numbers
 func _draw() -> void:
-	if draw_influence_circle:
-		draw_arc(Vector2.ZERO, influence_radius * INFLUENCE_RADIUS_MULTIPLIER, 0, TAU, 64, Color.RED, 2.0)
+	if desenhar_circulo_influencia:
+		draw_arc(Vector2.ZERO, raio_influencia * MULTIPLICADOR_RAIO_INFLUENCIA, 0, TAU, 64, Color.RED, 2.0)
