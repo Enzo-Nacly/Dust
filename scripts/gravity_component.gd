@@ -3,7 +3,7 @@ extends Node2D
 
 @export var forca_gravidade : float = 9.8
 @export var raio_influencia : float = 6.0
-@export var desenhar_circulo_influencia : bool = false
+@export var desenhar_circulo_influencia : bool = true
 
 # duas constantes para não ter que escrever números grandes
 const MULTIPLICADOR_RAIO_INFLUENCIA : float = 10**2
