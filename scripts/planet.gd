@@ -16,6 +16,9 @@ func _draw():
 	var shape : Shape2D = collision_shape.shape
 
 	if shape is CircleShape2D:
-		var raio : float = shape.radius
+		var raio_shape : float = shape.radius
+		var proporcao : float = collision_shape.shape.x
+		
+		var raio_desenho : float = raio_shape * proporcao
 		var posicao_centro : Vector2 = Vector2.ZERO
-		draw_circle(posicao_centro, raio, cor)
+		draw_circle(posicao_centro, raio_desenho, cor)

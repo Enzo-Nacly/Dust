@@ -11,7 +11,8 @@ script = ExtResource("1_k6qxa")
 cor = Color(0.56079465, 0.21558312, 0.7725324, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1661092387]
+scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_vb3mt")
 
 [node name="Gravity_Component" parent="." unique_id=804448457 instance=ExtResource("2_2jy7m")]
-desenhar_circulo_influencia = true
+raio_influencia = 12.0
