@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ux0228ttqf7j"]
+
+[ext_resource type="Script" uid="uid://dcjuqywql3jc4" path="res://scripts/player.gd" id="1_gdgnb"]
+[ext_resource type="Texture2D" uid="uid://dw2lmamnyxlg3" path="res://assets/sprites/icon.svg" id="2_06akj"]
+[ext_resource type="PackedScene" uid="uid://bit1nhl4ckxru" path="res://assets/components/movement_componet.tscn" id="3_gdgnb"]
+[ext_resource type="PackedScene" uid="uid://68ws5bbalgjv" path="res://assets/components/rotation_component.tscn" id="4_06akj"]
+[ext_resource type="PackedScene" uid="uid://crspf5ooucvj8" path="res://assets/components/jump_component.tscn" id="5_hlp2g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jhex"]
+
+[node name="Player" type="CharacterBody2D" unique_id=514355837]
+script = ExtResource("1_gdgnb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=747360896]
+texture = ExtResource("2_06akj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1914463975]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1715437799]
+scale = Vector2(6.5, 6.5)
+shape = SubResource("RectangleShape2D_0jhex")
+
+[node name="Components" type="Node" parent="." unique_id=813608034]
+
+[node name="Movement_Componet" parent="Components" unique_id=501626970 instance=ExtResource("3_gdgnb")]
+
+[node name="Rotation_Component" parent="Components" unique_id=1188201077 instance=ExtResource("4_06akj")]
+
+[node name="Jump_Component" parent="Components" unique_id=823883516 instance=ExtResource("5_hlp2g")]

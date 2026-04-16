@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cly7rhvtfsjiw"]
+
+[ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://assets/planets/purple_planet.tscn" id="2_7nwiy"]
+[ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://assets/entities/player.tscn" id="2_i1as6"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_i1as6")]
+position = Vector2(0, -65)
+
+[node name="Purple_Planet" parent="." instance=ExtResource("2_7nwiy")]
+position = Vector2(9, 473)
