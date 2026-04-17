@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Planet_Resource" format=3 uid="uid://dychwihy3viig"]
+
+[ext_resource type="Script" uid="uid://bfcpcdeuugrq4" path="res://scripts/planet_resource.gd" id="1_1gsq0"]
+
+[resource]
+script = ExtResource("1_1gsq0")
+raio = 400.0
+cor = Color(0.43500397, 0.10785218, 0.7350164, 1)
+metadata/_custom_type_script = "uid://bfcpcdeuugrq4"

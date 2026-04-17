@@ -1,19 +1,24 @@
 class_name Gravity_Component
 extends Node2D
 
-@export var forca_gravidade : float = 9.8
-@export var raio_influencia : float = 6.0
 @export var desenhar_circulo_influencia : bool = true
 
 # duas constantes para não ter que escrever números grandes
-const MULTIPLICADOR_RAIO_INFLUENCIA : float = 10**2
-const MULTIPLICADOR_FORCA_GRAVIDADE : float = 10**2
+#const MULTIPLICADOR_FORCA_GRAVIDADE : float = 1.0/100.0
+const MULTIPLICADOR_FORCA_GRAVIDADE : float = 100
+const SOMADOR_RAIO : float = 500.0
 
 var entidade : Node2D 
+var forca_gravidade : float
+var raio_influencia : float
 
 # apenas para ter certeza que existe uma entidade, um pai (parent)
-func setup(_entidade : Node2D) -> void:
+func setup(_entidade : Node2D, _forca_gravidade : float, raio : float) -> void:
 	entidade = _entidade
+	#forca_gravidade = raio * MULTIPLICADOR_FORCA_GRAVIDADE
+	forca_gravidade = _forca_gravidade * MULTIPLICADOR_FORCA_GRAVIDADE
+	raio_influencia = raio + SOMADOR_RAIO
+	print(forca_gravidade)
 
 func pegar_gravidade_em(posicao_particula : Vector2) -> Vector2:
 	
@@ -23,14 +28,16 @@ func pegar_gravidade_em(posicao_particula : Vector2) -> Vector2:
 	# pegando o módulo do vetor
 	var distancia : float = vetor_centro.length()
 	
-	if distancia > raio_influencia * MULTIPLICADOR_RAIO_INFLUENCIA:
+	if distancia > raio_influencia:
 		return Vector2.ZERO
 	
 	# pega a direção para o centro e aplica a forca da gravidade
-	var forca_gravitacional : Vector2 = vetor_centro.normalized() * forca_gravidade * MULTIPLICADOR_FORCA_GRAVIDADE
+	var forca_gravitacional : Vector2 = vetor_centro.normalized() * forca_gravidade
 	return forca_gravitacional
 
-# tem que sumir com esses magic numbers
 func _draw() -> void:
 	if desenhar_circulo_influencia:
-		draw_arc(Vector2.ZERO, raio_influencia * MULTIPLICADOR_RAIO_INFLUENCIA, 0, TAU, 64, Color.RED, 2.0)
+		var centro_circulo : Vector2 = Vector2.ZERO
+		var segmentos_arco : int = 64
+		var grossura_arco : float = 2.0
+		draw_arc(centro_circulo, raio_influencia, 0, TAU, segmentos_arco, Color.RED, grossura_arco)
