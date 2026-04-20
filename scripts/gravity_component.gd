@@ -3,22 +3,18 @@ extends Node2D
 
 @export var desenhar_circulo_influencia : bool = true
 
-# duas constantes para não ter que escrever números grandes
-#const MULTIPLICADOR_FORCA_GRAVIDADE : float = 1.0/100.0
-const MULTIPLICADOR_FORCA_GRAVIDADE : float = 100
-const SOMADOR_RAIO : float = 500.0
+const MULTIPLICADOR_RAIO : float = 3.0
 
 var entidade : Node2D 
-var forca_gravidade : float
+var forca_gravidade : int
 var raio_influencia : float
 
 # apenas para ter certeza que existe uma entidade, um pai (parent)
-func setup(_entidade : Node2D, _forca_gravidade : float, raio : float) -> void:
+func setup(_entidade : Node2D, raio : int) -> void:
 	entidade = _entidade
-	#forca_gravidade = raio * MULTIPLICADOR_FORCA_GRAVIDADE
-	forca_gravidade = _forca_gravidade * MULTIPLICADOR_FORCA_GRAVIDADE
-	raio_influencia = raio + SOMADOR_RAIO
-	print(forca_gravidade)
+	raio_influencia = raio * MULTIPLICADOR_RAIO
+	forca_gravidade = calcular_forca_gravidade(raio)
+	
 
 func pegar_gravidade_em(posicao_particula : Vector2) -> Vector2:
 	
@@ -34,7 +30,18 @@ func pegar_gravidade_em(posicao_particula : Vector2) -> Vector2:
 	# pega a direção para o centro e aplica a forca da gravidade
 	var forca_gravitacional : Vector2 = vetor_centro.normalized() * forca_gravidade
 	return forca_gravitacional
-
+	
+	
+func log_base(numero: float, base: float) -> float:
+	return log(numero) / log(base)
+	
+	
+func calcular_forca_gravidade(raio: float) -> int:
+	const BASE : float = 2.5
+	var forca_g := log_base(raio, BASE) * 10**2
+	return roundi(forca_g)
+	
+	
 func _draw() -> void:
 	if desenhar_circulo_influencia:
 		var centro_circulo : Vector2 = Vector2.ZERO

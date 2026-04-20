@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bmrhwgqqhoblv" path="res://scripts/purple_planet.gd" id="1_k6qxa"]
 [ext_resource type="PackedScene" uid="uid://dhw1utyfd0bgl" path="res://assets/components/gravity_component.tscn" id="2_2jy7m"]
-[ext_resource type="Resource" uid="uid://b8csp8wuygwtr" path="res://assets/resources/planeta2_teste.tres" id="2_vb3mt"]
+[ext_resource type="Resource" uid="uid://bkjnwd82ch1yo" path="res://assets/resources/yellowish_planet.tres" id="2_vb3mt"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vb3mt"]
-radius = 397.5437
+[sub_resource type="CircleShape2D" id="CircleShape2D_2jy7m"]
+radius = 100.0
 
 [node name="Purple_Planet" type="StaticBody2D" unique_id=201800473 groups=["planets"]]
 script = ExtResource("1_k6qxa")
 planet_resource = ExtResource("2_vb3mt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1661092387]
-shape = SubResource("CircleShape2D_vb3mt")
+shape = SubResource("CircleShape2D_2jy7m")
 
 [node name="Gravity_Component" parent="." unique_id=804448457 instance=ExtResource("2_2jy7m")]

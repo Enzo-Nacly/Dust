@@ -1,10 +1,9 @@
 [gd_resource type="Resource" script_class="Planet_Resource" format=3 uid="uid://b8csp8wuygwtr"]
 
-[ext_resource type="Script" uid="uid://bfcpcdeuugrq4" path="res://scripts/planet_resource.gd" id="1_hrxix"]
+[ext_resource type="Script" uid="uid://bfcpcdeuugrq4" path="res://scripts/planet_status.gd" id="1_hrxix"]
 
 [resource]
 script = ExtResource("1_hrxix")
-raio = 1000.0
-forca_gravidade = 10.0
+raio = 1000
 cor = Color(0.42116174, 0.6654313, 0.91752225, 1)
 metadata/_custom_type_script = "uid://bfcpcdeuugrq4"
