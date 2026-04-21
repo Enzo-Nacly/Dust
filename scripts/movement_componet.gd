@@ -5,6 +5,7 @@ extends Node
 
 const VELOCIDADE_ANGULAR : float = 1.0/30.0
 const MULTIPLICADOR_VELOCIDADE : float = 10**2
+const INTENSIDADE_ATRITO : float = 50.0
 
 var entidade : CharacterBody2D 
 
@@ -13,17 +14,35 @@ func setup(_entidade : Node2D) -> void:
 	entidade = _entidade
 	
 func mover() -> void:
+	#var direcao : float = Input.get_axis("ui_left", "ui_right") 
+	#
+	#if entidade.motion_mode == CharacterBody2D.MOTION_MODE_GROUNDED:
+		#var incremento_velocidade : float = direcao * velocidade * MULTIPLICADOR_VELOCIDADE
+		#
+		#var vetor_lateral : float = entidade.velocity.dot(entidade.transform.x)
+		#
+		#entidade.velocity -= entidade.transform.x * vetor_lateral
+		#
+		#entidade.velocity += entidade.transform.x * incremento_velocidade
+	#
+	#else:
+		#entidade.rotate(VELOCIDADE_ANGULAR * direcao)
+		
+		
 	var direcao : float = Input.get_axis("ui_left", "ui_right") 
 	
 	if entidade.motion_mode == CharacterBody2D.MOTION_MODE_GROUNDED:
-		var incremento_velocidade : float = direcao * velocidade * MULTIPLICADOR_VELOCIDADE
+		if(direcao != 0.0):
+			var incremento_velocidade : float = direcao * velocidade * MULTIPLICADOR_VELOCIDADE
 		
-		var vetor_lateral : float = entidade.velocity.dot(entidade.transform.x)
+			var vetor_lateral : float = entidade.velocity.dot(entidade.transform.x)
 		
-		entidade.velocity -= entidade.transform.x * vetor_lateral
+			entidade.velocity -= entidade.transform.x * vetor_lateral
 		
-		entidade.velocity += entidade.transform.x * incremento_velocidade
-	
+			entidade.velocity += entidade.transform.x * incremento_velocidade
+			
+		#elif(entidade.is_on_floor()):
+			#entidade.velocity -= entidade.transform.x * INTENSIDADE_ATRITO
 	else:
 		entidade.rotate(VELOCIDADE_ANGULAR * direcao)
 	
