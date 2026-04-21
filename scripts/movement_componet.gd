@@ -5,7 +5,7 @@ extends Node
 
 const VELOCIDADE_ANGULAR : float = 1.0/30.0
 const MULTIPLICADOR_VELOCIDADE : float = 10**2
-const INTENSIDADE_ATRITO : float = 50.0
+const INTENSIDADE_ATRITO : float = 500.0
 
 var entidade : CharacterBody2D 
 
@@ -13,36 +13,37 @@ var entidade : CharacterBody2D
 func setup(_entidade : Node2D) -> void:
 	entidade = _entidade
 	
-func mover() -> void:
-	#var direcao : float = Input.get_axis("ui_left", "ui_right") 
-	#
-	#if entidade.motion_mode == CharacterBody2D.MOTION_MODE_GROUNDED:
-		#var incremento_velocidade : float = direcao * velocidade * MULTIPLICADOR_VELOCIDADE
-		#
-		#var vetor_lateral : float = entidade.velocity.dot(entidade.transform.x)
-		#
-		#entidade.velocity -= entidade.transform.x * vetor_lateral
-		#
-		#entidade.velocity += entidade.transform.x * incremento_velocidade
-	#
-	#else:
-		#entidade.rotate(VELOCIDADE_ANGULAR * direcao)
-		
-		
+func mover(delta : float) -> void:
 	var direcao : float = Input.get_axis("ui_left", "ui_right") 
 	
-	if entidade.motion_mode == CharacterBody2D.MOTION_MODE_GROUNDED:
-		if(direcao != 0.0):
-			var incremento_velocidade : float = direcao * velocidade * MULTIPLICADOR_VELOCIDADE
-		
-			var vetor_lateral : float = entidade.velocity.dot(entidade.transform.x)
-		
-			entidade.velocity -= entidade.transform.x * vetor_lateral
-		
-			entidade.velocity += entidade.transform.x * incremento_velocidade
-			
-		#elif(entidade.is_on_floor()):
-			#entidade.velocity -= entidade.transform.x * INTENSIDADE_ATRITO
-	else:
+	if entidade.motion_mode != CharacterBody2D.MOTION_MODE_GROUNDED:
 		entidade.rotate(VELOCIDADE_ANGULAR * direcao)
+		return
+		
+	if direcao != 0.0:
+		aplicar_movimento(direcao)
+		
+	if entidade.is_on_floor():
+		aplicar_atrito(delta)
 	
+	
+func aplicar_movimento(direcao : float) -> void:
+	var incremento_velocidade : float = direcao * velocidade * MULTIPLICADOR_VELOCIDADE
+	var nova_velocidade_lateral : Vector2 = entidade.transform.x * incremento_velocidade
+
+	var modulo_velocidade_lateral : float = entidade.velocity.dot(entidade.transform.x)
+	var velocidade_lateral : Vector2 = entidade.transform.x * modulo_velocidade_lateral
+
+	entidade.velocity -= velocidade_lateral
+	entidade.velocity += nova_velocidade_lateral
+	
+	
+func aplicar_atrito(delta : float) -> void:
+	var modulo_velocidade_lateral : float = entidade.velocity.dot(entidade.transform.x)
+	var velocidade_lateral : Vector2 = entidade.transform.x * modulo_velocidade_lateral
+	
+	var modulo_velocidade_lateral_atritada : float = move_toward(modulo_velocidade_lateral, 0, INTENSIDADE_ATRITO * delta)
+	var velocidade_lateral_atritada : Vector2 = entidade.transform.x * modulo_velocidade_lateral_atritada
+	
+	entidade.velocity -= velocidade_lateral
+	entidade.velocity += velocidade_lateral_atritada

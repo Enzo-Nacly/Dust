@@ -13,7 +13,7 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	movement_component.mover()
+	movement_component.mover(delta)
 	
 	var forca_gravitacional : Vector2 = planet.pegar_gravidade_em(self.global_position)
 	
