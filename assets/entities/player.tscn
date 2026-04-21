@@ -23,6 +23,7 @@ shape = SubResource("RectangleShape2D_0jhex")
 [node name="Components" type="Node" parent="." unique_id=813608034]
 
 [node name="Movement_Componet" parent="Components" unique_id=501626970 instance=ExtResource("3_gdgnb")]
+proporcao_velocidade = 6.0
 
 [node name="Rotation_Component" parent="Components" unique_id=1188201077 instance=ExtResource("4_06akj")]
 
