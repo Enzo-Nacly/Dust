@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		# aplicando gravidade a entidade
 		self.velocity += forca_gravitacional * delta
 	else:
-			# atualizando o motion_mode para não quebrar o .is_on_floor() no jump_component
-			self.motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+		# atualizando o motion_mode para não quebrar o .is_on_floor() no jump_component
+		self.motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	
 	move_and_slide()

@@ -29,7 +29,6 @@ func mover(delta : float) -> void:
 		if modulo_velocidade_lateral != 0.0:
 			aplicar_atrito(delta)
 	
-	
 func aplicar_aceleracao(delta : float, direcao : float) -> void:
 	var modulo_velocidade_lateral : float = entidade.velocity.dot(entidade.transform.x)
 	var velocidade_lateral : Vector2 = entidade.transform.x * modulo_velocidade_lateral

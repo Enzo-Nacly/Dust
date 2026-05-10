@@ -45,6 +45,6 @@ func calcular_forca_gravidade(raio: float) -> int:
 func _draw() -> void:
 	if desenhar_circulo_influencia:
 		var centro_circulo : Vector2 = Vector2.ZERO
-		var segmentos_arco : int = 64
+		var segmentos_arco : int = int((raio_influencia/MULTIPLICADOR_RAIO)/4)
 		var grossura_arco : float = 2.0
 		draw_arc(centro_circulo, raio_influencia, 0, TAU, segmentos_arco, Color.RED, grossura_arco)
