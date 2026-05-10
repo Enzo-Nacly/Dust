@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.ComponentModel;
 
-public partial class planet_csharp : StaticBody2D
+public partial class Planet : StaticBody2D
 {
 	[Export] public PlanetStatus planetStatus;
 
@@ -14,7 +14,7 @@ public partial class planet_csharp : StaticBody2D
 		gravityComponent = GetNode<GravityComponet>("Gravity_Component");
 		collision_shape = GetNode<CollisionShape2D>("CollisionShape2D");
 
-		gravityComponent.setup(this, planetStatus.raio);
+		gravityComponent.Setup(this, planetStatus.raio);
 		if(collision_shape.Shape is CircleShape2D)
 		{
 			CircleShape2D shape = (CircleShape2D)(collision_shape.Shape);
@@ -22,9 +22,9 @@ public partial class planet_csharp : StaticBody2D
 		}	
 	}
 
-	public Godot.Vector2 pegarGravidadeEm(Godot.Vector2 posicaoParticula)
+	public Godot.Vector2 PegarGravidadeEm(Godot.Vector2 posicaoParticula)
 	{
-		return gravityComponent.pegarGravidadeEm(posicaoParticula);
+		return gravityComponent.PegarGravidadeEm(posicaoParticula);
 	}
 
     public override void _Draw()

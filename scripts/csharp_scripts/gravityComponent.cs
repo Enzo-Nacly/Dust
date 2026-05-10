@@ -14,26 +14,26 @@ public partial class GravityComponet : Node2D
     private int forcaGravidade;
     private float raioInfluencia;
 
-    public void setup(Node2D entidade, int raio)
+    public void Setup(Node2D entidade, int raio)
     {
         this.entidade = entidade;
         raioInfluencia = MULTIPLICADOR_RAIO * raio;
-        forcaGravidade = calcularForcaGravidade(raio);
+        forcaGravidade = CalcularForcaGravidade(raio);
     }
 
-    private float logBase(float numero, float baseLog)
+    private float LogBase(float numero, float baseLog)
     {
         return (float)(Math.Log(numero)/Math.Log(baseLog));
     }
 
-    private int calcularForcaGravidade(float raio)
+    private int CalcularForcaGravidade(float raio)
     {
         const float BASE_LOG = 2.5f;
-        float forcaG = (float)(logBase(raio, BASE_LOG) * Math.Pow(10, 2));
+        float forcaG = (float)(LogBase(raio, BASE_LOG) * Math.Pow(10, 2));
         return (int)(forcaG);
     }
 
-    public Godot.Vector2 pegarGravidadeEm(Godot.Vector2 posicaoParticula)
+    public Godot.Vector2 PegarGravidadeEm(Godot.Vector2 posicaoParticula)
     {
         Godot.Vector2 vetorCentro = entidade.GlobalPosition - posicaoParticula;
         float distancia = vetorCentro.Length();
