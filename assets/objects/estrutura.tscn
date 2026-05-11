@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://troo3gbyf83b"]
+
+[ext_resource type="Script" uid="uid://bsif7vnq8hgc7" path="res://scripts/csharp_scripts/estrutura.cs" id="1_2x24v"]
+[ext_resource type="Texture2D" uid="uid://dw2lmamnyxlg3" path="res://assets/sprites/icon.svg" id="2_na7lc"]
+[ext_resource type="PackedScene" uid="uid://68ws5bbalgjv" path="res://assets/components/rotation_component.tscn" id="3_mepis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27pev"]
+size = Vector2(190, 468)
+
+[node name="estrutura" type="StaticBody2D" unique_id=2145412542]
+script = ExtResource("1_2x24v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2135674922]
+modulate = Color(0.5754115, 0.6539243, 0.9238462, 1)
+scale = Vector2(1.793, 4)
+texture = ExtResource("2_na7lc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=799832023]
+visible = false
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_27pev")
+
+[node name="Rotation_Component" parent="." unique_id=683648501 instance=ExtResource("3_mepis")]
