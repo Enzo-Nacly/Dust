@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class RotationComponent
+public partial class RotationComponent : Node2D
 {
     private static readonly float AJUSTE_ORIENTACAO_SPRITE = Mathf.Pi / 2.0f;
 

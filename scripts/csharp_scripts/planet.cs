@@ -6,12 +6,12 @@ public partial class Planet : StaticBody2D
 {
 	[Export] public PlanetStatus planetStatus;
 
-	private GravityComponet gravityComponent;
+	private GravityComponent gravityComponent;
 	private CollisionShape2D collision_shape;
 
 	public override void _Ready()
 	{
-		gravityComponent = GetNode<GravityComponet>("Gravity_Component");
+		gravityComponent = GetNode<GravityComponent>("Gravity_Component");
 		collision_shape = GetNode<CollisionShape2D>("CollisionShape2D");
 
 		gravityComponent.Setup(this, planetStatus.raio);

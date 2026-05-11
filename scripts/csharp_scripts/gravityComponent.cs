@@ -1,10 +1,7 @@
 using Godot;
 using System;
-using System.ComponentModel;
-using System.Numerics;
-using System.Runtime.CompilerServices;
 
-public partial class GravityComponet : Node2D
+public partial class GravityComponent : Node2D
 {
     [Export] private bool desenharCirculoInfluencia = true;
 

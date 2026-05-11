@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PlanetStatus" format=3 uid="uid://d3t0lt3irgpy5"]
+
+[ext_resource type="Script" uid="uid://3p3a6moyls57" path="res://scripts/csharp_scripts/PlanetStatus.cs" id="1_4e8ox"]
+
+[resource]
+script = ExtResource("1_4e8ox")
+raio = 600
+cor = Color(0.67915666, 0.7319792, 0.28815478, 1)
+metadata/_custom_type_script = "uid://3p3a6moyls57"

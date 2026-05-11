@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Planet_Resource" format=3 uid="uid://bkjnwd82ch1yo"]
-
-[ext_resource type="Script" uid="uid://bfcpcdeuugrq4" path="res://scripts/gdscripts/planet_status.gd" id="1_w6l8e"]
-
-[resource]
-script = ExtResource("1_w6l8e")
-raio = 600
-cor = Color(0.7535544, 0.8290432, 0.32579863, 1)
-metadata/_custom_type_script = "uid://bfcpcdeuugrq4"
