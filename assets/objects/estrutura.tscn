@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://troo3gbyf83b"]
 
-[ext_resource type="Script" uid="uid://bsif7vnq8hgc7" path="res://scripts/csharp_scripts/estrutura.cs" id="1_2x24v"]
+[ext_resource type="Script" uid="uid://cg3emeqqx8qg7" path="res://assets/objects/Objeto.cs" id="1_2x24v"]
 [ext_resource type="Texture2D" uid="uid://dw2lmamnyxlg3" path="res://assets/sprites/icon.svg" id="2_na7lc"]
 [ext_resource type="PackedScene" uid="uid://68ws5bbalgjv" path="res://assets/components/rotation_component.tscn" id="3_mepis"]
 
@@ -19,5 +19,6 @@ texture = ExtResource("2_na7lc")
 visible = false
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_27pev")
+disabled = true
 
 [node name="Rotation_Component" parent="." unique_id=683648501 instance=ExtResource("3_mepis")]

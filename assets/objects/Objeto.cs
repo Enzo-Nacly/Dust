@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Estrutura : StaticBody2D
+public partial class Objeto : StaticBody2D
 {
 	private Planet planet;
 	private RotationComponent rotationComponent;

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://assets/planets/purple_planet.tscn" id="2_7nwiy"]
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://assets/entities/player.tscn" id="2_i1as6"]
+[ext_resource type="PackedScene" uid="uid://troo3gbyf83b" path="res://assets/objects/estrutura.tscn" id="3_i1as6"]
 
 [node name="Main" type="Node2D" unique_id=522489995]
 
@@ -10,3 +11,9 @@ position = Vector2(0, -65)
 
 [node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("2_7nwiy")]
 position = Vector2(9, 473)
+
+[node name="estrutura" parent="." unique_id=2145412542 instance=ExtResource("3_i1as6")]
+position = Vector2(697, -40)
+
+[node name="estrutura2" parent="." unique_id=984917716 instance=ExtResource("3_i1as6")]
+position = Vector2(-819, 627)

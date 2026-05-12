@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ux0228ttqf7j"]
 
-[ext_resource type="Script" uid="uid://cd6cfl1rh1kdd" path="res://scripts/csharp_scripts/Player.cs" id="1_hlp2g"]
+[ext_resource type="Script" uid="uid://suapp5hipok6" path="res://scripts/csharp_scripts/Player.cs" id="1_hlp2g"]
 [ext_resource type="Texture2D" uid="uid://dw2lmamnyxlg3" path="res://assets/sprites/icon.svg" id="2_06akj"]
 [ext_resource type="PackedScene" uid="uid://bit1nhl4ckxru" path="res://assets/components/movement_componet.tscn" id="3_gdgnb"]
 [ext_resource type="PackedScene" uid="uid://68ws5bbalgjv" path="res://assets/components/rotation_component.tscn" id="4_06akj"]
@@ -9,6 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jhex"]
 
 [node name="Player" type="CharacterBody2D" unique_id=514355837]
+z_index = 5
 script = ExtResource("1_hlp2g")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=747360896]
