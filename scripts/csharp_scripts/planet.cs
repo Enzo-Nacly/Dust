@@ -27,10 +27,10 @@ public partial class Planet : StaticBody2D
 		return gravityComponent.PegarGravidadeEm(posicaoParticula);
 	}
 
-    public override void _Draw()
-    {
-        Vector2 posicaoCentro = Vector2.Zero;
+	public override void _Draw()
+	{
+		Vector2 posicaoCentro = Vector2.Zero;
 		DrawCircle(posicaoCentro, planetStatus.raio, planetStatus.cor);
-    }
+	}
 
 }
