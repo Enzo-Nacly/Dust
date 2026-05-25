@@ -1,9 +1,16 @@
 using Godot;
 using System;
 
-public virtual partial class Interactable : Node
+
+
+// estava dando dois erros:
+// 1 - Método Abstrato não pode existir se a classe não for abstrata;
+// 2 - o modificador virtual não pode existir pro item, a gente não sabe o porque desse segundo.
+public abstract partial class Interactable : Node
 {
-	public abstract void Interagir()
+	private CollisionShape2D collision_shape;
+
+	public abstract void Interagir();
 
 	public override void _Ready()
 	{

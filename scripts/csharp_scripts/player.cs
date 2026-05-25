@@ -9,7 +9,7 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
 	{
-		movementComponent = GetNode<MovementComponent>("Components/Movement_Componet");
+		movementComponent = GetNode<MovementComponent>("Components/Movement_Component");
 		rotationComponent = GetNode<RotationComponent>("Components/Rotation_Component");
 		jumpComponent = GetNode<JumpComponent>("Components/Jump_Component");
 
