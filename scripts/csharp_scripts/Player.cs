@@ -5,15 +5,13 @@ public partial class Player : CharacterBody2D
 	private MovementComponent movementComponent;
 	private RotationComponent rotationComponent;
 	private JumpComponent jumpComponent;
-	private Interacao interacaoComponent;
 	private Planet planet;
 
 	public override void _Ready()
 	{
-		movementComponent = GetNode<MovementComponent>("Components/Movement_Componet");
+		movementComponent = GetNode<MovementComponent>("Components/Movement_Component");
 		rotationComponent = GetNode<RotationComponent>("Components/Rotation_Component");
 		jumpComponent = GetNode<JumpComponent>("Components/Jump_Component");
-	 	interacaoComponent = GetNode<Interacao>("Components/InterectComponent");
 
 		// get_tree().get_nodes_in_group("planets")[0]
 		planet = GetTree().GetNodesInGroup("planets")[0] as Planet;
@@ -21,7 +19,6 @@ public partial class Player : CharacterBody2D
 		movementComponent.Setup(this);
 		rotationComponent.Setup(this);
 		jumpComponent.Setup(this);
-		interacaoComponent.Setup(this);
 		
 	}
 

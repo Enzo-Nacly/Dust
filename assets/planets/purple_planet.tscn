@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://ckratrq8jvnm8"]
 
-[ext_resource type="Script" path="res://scripts/csharp_scripts/PurplePlanet.cs" id="1_k6qxa"]
+[ext_resource type="Script" uid="uid://mnj75l4pwqec" path="res://scripts/csharp_scripts/PurplePlanet.cs" id="1_k6qxa"]
 [ext_resource type="PackedScene" uid="uid://dhw1utyfd0bgl" path="res://assets/components/gravity_component.tscn" id="2_2jy7m"]
-[ext_resource type="Resource" uid="uid://d3t0lt3irgpy5" path="res://assets/resources/planetaAmarelo.tres" id="2_vb3mt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2jy7m"]
 radius = 100.0
 
 [node name="Purple_Planet" type="StaticBody2D" unique_id=201800473 groups=["planets"]]
 script = ExtResource("1_k6qxa")
-planetStatus = ExtResource("2_vb3mt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1661092387]
 shape = SubResource("CircleShape2D_2jy7m")
