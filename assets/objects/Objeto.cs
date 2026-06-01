@@ -17,10 +17,10 @@ public partial class Objeto : StaticBody2D
 	{
 		Vector2 forcaGravitacional = planet.PegarGravidadeEm(GlobalPosition);
 
-        if (forcaGravitacional != Vector2.Zero)
-        {
-            Vector2 vetorCentro = forcaGravitacional.Normalized();
-            rotationComponent.AtualizarRotacao(vetorCentro);
+		if (forcaGravitacional != Vector2.Zero)
+		{
+			Vector2 vetorCentro = forcaGravitacional.Normalized();
+			rotationComponent.AtualizarRotacao(vetorCentro);
 		}
 	}
 }

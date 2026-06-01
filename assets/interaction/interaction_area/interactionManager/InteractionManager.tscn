@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b5v60bh8mc13q"]
+
+[ext_resource type="Script" uid="uid://cqd3exaj1nrqy" path="res://assets/interaction/interaction_area/interactionManager/InteractionManager.gd" id="1_0v2vh"]
+
+[node name="InteractionManager" type="Node2D" unique_id=954890886]
+script = ExtResource("1_0v2vh")
+
+[node name="Label" type="Label" parent="." unique_id=1870105083]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_right = 65.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "[E] para interagir"
+horizontal_alignment = 1
+vertical_alignment = 1

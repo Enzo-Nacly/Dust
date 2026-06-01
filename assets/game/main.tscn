@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://cly7rhvtfsjiw"]
 
+[ext_resource type="PackedScene" uid="uid://colp0qiqlx1vv" path="res://assets/objects/objs_interagiveis/Obj_tabletTask.tscn" id="1_hmcb6"]
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://assets/planets/purple_planet.tscn" id="2_7nwiy"]
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://assets/entities/player.tscn" id="2_i1as6"]
 [ext_resource type="PackedScene" uid="uid://troo3gbyf83b" path="res://assets/objects/estrutura.tscn" id="3_i1as6"]
 
 [node name="Main" type="Node2D" unique_id=522489995]
 
+[node name="ObjTabletTask" parent="." unique_id=427427135 instance=ExtResource("1_hmcb6")]
+position = Vector2(2, -174)
+
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_i1as6")]
-position = Vector2(0, -65)
+position = Vector2(383, 1)
 
 [node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("2_7nwiy")]
 position = Vector2(9, 473)
