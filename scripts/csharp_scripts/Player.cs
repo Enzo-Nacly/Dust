@@ -24,13 +24,6 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		if (Control.interacao)
-		{
-			Velocity = Vector2.Zero;
-		}
-		else{
-
-		}
 
 			movementComponent.Mover((float)delta);
 

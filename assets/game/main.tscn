@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cly7rhvtfsjiw"]
 
-[ext_resource type="PackedScene" uid="uid://colp0qiqlx1vv" path="res://assets/objects/objs_interagiveis/Obj_tabletTask.tscn" id="1_hmcb6"]
+[ext_resource type="PackedScene" uid="uid://colp0qiqlx1vv" path="res://assets/objects/objs_interagiveis/Planet1/Obj_tabletTask.tscn" id="1_hmcb6"]
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://assets/planets/purple_planet.tscn" id="2_7nwiy"]
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://assets/entities/player.tscn" id="2_i1as6"]
 [ext_resource type="Resource" uid="uid://d3t0lt3irgpy5" path="res://assets/resources/planetaAmarelo.tres" id="3_hmcb6"]
@@ -9,7 +9,7 @@
 [node name="Main" type="Node2D" unique_id=522489995]
 
 [node name="ObjTabletTask" parent="." unique_id=427427135 instance=ExtResource("1_hmcb6")]
-position = Vector2(2, -174)
+position = Vector2(-2, -153)
 
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_i1as6")]
 position = Vector2(383, 1)

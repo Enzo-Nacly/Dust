@@ -2,35 +2,84 @@ using Godot;
 using System;
 using System.ComponentModel;
 
+//public partial class Planet : StaticBody2D
+//{
+	//[Export] public PlanetStatus planetStatus;
+//
+	//private GravityComponent gravityComponent;
+	//private CollisionShape2D collision_shape;
+//
+	//public override void _Ready()
+	//{
+		//gravityComponent = GetNode<GravityComponent>("Gravity_Component");
+		//collision_shape = GetNode<CollisionShape2D>("CollisionShape2D");
+//
+		//gravityComponent.Setup(this, planetStatus.raio);
+		//if(collision_shape.Shape is CircleShape2D)
+		//{
+			//CircleShape2D shape = (CircleShape2D)(collision_shape.Shape);
+			//shape.Radius = planetStatus.raio;		
+		//}	
+	//}
+//
+	//public Godot.Vector2 PegarGravidadeEm(Godot.Vector2 posicaoParticula)
+	//{
+		//return gravityComponent.PegarGravidadeEm(posicaoParticula);
+	//}
+//
+	//public override void _Draw()
+	//{
+		//Vector2 posicaoCentro = Vector2.Zero;
+		//DrawCircle(posicaoCentro, planetStatus.raio, planetStatus.cor);
+	//}
+//
+//}
 public partial class Planet : StaticBody2D
 {
 	[Export] public PlanetStatus planetStatus;
-
+	
 	private GravityComponent gravityComponent;
-	private CollisionShape2D collision_shape;
+	private CollisionShape2D collisionShape;
+	private Sprite2D sprite;
 
 	public override void _Ready()
 	{
 		gravityComponent = GetNode<GravityComponent>("Gravity_Component");
-		collision_shape = GetNode<CollisionShape2D>("CollisionShape2D");
+		collisionShape = GetNode<CollisionShape2D>("CollisionShape2D");
+		sprite = GetNode<Sprite2D>("Sprite2D"); 
 
 		gravityComponent.Setup(this, planetStatus.raio);
-		if(collision_shape.Shape is CircleShape2D)
+
+		// Ajusta o Colisor
+		if (collisionShape.Shape is CircleShape2D circleShape)
 		{
-			CircleShape2D shape = (CircleShape2D)(collision_shape.Shape);
-			shape.Radius = planetStatus.raio;		
-		}	
+			circleShape.Radius = planetStatus.raio;
+		}
+
+		// Ajusta o tamanho do Sprite para casar com o raio
+		AjustarTamanhoDoSprite();
+	}
+
+	private void AjustarTamanhoDoSprite()
+	{
+		if (sprite.Texture == null) return;
+
+		// Pega o tamanho original da imagem em pixels (largura)
+		float tamanhoOriginalDaImagem = sprite.Texture.GetSize().X;
+
+		// O diâmetro desejado é o dobro do raio
+		float diametroDesejado = planetStatus.raio * 2;
+
+		// Calcula a escala necessária
+		float novaEscala = diametroDesejado / tamanhoOriginalDaImagem;
+
+		// Aplica a escala no Sprite
+		sprite.Scale = new Vector2(novaEscala, novaEscala);
+		
 	}
 
 	public Godot.Vector2 PegarGravidadeEm(Godot.Vector2 posicaoParticula)
 	{
 		return gravityComponent.PegarGravidadeEm(posicaoParticula);
 	}
-
-	public override void _Draw()
-	{
-		Vector2 posicaoCentro = Vector2.Zero;
-		DrawCircle(posicaoCentro, planetStatus.raio, planetStatus.cor);
-	}
-
 }

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://mnj75l4pwqec" path="res://scripts/csharp_scripts/PurplePlanet.cs" id="1_k6qxa"]
 [ext_resource type="PackedScene" uid="uid://dhw1utyfd0bgl" path="res://assets/components/gravity_component.tscn" id="2_2jy7m"]
+[ext_resource type="Texture2D" uid="uid://bbhe8bqn64vof" path="res://assets/sprites/Planeta1/Planeta/planeta1roxo.png" id="3_2jy7m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2jy7m"]
 radius = 100.0
@@ -13,3 +14,6 @@ script = ExtResource("1_k6qxa")
 shape = SubResource("CircleShape2D_2jy7m")
 
 [node name="Gravity_Component" parent="." unique_id=804448457 instance=ExtResource("2_2jy7m")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=961972085]
+texture = ExtResource("3_2jy7m")

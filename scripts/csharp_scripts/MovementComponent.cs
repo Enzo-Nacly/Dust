@@ -16,10 +16,14 @@ public partial class MovementComponent : Node2D
 	{
 		this.entidade = entidade;
 	}
+	
 
 
 	public void Mover(float delta)
 	{
+		
+
+		
 		float direcao = Input.GetAxis("ui_left", "ui_right");
 
 		if(entidade.MotionMode == CharacterBody2D.MotionModeEnum.Floating)
