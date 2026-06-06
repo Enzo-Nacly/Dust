@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://3txkkq342mvk"]
 
+[ext_resource type="Script" uid="uid://3256wgi3yits" path="res://assets/objects/Planeta1/Caverna/caverna_parede_externo.gd" id="1_n137m"]
 [ext_resource type="Texture2D" uid="uid://shtr6jsj7cil" path="res://assets/sprites/Planeta1/Caverna/Caverna Externo.png" id="1_s4vj0"]
 
 [node name="CavernaPuzzle" type="StaticBody2D" unique_id=1471874157]
+script = ExtResource("1_n137m")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1432194592]
 polygon = PackedVector2Array(-133, 5, -129, 14, -124, 13, -118, 8, -106, 9, -100, 14, -89, 15, -82, 21, -76, 26, -75, 30, -69, 36, -65, 41, -58, 45, -50, 54, -46, 65, -44, 74, -45, 82, -49, 109, -4, 123, 13, 121, 56, 131, 71, 124, 94, 129, 114, 120, 122, 110, 130, 98, 133, 86, 131, 75, 125, 63, 124, 40, 129, 21, 130, 9, 120, 2, 105, 1, 85, -23, 88, -47, 88, -57, 80, -65, 85, -77, 83, -85, 64, -105, 51, -108, 4, -121, -15, -131, -47, -99, -101, -75, -106, -57, -122, -49, -131, -26)

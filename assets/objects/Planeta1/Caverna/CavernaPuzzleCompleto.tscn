@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://assets/components/gravity_rotation_component_objects.tscn" id="1_jbqqp"]
 [ext_resource type="PackedScene" uid="uid://3txkkq342mvk" path="res://assets/objects/Planeta1/Caverna/CavernaPuzzle.tscn" id="2_ap8gp"]
 [ext_resource type="PackedScene" uid="uid://ukdcr78ihqtw" path="res://assets/objects/Planeta1/Caverna/CavernaPorta.tscn" id="3_sbc6o"]
+[ext_resource type="PackedScene" uid="uid://dglppci8t1o2l" path="res://assets/objects/Planeta1/Caverna/ComponentEntryExit.tscn" id="5_sbc6o"]
 
 [node name="CavernaPuzzleCompleto" type="Node2D" unique_id=1511786806]
 
@@ -17,3 +18,9 @@ position = Vector2(65, -2)
 
 [node name="CavernaPorta" parent="." unique_id=1041345079 instance=ExtResource("3_sbc6o")]
 position = Vector2(-36, 36)
+
+[node name="ComponentEntryExit" parent="." unique_id=425402362 instance=ExtResource("5_sbc6o")]
+position = Vector2(-52, 37)
+
+[connection signal="body_entered" from="ComponentEntryExit" to="ComponentEntryExit" method="_on_body_entered"]
+[connection signal="body_exited" from="ComponentEntryExit" to="ComponentEntryExit" method="_on_body_exited"]
