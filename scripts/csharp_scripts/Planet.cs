@@ -50,13 +50,11 @@ public partial class Planet : StaticBody2D
 
 		gravityComponent.Setup(this, planetStatus.raio);
 
-		// Ajusta o Colisor
 		if (collisionShape.Shape is CircleShape2D circleShape)
 		{
 			circleShape.Radius = planetStatus.raio;
 		}
 
-		// Ajusta o tamanho do Sprite para casar com o raio
 		AjustarTamanhoDoSprite();
 	}
 
@@ -64,16 +62,14 @@ public partial class Planet : StaticBody2D
 	{
 		if (sprite.Texture == null) return;
 
-		// Pega o tamanho original da imagem em pixels (largura)
+
 		float tamanhoOriginalDaImagem = sprite.Texture.GetSize().X;
 
-		// O diâmetro desejado é o dobro do raio
 		float diametroDesejado = planetStatus.raio * 2;
 
-		// Calcula a escala necessária
 		float novaEscala = diametroDesejado / tamanhoOriginalDaImagem;
 
-		// Aplica a escala no Sprite
+
 		sprite.Scale = new Vector2(novaEscala, novaEscala);
 		
 	}

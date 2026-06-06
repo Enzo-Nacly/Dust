@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://c24d1ionx07rw" path="res://assets/objects/objs_interagiveis/obj_tablet_task.gd" id="1_5u60r"]
 [ext_resource type="Texture2D" uid="uid://bqoipv5kspdq0" path="res://assets/sprites/tabletepurplePlanet.png" id="2_80e2v"]
 [ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://assets/interaction/interaction_area/Interaction_area.tscn" id="3_vpab8"]
-[ext_resource type="PackedScene" uid="uid://68ws5bbalgjv" path="res://assets/components/rotation_component.tscn" id="4_80e2v"]
 [ext_resource type="Texture2D" uid="uid://dn0c6srtorrv3" path="res://assets/sprites/tabletaberto.jpg" id="4_vpab8"]
 [ext_resource type="Script" uid="uid://b8l6tqqk2eba" path="res://assets/objects/objs_interagiveis/tabletaberto.gd" id="5_xkdrn"]
+[ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://assets/components/gravity_rotation_component_objects.tscn" id="6_4rmit"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkdrn"]
 radius = 50.159744
@@ -60,4 +60,4 @@ offset_top = -16.0
 offset_right = 225.0
 offset_bottom = 232.0
 
-[node name="Rotation_Component" parent="." unique_id=683648501 instance=ExtResource("4_80e2v")]
+[node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("6_4rmit")]

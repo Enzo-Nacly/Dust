@@ -45,11 +45,18 @@ func _on_botao_pressionado(numero: int) -> void:
 
 func verificar_senha() -> void:
 	if sequencia_digitada == SENHA_CORRETA:
-		print("Senha Correta")
+		print("Senha Correta!")
+		
+		var portas = get_tree().get_nodes_in_group("grupo_porta_da_caverna0")
+
+		if portas.size() > 0:
+			portas[0].abrir()
+		
 		tabletaberto.visible = false
 		sequencia_digitada.clear()
 	else:
 		print("Senha Incorreta! Tente novamente.")
 		sequencia_digitada.clear()
+
 		
 	pass
