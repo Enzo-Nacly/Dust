@@ -27,6 +27,10 @@ InteractionManager="*uid://b5v60bh8mc13q"
 
 project/assembly_name="Dust"
 
+[global_group]
+
+player="Grupo do Jogador principal"
+
 [input]
 
 ui_accept={

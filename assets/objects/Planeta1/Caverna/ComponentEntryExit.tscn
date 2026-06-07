@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://de4mwd7wryhdq" path="res://assets/objects/Planeta1/Caverna/component_entry_exit.gd" id="1_afidu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dawc4"]
-size = Vector2(20, 57)
+size = Vector2(1, 57)
 
 [node name="ComponentEntryExit" type="Area2D" unique_id=425402362]
 script = ExtResource("1_afidu")

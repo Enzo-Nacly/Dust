@@ -10,9 +10,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jhex"]
 size = Vector2(3.8461542, 4.769231)
 
-[node name="Player" type="CharacterBody2D" unique_id=514355837]
+[node name="Player" type="CharacterBody2D" unique_id=514355837 groups=["player"]]
 z_index = 5
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_hlp2g")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=747360896]
@@ -22,6 +22,8 @@ texture = ExtResource("2_12tmk")
 offset = Vector2(0, -10)
 ignore_rotation = false
 zoom = Vector2(3, 3)
+position_smoothing_speed = 0.1
+rotation_smoothing_speed = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1715437799]
 position = Vector2(0.4999981, -0.5)
