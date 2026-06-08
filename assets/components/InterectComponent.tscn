@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://c8hahsp8cvrsp"]
-
-[ext_resource type="Script" uid="uid://covyjaw5t5u3i" path="res://scripts/csharp_scripts/Interacao.cs" id="1_y6rai"]
-
-[node name="InterectComponent" type="Node2D" unique_id=76302921]
-script = ExtResource("1_y6rai")
