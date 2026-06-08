@@ -21,7 +21,7 @@ texture = ExtResource("2_12tmk")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1914463975]
 offset = Vector2(0, -10)
 ignore_rotation = false
-zoom = Vector2(3, 3)
+zoom = Vector2(2.2, 2.2)
 position_smoothing_speed = 0.1
 rotation_smoothing_speed = 0.5
 

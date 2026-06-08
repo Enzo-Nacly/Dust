@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c2sf6outg6teh"]
+
+[ext_resource type="Script" uid="uid://b4w8vqilqwd2x" path="res://assets/interaction/interaction_area/interaction_area.gd" id="1_737yq"]
+
+[node name="PuzzleCristaisCompleto" type="Area2D" unique_id=1242830615]
+script = ExtResource("1_737yq")
+metadata/_custom_type_script = "uid://b4w8vqilqwd2x"

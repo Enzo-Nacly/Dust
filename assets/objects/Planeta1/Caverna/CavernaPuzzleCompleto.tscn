@@ -1,17 +1,29 @@
 [gd_scene format=3 uid="uid://dly62qyss7gmo"]
 
+[ext_resource type="PackedScene" uid="uid://donb1gbk2vcyy" path="res://assets/objects/Planeta1/Caverna/CavernaParedeSemColisao.tscn" id="1_1ubje"]
 [ext_resource type="PackedScene" uid="uid://bxeisle2jqc4u" path="res://assets/objects/Planeta1/Caverna/CavernaParedeColisao.tscn" id="1_ap8gp"]
 [ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://assets/components/gravity_rotation_component_objects.tscn" id="1_jbqqp"]
 [ext_resource type="PackedScene" uid="uid://3txkkq342mvk" path="res://assets/objects/Planeta1/Caverna/CavernaPuzzle.tscn" id="2_ap8gp"]
+[ext_resource type="PackedScene" uid="uid://4j3q7p1p2udv" path="res://assets/objects/Planeta1/Caverna/Puzzle/Varanda/ChaoVaranda.tscn" id="2_iy7mi"]
 [ext_resource type="PackedScene" uid="uid://ukdcr78ihqtw" path="res://assets/objects/Planeta1/Caverna/CavernaPorta.tscn" id="3_sbc6o"]
 [ext_resource type="PackedScene" uid="uid://dglppci8t1o2l" path="res://assets/objects/Planeta1/Caverna/ComponentEntryExit.tscn" id="5_sbc6o"]
+[ext_resource type="Texture2D" uid="uid://x6unsf61pjfd" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/cima_da_varanda.png" id="8_gfymu"]
 
 [node name="CavernaPuzzleCompleto" type="Node2D" unique_id=1511786806]
 
+[node name="CavernaParedeSemColisao" parent="." unique_id=1279682281 instance=ExtResource("1_1ubje")]
+position = Vector2(67, 2)
+
+[node name="ChaoVaranda" parent="." unique_id=2074429728 instance=ExtResource("2_iy7mi")]
+position = Vector2(45, 20)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ChaoVaranda" unique_id=391998815]
+position = Vector2(-0.5, -64)
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("8_gfymu")
+
 [node name="CavernaParedeColisao" parent="." unique_id=19942579 instance=ExtResource("1_ap8gp")]
 position = Vector2(66, -2)
-
-[node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("1_jbqqp")]
 
 [node name="CavernaPuzzle" parent="." unique_id=1471874157 instance=ExtResource("2_ap8gp")]
 position = Vector2(65, -2)
@@ -21,6 +33,8 @@ position = Vector2(-36, 36)
 
 [node name="ComponentEntryExit" parent="." unique_id=425402362 instance=ExtResource("5_sbc6o")]
 position = Vector2(-52, 37)
+
+[node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("1_jbqqp")]
 
 [connection signal="body_entered" from="ComponentEntryExit" to="ComponentEntryExit" method="_on_body_entered"]
 [connection signal="body_exited" from="ComponentEntryExit" to="ComponentEntryExit" method="_on_body_exited"]

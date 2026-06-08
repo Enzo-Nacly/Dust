@@ -9,7 +9,7 @@
 [node name="Main" type="Node2D" unique_id=522489995]
 
 [node name="CavernaPuzzleCompleto" parent="." unique_id=1511786806 instance=ExtResource("1_4dpd8")]
-position = Vector2(-544, 126)
+position = Vector2(-74, 1120)
 
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_i1as6")]
 position = Vector2(640, 454)
@@ -19,4 +19,4 @@ position = Vector2(9, 473)
 planetStatus = ExtResource("3_hmcb6")
 
 [node name="ObjTabletTask" parent="." unique_id=427427135 instance=ExtResource("1_hmcb6")]
-position = Vector2(-610, 341)
+position = Vector2(349, 1002)
