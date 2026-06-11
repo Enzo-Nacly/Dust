@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://assets/entities/player.tscn" id="1_ebctv"]
 [ext_resource type="PackedScene" uid="uid://dhw1utyfd0bgl" path="res://assets/components/gravity_component.tscn" id="2_23g7q"]
-[ext_resource type="PackedScene" uid="uid://colp0qiqlx1vv" path="res://assets/objects/objs_interagiveis/Planet1/Obj_tabletTask.tscn" id="2_kr4yc"]
+[ext_resource type="PackedScene" uid="uid://colp0qiqlx1vv" path="res://assets/objects/Obj_tabletTask.tscn" id="2_kr4yc"]
 [ext_resource type="PackedScene" uid="uid://crspf5ooucvj8" path="res://assets/components/jump_component.tscn" id="3_nhoqn"]
 [ext_resource type="PackedScene" uid="uid://bit1nhl4ckxru" path="res://assets/components/movement_componet.tscn" id="4_21faj"]
 [ext_resource type="PackedScene" uid="uid://68ws5bbalgjv" path="res://assets/components/rotation_component.tscn" id="5_qfqg2"]

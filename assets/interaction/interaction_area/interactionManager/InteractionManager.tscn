@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5v60bh8mc13q"]
 
 [ext_resource type="Script" uid="uid://cqd3exaj1nrqy" path="res://assets/interaction/interaction_area/interactionManager/InteractionManager.gd" id="1_0v2vh"]
+[ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://assets/components/gravity_rotation_component_objects.tscn" id="2_v7jy8"]
 
 [node name="InteractionManager" type="Node2D" unique_id=954890886]
 script = ExtResource("1_0v2vh")
@@ -16,3 +17,5 @@ grow_horizontal = 2
 text = "[E] para interagir"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("2_v7jy8")]

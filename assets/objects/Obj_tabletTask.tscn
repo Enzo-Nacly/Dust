@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://colp0qiqlx1vv"]
+
+[ext_resource type="Script" uid="uid://c24d1ionx07rw" path="res://assets/objects/objs_interagiveis/obj_tablet_task.gd" id="1_5u60r"]
+[ext_resource type="Texture2D" uid="uid://0is6cwhvpjut" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao1.png" id="3_fvifo"]
+[ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://assets/interaction/interaction_area/Interaction_area.tscn" id="3_vpab8"]
+[ext_resource type="Texture2D" uid="uid://dhn480ut1ogqj" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao2.png" id="4_c0uyl"]
+[ext_resource type="Texture2D" uid="uid://dn0c6srtorrv3" path="res://assets/sprites/tabletaberto.jpg" id="4_vpab8"]
+[ext_resource type="Texture2D" uid="uid://dq7sno6vl56i0" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao3.png" id="5_oq4ox"]
+[ext_resource type="Script" uid="uid://b8l6tqqk2eba" path="res://assets/objects/objs_interagiveis/tabletaberto.gd" id="5_xkdrn"]
+[ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://assets/components/gravity_rotation_component_objects.tscn" id="6_4rmit"]
+[ext_resource type="Texture2D" uid="uid://cp78psy1g248h" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao4.png" id="6_eccli"]
+[ext_resource type="Texture2D" uid="uid://dejydpraf4oj1" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao6.png" id="7_0rnry"]
+[ext_resource type="SpriteFrames" uid="uid://ycrssgf1xsbr" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/AnimaçãoPlacaFuncionando.tres" id="7_vlwly"]
+[ext_resource type="Texture2D" uid="uid://dhdtc18lbohl5" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao5.png" id="8_ebsp3"]
+[ext_resource type="Texture2D" uid="uid://gdom6moxoj2d" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao7.png" id="9_asfu6"]
+[ext_resource type="Texture2D" uid="uid://ceqf0bgeedv57" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao8.png" id="10_83n27"]
+[ext_resource type="Texture2D" uid="uid://xtx7ypi8xg0g" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao9.png" id="11_jbm8p"]
+[ext_resource type="Texture2D" uid="uid://bcqktvtn3eov7" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao10.png" id="12_kwdu5"]
+[ext_resource type="Texture2D" uid="uid://00n0poqwkp6p" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao11.png" id="13_skn2q"]
+[ext_resource type="Texture2D" uid="uid://do8nl4w1rj2kt" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao12.png" id="14_1crns"]
+[ext_resource type="Texture2D" uid="uid://dp1o7hkg016q8" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao13.png" id="15_qrlt7"]
+[ext_resource type="Texture2D" uid="uid://dk5ughb6pqjf1" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao14.png" id="16_plbw1"]
+[ext_resource type="Texture2D" uid="uid://dajgqfwvmhh07" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao15.png" id="17_1642k"]
+[ext_resource type="Texture2D" uid="uid://byeke2pdocu17" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao16.png" id="18_50s8x"]
+[ext_resource type="Texture2D" uid="uid://clryd6qxat316" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao17.png" id="19_jv1xo"]
+[ext_resource type="Texture2D" uid="uid://iv1t6pa8y32c" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao18.png" id="20_cs780"]
+[ext_resource type="Texture2D" uid="uid://da4h6ptsnu6gl" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao19.png" id="21_wsbhs"]
+[ext_resource type="Texture2D" uid="uid://d1h68ey56fd78" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao20.png" id="22_xkrb0"]
+[ext_resource type="Texture2D" uid="uid://dsisrm23e6enk" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao21.png" id="23_5cc2i"]
+[ext_resource type="Texture2D" uid="uid://bf28tbql5we25" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao22.png" id="24_fcuku"]
+[ext_resource type="Texture2D" uid="uid://bdh1c7r6dbxot" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao23.png" id="25_0caf7"]
+[ext_resource type="Texture2D" uid="uid://bygm0qwsveo8" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao24.png" id="26_85s02"]
+[ext_resource type="Texture2D" uid="uid://bo5f0637k7x5h" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao25.png" id="27_3u2po"]
+[ext_resource type="Texture2D" uid="uid://cw7uwifwgq6hx" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao26.png" id="28_6vlhi"]
+[ext_resource type="Texture2D" uid="uid://ck4q4frqw33qv" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/Animação TabletAberto Png/tabletabertoanimacao27.png" id="29_a2t34"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xkdrn"]
+radius = 50.159744
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l0wl8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fvifo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c0uyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oq4ox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eccli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0rnry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ebsp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_asfu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_83n27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jbm8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kwdu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_skn2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1crns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qrlt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_plbw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_1642k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_50s8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jv1xo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cs780")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wsbhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xkrb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5cc2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_fcuku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0caf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_85s02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3u2po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6vlhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_a2t34")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ObjTabletTask" type="StaticBody2D" unique_id=427427135]
+script = ExtResource("1_5u60r")
+
+[node name="InteractionArea" parent="." unique_id=591702249 instance=ExtResource("3_vpab8")]
+action_name = "abrir tablet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1584704327]
+shape = SubResource("CircleShape2D_xkdrn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="InteractionArea" unique_id=976518185]
+
+[node name="Tabletaberto" type="Sprite2D" parent="InteractionArea/CanvasLayer" unique_id=163943851]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("4_vpab8")
+script = ExtResource("5_xkdrn")
+
+[node name="Botao1" type="Button" parent="InteractionArea/CanvasLayer/Tabletaberto" unique_id=729511424]
+offset_left = -279.0
+offset_top = -196.0
+offset_right = -126.0
+offset_bottom = -43.0
+
+[node name="Botao2" type="Button" parent="InteractionArea/CanvasLayer/Tabletaberto" unique_id=1148239474]
+offset_left = -120.0
+offset_top = -197.0
+offset_right = 44.0
+offset_bottom = -34.0
+
+[node name="Botao3" type="Button" parent="InteractionArea/CanvasLayer/Tabletaberto" unique_id=635300051]
+offset_left = 50.0
+offset_top = -197.0
+offset_right = 224.0
+offset_bottom = -23.0
+
+[node name="Botao4" type="Button" parent="InteractionArea/CanvasLayer/Tabletaberto" unique_id=1126136407]
+offset_left = -278.0
+offset_top = 4.0
+offset_right = -37.0
+offset_bottom = 231.0
+
+[node name="Botao5" type="Button" parent="InteractionArea/CanvasLayer/Tabletaberto" unique_id=1419368269]
+offset_left = -30.0
+offset_top = -15.0
+offset_right = 225.0
+offset_bottom = 232.0
+
+[node name="AnimacaoSprTabletAberto" type="AnimatedSprite2D" parent="InteractionArea/CanvasLayer/Tabletaberto" unique_id=1406163575]
+position = Vector2(-337, -94)
+sprite_frames = SubResource("SpriteFrames_l0wl8")
+
+[node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("6_4rmit")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=899412348]
+sprite_frames = ExtResource("7_vlwly")
+animation = &"TabletLigado"

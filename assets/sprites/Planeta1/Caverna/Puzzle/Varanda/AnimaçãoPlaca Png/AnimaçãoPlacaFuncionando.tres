@@ -1,0 +1,96 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ycrssgf1xsbr"]
+
+[ext_resource type="Texture2D" uid="uid://8vmn3qr7b875" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA2.png" id="1_0gigo"]
+[ext_resource type="Texture2D" uid="uid://dha02eaogyrpg" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA3.png" id="2_6snd8"]
+[ext_resource type="Texture2D" uid="uid://b1aei8pxgvvcy" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA4.png" id="3_4boil"]
+[ext_resource type="Texture2D" uid="uid://dldkn4dnq6afl" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA5.png" id="4_y54f8"]
+[ext_resource type="Texture2D" uid="uid://bby6ve6r3mf8h" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA6.png" id="5_aspto"]
+[ext_resource type="Texture2D" uid="uid://c1ysenq4rx1dy" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA7.png" id="6_m30su"]
+[ext_resource type="Texture2D" uid="uid://b5qwdymf5qiej" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA8.png" id="7_s6jss"]
+[ext_resource type="Texture2D" uid="uid://i25ien1tdi0" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA9.png" id="8_o1o3w"]
+[ext_resource type="Texture2D" uid="uid://dc7fm8w718kjr" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA10.png" id="9_gykw4"]
+[ext_resource type="Texture2D" uid="uid://cu1nfernwvxnu" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA11.png" id="10_qfu3k"]
+[ext_resource type="Texture2D" uid="uid://txclujs4h62d" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA12.png" id="11_8wukb"]
+[ext_resource type="Texture2D" uid="uid://lqmrxijexk5p" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA13.png" id="12_777tp"]
+[ext_resource type="Texture2D" uid="uid://b280r2grn3u1k" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA14.png" id="13_ycykk"]
+[ext_resource type="Texture2D" uid="uid://cuhuwpcphdu7v" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA15.png" id="14_5ttyb"]
+[ext_resource type="Texture2D" uid="uid://doysehh7svj83" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA16.png" id="15_bjxqd"]
+[ext_resource type="Texture2D" uid="uid://c3rkcnx32uhvw" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/tabletepurplePlanetFinalANIMADA17.png" id="16_4iuwy"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0gigo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6snd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4boil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y54f8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aspto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m30su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s6jss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o1o3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gykw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qfu3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8wukb")
+}],
+"loop": false,
+"name": &"PlacaFuncionando",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_777tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ycykk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5ttyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bjxqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4iuwy")
+}],
+"loop": false,
+"name": &"TabletDesligando",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_o1o3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gykw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qfu3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8wukb")
+}],
+"loop": true,
+"name": &"TabletLigado",
+"speed": 5.0
+}]
