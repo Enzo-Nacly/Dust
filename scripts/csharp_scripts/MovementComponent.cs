@@ -46,15 +46,15 @@ public partial class MovementComponent : Node2D
 
 	private void AplicarAceleracao(float delta, float direcao)
 	{
-		float moduloVelocidadeLateral = entidade.Velocity.Dot(entidade.Transform.X);
-		Godot.Vector2 velocidadeLateral = entidade.Transform.X * moduloVelocidadeLateral;
-
-		float moduloVelocidade = direcao * proporcaoVelocidade * MULTIPLICADOR_VELOCIDADE;
-		float moduloVelocidadeLateralAcelerada = Mathf.MoveToward(moduloVelocidadeLateral, moduloVelocidade, ACELERACAO * delta);
-		Godot.Vector2 velocidadeLateralAcelerada = entidade.Transform.X * moduloVelocidadeLateralAcelerada;
-
-		entidade.Velocity -= velocidadeLateral;
-		entidade.Velocity += velocidadeLateralAcelerada;
+		//float moduloVelocidadeLateral = entidade.Velocity.Dot(entidade.Transform.X);
+		//Godot.Vector2 velocidadeLateral = entidade.Transform.X * moduloVelocidadeLateral;
+//
+		//float moduloVelocidade = direcao * proporcaoVelocidade * MULTIPLICADOR_VELOCIDADE;
+		//float moduloVelocidadeLateralAcelerada = Mathf.MoveToward(moduloVelocidadeLateral, moduloVelocidade, ACELERACAO * delta);
+		//Godot.Vector2 velocidadeLateralAcelerada = entidade.Transform.X * moduloVelocidadeLateralAcelerada;
+//
+		//entidade.Velocity -= velocidadeLateral;
+		//entidade.Velocity += velocidadeLateralAcelerada;
 	}
 
 

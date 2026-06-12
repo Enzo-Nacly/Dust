@@ -1,6 +1,6 @@
-extends Sprite2D
+extends AnimatedSprite2D
 
-@onready var tabletaberto: Sprite2D = $"."
+@onready var tabletabertoAnimacao: AnimatedSprite2D = $"."
 const SENHA_CORRETA: Array = [1, 2, 3, 4, 5]
 
 var sequencia_digitada = []
@@ -52,7 +52,7 @@ func verificar_senha() -> void:
 		if portas.size() > 0:
 			portas[0].abrir()
 		
-		tabletaberto.visible = false
+		tabletabertoAnimacao.visible = false
 		sequencia_digitada.clear()
 	else:
 		print("Senha Incorreta! Tente novamente.")
