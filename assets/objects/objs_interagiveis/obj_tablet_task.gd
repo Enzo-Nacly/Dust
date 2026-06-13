@@ -23,7 +23,10 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
+		tabletabertoAnimacao.play("fechando")
+		await tabletabertoAnimacao.animation_finished
 		tabletabertoAnimacao.visible = false
+
 		animacao.play("TabletDesligando")
 		await animacao.animation_finished
 		if animacao.animation == "TabletDesligando":
@@ -35,11 +38,10 @@ func _process(delta: float) -> void:
 	pass
 
 func InteracaoTablet1():
-	var instancia_cs = script_cs.new()
-	tabletabertoAnimacao.play()
 	if tabletabertoAnimacao.visible == false:
 		tabletabertoAnimacao.visible = true
-		instancia_cs.set("interacao", false)
+		tabletabertoAnimacao.play("abrindo")
+		await tabletabertoAnimacao.animation_finished
+		tabletabertoAnimacao.play("normal")
 	else:
 		tabletabertoAnimacao.visible = false
-		instancia_cs.set("interacao", true)

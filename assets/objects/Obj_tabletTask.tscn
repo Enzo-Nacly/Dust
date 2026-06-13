@@ -4,11 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://43s21cgepm5x" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/Animação TabletAberto Png/tabletabertoanimacao1.png" id="3_5h3y0"]
 [ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://assets/interaction/interaction_area/Interaction_area.tscn" id="3_vpab8"]
 [ext_resource type="Texture2D" uid="uid://dn0c6srtorrv3" path="res://assets/sprites/tabletaberto.jpg" id="4_vpab8"]
+[ext_resource type="Texture2D" uid="uid://dcvsuqs8rhfd1" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/Animação TabletAberto Png/AbrindoFechando/TabletAnimacaoFechandoAbrindo/TabletAbertyoFechandoAbrindo1.png" id="4_wtsko"]
 [ext_resource type="Texture2D" uid="uid://5o21nvdpgcc7" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/Animação TabletAberto Png/tabletabertoanimacao2.png" id="4_ysb6l"]
 [ext_resource type="Texture2D" uid="uid://cxpv1bdcrl3lc" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/Animação TabletAberto Png/tabletabertoanimacao3.png" id="5_amd5w"]
+[ext_resource type="Texture2D" uid="uid://bhtuwdap35yec" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/Animação TabletAberto Png/AbrindoFechando/TabletAnimacaoFechandoAbrindo/TabletAbertyoFechandoAbrindo2.png" id="5_oh3sr"]
 [ext_resource type="Script" uid="uid://b8l6tqqk2eba" path="res://assets/objects/objs_interagiveis/tabletaberto.gd" id="5_xkdrn"]
 [ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://assets/components/gravity_rotation_component_objects.tscn" id="6_4rmit"]
 [ext_resource type="Texture2D" uid="uid://huxm0ilohh5y" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/Animação TabletAberto Png/tabletabertoanimacao4.png" id="6_thwnt"]
+[ext_resource type="Texture2D" uid="uid://chseinuw3o7br" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/Animação TabletAberto Png/AbrindoFechando/TabletAnimacaoFechandoAbrindo/TabletAbertyoFechandoAbrindo3.png" id="6_y7eoy"]
+[ext_resource type="Texture2D" uid="uid://cbmgx3awimwt3" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/Animação TabletAberto Png/AbrindoFechando/TabletAnimacaoFechandoAbrindo/TabletAbertyoFechandoAbrindo4.png" id="7_og1gk"]
 [ext_resource type="SpriteFrames" uid="uid://ycrssgf1xsbr" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/AnimaçãoPlaca Png/AnimaçãoPlacaFuncionando.tres" id="7_vlwly"]
 [ext_resource type="Texture2D" uid="uid://cu40fns8li6fi" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/Animação TabletAberto Png/tabletabertoanimacao5.png" id="7_wtsko"]
 [ext_resource type="Texture2D" uid="uid://cpdrj8hogyfk0" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/Animação TabletAberto Png/tabletabertoanimacao6.png" id="8_oh3sr"]
@@ -22,6 +26,40 @@ radius = 50.159744
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l0wl8"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wtsko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oh3sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y7eoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_og1gk")
+}],
+"loop": false,
+"name": &"abrindo",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_og1gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y7eoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oh3sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wtsko")
+}],
+"loop": false,
+"name": &"fechando",
+"speed": 20.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_5h3y0")
@@ -54,7 +92,7 @@ animations = [{
 "texture": ExtResource("12_4vt1k")
 }],
 "loop": true,
-"name": &"animacao_placa",
+"name": &"normal",
 "speed": 5.0
 }]
 
@@ -76,10 +114,10 @@ texture = ExtResource("4_vpab8")
 
 [node name="AnimacaoSprTabletAberto" type="AnimatedSprite2D" parent="InteractionArea/CanvasLayer" unique_id=1406163575]
 visible = false
-position = Vector2(571, 291)
+position = Vector2(573, 293)
 scale = Vector2(2.8265305, 2.8265307)
 sprite_frames = SubResource("SpriteFrames_l0wl8")
-animation = &"animacao_placa"
+animation = &"abrindo"
 script = ExtResource("5_xkdrn")
 
 [node name="Botao1" type="Button" parent="InteractionArea/CanvasLayer/AnimacaoSprTabletAberto" unique_id=729511424]
@@ -87,30 +125,35 @@ offset_left = -41.03972
 offset_top = -31.841156
 offset_right = -16.981949
 offset_bottom = -9.198555
+flat = true
 
 [node name="Botao2" type="Button" parent="InteractionArea/CanvasLayer/AnimacaoSprTabletAberto" unique_id=1148239474]
 offset_left = -15.920585
 offset_top = -32.548737
 offset_right = 12.198169
 offset_bottom = -4.245491
+flat = true
 
 [node name="Botao3" type="Button" parent="InteractionArea/CanvasLayer/AnimacaoSprTabletAberto" unique_id=635300051]
 offset_left = 13.797846
 offset_top = -32.19495
 offset_right = 44.57763
 offset_bottom = -1.415165
+flat = true
 
 [node name="Botao4" type="Button" parent="InteractionArea/CanvasLayer/AnimacaoSprTabletAberto" unique_id=1126136407]
 offset_left = -36.794228
 offset_top = 0.7075863
 offset_right = -0.7075882
 offset_bottom = 36.08664
+flat = true
 
 [node name="Botao5" type="Button" parent="InteractionArea/CanvasLayer/AnimacaoSprTabletAberto" unique_id=1419368269]
 offset_left = 1.061367
 offset_top = -0.35379443
 offset_right = 41.039715
 offset_bottom = 40.685925
+flat = true
 
 [node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("6_4rmit")]
 

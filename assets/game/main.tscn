@@ -12,7 +12,7 @@
 position = Vector2(-74, 1120)
 
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_i1as6")]
-position = Vector2(640, 454)
+position = Vector2(-699, 469)
 
 [node name="ObjTabletTask" parent="." unique_id=427427135 instance=ExtResource("1_hmcb6")]
 position = Vector2(155, 1053)
