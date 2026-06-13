@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c5a31mfdo1ppc"]
+
+[ext_resource type="PackedScene" uid="uid://dly62qyss7gmo" path="res://assets/objects/Planeta1/Caverna/CavernaPuzzleCompleto.tscn" id="1_s206x"]
+[ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://assets/entities/player.tscn" id="2_nuu6i"]
+[ext_resource type="PackedScene" uid="uid://colp0qiqlx1vv" path="res://assets/objects/Obj_tabletTask.tscn" id="3_76k7n"]
+[ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://assets/planets/purple_planet.tscn" id="4_fextu"]
+[ext_resource type="Resource" uid="uid://d3t0lt3irgpy5" path="res://assets/resources/planetaAmarelo.tres" id="5_xc4em"]
+
+[node name="Main" type="Node2D" unique_id=522489995]
+
+[node name="CavernaPuzzleCompleto" parent="." unique_id=1511786806 instance=ExtResource("1_s206x")]
+position = Vector2(-74, 1120)
+
+[node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_nuu6i")]
+position = Vector2(-699, 469)
+
+[node name="ObjTabletTask" parent="." unique_id=427427135 instance=ExtResource("3_76k7n")]
+position = Vector2(155, 1053)
+
+[node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("4_fextu")]
+position = Vector2(9, 473)
+planetStatus = ExtResource("5_xc4em")
