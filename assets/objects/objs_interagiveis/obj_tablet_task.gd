@@ -3,7 +3,7 @@ extends Node2D
 @onready var animacao: AnimatedSprite2D = $AnimatedSprite2D
 @onready var tabletabertoAnimacao : AnimatedSprite2D = $InteractionArea/CanvasLayer/AnimacaoSprTabletAberto
 @onready var tabletaberto: Sprite2D = $InteractionArea/CanvasLayer/Tabletaberto
-var script_cs = load("res://assets/game/Control.cs")
+
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "InteracaoTablet1")
