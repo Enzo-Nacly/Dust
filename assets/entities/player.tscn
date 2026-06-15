@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://ux0228ttqf7j"]
 
 [ext_resource type="Script" uid="uid://suapp5hipok6" path="res://scripts/csharp_scripts/Player.cs" id="1_hlp2g"]
-[ext_resource type="Texture2D" uid="uid://44ccw3i3gtkt" path="res://assets/sprites/Player/player01.png" id="2_12tmk"]
+[ext_resource type="Texture2D" uid="uid://00g4c7fy7v2s" path="res://assets/sprites/explorer.png" id="2_hlp2g"]
 [ext_resource type="PackedScene" uid="uid://bit1nhl4ckxru" path="res://assets/components/movement_componet.tscn" id="3_gdgnb"]
 [ext_resource type="PackedScene" uid="uid://68ws5bbalgjv" path="res://assets/components/rotation_component.tscn" id="4_06akj"]
 [ext_resource type="PackedScene" uid="uid://crspf5ooucvj8" path="res://assets/components/jump_component.tscn" id="5_hlp2g"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jhex"]
-size = Vector2(3.8461542, 4.769231)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_12tmk"]
+radius = 0.923077
+height = 4.0
 
 [node name="Player" type="CharacterBody2D" unique_id=514355837 groups=["player"]]
 z_index = 5
@@ -26,7 +27,7 @@ rotation_smoothing_speed = 0.5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1715437799]
 position = Vector2(0.4999981, -0.5)
 scale = Vector2(6.5, 6.5)
-shape = SubResource("RectangleShape2D_0jhex")
+shape = SubResource("CapsuleShape2D_12tmk")
 
 [node name="Components" type="Node" parent="." unique_id=813608034]
 
