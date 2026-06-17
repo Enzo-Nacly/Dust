@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c03ymnumy2vcv" path="res://assets/sprites/prato_cristal.png" id="2_624ap"]
 [ext_resource type="Texture2D" uid="uid://du6jh8xqvcs5c" path="res://assets/sprites/suporte_manivela.png" id="3_bp1ow"]
 [ext_resource type="Texture2D" uid="uid://c3dejxb27s8es" path="res://assets/sprites/manivela.png" id="4_dk4im"]
-[ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://assets/interaction/interaction_area/Interaction_area.tscn" id="6_624ap"]
+[ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://assets/interaction/Interaction_area.tscn" id="6_624ap"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk4im"]
 radius = 13.038404

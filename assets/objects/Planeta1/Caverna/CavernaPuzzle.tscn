@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3txkkq342mvk"]
 
-[ext_resource type="Script" uid="uid://3256wgi3yits" path="res://assets/objects/Planeta1/Caverna/caverna_parede_externo.gd" id="1_n137m"]
+[ext_resource type="Script" uid="uid://3256wgi3yits" path="res://scripts/gdscripts/caverna_parede_externo.gd" id="1_n137m"]
 [ext_resource type="Texture2D" uid="uid://shtr6jsj7cil" path="res://assets/sprites/Planeta1/Caverna/Caverna Externo.png" id="1_s4vj0"]
 
 [node name="CavernaPuzzle" type="StaticBody2D" unique_id=1471874157]
