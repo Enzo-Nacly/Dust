@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cplbqrgi1yi11"
-path="res://.godot/imported/quinoyd.png-ef69b0b29b7f7142215f33b2c31e93a1.ctex"
+uid="uid://d5wwxih64lnv"
+path="res://.godot/imported/coluna_da_varanda.png-b470e2f229c9d32b26bcbdc5920e5609.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/quinoyd.png"
-dest_files=["res://.godot/imported/quinoyd.png-ef69b0b29b7f7142215f33b2c31e93a1.ctex"]
+source_file="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/coluna_da_varanda.png"
+dest_files=["res://.godot/imported/coluna_da_varanda.png-b470e2f229c9d32b26bcbdc5920e5609.ctex"]
 
 [params]
 

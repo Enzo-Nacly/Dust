@@ -1,15 +1,21 @@
 [gd_scene format=3 uid="uid://4j3q7p1p2udv"]
 
-[ext_resource type="Texture2D" uid="uid://bvmruwcjayrm" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/chao_da_varanda.png" id="1_loroq"]
+[ext_resource type="Texture2D" uid="uid://d5wwxih64lnv" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/coluna_da_varanda.png" id="1_j7f80"]
+[ext_resource type="Texture2D" uid="uid://u2f1okpges23" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/cima_da_varandaFinal.png" id="2_7gen1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7f80"]
 size = Vector2(206, 4)
 
 [node name="ChaoVaranda" type="StaticBody2D" unique_id=2074429728]
 
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1670895395]
+position = Vector2(4, 4)
+texture = ExtResource("1_j7f80")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=435042875]
-texture = ExtResource("1_loroq")
+position = Vector2(-1, -56)
+texture = ExtResource("2_7gen1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166810585]
-position = Vector2(-1, -56)
+position = Vector2(-2, -54)
 shape = SubResource("RectangleShape2D_j7f80")

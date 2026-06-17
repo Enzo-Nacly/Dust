@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://00g4c7fy7v2s"
-path="res://.godot/imported/explorer.png-9b234b389e8f17aa7586e85623cc7d39.ctex"
+uid="uid://u2f1okpges23"
+path="res://.godot/imported/cima_da_varandaFinal.png-5162355e8c2668ea0dfef37df70f3256.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/explorer.png"
-dest_files=["res://.godot/imported/explorer.png-9b234b389e8f17aa7586e85623cc7d39.ctex"]
+source_file="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/cima_da_varandaFinal.png"
+dest_files=["res://.godot/imported/cima_da_varandaFinal.png-5162355e8c2668ea0dfef37df70f3256.ctex"]
 
 [params]
 

@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://c03ymnumy2vcv" path="res://assets/sprites/prato_cristal.png" id="2_624ap"]
 [ext_resource type="Texture2D" uid="uid://du6jh8xqvcs5c" path="res://assets/sprites/suporte_manivela.png" id="3_bp1ow"]
 [ext_resource type="Texture2D" uid="uid://c3dejxb27s8es" path="res://assets/sprites/manivela.png" id="4_dk4im"]
-[ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://assets/components/gravity_rotation_component_objects.tscn" id="5_rho3g"]
 [ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://assets/interaction/interaction_area/Interaction_area.tscn" id="6_624ap"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk4im"]
@@ -39,6 +38,7 @@ position = Vector2(24, 9)
 texture = ExtResource("4_dk4im")
 
 [node name="InteractionArea" parent="." unique_id=591702249 instance=ExtResource("6_624ap")]
+action_name = "Girar a Manivela"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=489906981]
 position = Vector2(25, 8)
@@ -51,5 +51,3 @@ shape = SubResource("RectangleShape2D_8wyci")
 [node name="CollisionShape_suporte_manivela" type="CollisionShape2D" parent="." unique_id=1508128364]
 position = Vector2(13.5, 15)
 shape = SubResource("RectangleShape2D_4l75v")
-
-[node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("5_rho3g")]
