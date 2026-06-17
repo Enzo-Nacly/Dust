@@ -35,7 +35,6 @@ func _ready() -> void:
 			var numero_do_botao = int(child.name.replace("Botao", ""))
 			child.pressed.connect(Callable(self, "_on_botao_pressionado").bind(numero_do_botao))
 
-
 func _on_botao_pressionado(numero: int) -> void:
 	sequencia_digitada.append(numero)
 	print("Sequência atual: ", sequencia_digitada)
