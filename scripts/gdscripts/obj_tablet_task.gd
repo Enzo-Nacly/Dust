@@ -1,47 +1,37 @@
 extends Node2D
 @onready var interaction_area : InteractionArea = $InteractionArea
-@onready var animacao: AnimatedSprite2D = $AnimatedSprite2D
-@onready var tabletabertoAnimacao : AnimatedSprite2D = $InteractionArea/CanvasLayer/AnimacaoSprTabletAberto
-@onready var tabletaberto: Sprite2D = $InteractionArea/CanvasLayer/Tabletaberto
+@onready var tableta_animation_player: AnimationPlayer = $tableta_animation_player
+@onready var tela_animation_player: AnimationPlayer = $tela_animation_player
+@onready var tela_sprite: Sprite2D = $InteractionArea/CanvasLayer/tableta_tela_sprite
 
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "InteracaoTablet1")
 	interaction_area.body_entered.connect(Callable(self, "_on_body_entered"))
 	interaction_area.body_exited.connect(Callable(self, "_on_body_exited"))
-	animacao.play("TabletDesligando")
-	animacao.stop()
-	animacao.frame = 4;
 	
 	
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		animacao.play("PlacaFuncionando")
-		await animacao.animation_finished
-		if animacao.animation == "PlacaFuncionando":
-			animacao.play("TabletLigado")
+		tableta_animation_player.play_backwards("desligando")
+		await tableta_animation_player.animation_finished
+		tableta_animation_player.play("ligando")
+		await tableta_animation_player.animation_finished
+		tableta_animation_player.play("ligada")
+
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
-		tabletabertoAnimacao.play("fechando")
-		await tabletabertoAnimacao.animation_finished
-		tabletabertoAnimacao.visible = false
+		tableta_animation_player.play("desligando")
+		await tableta_animation_player.animation_finished
+		tela_sprite.visible = false
 
-		animacao.play("TabletDesligando")
-		await animacao.animation_finished
-		if animacao.animation == "TabletDesligando":
-			animacao.stop()
-			animacao.frame = 4
-
-
-func _process(delta: float) -> void:
-	pass
 
 func InteracaoTablet1():
-	if tabletabertoAnimacao.visible == false:
-		tabletabertoAnimacao.visible = true
-		tabletabertoAnimacao.play("abrindo")
-		await tabletabertoAnimacao.animation_finished
-		tabletabertoAnimacao.play("normal")
+	if tela_sprite.visible == false:
+		tela_sprite.visible = true
+		tela_animation_player.play("on_off")
+		await tela_animation_player.animation_finished
+		tela_animation_player.play("ligada")
 	else:
-		tabletabertoAnimacao.visible = false
+		tela_sprite.visible = false

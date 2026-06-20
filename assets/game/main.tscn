@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dly62qyss7gmo" path="res://assets/objects/Planeta1/Caverna/CavernaPuzzleCompleto.tscn" id="1_s206x"]
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://assets/entities/player.tscn" id="2_nuu6i"]
-[ext_resource type="PackedScene" uid="uid://colp0qiqlx1vv" path="res://assets/objects/Obj_tabletTask.tscn" id="3_76k7n"]
+[ext_resource type="PackedScene" uid="uid://bs84j0skadns7" path="res://assets/objects/tableta.tscn" id="3_4dpd8"]
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://assets/planets/purple_planet.tscn" id="4_fextu"]
 [ext_resource type="Resource" uid="uid://d3t0lt3irgpy5" path="res://assets/resources/planetaAmarelo.tres" id="5_xc4em"]
 
@@ -14,7 +14,7 @@ position = Vector2(-74, 1120)
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_nuu6i")]
 position = Vector2(-699, 469)
 
-[node name="ObjTabletTask" parent="." unique_id=427427135 instance=ExtResource("3_76k7n")]
+[node name="tableta" parent="." unique_id=427427135 instance=ExtResource("3_4dpd8")]
 position = Vector2(155, 1053)
 
 [node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("4_fextu")]
