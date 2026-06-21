@@ -21,13 +21,13 @@ position = Vector2(122, -40)
 position = Vector2(130, -89)
 
 [node name="ChaoVaranda" parent="ComponentEntryExit" unique_id=2074429728 instance=ExtResource("2_iy7mi")]
-position = Vector2(121, 4)
+position = Vector2(138, 1)
 
 [node name="CavernaParedeColisao" parent="ComponentEntryExit" unique_id=19942579 instance=ExtResource("1_ap8gp")]
 position = Vector2(122, -39)
 
 [node name="CavernaPorta" parent="." unique_id=1041345079 instance=ExtResource("3_sbc6o")]
-position = Vector2(1, 59)
+position = Vector2(-7, 60)
 
 [node name="CavernaPuzzle" parent="." unique_id=1471874157 instance=ExtResource("2_ap8gp")]
 position = Vector2(70, -2)
