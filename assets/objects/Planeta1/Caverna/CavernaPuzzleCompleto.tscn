@@ -11,29 +11,28 @@
 
 [node name="CavernaPuzzleCompleto" type="Node2D" unique_id=1511786806]
 
-[node name="CavernaParedeSemColisao" parent="." unique_id=1279682281 instance=ExtResource("1_1ubje")]
-position = Vector2(67, 2)
-
-[node name="conjunto_cristal_manivela" parent="." unique_id=219770914 instance=ExtResource("1_gfymu")]
-position = Vector2(56, -70)
-
-[node name="ChaoVaranda" parent="." unique_id=2074429728 instance=ExtResource("2_iy7mi")]
-position = Vector2(45, 20)
-
-[node name="CavernaParedeColisao" parent="." unique_id=19942579 instance=ExtResource("1_ap8gp")]
-position = Vector2(66, -2)
-
-[node name="CavernaPuzzle" parent="." unique_id=1471874157 instance=ExtResource("2_ap8gp")]
-position = Vector2(65, -2)
-
-[node name="CavernaPorta" parent="." unique_id=1041345079 instance=ExtResource("3_sbc6o")]
-position = Vector2(-36, 36)
-
 [node name="ComponentEntryExit" parent="." unique_id=425402362 instance=ExtResource("5_sbc6o")]
 position = Vector2(-52, 37)
 
+[node name="CavernaParedeSemColisao" parent="ComponentEntryExit" unique_id=1279682281 instance=ExtResource("1_1ubje")]
+position = Vector2(122, -40)
+
+[node name="conjunto_cristal_manivela" parent="ComponentEntryExit" unique_id=219770914 instance=ExtResource("1_gfymu")]
+position = Vector2(130, -89)
+
+[node name="ChaoVaranda" parent="ComponentEntryExit" unique_id=2074429728 instance=ExtResource("2_iy7mi")]
+position = Vector2(121, 4)
+
+[node name="CavernaParedeColisao" parent="ComponentEntryExit" unique_id=19942579 instance=ExtResource("1_ap8gp")]
+position = Vector2(122, -39)
+
+[node name="CavernaPorta" parent="." unique_id=1041345079 instance=ExtResource("3_sbc6o")]
+position = Vector2(1, 59)
+
+[node name="CavernaPuzzle" parent="." unique_id=1471874157 instance=ExtResource("2_ap8gp")]
+position = Vector2(70, -2)
+
 [node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("1_jbqqp")]
-visible = false
 
 [connection signal="body_entered" from="ComponentEntryExit" to="ComponentEntryExit" method="_on_body_entered"]
 [connection signal="body_exited" from="ComponentEntryExit" to="ComponentEntryExit" method="_on_body_exited"]

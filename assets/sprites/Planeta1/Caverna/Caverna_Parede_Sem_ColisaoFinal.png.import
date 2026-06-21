@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm1rrig30cw1b"
-path="res://.godot/imported/explorer.png-506b3eff3f64d36ad4641cf70da82477.ctex"
+uid="uid://brgcdxpc6d15g"
+path="res://.godot/imported/Caverna_Parede_Sem_ColisaoFinal.png-62a911597a584e52039d1922204976e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/explorer.png"
-dest_files=["res://.godot/imported/explorer.png-506b3eff3f64d36ad4641cf70da82477.ctex"]
+source_file="res://assets/sprites/Planeta1/Caverna/Caverna_Parede_Sem_ColisaoFinal.png"
+dest_files=["res://.godot/imported/Caverna_Parede_Sem_ColisaoFinal.png-62a911597a584e52039d1922204976e2.ctex"]
 
 [params]
 

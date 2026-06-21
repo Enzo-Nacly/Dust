@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://donb1gbk2vcyy"]
 
-[ext_resource type="Texture2D" uid="uid://dy5xlqrlgsqnl" path="res://assets/sprites/Planeta1/Caverna/Caverna_Parede_Sem_Colisao.png" id="1_n7mbq"]
+[ext_resource type="Texture2D" uid="uid://brgcdxpc6d15g" path="res://assets/sprites/Planeta1/Caverna/Caverna_Parede_Sem_ColisaoFinal.png" id="1_n7mbq"]
 
 [node name="CavernaParedeSemColisao" type="Sprite2D" unique_id=1279682281]
 texture = ExtResource("1_n7mbq")
