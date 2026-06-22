@@ -7,262 +7,168 @@
 [ext_resource type="Script" uid="uid://b8l6tqqk2eba" path="res://scripts/gdscripts/tabletaberto.gd" id="5_retls"]
 [ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://assets/components/gravity_rotation_component_objects.tscn" id="6_pkdnk"]
 
+[sub_resource type="Animation" id="Animation_m0uej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tableta_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_3yrc6"]
+resource_name = "desligada"
+length = 0.001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tableta_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nulvw"]
+resource_name = "desligando"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tableta_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 15, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_22uga"]
+resource_name = "ligada"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tableta_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_ntgv3"]
+resource_name = "ligando"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tableta_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3yrc6"]
+_data = {
+&"RESET": SubResource("Animation_m0uej"),
+&"desligada": SubResource("Animation_3yrc6"),
+&"desligando": SubResource("Animation_nulvw"),
+&"ligada": SubResource("Animation_22uga"),
+&"ligando": SubResource("Animation_ntgv3")
+}
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkdrn"]
 radius = 50.159744
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hn620"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(0, 0, 208, 147)
+[sub_resource type="Animation" id="Animation_wb71q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionArea/CanvasLayer/tableta_tela_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dbh8f"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(208, 0, 208, 147)
+[sub_resource type="Animation" id="Animation_wk2yr"]
+resource_name = "ligada"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionArea/CanvasLayer/tableta_tela_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v4whi"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(416, 0, 208, 147)
+[sub_resource type="Animation" id="Animation_tsmle"]
+resource_name = "on_off"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionArea/CanvasLayer/tableta_tela_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ijcq"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(1040, 0, 208, 147)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0w8ac"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(1248, 0, 208, 147)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xpkbg"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(1456, 0, 208, 147)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yrgld"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(1664, 0, 208, 147)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2fqon"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(1872, 0, 208, 147)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6nrnf"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(2080, 0, 208, 147)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_svevs"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(2288, 0, 208, 147)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5xf4g"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(2496, 0, 208, 147)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fngf4"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(2704, 0, 208, 147)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n2icx"]
-atlas = ExtResource("4_c1ggw")
-region = Rect2(2912, 0, 208, 147)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rmaym"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hn620")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dbh8f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v4whi")
-}],
-"loop": false,
-"name": &"abrindo",
-"speed": 20.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v4whi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dbh8f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hn620")
-}],
-"loop": false,
-"name": &"fechando",
-"speed": 20.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5ijcq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0w8ac")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xpkbg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yrgld")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2fqon")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6nrnf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_svevs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5xf4g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fngf4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n2icx")
-}],
-"loop": true,
-"name": &"normal",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gsky0"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(0, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kyvch"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(44, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cvh77"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(66, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7tep0"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(88, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c8lqe"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(110, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2gl1h"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(132, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vnsov"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(154, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kb1e3"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(176, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rtqvq"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(286, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yhcxr"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(308, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pfmik"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(330, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c1ggw"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(352, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_retls"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(374, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pkdnk"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(198, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vryvo"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(242, 0, 22, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4rabo"]
-atlas = ExtResource("2_yhcxr")
-region = Rect2(220, 0, 22, 63)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dbh8f"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gsky0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kyvch")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cvh77")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7tep0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c8lqe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2gl1h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vnsov")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kb1e3")
-}],
-"loop": false,
-"name": &"PlacaFuncionando",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rtqvq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yhcxr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pfmik")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c1ggw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_retls")
-}],
-"loop": false,
-"name": &"TabletDesligando",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pkdnk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vryvo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4rabo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vryvo")
-}],
-"loop": true,
-"name": &"TabletLigado",
-"speed": 5.0
-}]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_67sxt"]
+_data = {
+&"RESET": SubResource("Animation_wb71q"),
+&"ligada": SubResource("Animation_wk2yr"),
+&"on_off": SubResource("Animation_tsmle")
+}
 
 [node name="tableta" type="StaticBody2D" unique_id=427427135]
 script = ExtResource("1_rtqvq")
+
+[node name="tableta_sprite" type="Sprite2D" parent="." unique_id=12268450]
+texture = ExtResource("2_yhcxr")
+hframes = 18
+frame = 2
+
+[node name="tableta_animation_player" type="AnimationPlayer" parent="." unique_id=1692479242]
+libraries/ = SubResource("AnimationLibrary_3yrc6")
+autoplay = &"desligada"
 
 [node name="InteractionArea" parent="." unique_id=591702249 instance=ExtResource("3_pfmik")]
 action_name = "abrir tablet"
@@ -274,56 +180,48 @@ shape = SubResource("CircleShape2D_xkdrn")
 
 [node name="tableta_tela_sprite" type="Sprite2D" parent="InteractionArea/CanvasLayer" unique_id=163127923]
 visible = false
-position = Vector2(614, 346)
+position = Vector2(575, 325)
 scale = Vector2(3, 3)
 texture = ExtResource("4_c1ggw")
 hframes = 15
-
-[node name="TabletAberto" type="AnimatedSprite2D" parent="InteractionArea/CanvasLayer" unique_id=822635733]
-visible = false
-position = Vector2(599, 343)
-scale = Vector2(2.9927716, 2.9927719)
-sprite_frames = SubResource("SpriteFrames_rmaym")
-animation = &"fechando"
 script = ExtResource("5_retls")
 
-[node name="Botao1" type="Button" parent="InteractionArea/CanvasLayer/TabletAberto" unique_id=729511424]
-offset_left = -41.09903
-offset_top = -32.077286
-offset_right = -17.04129
-offset_bottom = -9.434677
+[node name="Botao1" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=729511424]
+offset_left = -39.33333
+offset_top = -40.666664
+offset_right = -15.275558
+offset_bottom = -18.024063
 flat = true
 
-[node name="Botao2" type="Button" parent="InteractionArea/CanvasLayer/TabletAberto" unique_id=1148239474]
-offset_left = -16.372782
-offset_top = -32.745564
-offset_right = 11.745972
-offset_bottom = -4.442318
+[node name="Botao2" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=1148239474]
+offset_left = -15.666672
+offset_top = -41.333336
+offset_right = 12.452082
+offset_bottom = -13.03009
 flat = true
 
-[node name="Botao3" type="Button" parent="InteractionArea/CanvasLayer/TabletAberto" unique_id=635300051]
-offset_left = 13.6996765
-offset_top = -32.07729
-offset_right = 44.47946
-offset_bottom = -1.2975044
+[node name="Botao3" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=635300051]
+offset_left = 12.333328
+offset_top = -41.000008
+offset_right = 43.113113
+offset_bottom = -10.220222
 flat = true
 
-[node name="Botao4" type="Button" parent="InteractionArea/CanvasLayer/TabletAberto" unique_id=1126136407]
-offset_left = -37.4235
-offset_top = 1.0024147
-offset_right = -1.3368607
-offset_bottom = 36.381466
+[node name="Botao4" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=1126136407]
+offset_left = -35.33333
+offset_top = -10.0
+offset_right = 0.75331116
+offset_bottom = 25.379051
 flat = true
 
-[node name="Botao5" type="Button" parent="InteractionArea/CanvasLayer/TabletAberto" unique_id=1419368269]
-offset_left = 1.0024228
-offset_top = 0.668273
-offset_right = 40.98077
-offset_bottom = 41.707993
+[node name="Botao5" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=1419368269]
+offset_left = 0.33332825
+offset_top = -11.0
+offset_right = 40.311676
+offset_bottom = 30.039719
 flat = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=977755783]
-sprite_frames = SubResource("SpriteFrames_dbh8f")
-animation = &"TabletDesligando"
+[node name="tela_animation_player" type="AnimationPlayer" parent="." unique_id=1320297300]
+libraries/ = SubResource("AnimationLibrary_67sxt")
 
 [node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("6_pkdnk")]
