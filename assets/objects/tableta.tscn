@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c4te6q5cyi2k" path="res://assets/sprites/animacoes/tableta_sheet.png" id="2_yhcxr"]
 [ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://assets/interaction/Interaction_area.tscn" id="3_pfmik"]
 [ext_resource type="Texture2D" uid="uid://c7u48of8tgmrn" path="res://assets/sprites/animacoes/tableta_tela_sheet.png" id="4_c1ggw"]
-[ext_resource type="Script" uid="uid://b8l6tqqk2eba" path="res://scripts/gdscripts/tabletaberto.gd" id="5_retls"]
+[ext_resource type="Script" uid="uid://b8l6tqqk2eba" path="res://scripts/gdscripts/tableta_tela.gd" id="5_retls"]
 [ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://assets/components/gravity_rotation_component_objects.tscn" id="6_pkdnk"]
 
 [sub_resource type="Animation" id="Animation_m0uej"]
@@ -56,6 +56,22 @@ tracks/0/keys = {
 "values": [13, 14, 15, 16, 17]
 }
 
+[sub_resource type="Animation" id="Animation_ntgv3"]
+resource_name = "inicializar_tela"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tableta_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
 [sub_resource type="Animation" id="Animation_22uga"]
 resource_name = "ligada"
 length = 0.4
@@ -74,8 +90,9 @@ tracks/0/keys = {
 "values": [10, 11]
 }
 
-[sub_resource type="Animation" id="Animation_ntgv3"]
+[sub_resource type="Animation" id="Animation_rtqvq"]
 resource_name = "ligando"
+length = 0.5
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -84,10 +101,10 @@ tracks/0/path = NodePath("tableta_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+"values": [17, 16, 15, 14, 13]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3yrc6"]
@@ -95,8 +112,9 @@ _data = {
 &"RESET": SubResource("Animation_m0uej"),
 &"desligada": SubResource("Animation_3yrc6"),
 &"desligando": SubResource("Animation_nulvw"),
+&"inicializar_tela": SubResource("Animation_ntgv3"),
 &"ligada": SubResource("Animation_22uga"),
-&"ligando": SubResource("Animation_ntgv3")
+&"ligando": SubResource("Animation_rtqvq")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkdrn"]
@@ -174,6 +192,7 @@ autoplay = &"desligada"
 action_name = "abrir tablet"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1584704327]
+visible = false
 shape = SubResource("CircleShape2D_xkdrn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="InteractionArea" unique_id=976518185]
@@ -187,38 +206,38 @@ hframes = 15
 script = ExtResource("5_retls")
 
 [node name="Botao1" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=729511424]
-offset_left = -39.33333
-offset_top = -40.666664
-offset_right = -15.275558
-offset_bottom = -18.024063
+offset_left = -41.33333
+offset_top = -31.666664
+offset_right = -17.275558
+offset_bottom = -9.024063
 flat = true
 
 [node name="Botao2" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=1148239474]
-offset_left = -15.666672
-offset_top = -41.333336
-offset_right = 12.452082
-offset_bottom = -13.03009
+offset_left = -16.000006
+offset_top = -32.666668
+offset_right = 12.118748
+offset_bottom = -4.3634224
 flat = true
 
 [node name="Botao3" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=635300051]
-offset_left = 12.333328
-offset_top = -41.000008
-offset_right = 43.113113
-offset_bottom = -10.220222
+offset_left = 12.999995
+offset_top = -31.33333
+offset_right = 43.77978
+offset_bottom = -0.553545
 flat = true
 
 [node name="Botao4" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=1126136407]
-offset_left = -35.33333
-offset_top = -10.0
-offset_right = 0.75331116
-offset_bottom = 25.379051
+offset_left = -37.66666
+offset_top = 1.666667
+offset_right = -1.5800209
+offset_bottom = 37.04572
 flat = true
 
 [node name="Botao5" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=1419368269]
-offset_left = 0.33332825
-offset_top = -11.0
-offset_right = 40.311676
-offset_bottom = 30.039719
+offset_left = 1.999995
+offset_top = 1.333334
+offset_right = 41.978344
+offset_bottom = 42.373055
 flat = true
 
 [node name="tela_animation_player" type="AnimationPlayer" parent="." unique_id=1320297300]

@@ -11,21 +11,28 @@ func _ready() -> void:
 	interaction_area.body_exited.connect(Callable(self, "_on_body_exited"))
 	
 	
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: Node2D) -> void:	
 	if body.name == "Player":
-		tableta_animation_player.play_backwards("desligando")
-		await tableta_animation_player.animation_finished
+		print("player entrou \nligando\n")	
+		
 		tableta_animation_player.play("ligando")
-		await tableta_animation_player.animation_finished
-		tableta_animation_player.play("ligada")
+		
+		#if tableta_animation_player.current_animation != "desligando":
+			#print("aguardando animacao acabar on_entered\n")
+			#await tableta_animation_player.animation_finished
+			#print("inicializando tela\n")
+			#tableta_animation_player.play("inicializar_tela")
+			#await tableta_animation_player.animation_finished
+			#tableta_animation_player.play("ligada")
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
-		tableta_animation_player.play("desligando")
-		await tableta_animation_player.animation_finished
+		print("player saiu \ndesligando\n")
+		
 		tela_sprite.visible = false
-
+		tableta_animation_player.play("desligando")
+		
 
 func InteracaoTablet1():
 	if tela_sprite.visible == false:

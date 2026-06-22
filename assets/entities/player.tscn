@@ -6,9 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://68ws5bbalgjv" path="res://assets/components/rotation_component.tscn" id="4_06akj"]
 [ext_resource type="PackedScene" uid="uid://crspf5ooucvj8" path="res://assets/components/jump_component.tscn" id="5_hlp2g"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hlp2g"]
-radius = 1.6923077
-height = 4.6153846
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlp2g"]
+size = Vector2(2.4615388, 4.1538467)
 
 [node name="Player" type="CharacterBody2D" unique_id=514355837 groups=["player"]]
 z_index = 5
@@ -26,9 +25,9 @@ position_smoothing_speed = 0.1
 rotation_smoothing_speed = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1715437799]
-position = Vector2(-2, 1)
+position = Vector2(1.000001, 2.499998)
 scale = Vector2(6.5, 6.5)
-shape = SubResource("CapsuleShape2D_hlp2g")
+shape = SubResource("RectangleShape2D_hlp2g")
 
 [node name="Components" type="Node" parent="." unique_id=813608034]
 
