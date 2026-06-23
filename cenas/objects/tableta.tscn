@@ -1,0 +1,246 @@
+[gd_scene format=3 uid="uid://bs84j0skadns7"]
+
+[ext_resource type="Script" uid="uid://c24d1ionx07rw" path="res://scripts/gdscripts/tableta/tableta.gd" id="1_rtqvq"]
+[ext_resource type="Texture2D" uid="uid://c4te6q5cyi2k" path="res://assets/sprites/animacoes/tableta_sheet.png" id="2_yhcxr"]
+[ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://cenas/interaction/Interaction_area.tscn" id="3_pfmik"]
+[ext_resource type="Texture2D" uid="uid://c7u48of8tgmrn" path="res://assets/sprites/animacoes/tableta_tela_sheet.png" id="4_c1ggw"]
+[ext_resource type="Script" uid="uid://b8l6tqqk2eba" path="res://scripts/gdscripts/tableta/tableta_tela.gd" id="5_retls"]
+[ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://cenas/componentes/gravity_rotation_component_objects.tscn" id="6_pkdnk"]
+
+[sub_resource type="Animation" id="Animation_m0uej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tableta_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_3yrc6"]
+resource_name = "desligada"
+length = 0.001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tableta_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nulvw"]
+resource_name = "desligando"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tableta_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 15, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_ntgv3"]
+resource_name = "inicializar_tela"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tableta_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_22uga"]
+resource_name = "ligada"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tableta_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_rtqvq"]
+resource_name = "ligando"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tableta_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [17, 16, 15, 14, 13]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3yrc6"]
+_data = {
+&"RESET": SubResource("Animation_m0uej"),
+&"desligada": SubResource("Animation_3yrc6"),
+&"desligando": SubResource("Animation_nulvw"),
+&"inicializar_tela": SubResource("Animation_ntgv3"),
+&"ligada": SubResource("Animation_22uga"),
+&"ligando": SubResource("Animation_rtqvq")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xkdrn"]
+radius = 50.159744
+
+[sub_resource type="Animation" id="Animation_wb71q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionArea/CanvasLayer/tableta_tela_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wk2yr"]
+resource_name = "ligada"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionArea/CanvasLayer/tableta_tela_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+
+[sub_resource type="Animation" id="Animation_tsmle"]
+resource_name = "on_off"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractionArea/CanvasLayer/tableta_tela_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_67sxt"]
+_data = {
+&"RESET": SubResource("Animation_wb71q"),
+&"ligada": SubResource("Animation_wk2yr"),
+&"on_off": SubResource("Animation_tsmle")
+}
+
+[node name="Tableta" type="StaticBody2D" unique_id=427427135]
+script = ExtResource("1_rtqvq")
+
+[node name="tableta_sprite" type="Sprite2D" parent="." unique_id=12268450]
+texture = ExtResource("2_yhcxr")
+hframes = 18
+frame = 2
+
+[node name="tableta_animation_player" type="AnimationPlayer" parent="." unique_id=1692479242]
+libraries/ = SubResource("AnimationLibrary_3yrc6")
+autoplay = &"desligada"
+
+[node name="InteractionArea" parent="." unique_id=591702249 instance=ExtResource("3_pfmik")]
+action_name = "abrir tablet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1584704327]
+visible = false
+shape = SubResource("CircleShape2D_xkdrn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="InteractionArea" unique_id=976518185]
+
+[node name="tableta_tela_sprite" type="Sprite2D" parent="InteractionArea/CanvasLayer" unique_id=163127923]
+visible = false
+position = Vector2(575, 325)
+scale = Vector2(3, 3)
+texture = ExtResource("4_c1ggw")
+hframes = 15
+script = ExtResource("5_retls")
+
+[node name="Botao1" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=729511424]
+offset_left = -41.33333
+offset_top = -31.666664
+offset_right = -17.275558
+offset_bottom = -9.024063
+flat = true
+
+[node name="Botao2" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=1148239474]
+offset_left = -16.000006
+offset_top = -32.666668
+offset_right = 12.118748
+offset_bottom = -4.3634224
+flat = true
+
+[node name="Botao3" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=635300051]
+offset_left = 12.999995
+offset_top = -31.33333
+offset_right = 43.77978
+offset_bottom = -0.553545
+flat = true
+
+[node name="Botao4" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=1126136407]
+offset_left = -37.66666
+offset_top = 1.666667
+offset_right = -1.5800209
+offset_bottom = 37.04572
+flat = true
+
+[node name="Botao5" type="Button" parent="InteractionArea/CanvasLayer/tableta_tela_sprite" unique_id=1419368269]
+offset_left = 1.999995
+offset_top = 1.333334
+offset_right = 41.978344
+offset_bottom = 42.373055
+flat = true
+
+[node name="tela_animation_player" type="AnimationPlayer" parent="." unique_id=1320297300]
+libraries/ = SubResource("AnimationLibrary_67sxt")
+
+[node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("6_pkdnk")]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c5a31mfdo1ppc"]
+
+[ext_resource type="PackedScene" uid="uid://dly62qyss7gmo" path="res://cenas/objects/Planeta1/Caverna/CavernaPuzzleCompleto.tscn" id="1_munf6"]
+[ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://cenas/entities/player.tscn" id="2_h2r2o"]
+[ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://cenas/planetas/planeta_roxo.tscn" id="3_pitpt"]
+[ext_resource type="PackedScene" uid="uid://bs84j0skadns7" path="res://cenas/objects/tableta.tscn" id="4_6hhvf"]
+
+[node name="Main" type="Node2D" unique_id=522489995]
+
+[node name="CavernaPuzzleCompleto" parent="." unique_id=1511786806 instance=ExtResource("1_munf6")]
+position = Vector2(-73, 1133)
+
+[node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
+position = Vector2(-699, 469)
+
+[node name="tableta" parent="." unique_id=427427135 instance=ExtResource("4_6hhvf")]
+position = Vector2(61, 1065)
+
+[node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("3_pitpt")]
+position = Vector2(9, 473)

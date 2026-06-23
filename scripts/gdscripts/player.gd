@@ -1,38 +1,40 @@
 class_name Player
 extends CharacterBody2D
 
-@onready var movement_component : MovementComponent = $Components/Movement_Componet
-@onready var rotation_component : Rotation_Component = $Components/Rotation_Component
-@onready var jump_component : Jump_Component = $Components/Jump_Component
-#@onready var planet : Planet = get_tree().get_nodes_in_group("planets")[0]
+var componente_movimento: ComponenteMovimento
+var componente_rotacao: ComponenteRotacao
+var componente_pulo: ComponentePulo
+var planeta: Planeta
 
 func _ready() -> void:
-	movement_component.setup(self)
-	rotation_component.setup(self)
-	jump_component.setup(self)
-	
+	# Ajuste esses caminhos conforme o nome exato dos nós na sua cena
+	componente_movimento = $Componentes/ComponenteMovimento
+	componente_rotacao = $Componentes/ComponenteRotacao
+	componente_pulo = $Componentes/ComponentePulo
+
+	var planetas = get_tree().get_nodes_in_group("planets")
+	if planetas.size() > 0:
+		planeta = planetas[0] as Planeta
+
+	componente_movimento.setup(self)
+	componente_rotacao.setup(self)
+	componente_pulo.setup(self)
 
 func _physics_process(delta: float) -> void:
-	movement_component.mover(delta)
-	
-	#var forca_gravitacional : Vector2 = planet.pegar_gravidade_em(self.global_position)
-	
-	# se o explorer não está fora de um corpo celeste
-	#if forca_gravitacional != Vector2.ZERO:
-		#var vetor_centro : Vector2 = forca_gravitacional.normalized()
-		#rotation_component.atualizar_rotacao(vetor_centro)
-		
-		# settando corretamente em relação ao planeta
-		#self.up_direction = -vetor_centro
-		
-		# atualizando o motion_mode para não quebrar o .is_on_floor() no jump_component
-		#self.motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
-		#jump_component.pular(vetor_centro)
-		
-		# aplicando gravidade a entidade
-		#self.velocity += forca_gravitacional * delta
-	#else:
-		# atualizando o motion_mode para não quebrar o .is_on_floor() no jump_component
-		#self.motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+	componente_movimento.mover(delta)
+
+	var forca_gravitacional: Vector2 = planeta.pegar_gravidade_em(global_position)
+
+	if forca_gravitacional != Vector2.ZERO:
+		var vetor_centro: Vector2 = forca_gravitacional.normalized()
+		componente_rotacao.atualizar_rotacao(vetor_centro)
+
+		up_direction = -vetor_centro
+		motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
+		componente_pulo.pular(vetor_centro)
+
+		velocity += forca_gravitacional * delta
+	else:
+		motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	
 	move_and_slide()

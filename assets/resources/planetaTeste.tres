@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="PlanetStatus" format=3 uid="uid://rbnd2hrkaq8y"]
-
-[ext_resource type="Script" path="res://scripts/csharp_scripts/PlanetStatus.cs" id="1_xvwa3"]
-
-[resource]
-script = ExtResource("1_xvwa3")
-raio = 1000
-cor = Color(0.2508226, 0.57878363, 0.71153826, 1)

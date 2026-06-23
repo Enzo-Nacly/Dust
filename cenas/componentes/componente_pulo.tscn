@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://crspf5ooucvj8"]
+
+[ext_resource type="Script" uid="uid://bi44habvi5v0" path="res://scripts/gdscripts/componentes/componente_pulo.gd" id="1_wt0l6"]
+
+[node name="ComponentePulo" type="Node2D" unique_id=1157351032]
+script = ExtResource("1_wt0l6")

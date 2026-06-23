@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://68ws5bbalgjv"]
-
-[ext_resource type="Script" path="res://scripts/csharp_scripts/RotationComponent.cs" id="1_45qju"]
-
-[node name="Rotation_Component" type="Node2D" unique_id=683648501]
-script = ExtResource("1_45qju")
