@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://68ws5bbalgjv"]
 
-[ext_resource type="Script" uid="uid://h6wfdw1onmno" path="res://scripts/gdscripts/componentes/componente_rotacao.gd" id="1_gw3ps"]
+[ext_resource type="Script" uid="uid://h6wfdw1onmno" path="res://scripts/componentes/componente_rotacao.gd" id="1_gw3ps"]
 
 [node name="ComponenteRotacao" type="Node2D" unique_id=683648501]
 script = ExtResource("1_gw3ps")

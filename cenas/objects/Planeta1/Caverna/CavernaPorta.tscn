@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ukdcr78ihqtw"]
 
-[ext_resource type="Script" uid="uid://bvhnbvxbcd6vt" path="res://scripts/gdscripts/caverna_porta.gd" id="1_otwrx"]
+[ext_resource type="Script" uid="uid://bvhnbvxbcd6vt" path="res://scripts/caverna_porta.gd" id="1_otwrx"]
 [ext_resource type="Texture2D" uid="uid://5d1ng2w5w3kq" path="res://assets/sprites/Planeta1/Caverna/Caverna PortaFinal.png" id="2_otwrx"]
 
 [node name="CavernaPorta" type="StaticBody2D" unique_id=1041345079]

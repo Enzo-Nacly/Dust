@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ducm57nikiwij"]
 
-[ext_resource type="Script" uid="uid://dcds04ik5lccf" path="res://scripts/gdscripts/componentes/GravityRotationComponentObjcts.gd" id="1_v17mp"]
+[ext_resource type="Script" uid="uid://dcds04ik5lccf" path="res://scripts/componentes/GravityRotationComponentObjcts.gd" id="1_v17mp"]
 
 [node name="GravityRotationComponentObjects" type="Node2D" unique_id=374240960]
 script = ExtResource("1_v17mp")

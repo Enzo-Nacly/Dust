@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckratrq8jvnm8"]
 
-[ext_resource type="Script" uid="uid://bmrhwgqqhoblv" path="res://scripts/gdscripts/planeta_roxo.gd" id="1_ynegy"]
+[ext_resource type="Script" uid="uid://bmrhwgqqhoblv" path="res://scripts/planeta_roxo.gd" id="1_ynegy"]
 [ext_resource type="Resource" uid="uid://b8four6xjwy3o" path="res://resources/planeta_roxo.tres" id="2_64omq"]
 [ext_resource type="Texture2D" uid="uid://bbhe8bqn64vof" path="res://assets/sprites/Planeta1/Planeta/planeta1roxo.png" id="3_2jy7m"]
 [ext_resource type="PackedScene" uid="uid://bv78xgcw66cj4" path="res://cenas/componentes/componente_gravidade.tscn" id="3_ynegy"]

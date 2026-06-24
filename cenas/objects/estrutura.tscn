@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://troo3gbyf83b"]
 
-[ext_resource type="Script" uid="uid://52opq1aqq05k" path="res://scripts/gdscripts/objeto.gd" id="1_gvv1d"]
+[ext_resource type="Script" uid="uid://52opq1aqq05k" path="res://scripts/objeto.gd" id="1_gvv1d"]
 [ext_resource type="Texture2D" uid="uid://dw2lmamnyxlg3" path="res://assets/sprites/icon.svg" id="2_na7lc"]
 [ext_resource type="PackedScene" uid="uid://68ws5bbalgjv" path="res://cenas/componentes/componente_rotacao.tscn" id="3_mepis"]
 

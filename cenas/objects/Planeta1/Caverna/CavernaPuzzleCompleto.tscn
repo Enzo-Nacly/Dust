@@ -12,7 +12,7 @@
 [node name="CavernaPuzzleCompleto" type="Node2D" unique_id=1511786806]
 
 [node name="ComponentEntryExit" parent="." unique_id=425402362 instance=ExtResource("5_sbc6o")]
-position = Vector2(-52, 37)
+position = Vector2(-116, -44)
 
 [node name="CavernaParedeSemColisao" parent="ComponentEntryExit" unique_id=1279682281 instance=ExtResource("1_1ubje")]
 position = Vector2(122, -40)
@@ -27,12 +27,13 @@ position = Vector2(138, 1)
 position = Vector2(122, -39)
 
 [node name="CavernaPorta" parent="." unique_id=1041345079 instance=ExtResource("3_sbc6o")]
-position = Vector2(-7, 60)
+position = Vector2(-71, -21)
 
 [node name="CavernaPuzzle" parent="." unique_id=1471874157 instance=ExtResource("2_ap8gp")]
-position = Vector2(70, -2)
+position = Vector2(6, -83)
 
 [node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("1_jbqqp")]
+position = Vector2(-62, -77)
 
 [connection signal="body_entered" from="ComponentEntryExit" to="ComponentEntryExit" method="_on_body_entered"]
 [connection signal="body_exited" from="ComponentEntryExit" to="ComponentEntryExit" method="_on_body_exited"]

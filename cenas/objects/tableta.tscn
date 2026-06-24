@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bs84j0skadns7"]
 
-[ext_resource type="Script" uid="uid://c24d1ionx07rw" path="res://scripts/gdscripts/tableta/tableta.gd" id="1_rtqvq"]
+[ext_resource type="Script" uid="uid://c24d1ionx07rw" path="res://scripts/tableta/tableta.gd" id="1_rtqvq"]
 [ext_resource type="Texture2D" uid="uid://c4te6q5cyi2k" path="res://assets/sprites/animacoes/tableta_sheet.png" id="2_yhcxr"]
 [ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://cenas/interaction/Interaction_area.tscn" id="3_pfmik"]
 [ext_resource type="Texture2D" uid="uid://c7u48of8tgmrn" path="res://assets/sprites/animacoes/tableta_tela_sheet.png" id="4_c1ggw"]
-[ext_resource type="Script" uid="uid://b8l6tqqk2eba" path="res://scripts/gdscripts/tableta/tableta_tela.gd" id="5_retls"]
+[ext_resource type="Script" uid="uid://b8l6tqqk2eba" path="res://scripts/tableta/tableta_tela.gd" id="5_retls"]
 [ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://cenas/componentes/gravity_rotation_component_objects.tscn" id="6_pkdnk"]
 
 [sub_resource type="Animation" id="Animation_m0uej"]

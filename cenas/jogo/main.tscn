@@ -8,13 +8,14 @@
 [node name="Main" type="Node2D" unique_id=522489995]
 
 [node name="CavernaPuzzleCompleto" parent="." unique_id=1511786806 instance=ExtResource("1_munf6")]
-position = Vector2(-73, 1133)
+position = Vector2(0, -18)
 
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
-position = Vector2(-699, 469)
+position = Vector2(-485, 186)
 
 [node name="tableta" parent="." unique_id=427427135 instance=ExtResource("4_6hhvf")]
-position = Vector2(61, 1065)
+position = Vector2(-224.00002, 32)
+rotation = -0.40142572
 
 [node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("3_pitpt")]
-position = Vector2(9, 473)
+position = Vector2(0, 473)

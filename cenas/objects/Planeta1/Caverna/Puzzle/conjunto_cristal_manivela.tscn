@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://br743hdrfh8ay"]
 
-[ext_resource type="Script" uid="uid://cbw66y7fov4mt" path="res://scripts/gdscripts/conjunto_cristal_manivela.gd" id="1_bp1ow"]
+[ext_resource type="Script" uid="uid://cbw66y7fov4mt" path="res://scripts/conjunto_cristal_manivela.gd" id="1_bp1ow"]
 [ext_resource type="Texture2D" uid="uid://cpn1whuuvmt2a" path="res://assets/sprites/cristal.png" id="1_il2n3"]
 [ext_resource type="Texture2D" uid="uid://c03ymnumy2vcv" path="res://assets/sprites/prato_cristal.png" id="2_624ap"]
 [ext_resource type="Texture2D" uid="uid://du6jh8xqvcs5c" path="res://assets/sprites/suporte_manivela.png" id="3_bp1ow"]
