@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c5a31mfdo1ppc"]
 
-[ext_resource type="PackedScene" uid="uid://dly62qyss7gmo" path="res://cenas/objects/Planeta1/Caverna/CavernaPuzzleCompleto.tscn" id="1_munf6"]
-[ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://cenas/entities/player.tscn" id="2_h2r2o"]
+[ext_resource type="PackedScene" uid="uid://dly62qyss7gmo" path="res://cenas/objetos/Planeta1/Caverna/CavernaPuzzleCompleto.tscn" id="1_munf6"]
+[ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://cenas/entidades/player.tscn" id="2_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://cenas/planetas/planeta_roxo.tscn" id="3_pitpt"]
-[ext_resource type="PackedScene" uid="uid://bs84j0skadns7" path="res://cenas/objects/tableta.tscn" id="4_6hhvf"]
+[ext_resource type="PackedScene" uid="uid://bs84j0skadns7" path="res://cenas/objetos/tableta.tscn" id="4_6hhvf"]
 
 [node name="Main" type="Node2D" unique_id=522489995]
 

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dly62qyss7gmo"]
 
-[ext_resource type="PackedScene" uid="uid://donb1gbk2vcyy" path="res://cenas/objects/Planeta1/Caverna/CavernaParedeSemColisao.tscn" id="1_1ubje"]
-[ext_resource type="PackedScene" uid="uid://bxeisle2jqc4u" path="res://cenas/objects/Planeta1/Caverna/CavernaParedeColisao.tscn" id="1_ap8gp"]
-[ext_resource type="PackedScene" uid="uid://br743hdrfh8ay" path="res://cenas/objects/Planeta1/Caverna/Puzzle/conjunto_cristal_manivela.tscn" id="1_gfymu"]
+[ext_resource type="PackedScene" uid="uid://donb1gbk2vcyy" path="res://cenas/objetos/Planeta1/Caverna/CavernaParedeSemColisao.tscn" id="1_1ubje"]
+[ext_resource type="PackedScene" uid="uid://bxeisle2jqc4u" path="res://cenas/objetos/Planeta1/Caverna/CavernaParedeColisao.tscn" id="1_ap8gp"]
+[ext_resource type="PackedScene" uid="uid://br743hdrfh8ay" path="res://cenas/objetos/Planeta1/Caverna/Puzzle/conjunto_cristal_manivela.tscn" id="1_gfymu"]
 [ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://cenas/componentes/gravity_rotation_component_objects.tscn" id="1_jbqqp"]
-[ext_resource type="PackedScene" uid="uid://3txkkq342mvk" path="res://cenas/objects/Planeta1/Caverna/CavernaPuzzle.tscn" id="2_ap8gp"]
-[ext_resource type="PackedScene" uid="uid://4j3q7p1p2udv" path="res://cenas/objects/Planeta1/Caverna/Puzzle/Varanda/ChaoVaranda.tscn" id="2_iy7mi"]
-[ext_resource type="PackedScene" uid="uid://ukdcr78ihqtw" path="res://cenas/objects/Planeta1/Caverna/CavernaPorta.tscn" id="3_sbc6o"]
-[ext_resource type="PackedScene" uid="uid://dglppci8t1o2l" path="res://cenas/objects/Planeta1/Caverna/ComponentEntryExit.tscn" id="5_sbc6o"]
+[ext_resource type="PackedScene" uid="uid://3txkkq342mvk" path="res://cenas/objetos/Planeta1/Caverna/CavernaPuzzle.tscn" id="2_ap8gp"]
+[ext_resource type="PackedScene" uid="uid://4j3q7p1p2udv" path="res://cenas/objetos/Planeta1/Caverna/Puzzle/Varanda/ChaoVaranda.tscn" id="2_iy7mi"]
+[ext_resource type="PackedScene" uid="uid://ukdcr78ihqtw" path="res://cenas/objetos/Planeta1/Caverna/CavernaPorta.tscn" id="3_sbc6o"]
+[ext_resource type="PackedScene" uid="uid://dglppci8t1o2l" path="res://cenas/objetos/Planeta1/Caverna/ComponentEntryExit.tscn" id="5_sbc6o"]
 
 [node name="CavernaPuzzleCompleto" type="Node2D" unique_id=1511786806]
 
