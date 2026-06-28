@@ -2,20 +2,12 @@ class_name ComponenteMovimento
 extends Node2D  
 
 @export var proporcao_velocidade: float = 5.0
+@onready var entidade: CharacterBody2D = self.owner
 
 const MULTIPLICADOR_VELOCIDADE: float = 100.0
 const VELOCIDADE_ANGULAR: float = 1.0 / 30.0
 const ATRITO: float = 500.0
 const ACELERACAO: float = 500.0
-
-var entidade: CharacterBody2D
-
-#func _ready() -> void:
-	## 'owner' já puxa direto a raiz da cena (o Player, o Planeta, etc.)
-	#entidade = owner as Node2D
-
-func setup(_entidade: CharacterBody2D) -> void:
-	entidade = _entidade
 
 func mover(delta: float) -> void:
 	var direcao: float = Input.get_axis("ui_left", "ui_right")

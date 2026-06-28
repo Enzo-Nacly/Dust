@@ -1,5 +1,5 @@
 class_name Player
-extends CharacterBody2D
+extends Movel
 
 var componente_movimento: ComponenteMovimento
 var componente_rotacao: ComponenteRotacao
@@ -15,10 +15,6 @@ func _ready() -> void:
 	var planetas = get_tree().get_nodes_in_group("planets")
 	if planetas.size() > 0:
 		planeta = planetas[0] as Planeta
-
-	componente_movimento.setup(self)
-	componente_rotacao.setup(self)
-	componente_pulo.setup(self)
 
 func _physics_process(delta: float) -> void:
 	componente_movimento.mover(delta)

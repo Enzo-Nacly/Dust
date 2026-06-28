@@ -1,0 +1,2 @@
+class_name Movel
+extends CharacterBody2D
