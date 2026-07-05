@@ -3,12 +3,12 @@ extends StaticBody2D
 
 @export var planeta_status: PlanetaStatus
 	
-var componente_gravidade: ComponenteGravidade
+var componente_gravidade: ComponenteCampoGravitacional
 var forma_colisao: CollisionShape2D
 var sprite: Sprite2D
 
 func _ready() -> void:
-	componente_gravidade = $ComponenteGravidade
+	componente_gravidade = $ComponenteCampoGravitacional
 	forma_colisao = $CollisionShape2D
 	sprite = $Sprite2D 
 

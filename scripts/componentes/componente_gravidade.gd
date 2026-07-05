@@ -1,45 +1,32 @@
 class_name ComponenteGravidade
-extends Node2D
+extends Node
 
-@export var desenhar_circulo_influencia: bool = true
+@onready var entidade: CharacterBody2D = self.owner
 
-const MULTIPLICADOR_RAIO: float = 3.0
+var corpo_celeste: Planeta
+var vetor_centro: Vector2
+var esta_em_campo: bool
 
-var entidade: Node2D
-var forca_gravidade: int
-var raio_influencia: float
 
-#func _ready() -> void:
-	## 'owner' já puxa direto a raiz da cena (o Player, o Planeta, etc.)
-	#entidade = owner as Node2D
+func _ready() -> void:
+	var corpo_celestes = get_tree().get_nodes_in_group("planets")
+	if corpo_celestes.size() > 0:
+		corpo_celeste = corpo_celestes[0] as Planeta
 
-func setup(_entidade: Node2D, raio: int) -> void:
-	entidade = _entidade
-	raio_influencia = MULTIPLICADOR_RAIO * raio
-	forca_gravidade = _calcular_forca_gravidade(raio)
-	queue_redraw()
+func aplicar_gravidade(delta: float) -> void:
+	var forca_gravitacional: Vector2 = pegar_forca_gravitacional()
+	entidade.velocity += forca_gravitacional * delta
 
-func _log_base(numero: float, base_log: float) -> float:
-	return log(numero) / log(base_log)
-
-func _calcular_forca_gravidade(raio: float) -> int:
-	const BASE_LOG: float = 2.5
-	var forca_g: float = _log_base(raio, BASE_LOG) * pow(10, 2)
-	return int(forca_g)
-
-func pegar_gravidade_em(posicao_particula: Vector2) -> Vector2:
-	var vetor_centro: Vector2 = entidade.global_position - posicao_particula
-	var distancia: float = vetor_centro.length()
+func pegar_forca_gravitacional() -> Vector2:
+	var forca_gravitacional: Vector2 = corpo_celeste.pegar_gravidade_em(entidade.global_position)
+	_esta_em_campo(forca_gravitacional)
+	_registrar_vetor_centro(forca_gravitacional)
 	
-	if distancia > raio_influencia:
-		return Vector2.ZERO
-
-	var forca_gravitacional: Vector2 = vetor_centro.normalized() * forca_gravidade
 	return forca_gravitacional
 
-func _draw() -> void:
-	if desenhar_circulo_influencia:
-		var centro_circulo: Vector2 = Vector2.ZERO
-		var segmentos_arco: int = int((raio_influencia / MULTIPLICADOR_RAIO) / 4)
-		var grossura_arco: float = 2.0
-		draw_arc(centro_circulo, raio_influencia, 0, TAU, segmentos_arco, Color.RED, grossura_arco)
+func _esta_em_campo(forca_gravitacional: Vector2) -> void:
+	if forca_gravitacional == Vector2.ZERO: esta_em_campo = false
+	else: esta_em_campo = true
+
+func _registrar_vetor_centro(forca_gravitacional: Vector2) -> void:
+	self.vetor_centro = forca_gravitacional.normalized()

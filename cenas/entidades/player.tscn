@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://ux0228ttqf7j"]
 
-[ext_resource type="Script" uid="uid://dcjuqywql3jc4" path="res://scripts/player.gd" id="1_uuqyi"]
+[ext_resource type="Script" uid="uid://dcjuqywql3jc4" path="res://scripts/entidades/player.gd" id="1_uuqyi"]
 [ext_resource type="Texture2D" uid="uid://dm1rrig30cw1b" path="res://assets/sprites/explorer.png" id="2_hlp2g"]
-[ext_resource type="PackedScene" uid="uid://bit1nhl4ckxru" path="res://cenas/componentes/componente_movimento.tscn" id="3_gdgnb"]
-[ext_resource type="PackedScene" uid="uid://68ws5bbalgjv" path="res://cenas/componentes/componente_rotacao.tscn" id="4_06akj"]
-[ext_resource type="PackedScene" uid="uid://crspf5ooucvj8" path="res://cenas/componentes/componente_pulo.tscn" id="5_hlp2g"]
+[ext_resource type="Script" uid="uid://h6wfdw1onmno" path="res://scripts/componentes/componente_rotacao.gd" id="4_lxx67"]
+[ext_resource type="Script" uid="uid://dhm6j02iw2vrm" path="res://scripts/componentes/componente_movimento.gd" id="5_6ql6w"]
+[ext_resource type="Script" uid="uid://bi44habvi5v0" path="res://scripts/componentes/componente_pulo.gd" id="6_55ggn"]
+[ext_resource type="Script" uid="uid://camujvpkdi7li" path="res://scripts/componentes/componente_gravidade.gd" id="6_lxx67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlp2g"]
 size = Vector2(2.4615388, 4.1538467)
@@ -31,8 +32,18 @@ shape = SubResource("RectangleShape2D_hlp2g")
 
 [node name="Componentes" type="Node" parent="." unique_id=813608034]
 
-[node name="ComponenteRotacao" parent="Componentes" unique_id=683648501 instance=ExtResource("4_06akj")]
+[node name="ComponenteGravidade" type="Node" parent="Componentes" unique_id=1304498135]
+script = ExtResource("6_lxx67")
+metadata/_custom_type_script = "uid://camujvpkdi7li"
 
-[node name="ComponenteMovimento" parent="Componentes" unique_id=501626970 instance=ExtResource("3_gdgnb")]
+[node name="ComponenteRotacao" type="Node" parent="Componentes" unique_id=1348905474]
+script = ExtResource("4_lxx67")
+metadata/_custom_type_script = "uid://h6wfdw1onmno"
 
-[node name="ComponentePulo" parent="Componentes" unique_id=823883516 instance=ExtResource("5_hlp2g")]
+[node name="ComponenteMovimento" type="Node" parent="Componentes" unique_id=856588432]
+script = ExtResource("5_6ql6w")
+metadata/_custom_type_script = "uid://dhm6j02iw2vrm"
+
+[node name="ComponentePulo" type="Node" parent="Componentes" unique_id=940256515]
+script = ExtResource("6_55ggn")
+metadata/_custom_type_script = "uid://bi44habvi5v0"
