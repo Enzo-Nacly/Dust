@@ -14,3 +14,9 @@ func atualizar_fisica(delta: float) -> void:
 
 func sair() -> void:
 	pass
+
+func pegar_direcao() -> float:
+	return 0.0
+
+func quer_pular() -> bool:
+	return false

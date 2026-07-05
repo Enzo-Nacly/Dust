@@ -9,7 +9,7 @@ const VELOCIDADE_ANGULAR: float = 1.0 / 30.0
 const ATRITO: float = 500.0
 const ACELERACAO: float = 500.0
 
-func mover(delta: float, direcao: int) -> void:
+func mover(delta: float, direcao: float) -> void:
 	if entidade.motion_mode == CharacterBody2D.MOTION_MODE_FLOATING:
 		entidade.rotate(VELOCIDADE_ANGULAR * direcao)
 		return

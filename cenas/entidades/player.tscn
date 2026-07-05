@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dcjuqywql3jc4" path="res://scripts/entidades/player.gd" id="1_uuqyi"]
 [ext_resource type="Texture2D" uid="uid://dm1rrig30cw1b" path="res://assets/sprites/explorer.png" id="2_hlp2g"]
+[ext_resource type="Script" uid="uid://674spd08s71d" path="res://scripts/maquina_estado_finito/maquina_estado_finito.gd" id="3_6ql6w"]
+[ext_resource type="Script" uid="uid://4wph8yvgvjrm" path="res://scripts/maquina_estado_finito/estados/player/player_idle.gd" id="4_jgxua"]
 [ext_resource type="Script" uid="uid://h6wfdw1onmno" path="res://scripts/componentes/componente_rotacao.gd" id="4_lxx67"]
 [ext_resource type="Script" uid="uid://dhm6j02iw2vrm" path="res://scripts/componentes/componente_movimento.gd" id="5_6ql6w"]
+[ext_resource type="Script" uid="uid://buhweve2hrn4y" path="res://scripts/maquina_estado_finito/estados/player/player_movendo.gd" id="5_k6ct6"]
 [ext_resource type="Script" uid="uid://bi44habvi5v0" path="res://scripts/componentes/componente_pulo.gd" id="6_55ggn"]
 [ext_resource type="Script" uid="uid://camujvpkdi7li" path="res://scripts/componentes/componente_gravidade.gd" id="6_lxx67"]
 
@@ -29,6 +32,22 @@ rotation_smoothing_speed = 0.5
 position = Vector2(1.000001, 2.499998)
 scale = Vector2(6.5, 6.5)
 shape = SubResource("RectangleShape2D_hlp2g")
+
+[node name="MaquinaEstadoFinito" type="Node" parent="." unique_id=1742845906 node_paths=PackedStringArray("estado_inicial")]
+script = ExtResource("3_6ql6w")
+mostrar_estados = true
+estado_inicial = NodePath("PlayerIdle")
+metadata/_custom_type_script = "uid://674spd08s71d"
+
+[node name="PlayerIdle" type="Node" parent="MaquinaEstadoFinito" unique_id=180577969 node_paths=PackedStringArray("player_movendo")]
+script = ExtResource("4_jgxua")
+player_movendo = NodePath("../PlayerMovendo")
+metadata/_custom_type_script = "uid://4wph8yvgvjrm"
+
+[node name="PlayerMovendo" type="Node" parent="MaquinaEstadoFinito" unique_id=412665300 node_paths=PackedStringArray("player_idle")]
+script = ExtResource("5_k6ct6")
+player_idle = NodePath("../PlayerIdle")
+metadata/_custom_type_script = "uid://buhweve2hrn4y"
 
 [node name="Componentes" type="Node" parent="." unique_id=813608034]
 
