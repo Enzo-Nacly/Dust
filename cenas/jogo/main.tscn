@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://cenas/entidades/player.tscn" id="2_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://cenas/planetas/planeta_roxo.tscn" id="3_pitpt"]
 [ext_resource type="PackedScene" uid="uid://bs84j0skadns7" path="res://cenas/objetos/tableta.tscn" id="4_6hhvf"]
+[ext_resource type="PackedScene" uid="uid://br743hdrfh8ay" path="res://cenas/objetos/Planeta1/Caverna/Puzzle/conjunto_cristal_manivela.tscn" id="5_h2r2o"]
+[ext_resource type="PackedScene" uid="uid://cct036hg0dkb0" path="res://cenas/objetos/lupa.tscn" id="6_pitpt"]
+[ext_resource type="PackedScene" uid="uid://c76xwlw0a2ved" path="res://cenas/objetos/planta_circulo.tscn" id="7_6hhvf"]
 
 [node name="Main" type="Node2D" unique_id=522489995]
 
@@ -19,3 +22,16 @@ rotation = -0.40142572
 
 [node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("3_pitpt")]
 position = Vector2(0, 473)
+
+[node name="conjunto_cristal_manivela" parent="." unique_id=1737412565 instance=ExtResource("5_h2r2o")]
+position = Vector2(-366, 104)
+
+[node name="lupa" parent="." unique_id=343239108 instance=ExtResource("6_pitpt")]
+position = Vector2(-389, 140)
+rotation = -0.87266463
+
+[node name="planta_circulo" parent="." unique_id=1265906810 instance=ExtResource("7_6hhvf")]
+position = Vector2(-408, 164)
+
+[node name="planta_circulo2" parent="." unique_id=181794987 instance=ExtResource("7_6hhvf")]
+position = Vector2(-418, 126)

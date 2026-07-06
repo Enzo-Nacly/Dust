@@ -1,6 +1,7 @@
 class_name ComponenteGravidade
 extends Node
 
+@export var nao_aplicar_gravidade: bool = false
 @onready var entidade: CharacterBody2D = self.owner
 
 var corpo_celeste: Planeta
@@ -15,6 +16,7 @@ func _ready() -> void:
 
 func aplicar_gravidade(delta: float) -> void:
 	var forca_gravitacional: Vector2 = pegar_forca_gravitacional()
+	if nao_aplicar_gravidade: return
 	entidade.velocity += forca_gravitacional * delta
 
 func pegar_forca_gravitacional() -> Vector2:

@@ -30,6 +30,7 @@ project/assembly_name="Dust"
 [global_group]
 
 player="Grupo do Jogador principal"
+plantas=""
 
 [input]
 

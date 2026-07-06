@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cct036hg0dkb0"]
+
+[ext_resource type="Script" uid="uid://xpuh0j5cd7wp" path="res://scripts/lupa.gd" id="1_dnll5"]
+[ext_resource type="Texture2D" uid="uid://dkaen55l7caxx" path="res://assets/sprites/lupa_varanda.png" id="1_oieql"]
+[ext_resource type="Texture2D" uid="uid://b0x7m7ovsusw6" path="res://assets/sprites/cone_d_blur.png" id="3_1etx3"]
+[ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://cenas/interaction/Interaction_area.tscn" id="3_8xe5e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
+radius = 16.03122
+
+[node name="lupa" type="Node2D" unique_id=343239108]
+z_index = 7
+script = ExtResource("1_dnll5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=933036095]
+texture = ExtResource("1_oieql")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=542915672]
+position = Vector2(0.12416077, -1.164772)
+rotation = 3.1415927
+scale = Vector2(0.080278166, 0.19541097)
+texture = ExtResource("3_1etx3")
+offset = Vector2(4.5285935, -240.4271)
+
+[node name="InteractionArea" parent="." unique_id=591702249 instance=ExtResource("3_8xe5e")]
+action_name = "mudar direcao"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1331037849]
+visible = false
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_fu62x")

@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Movel
 
 @onready var interaction_area : InteractionArea = $InteractionArea
 
