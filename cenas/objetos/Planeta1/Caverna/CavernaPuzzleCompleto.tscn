@@ -14,9 +14,11 @@
 position = Vector2(-116, -44)
 
 [node name="CavernaParedeSemColisao" parent="ComponentEntryExit" unique_id=1279682281 instance=ExtResource("1_1ubje")]
+z_index = -3
 position = Vector2(122, -40)
 
 [node name="ChaoVaranda" parent="ComponentEntryExit" unique_id=2074429728 instance=ExtResource("2_iy7mi")]
+z_index = -2
 position = Vector2(138, 1)
 
 [node name="CavernaParedeColisao" parent="ComponentEntryExit" unique_id=19942579 instance=ExtResource("1_ap8gp")]
@@ -26,7 +28,6 @@ position = Vector2(122, -39)
 position = Vector2(-71, -21)
 
 [node name="CavernaPuzzle" parent="." unique_id=1471874157 instance=ExtResource("2_ap8gp")]
-visible = false
 position = Vector2(6, -83)
 
 [node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("1_jbqqp")]

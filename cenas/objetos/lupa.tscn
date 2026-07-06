@@ -9,16 +9,17 @@
 radius = 16.03122
 
 [node name="lupa" type="Node2D" unique_id=343239108]
-z_index = 7
+z_index = 4
 script = ExtResource("1_dnll5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=933036095]
 texture = ExtResource("1_oieql")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=542915672]
-position = Vector2(0.12416077, -1.164772)
+position = Vector2(0.19863665, 2)
 rotation = 3.1415927
-scale = Vector2(0.080278166, 0.19541097)
+scale = Vector2(0.092158936, 0.4195831)
+energy = 2.0
 texture = ExtResource("3_1etx3")
 offset = Vector2(4.5285935, -240.4271)
 

@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://4j3q7p1p2udv"]
 
+[ext_resource type="Script" uid="uid://cm7hox2nt4w0d" path="res://scripts/chao_varanda.gd" id="1_ahofc"]
 [ext_resource type="Texture2D" uid="uid://d5wwxih64lnv" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/coluna_da_varanda.png" id="1_j7f80"]
 [ext_resource type="Texture2D" uid="uid://u2f1okpges23" path="res://assets/sprites/Planeta1/Caverna/Puzzle/Varanda/cima_da_varandaFinal.png" id="2_7gen1"]
 [ext_resource type="PackedScene" uid="uid://br743hdrfh8ay" path="res://cenas/objetos/Planeta1/Caverna/Puzzle/conjunto_cristal_manivela.tscn" id="3_0hal8"]
+[ext_resource type="PackedScene" uid="uid://cct036hg0dkb0" path="res://cenas/objetos/lupa.tscn" id="4_nuexs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7f80"]
 size = Vector2(206, 4)
 
 [node name="ChaoVaranda" type="StaticBody2D" unique_id=2074429728]
 collision_layer = 5
+script = ExtResource("1_ahofc")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1670895395]
 position = Vector2(4, 4)
@@ -23,6 +26,11 @@ position = Vector2(-2, -68)
 shape = SubResource("RectangleShape2D_j7f80")
 
 [node name="conjunto_cristal_manivela" parent="." unique_id=1737412565 instance=ExtResource("3_0hal8")]
-z_index = -6
+z_index = 0
 position = Vector2(-5, -91)
 collision_mask = 5
+
+[node name="lupa" parent="." unique_id=343239108 instance=ExtResource("4_nuexs")]
+z_index = 1
+position = Vector2(-6, -74)
+mostrar_luz = false

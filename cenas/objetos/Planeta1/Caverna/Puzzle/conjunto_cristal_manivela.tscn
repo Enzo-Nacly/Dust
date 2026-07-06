@@ -19,27 +19,28 @@ size = Vector2(36, 50)
 size = Vector2(8, 11.5)
 
 [node name="conjunto_cristal_manivela" type="CharacterBody2D" unique_id=1737412565]
+z_index = 1
 script = ExtResource("1_bp1ow")
 
 [node name="Sprites" type="Node2D" parent="." unique_id=1494409334]
 
 [node name="cristal_sprite" type="Sprite2D" parent="Sprites" unique_id=130814089]
-z_index = 6
+z_index = 1
 position = Vector2(0, -7)
 texture = ExtResource("2_45iwv")
 
 [node name="prato_sprite" type="Sprite2D" parent="Sprites" unique_id=1216165718]
-z_index = 6
+z_index = 1
 position = Vector2(0, 18)
 texture = ExtResource("3_1114y")
 
 [node name="suporte_sprite" type="Sprite2D" parent="Sprites" unique_id=980339206]
-z_index = 6
+z_index = 2
 position = Vector2(20.5, 15.5)
 texture = ExtResource("3_bp1ow")
 
 [node name="manivela_sprite" type="Sprite2D" parent="Sprites" unique_id=1748540292]
-z_index = 6
+z_index = 2
 position = Vector2(24, 13)
 texture = ExtResource("4_dk4im")
 offset = Vector2(8, -3.5)
