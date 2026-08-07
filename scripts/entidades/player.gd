@@ -8,16 +8,19 @@ func _ready() -> void:
 	Game_Manager.on_dialog.connect(func(): Game_Manager.can_move = false)
 	Game_Manager.out_dialog.connect(func(): Game_Manager.can_move = true)
 
-func _physics_process(delta: float) -> void:
-	if Game_Manager.can_move == true:
-		var direcao: int = int(Input.get_axis("ui_left", "ui_right"))
+func movimento() -> int:
+	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+		var direcao: int = int(Input.get_axis("left", "right"))
 		if direcao < 0: sprite.flip_h = true
 		else: sprite.flip_h = false
-		
+		return direcao
+	else:
+		return 0
+
+func _physics_process(delta: float) -> void:
+	if Game_Manager.can_move == true:
+		var direcao = movimento()
 		componente_movimento.mover(delta, direcao)
-		
 		processar_fisica_basica(delta)
-		
 		componente_pulo.pular()
-		
 		finalizar_fisica()
