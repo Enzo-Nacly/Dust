@@ -75,10 +75,10 @@ func InteracaoTablet1() -> void:
 
 	if !tela_sprite.visible:
 		tela_sprite.visible = true
+		Game_Manager.on_dialog.emit()
 		tela_animation_player.play("on_off")
-
 		await tela_animation_player.animation_finished
-
 		tela_animation_player.play("ligada")
 	else:
 		tela_sprite.visible = false
+		Game_Manager.out_dialog.emit()

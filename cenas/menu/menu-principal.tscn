@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://dqfe8uswv28nq"]
+
+[ext_resource type="Texture2D" uid="uid://b864qpfv2k2lu" path="res://assets/sprites/back.png" id="1_0b1un"]
+[ext_resource type="Script" uid="uid://dlbsgfu702u8i" path="res://cenas/menu/menu_principal.gd" id="1_25x7m"]
+[ext_resource type="FontFile" uid="uid://dsn0sg2somd7d" path="res://assets/fontes/PixelifySans-Regular.ttf" id="2_25x7m"]
+[ext_resource type="Texture2D" uid="uid://bk03nwpm2jg54" path="res://assets/fontes/bot-jogar.png" id="3_fi1mq"]
+[ext_resource type="Script" uid="uid://bxlpna6ha1h6v" path="res://scripts/texture_button.gd" id="4_0uah4"]
+[ext_resource type="Texture2D" uid="uid://dghkquspy086s" path="res://assets/fontes/bot-sair.png" id="5_jakpw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_06q5q"]
+font = ExtResource("2_25x7m")
+font_size = 100
+
+[sub_resource type="Animation" id="Animation_0b1un"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Titulo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(460, 264)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Titulo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container-botao:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container-botao:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(391, 232)]
+}
+
+[sub_resource type="Animation" id="Animation_25x7m"]
+resource_name = "intro"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Titulo:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(460, 264), Vector2(460, 264), Vector2(460, 24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Titulo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container-botao:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.15, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container-botao:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.1, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(391, 232), Vector2(441, 232)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fi1mq"]
+_data = {
+&"RESET": SubResource("Animation_0b1un"),
+&"intro": SubResource("Animation_25x7m")
+}
+
+[node name="MenuPrincipal" type="Control" unique_id=1666496725]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_25x7m")
+
+[node name="Img_fundo" type="TextureRect" parent="." unique_id=2019994807]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0b1un")
+
+[node name="Titulo" type="Label" parent="." unique_id=2030299959]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -60.0
+offset_right = 116.0
+offset_bottom = 60.000122
+grow_horizontal = 2
+grow_vertical = 2
+text = "DUST"
+label_settings = SubResource("LabelSettings_06q5q")
+
+[node name="Container-botao" type="VBoxContainer" parent="." unique_id=1269638660]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -92.0
+offset_right = 85.00006
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Jogar" type="TextureButton" parent="Container-botao" unique_id=1676482754]
+custom_minimum_size = Vector2(270, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_fi1mq")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_0uah4")
+
+[node name="Sair" type="TextureButton" parent="Container-botao" unique_id=646899266]
+custom_minimum_size = Vector2(270, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_jakpw")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_0uah4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1979086348]
+libraries/ = SubResource("AnimationLibrary_fi1mq")
+
+[connection signal="pressed" from="Container-botao/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Container-botao/Sair" to="." method="_on_sair_pressed"]
