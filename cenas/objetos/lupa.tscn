@@ -2,8 +2,19 @@
 
 [ext_resource type="Script" uid="uid://xpuh0j5cd7wp" path="res://scripts/lupa.gd" id="1_dnll5"]
 [ext_resource type="Texture2D" uid="uid://dkaen55l7caxx" path="res://assets/sprites/lupa_varanda.png" id="1_oieql"]
-[ext_resource type="Texture2D" uid="uid://b0x7m7ovsusw6" path="res://assets/sprites/cone_d_blur.png" id="3_1etx3"]
 [ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://cenas/interaction/Interaction_area.tscn" id="3_8xe5e"]
+
+[sub_resource type="Gradient" id="Gradient_dnll5"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fu62x"]
+gradient = SubResource("Gradient_dnll5")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.95)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8xe5e"]
+load_path = "res://.godot/imported/cone_d_blur.png-42bbf938354e2a7c26ce8ab9fadbb72f.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
 radius = 16.03122
@@ -15,18 +26,25 @@ script = ExtResource("1_dnll5")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=933036095]
 texture = ExtResource("1_oieql")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=542915672]
-position = Vector2(0.19863665, 2)
-rotation = 3.1415927
-scale = Vector2(0.092158936, 0.4195831)
+[node name="luz_lupa" type="PointLight2D" parent="." unique_id=151563737]
+position = Vector2(-1.1346479e-13, -2.0000005)
+rotation = -3.1415925
+scale = Vector2(0.3, 0.15)
 energy = 2.0
-texture = ExtResource("3_1etx3")
-offset = Vector2(4.5285935, -240.4271)
+texture = SubResource("GradientTexture2D_fu62x")
+
+[node name="luz_feixe" type="PointLight2D" parent="." unique_id=542915672]
+position = Vector2(0, -3.0000002)
+rotation = 3.1415927
+scale = Vector2(0.1, 0.455)
+energy = 2.0
+shadow_enabled = true
+texture = SubResource("CompressedTexture2D_8xe5e")
+offset = Vector2(2.700841, -251.58868)
 
 [node name="InteractionArea" parent="." unique_id=591702249 instance=ExtResource("3_8xe5e")]
 action_name = "mudar direcao"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1331037849]
-visible = false
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_fu62x")

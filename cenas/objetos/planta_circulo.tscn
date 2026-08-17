@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://c76xwlw0a2ved"]
-
-[ext_resource type="Texture2D" uid="uid://brnbupkeqld2h" path="res://assets/sprites/planta.png" id="1_51r1w"]
-
-[node name="planta_circulo" type="Node2D" unique_id=1265906810 groups=["plantas"]]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=764194849]
-texture = ExtResource("1_51r1w")

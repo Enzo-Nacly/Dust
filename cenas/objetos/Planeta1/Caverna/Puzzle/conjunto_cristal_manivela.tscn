@@ -1,26 +1,19 @@
 [gd_scene format=3 uid="uid://br743hdrfh8ay"]
 
 [ext_resource type="Script" uid="uid://cbw66y7fov4mt" path="res://scripts/conjunto_cristal_manivela.gd" id="1_bp1ow"]
-[ext_resource type="Texture2D" uid="uid://di8kfi5gnda12" path="res://assets/sprites/cristal_grande.png" id="2_45iwv"]
+[ext_resource type="Texture2D" uid="uid://3da4eadvfvmq" path="res://assets/sprites/puzzle_cristal/cristal_grande-Sheet.png" id="2_45iwv"]
 [ext_resource type="Texture2D" uid="uid://c1r3ioq4rtobg" path="res://assets/sprites/prato_cristal_grande.png" id="3_1114y"]
 [ext_resource type="Texture2D" uid="uid://du6jh8xqvcs5c" path="res://assets/sprites/suporte_manivela.png" id="3_bp1ow"]
 [ext_resource type="Texture2D" uid="uid://c3dejxb27s8es" path="res://assets/sprites/manivela.png" id="4_dk4im"]
 [ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://cenas/interaction/Interaction_area.tscn" id="6_624ap"]
-[ext_resource type="Script" uid="uid://camujvpkdi7li" path="res://scripts/componentes/componente_gravidade.gd" id="7_45iwv"]
-[ext_resource type="Script" uid="uid://h6wfdw1onmno" path="res://scripts/componentes/componente_rotacao.gd" id="8_1114y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk4im"]
 radius = 13.038404
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wyci"]
-size = Vector2(36, 50)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4l75v"]
-size = Vector2(8, 11.5)
-
-[node name="conjunto_cristal_manivela" type="CharacterBody2D" unique_id=1737412565]
+[node name="conjunto_cristal_manivela" type="Node2D" unique_id=1036634973]
 z_index = 1
 script = ExtResource("1_bp1ow")
+cores = Array[Color]([Color(1, 0, 0, 1), Color(0, 0, 1, 1)])
 
 [node name="Sprites" type="Node2D" parent="." unique_id=1494409334]
 
@@ -28,6 +21,7 @@ script = ExtResource("1_bp1ow")
 z_index = 1
 position = Vector2(0, -7)
 texture = ExtResource("2_45iwv")
+hframes = 2
 
 [node name="prato_sprite" type="Sprite2D" parent="Sprites" unique_id=1216165718]
 z_index = 1
@@ -51,22 +45,3 @@ action_name = "girar a manivela"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=489906981]
 position = Vector2(32, 8)
 shape = SubResource("CircleShape2D_dk4im")
-
-[node name="Componentes" type="Node" parent="." unique_id=432539349]
-
-[node name="ComponenteGravidade" type="Node" parent="Componentes" unique_id=1020826793]
-script = ExtResource("7_45iwv")
-nao_aplicar_gravidade = true
-metadata/_custom_type_script = "uid://camujvpkdi7li"
-
-[node name="ComponenteRotacao" type="Node" parent="Componentes" unique_id=772226995]
-script = ExtResource("8_1114y")
-metadata/_custom_type_script = "uid://h6wfdw1onmno"
-
-[node name="CollisionShape_cristal_prato" type="CollisionShape2D" parent="." unique_id=416312967]
-position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_8wyci")
-
-[node name="CollisionShape_suporte_manivela" type="CollisionShape2D" parent="." unique_id=1508128364]
-position = Vector2(20, 15.25)
-shape = SubResource("RectangleShape2D_4l75v")
