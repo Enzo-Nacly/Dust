@@ -8,9 +8,9 @@ extends StaticBody2D
 func entry() ->void:
 	var tween = create_tween()
 	tween.tween_property(sprite_2d, "self_modulate:a", 0.0, 0.3)
-	chao_varanda.setup()
+	#chao_varanda.setup()
 
 func exit() -> void:	
 	var tween = create_tween()
 	tween.tween_property(sprite_2d, "self_modulate:a", 1.0, 0.3)
-	chao_varanda.des_setup()
+	#chao_varanda.des_setup()

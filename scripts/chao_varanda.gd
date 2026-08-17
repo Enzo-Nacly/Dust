@@ -7,8 +7,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-func setup() -> void:
-	lupa.mostrar_luz = true
-
-func des_setup() -> void:
-	lupa.mostrar_luz = false
+#func setup() -> void:
+	#lupa.mostrar_luz = true
+#
+#func des_setup() -> void:
+	#lupa.mostrar_luz = false
