@@ -17,4 +17,5 @@ func _process(_delta: float) -> void:
 
 	if forca_gravitacional != Vector2.ZERO:
 		var vetor_centro: Vector2 = forca_gravitacional.normalized()
-		componente_rotacao.atualizar_rotacao(vetor_centro)
+		#componente_rotacao.atualizar_rotacao(vetor_centro)
+		componente_rotacao.atualizar_rotacao()
