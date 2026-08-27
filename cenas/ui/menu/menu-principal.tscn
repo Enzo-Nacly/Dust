@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqfe8uswv28nq"]
 
 [ext_resource type="Texture2D" uid="uid://b864qpfv2k2lu" path="res://assets/sprites/back.png" id="1_0b1un"]
-[ext_resource type="Script" uid="uid://dlbsgfu702u8i" path="res://cenas/menu/menu_principal.gd" id="1_25x7m"]
+[ext_resource type="Script" uid="uid://dlbsgfu702u8i" path="res://cenas/ui/menu/menu_principal.gd" id="1_25x7m"]
 [ext_resource type="FontFile" uid="uid://dsn0sg2somd7d" path="res://assets/fontes/PixelifySans-Regular.ttf" id="2_25x7m"]
 [ext_resource type="Texture2D" uid="uid://bk03nwpm2jg54" path="res://assets/fontes/bot-jogar.png" id="3_fi1mq"]
 [ext_resource type="Script" uid="uid://bxlpna6ha1h6v" path="res://scripts/texture_button.gd" id="4_0uah4"]
