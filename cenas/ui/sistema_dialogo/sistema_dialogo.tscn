@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0751b0lhdvhf"]
 
 [ext_resource type="FontFile" uid="uid://di5t1fmy4grs5" path="res://assets/fontes/PixelOperator-Bold.ttf" id="1_1lmju"]
+[ext_resource type="Script" uid="uid://dqqvyktndxa87" path="res://scripts/ui/sistema_dialogo.gd" id="1_ogyxe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ptcv"]
 bg_color = Color(0, 0, 0, 1)
@@ -12,6 +13,7 @@ border_color = Color(1, 1, 1, 1)
 
 [node name="Sistema_dialogo" type="Node2D" unique_id=1444845559]
 z_index = 4096
+script = ExtResource("1_ogyxe")
 
 [node name="Panel" type="Panel" parent="." unique_id=1376916956]
 offset_left = -144.0

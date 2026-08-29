@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bec1ko75plmjj"]
+
+[ext_resource type="FontFile" uid="uid://di5t1fmy4grs5" path="res://assets/fontes/PixelOperator-Bold.ttf" id="1_ho5d5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gcis6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ho5d5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5p2a"]
+
+[node name="botao_dialogo" type="Button" unique_id=1392996512]
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+theme_override_colors/font_focus_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("1_ho5d5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gcis6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ho5d5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f5p2a")
