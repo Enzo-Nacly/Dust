@@ -4,6 +4,143 @@
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://cenas/entidades/player.tscn" id="2_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://cenas/planetas/planeta_roxo.tscn" id="3_pitpt"]
 [ext_resource type="PackedScene" uid="uid://bs84j0skadns7" path="res://cenas/objetos/tableta.tscn" id="4_6hhvf"]
+[ext_resource type="Texture2D" uid="uid://b8cv0h2duu03l" path="res://assets/sprites/quinoyd.png" id="5_h2r2o"]
+[ext_resource type="PackedScene" uid="uid://ddpbjdxd4p07n" path="res://cenas/componentes/area_dialogo.tscn" id="6_pitpt"]
+[ext_resource type="Script" uid="uid://cqpy6dko08c5i" path="res://scripts/resources/resource_dialogo_export.gd" id="7_ahwvi"]
+[ext_resource type="Texture2D" uid="uid://d7oy5nvtq810" path="res://assets/sprites/entidades/quinoyds/falando/piscando.png" id="8_e1ykf"]
+[ext_resource type="Script" uid="uid://uaam2kd3rb80" path="res://scripts/resources/resource_funcao_dialogo.gd" id="8_l7l8e"]
+[ext_resource type="Script" uid="uid://cw4wljefn5n1m" path="res://scripts/resources/resource_escolha_dialogo.gd" id="10_5qnmo"]
+[ext_resource type="Texture2D" uid="uid://duptog1g3ii20" path="res://assets/sprites/entidades/quinoyds/falando/padrao.png" id="11_qabof"]
+[ext_resource type="Script" uid="uid://dfje3vb4ru0hm" path="res://scripts/resources/resource_texto_dialogo.gd" id="12_e1ykf"]
+[ext_resource type="Texture2D" uid="uid://cnxm6jpgvsg8s" path="res://assets/sprites/entidades/quinoyds/falando/tontinho.png" id="13_acw65"]
+[ext_resource type="AudioStream" uid="uid://dcpwdu5khsn5v" path="res://assets/audio/sfx/talk.wav" id="13_qabof"]
+
+[sub_resource type="Animation" id="Animation_pitpt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.76009536]
+}
+
+[sub_resource type="Animation" id="Animation_6hhvf"]
+resource_name = "teste"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.74, 1),
+"transitions": PackedFloat32Array(1, 0.15932018, 3.8637452, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.6078244, 1), Vector2(0.6078244, 1.4227815), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_acw65"]
+resource_name = "wow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.22, 0.62, 1),
+"transitions": PackedFloat32Array(1, 5.656855, 1, 1),
+"update": 0,
+"values": [-0.76009536, -0.014481604, -3.8049068, -0.8088381]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5f6nu"]
+_data = {
+&"RESET": SubResource("Animation_pitpt"),
+&"teste": SubResource("Animation_6hhvf"),
+&"wow": SubResource("Animation_acw65")
+}
+
+[sub_resource type="Resource" id="Resource_qabof"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("8_e1ykf")
+qtd_frames_falante = 4
+frame_falante_terminou = 3
+texto = "necessito  comida  tienes..  Tengo fuemeee"
+velocidade_texto = 18.0
+som_texto = ExtResource("13_qabof")
+volume_texto_db = -8
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_ahwvi"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("13_acw65")
+texto = "Oh,  who és tuyo?"
+velocidade_texto = 5.0
+som_texto = ExtResource("13_qabof")
+volume_texto_pitch_min = 0.5
+volume_texto_pitch_max = 3.0
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_l7l8e"]
+script = ExtResource("8_l7l8e")
+caminho_node_com_funcao = NodePath("../quinoyd/AnimationPlayer")
+nome_funcao = "play"
+parametros_funcao = ["teste"]
+esconder_caixa_dialogo = true
+esperar_sinal_para_continuar = "animation_finished"
+metadata/_custom_type_script = "uid://uaam2kd3rb80"
+
+[sub_resource type="Resource" id="Resource_5qnmo"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("8_e1ykf")
+qtd_frames_falante = 4
+frame_falante_terminou = 4
+texto = "Biblia: A Odisseia é um poema épico da Grécia antiga, atribuído ao poeta Homero"
+velocidade_texto = 20.0
+som_texto = ExtResource("13_qabof")
+volume_texto_db = -8
+volume_texto_pitch_min = 0.5
+volume_texto_pitch_max = 1.0
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_e1ykf"]
+script = ExtResource("8_l7l8e")
+caminho_node_com_funcao = NodePath("../quinoyd/AnimationPlayer")
+nome_funcao = "play"
+parametros_funcao = ["wow"]
+esperar_sinal_para_continuar = "animation_finished"
+metadata/_custom_type_script = "uid://uaam2kd3rb80"
+
+[sub_resource type="Resource" id="Resource_kemws"]
+script = ExtResource("10_5qnmo")
+nome_falante = "quinoyd"
+imagem_falante = ExtResource("11_qabof")
+texto = "Consegues me help?"
+texto_escolha = Array[String](["YES", "NIEN"])
+chamada_funcoes_escolha = Array[ExtResource("8_l7l8e")]([SubResource("Resource_e1ykf"), null])
+metadata/_custom_type_script = "uid://cw4wljefn5n1m"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
+radius = 30.149628
 
 [node name="Main" type="Node2D" unique_id=522489995]
 
@@ -19,3 +156,24 @@ rotation = -0.40142572
 
 [node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("3_pitpt")]
 position = Vector2(0, 473)
+
+[node name="quinoyd" type="Sprite2D" parent="." unique_id=1290611076]
+position = Vector2(-366, 104.999985)
+rotation = -0.76009536
+texture = ExtResource("5_h2r2o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="quinoyd" unique_id=1965227920]
+libraries/ = SubResource("AnimationLibrary_5f6nu")
+
+[node name="area_dialogo" parent="." unique_id=843434367 instance=ExtResource("6_pitpt")]
+position = Vector2(-365, 107)
+ativar_instantaneamente = true
+ativar_one_shot = true
+dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_qabof"), SubResource("Resource_ahwvi"), SubResource("Resource_l7l8e"), SubResource("Resource_5qnmo"), SubResource("Resource_kemws")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_dialogo" unique_id=85451978]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_fu62x")
+debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=687282447 groups=["ui"]]

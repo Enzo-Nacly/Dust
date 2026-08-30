@@ -35,6 +35,7 @@ project/assembly_name="Dust"
 [global_group]
 
 player="Grupo do Jogador principal"
+ui="canvas_layer |  ui de qualquer scene,  planeta, caverna, casa,  etc..."
 
 [input]
 
