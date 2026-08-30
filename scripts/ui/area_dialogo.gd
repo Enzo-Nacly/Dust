@@ -4,16 +4,10 @@ const sistema_dialogo_preload = preload("res://cenas/ui/sistema_dialogo/sistema_
 
 @export var ativar_instantaneamente: bool
 @export var ativar_one_shot: bool
-@export var sobrepor_posicao_dialogo: bool
-@export var posicao_sobreposicao: Vector2
 @export var dialogo: Array[DialogoExport]
-
-var posicao_encima_dialogo: Vector2 = Vector2(160, 48)
-var posicao_embaixo_dialogo: Vector2 = Vector2(160, 192)
 
 var player_dentro: bool = false
 var ativou_ja: bool = false
-var posicao_dialogo_desejada: Vector2
 
 var player: Player = null
 
@@ -40,24 +34,15 @@ func _ativar_dialogo() -> void:
 	Game_Manager.can_move = false
 	
 	var sistema_dialogo = sistema_dialogo_preload.instantiate()
-	#if sobrepor_posicao_dialogo:
-		#posicao_dialogo_desejada = posicao_sobreposicao
-	#else:
-		#if player.global_position.y > get_viewport().get_camera_2d().get_screen_center_position().y:
-			#posicao_dialogo_desejada = posicao_encima_dialogo
-		#else:
-			#posicao_dialogo_desejada = posicao_embaixo_dialogo
-	#sistema_dialogo.global_position = posicao_dialogo_desejada
 	
 	var ui: CanvasLayer = _pegar_camada_interface()
 	if ui == null:
 		printerr("Camada de interface, UI, não foi encontrada!!!")
 		return
 	ui.add_child(sistema_dialogo)
-	
 	sistema_dialogo.dialogo = dialogo
+	
 	ativou_ja = true
-	#get_parent().add_child(sistema_dialogo)
 
 func _pegar_camada_interface() -> CanvasLayer:
 	return get_tree().get_first_node_in_group("ui") as CanvasLayer

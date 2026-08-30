@@ -252,7 +252,7 @@ func _texto_dialogo(item: TextoDialogo) -> void:
 	var tempo_caracter: float = 0.0
 	
 	while label_dialogo.visible_characters < total_caracteres:
-		if Input.is_action_just_pressed("ui_cancel"):
+		if Input.is_action_just_pressed("ui_accept"):
 			label_dialogo.visible_characters = total_caracteres
 			break
 		
@@ -295,7 +295,7 @@ func _texto_dialogo(item: TextoDialogo) -> void:
 		await get_tree().process_frame
 		
 		if label_dialogo.visible_characters == total_caracteres:
-			if Input.is_action_just_pressed("ui_accept"):
+			if Input.is_action_just_pressed("interact"):
 				item_dialogo_atual += 1
 				proximo_item = true
 
