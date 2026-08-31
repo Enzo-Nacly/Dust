@@ -62,9 +62,7 @@ func _process(_delta: float) -> void:
 
 func _funcao_resource(item: FuncaoDialogo) -> void:
 	var caminho_mais_encima: String = "../"
-	var caminho: NodePath = NodePath(
-		caminho_mais_encima + String(item.caminho_node_com_funcao)
-	)
+	var caminho: NodePath = NodePath(caminho_mais_encima + String(item.caminho_node_com_funcao))
 	
 	var node_com_funcao: Node = get_node(caminho)
 	
@@ -85,14 +83,9 @@ func _funcao_resource(item: FuncaoDialogo) -> void:
 			# não conseguem editar valores de fora
 			# a não ser que seja um dicionário.
 			var estado_sinal = {"feito": false}
-			var func_efeitoar: Callable = func(_args):
-				estado_sinal.feito = true
+			var func_efeitoar: Callable = func(_args): estado_sinal.feito = true
 			
-			node_com_funcao.connect(
-				nome_sinal,
-				func_efeitoar,
-				CONNECT_ONE_SHOT
-			)
+			node_com_funcao.connect(nome_sinal, func_efeitoar, CONNECT_ONE_SHOT)
 			
 			while not estado_sinal.feito:
 				# feito? -> não -> espera 1 frame -> feito? -> não -> ...
@@ -110,10 +103,7 @@ func _escolha_resource(item: EscolhaDialogo) -> void:
 		$HBoxContainer/falante_pai.visible = true
 		sprite_falante.texture = item.imagem_falante
 		sprite_falante.hframes = item.qtd_frames_falante
-		sprite_falante.frame = min(
-			item.frame_selecionada_falante,
-			item.qtd_frames_falante - 1
-		)
+		sprite_falante.frame = min(item.frame_selecionada_falante, item.qtd_frames_falante - 1)
 	else:
 		$HBoxContainer/falante_pai.visible = false
 	
@@ -127,34 +117,18 @@ func _escolha_resource(item: EscolhaDialogo) -> void:
 		
 		if funcao_resource:
 			var caminho_mais_encima: String = "../"
-			var caminho: NodePath = NodePath(
-				caminho_mais_encima + String(
-					funcao_resource.caminho_node_com_funcao
-				)
-			)
+			var caminho: NodePath = NodePath(caminho_mais_encima + String(funcao_resource.caminho_node_com_funcao))
 			
 			var node_com_funcao: Node = get_node(caminho)
 			
 			if printar_caminho_node_funcao:
 				print("Caminho do node com a função da escolha: ", caminho)
 			
-			var callable: Callable = Callable(
-				node_com_funcao,
-				funcao_resource.nome_funcao
-			).bindv(funcao_resource.parametros_funcao)
-			
-			botao_dialogo_variavel.connect(
-				"pressed",
-				callable,
-				CONNECT_ONE_SHOT
-			)
+			var callable: Callable = Callable(node_com_funcao, funcao_resource.nome_funcao).bindv(funcao_resource.parametros_funcao)
+			botao_dialogo_variavel.connect("pressed", callable, CONNECT_ONE_SHOT)
 			
 			if funcao_resource.esconder_caixa_dialogo:
-				botao_dialogo_variavel.connect(
-					"pressed",
-					hide,
-					CONNECT_ONE_SHOT
-				)
+				botao_dialogo_variavel.connect("pressed", hide, CONNECT_ONE_SHOT)
 			
 			botao_dialogo_variavel.connect(
 				"pressed",
@@ -172,17 +146,12 @@ func _escolha_resource(item: EscolhaDialogo) -> void:
 				CONNECT_ONE_SHOT
 			)
 		
-		$HBoxContainer/VBoxContainer/recipiente_botoes.add_child(
-			botao_dialogo_variavel
-		)
+		$HBoxContainer/VBoxContainer/recipiente_botoes.add_child(botao_dialogo_variavel)
 	
 	$HBoxContainer/VBoxContainer/recipiente_botoes.get_child(0).grab_focus()
 
 
-func _botao_escolha_pressionado(
-	node_com_funcao: Node,
-	esperar_sinal_para_continuar: String
-) -> void:
+func _botao_escolha_pressionado(node_com_funcao: Node, esperar_sinal_para_continuar: String) -> void:
 	
 	$HBoxContainer/VBoxContainer/recipiente_botoes.visible = false
 	
@@ -204,10 +173,7 @@ func _botao_escolha_pressionado(
 			var func_efeitoar: Callable = func(_args):
 				estado_sinal.feito = true
 			
-			node_com_funcao.connect(
-				nome_sinal,
-				func_efeitoar,
-				CONNECT_ONE_SHOT
+			node_com_funcao.connect(nome_sinal, func_efeitoar, CONNECT_ONE_SHOT
 			)
 			
 			while not estado_sinal.feito:
@@ -258,22 +224,13 @@ func _texto_dialogo(item: TextoDialogo) -> void:
 		
 		tempo_caracter += get_process_delta_time()
 		
-		if (
-			tempo_caracter >= (1.0 / item.velocidade_texto)
-			or texto_sem_colchetes[label_dialogo.visible_characters] == " "
-		):
-			var caracter: String = texto_sem_colchetes[
-				label_dialogo.visible_characters
-			]
+		if (tempo_caracter >= (1.0 / item.velocidade_texto) or texto_sem_colchetes[label_dialogo.visible_characters] == " "):
+			var caracter: String = texto_sem_colchetes[label_dialogo.visible_characters]
 			
 			label_dialogo.visible_characters += 1
 			
 			if caracter != " ":
-				$AudioStreamPlayer2D.pitch_scale = randf_range(
-					item.volume_texto_pitch_min,
-					item.volume_texto_pitch_max
-				)
-				
+				$AudioStreamPlayer2D.pitch_scale = randf_range(item.volume_texto_pitch_min, item.volume_texto_pitch_max)
 				$AudioStreamPlayer2D.play()
 				
 				if item.qtd_frames_falante != 1:
@@ -286,10 +243,7 @@ func _texto_dialogo(item: TextoDialogo) -> void:
 		
 		await get_tree().process_frame
 	
-	sprite_falante.frame = min(
-		item.frame_falante_terminou,
-		item.qtd_frames_falante - 1
-	)
+	sprite_falante.frame = min(item.frame_falante_terminou, item.qtd_frames_falante - 1)
 	
 	while true:
 		await get_tree().process_frame
