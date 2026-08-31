@@ -15,6 +15,43 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="Animation" id="Animation_h6jsg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fovus"]
+resource_name = "desaparecer"
+length = 0.76666665
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5aoik"]
+_data = {
+&"RESET": SubResource("Animation_h6jsg"),
+&"desaparecer": SubResource("Animation_fovus")
+}
+
 [node name="ui_inventario" type="Control" unique_id=34154311]
 layout_mode = 3
 anchors_preset = 15
@@ -70,3 +107,6 @@ offset_top = 6.0
 offset_right = 46.0
 offset_bottom = 46.0
 scale = Vector2(3, 3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=531149725]
+libraries/ = SubResource("AnimationLibrary_5aoik")

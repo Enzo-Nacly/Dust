@@ -1,12 +1,24 @@
 class_name ComponenteInventario
 extends Node
 
-const ui_inventario_preload: PackedScene = preload("res://cenas/ui/inventario/ui_inventario.tscn")
-
 @export var inventario: Inventario
+@export var ui_inventario: UIInventario
 
-var ui_inventario: Control = null
+var index_slot_selecionado: int = 0
 
 func _ready() -> void:
-	ui_inventario = ui_inventario_preload.instantiate()
-	ui_inventario.visible = false
+	pass
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("cima_inventario") or Input.is_action_just_pressed("baixo_inventario"):
+		ui_inventario.abrir()
+	else: ui_inventario.fechar()
+	
+	if Input.is_action_just_pressed("cima_inventario"):
+		index_slot_selecionado -= 1
+	elif Input.is_action_just_pressed("baixo_inventario"):
+		index_slot_selecionado += 1
+	
+	if index_slot_selecionado > 2: index_slot_selecionado = 0
+	elif index_slot_selecionado < 0: index_slot_selecionado = 2
+	ui_inventario.selecionar_slot(index_slot_selecionado)
