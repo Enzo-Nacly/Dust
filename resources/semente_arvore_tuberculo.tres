@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemInventario" format=3 uid="uid://cnar03g04wq47"]
+
+[ext_resource type="Script" uid="uid://b6qx5su7evvqt" path="res://scripts/resources/item_inventario.gd" id="1_vlj14"]
+[ext_resource type="Texture2D" uid="uid://3mewpo40dpyf" path="res://assets/sprites/semente_tuberculo.png" id="2_rsda6"]
+
+[resource]
+script = ExtResource("1_vlj14")
+nome = "semente da árvore-tubérculo"
+textura = ExtResource("2_rsda6")
+metadata/_custom_type_script = "uid://b6qx5su7evvqt"

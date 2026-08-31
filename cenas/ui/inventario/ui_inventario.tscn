@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://pj4m7i7wbmm8"]
+
+[ext_resource type="Script" uid="uid://cdmdy2m6p3i2y" path="res://scripts/ui/ui_inventario.gd" id="1_h6jsg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu62x"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="ui_inventario" type="Control" unique_id=34154311]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h6jsg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=50882955]
+layout_mode = 0
+offset_left = 961.92004
+offset_top = 149.04001
+offset_right = 1089.92
+offset_bottom = 541.04004
+
+[node name="slot_1" type="Panel" parent="VBoxContainer" unique_id=649815277]
+custom_minimum_size = Vector2(132, 132)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fu62x")
+
+[node name="textura_item" type="TextureRect" parent="VBoxContainer/slot_1" unique_id=1063718834]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 46.0
+offset_bottom = 46.0
+scale = Vector2(3, 3)
+
+[node name="slot_2" type="Panel" parent="VBoxContainer" unique_id=1455157636]
+custom_minimum_size = Vector2(132, 132)
+custom_maximum_size = Vector2(132, 132)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fu62x")
+
+[node name="textura_item" type="TextureRect" parent="VBoxContainer/slot_2" unique_id=1376288147]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 46.0
+offset_bottom = 46.0
+scale = Vector2(3, 3)
+
+[node name="slot_3" type="Panel" parent="VBoxContainer" unique_id=1751692298]
+custom_minimum_size = Vector2(132, 132)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fu62x")
+
+[node name="textura_item" type="TextureRect" parent="VBoxContainer/slot_3" unique_id=2099146108]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 46.0
+offset_bottom = 46.0
+scale = Vector2(3, 3)
