@@ -34,7 +34,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_fovus"]
 resource_name = "desaparecer"
-length = 0.76666665
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -56,7 +55,6 @@ _data = {
 
 [node name="ui_inventario" type="Control" unique_id=34154311]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -64,11 +62,14 @@ grow_vertical = 2
 script = ExtResource("1_h6jsg")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=50882955]
-layout_mode = 0
-offset_left = 313.0
-offset_top = 43.0
-offset_right = 345.07996
-offset_bottom = 147.0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.002
+anchor_bottom = -0.002
+offset_left = 212.0
+offset_top = 30.296
+offset_right = 244.0799
+offset_bottom = 134.296
 
 [node name="slot_1" type="Panel" parent="VBoxContainer" unique_id=649815277]
 custom_minimum_size = Vector2(32, 32)
@@ -114,3 +115,4 @@ scale = Vector2(0.7, 0.7)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=531149725]
 libraries/ = SubResource("AnimationLibrary_5aoik")
+autoplay = &"desaparecer"
