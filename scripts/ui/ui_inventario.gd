@@ -9,6 +9,7 @@ var duracao_animacao: float = 0.0
 var progresso_animacao: float = 0.0
 
 var visivel: bool = false
+var aparecendo: bool = false
 var desaparecendo: bool = true
 
 var slots: Array[Panel]
@@ -22,11 +23,12 @@ func _ready() -> void:
 		slot.add_theme_stylebox_override("panel", style)
 		slots.append(slot)
 		
-	duracao_animacao = animation_player.get_animation("desaparecer").length
+	duracao_animacao = animation_player.get_animation("aparecendo").length
 	
 	selecionar_slot(index_antigo_slot_selecionado)
 
 func _process(delta: float) -> void:
+	self.visible = visivel
 	_processar_animacao(delta)
 
 func adicionar_textura_slot(index_slot: int, textura: Texture2D) -> void:
@@ -35,7 +37,15 @@ func adicionar_textura_slot(index_slot: int, textura: Texture2D) -> void:
 		textura_slot.texture = textura
 
 func _processar_animacao(delta: float) -> void:
-	if not (desaparecendo and visivel): return
+	if aparecendo:
+		visivel = true
+		progresso_animacao += velocidade_aparecimento * delta
+	if desaparecendo:
+		progresso_animacao -= velocidade_desaparecimento * delta
+	
+	progresso_animacao = clamp(progresso_animacao, 0.0, duracao_animacao)
+	animation_player.seek(progresso_animacao, true)
+	if progresso_animacao == 0.0: visivel = false
 
 func selecionar_slot(index_slot: int) -> void:
 	if !(index_slot >= 0 and index_slot < slots.size()):

@@ -58,7 +58,6 @@ ui_inventario = NodePath("../../ui_inventario")
 metadata/_custom_type_script = "uid://ce2b6jkmre41"
 
 [node name="ui_inventario" parent="." unique_id=34154311 instance=ExtResource("8_55ggn")]
-anchors_preset = 15
 offset_left = -71.0
 offset_top = -81.0
 offset_right = -71.0
