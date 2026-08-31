@@ -37,6 +37,10 @@ project/assembly_name="Dust"
 player="Grupo do Jogador principal"
 ui="canvas_layer |  ui de qualquer scene,  planeta, caverna, casa,  etc..."
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [input]
 
 ui_accept={
