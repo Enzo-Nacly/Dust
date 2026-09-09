@@ -70,8 +70,8 @@ func InteracaoTablet1() -> void:
 	if !player_perto:
 		return
 
-	if tableta_animation_player.current_animation != "ligada":
-		return
+	#if tableta_animation_player.current_animation != "ligada":
+		#return
 
 	if !tela_sprite.visible:
 		tela_sprite.visible = true

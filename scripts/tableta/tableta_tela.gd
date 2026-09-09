@@ -30,6 +30,7 @@ func verificar_senha() -> void:
 			portas[0].abrir()
 		
 		tabletabertoAnimacao.visible = false
+		Game_Manager.out_dialog.emit()
 		sequencia_digitada.clear()
 	else:
 		print("Senha Incorreta! Tente novamente.")

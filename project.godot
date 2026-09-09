@@ -32,6 +32,12 @@ Game_Manager="*uid://b11wc06ldfudx"
 
 project/assembly_name="Dust"
 
+[file_customization]
+
+folder_colors={
+"res://cenas/planetas/": "teal"
+}
+
 [global_group]
 
 player="Grupo do Jogador principal"

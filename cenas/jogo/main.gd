@@ -7,6 +7,7 @@ func _enter_tree() -> void:
 	$Player/Camera2D.enabled = false
 	$AnimationPlayer/Camera2D.enabled = true
 	$Player.visible = false
+	$Player.set_physics_process(false)
 	pass
 
 
@@ -25,7 +26,8 @@ func _ready() -> void:
 	$Player.visible = true
 	await fade_in()
 	#
-	#$Player.set_physics_process(true)
+	Game_Manager.out_dialog.emit()
+	$Player.set_physics_process(true)
 
 
 func _criar_fade() -> void:

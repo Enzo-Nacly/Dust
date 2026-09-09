@@ -6,9 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://3txkkq342mvk" path="res://cenas/objetos/Planeta1/Caverna/CavernaPuzzle.tscn" id="2_ap8gp"]
 [ext_resource type="PackedScene" uid="uid://4j3q7p1p2udv" path="res://cenas/objetos/Planeta1/Caverna/Puzzle/Varanda/ChaoVaranda.tscn" id="2_iy7mi"]
 [ext_resource type="PackedScene" uid="uid://ukdcr78ihqtw" path="res://cenas/objetos/Planeta1/Caverna/CavernaPorta.tscn" id="3_sbc6o"]
-[ext_resource type="PackedScene" uid="uid://dglppci8t1o2l" path="res://cenas/componentes/Entraveis/ComponentEntryExit.tscn" id="5_sbc6o"]
+[ext_resource type="PackedScene" uid="uid://dglppci8t1o2l" path="res://cenas/objetos/Planeta1/Caverna/ComponentEntryExit.tscn" id="5_sbc6o"]
 
 [node name="CavernaPuzzleCompleto" type="Node2D" unique_id=1511786806]
+
+[node name="CavernaPorta" parent="." unique_id=1041345079 instance=ExtResource("3_sbc6o")]
+position = Vector2(-71, -21)
 
 [node name="ComponentEntryExit" parent="." unique_id=425402362 instance=ExtResource("5_sbc6o")]
 position = Vector2(-116, -44)
@@ -26,9 +29,6 @@ position = Vector2(122, -39)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ComponentEntryExit" unique_id=427224927]
 polygon = PackedVector2Array(18, 6, 0, 13, -3, 26, -5, 80, 89, 81, 86, -40, 22, -35)
-
-[node name="CavernaPorta" parent="." unique_id=1041345079 instance=ExtResource("3_sbc6o")]
-position = Vector2(-71, -21)
 
 [node name="CavernaPuzzle" parent="." unique_id=1471874157 instance=ExtResource("2_ap8gp")]
 position = Vector2(6, -83)
