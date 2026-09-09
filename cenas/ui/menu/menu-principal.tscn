@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bk03nwpm2jg54" path="res://assets/fontes/bot-jogar.png" id="3_fi1mq"]
 [ext_resource type="Script" uid="uid://bxlpna6ha1h6v" path="res://scripts/texture_button.gd" id="4_0uah4"]
 [ext_resource type="Texture2D" uid="uid://dghkquspy086s" path="res://assets/fontes/bot-sair.png" id="5_jakpw"]
+[ext_resource type="Texture2D" uid="uid://qyms35r4ql01" path="res://assets/sprites/fish Ship/Fish Ship01.png" id="7_q0s1j"]
+[ext_resource type="Texture2D" uid="uid://d3ug8r712e2u2" path="res://assets/sprites/PlanetasMapa/Nuvens-Sheet.png" id="8_5qvsn"]
+[ext_resource type="Texture2D" uid="uid://cag7jyh6ks1ud" path="res://assets/sprites/PlanetasMapa/PlanetaMapa1.png" id="8_qrb4k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_06q5q"]
 font = ExtResource("2_25x7m")
@@ -60,6 +63,178 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(391, 232)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-129, 412.00003)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Sprite2D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.06283186]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/Camera2D:zoom")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/Camera2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(577, 329)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer/PlanetaMapa1:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2206, 347)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPlayer/PlanetaMapa1:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimationPlayer/Sprite2D:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qrb4k"]
+resource_name = "cenaInicial"
+length = 2.2345
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.229735, 2.2345),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-122, 400), Vector2(1952, 368.99997), Vector2(2164, 330.00003), Vector2(2180, 342)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 2.2341707, 2.2345),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.18675023, 0.06283186, -0.10297442, -0.04886922]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.31, 2.0040162, 2.2342486),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(4, 4), Vector2(3, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.31, 2.0040162, 2.2342486),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(577, 329), Vector2(292, 352), Vector2(1963, 364), Vector2(2099, 337)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/PlanetaMapa1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.2342486),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2206, 347)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/PlanetaMapa1:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/Sprite2D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.2340991, 2.2345),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.1, 0.1), Vector2(0.01, 0.01)]
 }
 
 [sub_resource type="Animation" id="Animation_25x7m"]
@@ -117,8 +292,66 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fi1mq"]
 _data = {
 &"RESET": SubResource("Animation_0b1un"),
+&"cenaInicial": SubResource("Animation_qrb4k"),
 &"intro": SubResource("Animation_25x7m")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qvsn"]
+atlas = ExtResource("8_5qvsn")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywb4w"]
+atlas = ExtResource("8_5qvsn")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buvpk"]
+atlas = ExtResource("8_5qvsn")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdiyx"]
+atlas = ExtResource("8_5qvsn")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5lko"]
+atlas = ExtResource("8_5qvsn")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdt03"]
+atlas = ExtResource("8_5qvsn")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6orm"]
+atlas = ExtResource("8_5qvsn")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ungyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qvsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywb4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buvpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdiyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5lko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdt03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6orm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="MenuPrincipal" type="Control" unique_id=1666496725]
 layout_mode = 3
@@ -134,6 +367,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0b1un")
+
+[node name="Img_fundo" type="TextureRect" parent="Img_fundo" unique_id=101265243]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1140.0
+offset_top = -1.0
+offset_right = 1140.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_0b1un")
@@ -190,6 +436,23 @@ script = ExtResource("4_0uah4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1979086348]
 libraries/ = SubResource("AnimationLibrary_fi1mq")
+
+[node name="PlanetaMapa1" type="Sprite2D" parent="AnimationPlayer" unique_id=1935976068]
+position = Vector2(2206, 347)
+texture = ExtResource("8_qrb4k")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer" unique_id=1142571626]
+position = Vector2(-129, 412.00003)
+rotation = 0.06283186
+texture = ExtResource("7_q0s1j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimationPlayer" unique_id=1325021540]
+position = Vector2(2188, 332)
+sprite_frames = SubResource("SpriteFrames_ungyi")
+frame_progress = 0.5820156
+
+[node name="Camera2D" type="Camera2D" parent="AnimationPlayer" unique_id=1350390431]
+position = Vector2(577, 329)
 
 [connection signal="pressed" from="Container-botao/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="Container-botao/Sair" to="." method="_on_sair_pressed"]
