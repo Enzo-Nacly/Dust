@@ -1,5 +1,6 @@
-[gd_scene format=3 uid="uid://c5a31mfdo1ppc"]
+[gd_scene format=3 uid="uid://daa30ayv1lq7e"]
 
+[ext_resource type="Script" uid="uid://cbpdceqy3titn" path="res://cenas/jogo/main.gd" id="1_acw65"]
 [ext_resource type="PackedScene" uid="uid://dly62qyss7gmo" path="res://cenas/objetos/Planeta1/Caverna/CavernaPuzzleCompleto.tscn" id="1_munf6"]
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://cenas/entidades/player.tscn" id="2_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://cenas/planetas/planeta_roxo.tscn" id="3_pitpt"]
@@ -14,6 +15,7 @@
 [ext_resource type="Script" uid="uid://dfje3vb4ru0hm" path="res://scripts/resources/resource_texto_dialogo.gd" id="12_e1ykf"]
 [ext_resource type="Texture2D" uid="uid://cnxm6jpgvsg8s" path="res://assets/sprites/entidades/quinoyds/falando/tontinho.png" id="13_acw65"]
 [ext_resource type="AudioStream" uid="uid://dcpwdu5khsn5v" path="res://assets/audio/sfx/talk.wav" id="13_qabof"]
+[ext_resource type="Texture2D" uid="uid://qyms35r4ql01" path="res://assets/sprites/fish Ship/Fish Ship01.png" id="16_0ys5k"]
 
 [sub_resource type="Animation" id="Animation_pitpt"]
 length = 0.001
@@ -142,13 +144,150 @@ metadata/_custom_type_script = "uid://cw4wljefn5n1m"
 [sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
 radius = 30.149628
 
+[sub_resource type="Animation" id="Animation_ysqms"]
+resource_name = "CutsceneDescida"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.43117]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-836.99994, 414), Vector2(-501.9999, 455)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Camera2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.43117, -1.43117]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Camera2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0009999999, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-862, 391.99997), Vector2(-519.9999, 421)]
+}
+
+[sub_resource type="Animation" id="Animation_5bydj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.43117]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-836.99994, 414)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Camera2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.43117]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Camera2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-519.9999, 421)]
+}
+
+[sub_resource type="Animation" id="Animation_x1j5q"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cdns1"]
+_data = {
+&"CutsceneDescida": SubResource("Animation_ysqms"),
+&"RESET": SubResource("Animation_5bydj"),
+&"new_animation": SubResource("Animation_x1j5q")
+}
+
 [node name="Main" type="Node2D" unique_id=522489995]
+script = ExtResource("1_acw65")
+
+[node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
+position = Vector2(-496, 288)
 
 [node name="CavernaPuzzleCompleto" parent="." unique_id=1511786806 instance=ExtResource("1_munf6")]
 position = Vector2(0, -18)
-
-[node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
-position = Vector2(-485, 186)
 
 [node name="tableta" parent="." unique_id=427427135 instance=ExtResource("4_6hhvf")]
 position = Vector2(-224.00002, 32)
@@ -177,3 +316,17 @@ shape = SubResource("CircleShape2D_fu62x")
 debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=687282447 groups=["ui"]]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1543292264]
+libraries/ = SubResource("AnimationLibrary_cdns1")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer" unique_id=2072102090]
+position = Vector2(-836.99994, 414)
+rotation = -1.43117
+texture = ExtResource("16_0ys5k")
+
+[node name="Camera2D" type="Camera2D" parent="AnimationPlayer" unique_id=625790111]
+position = Vector2(-519.9999, 421)
+rotation = -1.43117
+ignore_rotation = false
+zoom = Vector2(3, 3)

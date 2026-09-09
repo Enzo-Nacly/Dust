@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://crt82478qdvr2"]
+
+[ext_resource type="PackedScene" uid="uid://dly62qyss7gmo" path="res://cenas/objetos/Planeta1/Caverna/CavernaPuzzleCompleto.tscn" id="1_nlydx"]
+[ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://cenas/entidades/player.tscn" id="2_bsktu"]
+[ext_resource type="PackedScene" uid="uid://bs84j0skadns7" path="res://cenas/objetos/tableta.tscn" id="3_jc3dl"]
+[ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://cenas/planetas/planeta_roxo.tscn" id="4_3c53h"]
+[ext_resource type="Texture2D" uid="uid://b8cv0h2duu03l" path="res://assets/sprites/quinoyd.png" id="5_v53r8"]
+[ext_resource type="PackedScene" uid="uid://ddpbjdxd4p07n" path="res://cenas/componentes/area_dialogo.tscn" id="6_bjgyg"]
+[ext_resource type="Script" uid="uid://cqpy6dko08c5i" path="res://scripts/resources/resource_dialogo_export.gd" id="7_qvpfj"]
+[ext_resource type="Texture2D" uid="uid://d7oy5nvtq810" path="res://assets/sprites/entidades/quinoyds/falando/piscando.png" id="8_pg7ea"]
+[ext_resource type="Script" uid="uid://dfje3vb4ru0hm" path="res://scripts/resources/resource_texto_dialogo.gd" id="9_2y8g0"]
+[ext_resource type="AudioStream" uid="uid://dcpwdu5khsn5v" path="res://assets/audio/sfx/talk.wav" id="10_enghg"]
+[ext_resource type="Texture2D" uid="uid://cnxm6jpgvsg8s" path="res://assets/sprites/entidades/quinoyds/falando/tontinho.png" id="11_li3ji"]
+[ext_resource type="Script" uid="uid://uaam2kd3rb80" path="res://scripts/resources/resource_funcao_dialogo.gd" id="12_ypxqp"]
+[ext_resource type="Texture2D" uid="uid://duptog1g3ii20" path="res://assets/sprites/entidades/quinoyds/falando/padrao.png" id="13_8bj4s"]
+[ext_resource type="Script" uid="uid://cw4wljefn5n1m" path="res://scripts/resources/resource_escolha_dialogo.gd" id="14_kj1ac"]
+
+[sub_resource type="Animation" id="Animation_pitpt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.76009536]
+}
+
+[sub_resource type="Animation" id="Animation_6hhvf"]
+resource_name = "teste"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.74, 1),
+"transitions": PackedFloat32Array(1, 0.15932018, 3.8637452, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.6078244, 1), Vector2(0.6078244, 1.4227815), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_acw65"]
+resource_name = "wow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.22, 0.62, 1),
+"transitions": PackedFloat32Array(1, 5.656855, 1, 1),
+"update": 0,
+"values": [-0.76009536, -0.014481604, -3.8049068, -0.8088381]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5f6nu"]
+_data = {
+&"RESET": SubResource("Animation_pitpt"),
+&"teste": SubResource("Animation_6hhvf"),
+&"wow": SubResource("Animation_acw65")
+}
+
+[sub_resource type="Resource" id="Resource_qabof"]
+script = ExtResource("9_2y8g0")
+imagem_falante = ExtResource("8_pg7ea")
+qtd_frames_falante = 4
+frame_falante_terminou = 3
+texto = "Estamos passando fome, árvores indo para a sombra"
+velocidade_texto = 18.0
+som_texto = ExtResource("10_enghg")
+volume_texto_db = -8
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_ahwvi"]
+script = ExtResource("9_2y8g0")
+imagem_falante = ExtResource("11_li3ji")
+texto = "Aqui, tome a semente de nossa árvore..."
+velocidade_texto = 5.0
+som_texto = ExtResource("10_enghg")
+volume_texto_pitch_min = 0.5
+volume_texto_pitch_max = 3.0
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_l7l8e"]
+script = ExtResource("12_ypxqp")
+caminho_node_com_funcao = NodePath("../quinoyd/AnimationPlayer")
+nome_funcao = "play"
+parametros_funcao = ["teste"]
+esconder_caixa_dialogo = true
+esperar_sinal_para_continuar = "animation_finished"
+metadata/_custom_type_script = "uid://uaam2kd3rb80"
+
+[sub_resource type="Resource" id="Resource_5qnmo"]
+script = ExtResource("9_2y8g0")
+imagem_falante = ExtResource("8_pg7ea")
+qtd_frames_falante = 4
+frame_falante_terminou = 4
+texto = "Nós adoramos pedras que são legais!!!"
+velocidade_texto = 20.0
+som_texto = ExtResource("10_enghg")
+volume_texto_db = -8
+volume_texto_pitch_min = 0.5
+volume_texto_pitch_max = 1.0
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_e1ykf"]
+script = ExtResource("12_ypxqp")
+caminho_node_com_funcao = NodePath("../quinoyd/AnimationPlayer")
+nome_funcao = "play"
+parametros_funcao = ["wow"]
+esperar_sinal_para_continuar = "animation_finished"
+metadata/_custom_type_script = "uid://uaam2kd3rb80"
+
+[sub_resource type="Resource" id="Resource_kemws"]
+script = ExtResource("14_kj1ac")
+nome_falante = "quinoyd"
+imagem_falante = ExtResource("13_8bj4s")
+texto = "Você vai conseguir nos ajudar?"
+texto_escolha = Array[String](["Acho que sim", "Tô nem aí"])
+chamada_funcoes_escolha = Array[ExtResource("12_ypxqp")]([SubResource("Resource_e1ykf"), null])
+metadata/_custom_type_script = "uid://cw4wljefn5n1m"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
+radius = 30.149628
+
+[node name="Main" type="Node2D" unique_id=522489995]
+
+[node name="CavernaPuzzleCompleto" parent="." unique_id=1511786806 instance=ExtResource("1_nlydx")]
+position = Vector2(0, -18)
+
+[node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_bsktu")]
+position = Vector2(-485, 186)
+
+[node name="tableta" parent="." unique_id=427427135 instance=ExtResource("3_jc3dl")]
+position = Vector2(-224.00002, 32)
+rotation = -0.40142572
+
+[node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("4_3c53h")]
+position = Vector2(0, 473)
+
+[node name="quinoyd" type="Sprite2D" parent="." unique_id=1290611076]
+position = Vector2(-366, 104.999985)
+rotation = -0.76009536
+texture = ExtResource("5_v53r8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="quinoyd" unique_id=1965227920]
+libraries/ = SubResource("AnimationLibrary_5f6nu")
+
+[node name="area_dialogo" parent="." unique_id=843434367 instance=ExtResource("6_bjgyg")]
+position = Vector2(-365, 107)
+ativar_instantaneamente = true
+ativar_one_shot = true
+dialogo = Array[ExtResource("7_qvpfj")]([SubResource("Resource_qabof"), SubResource("Resource_ahwvi"), SubResource("Resource_l7l8e"), SubResource("Resource_5qnmo"), SubResource("Resource_kemws")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_dialogo" unique_id=85451978]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_fu62x")
+debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=687282447 groups=["ui"]]
