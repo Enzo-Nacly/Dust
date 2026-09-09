@@ -449,7 +449,8 @@ texture = ExtResource("7_q0s1j")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimationPlayer" unique_id=1325021540]
 position = Vector2(2188, 332)
 sprite_frames = SubResource("SpriteFrames_ungyi")
-frame_progress = 0.5820156
+autoplay = "default"
+frame_progress = 0.4101217
 
 [node name="Camera2D" type="Camera2D" parent="AnimationPlayer" unique_id=1350390431]
 position = Vector2(577, 329)
