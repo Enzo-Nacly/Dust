@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://dfje3vb4ru0hm" path="res://scripts/resources/resource_texto_dialogo.gd" id="12_e1ykf"]
 [ext_resource type="Texture2D" uid="uid://cnxm6jpgvsg8s" path="res://assets/sprites/entidades/quinoyds/falando/tontinho.png" id="13_acw65"]
 [ext_resource type="AudioStream" uid="uid://dcpwdu5khsn5v" path="res://assets/audio/sfx/talk.wav" id="13_qabof"]
-[ext_resource type="Texture2D" uid="uid://qyms35r4ql01" path="res://assets/sprites/fish Ship/Fish Ship01.png" id="16_0ys5k"]
+[ext_resource type="Texture2D" uid="uid://0aw4c60m5o2r" path="res://assets/sprites/fish Ship/sheet/fishiShip3dDescendo-Sheet.png" id="16_acw65"]
 
 [sub_resource type="Animation" id="Animation_pitpt"]
 length = 0.001
@@ -146,6 +146,7 @@ radius = 30.149628
 
 [sub_resource type="Animation" id="Animation_ysqms"]
 resource_name = "CutsceneDescida"
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -153,10 +154,10 @@ tracks/0/path = NodePath("AnimationPlayer/Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-1.43117]
+"values": [-1.43117, -1.4940019]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -165,10 +166,10 @@ tracks/1/path = NodePath("AnimationPlayer/Sprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 3.8000607),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-836.99994, 414), Vector2(-501.9999, 455)]
+"values": [Vector2(-861, 391), Vector2(-542.745, 433.7507)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -189,7 +190,7 @@ tracks/3/path = NodePath("AnimationPlayer/Camera2D:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-1.43117, -1.43117]
@@ -201,10 +202,46 @@ tracks/4/path = NodePath("AnimationPlayer/Camera2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.0009999999, 1),
+"times": PackedFloat32Array(0.0009999999, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-862, 391.99997), Vector2(-519.9999, 421)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Sprite2D:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.7860382),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [10, 116]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/Sprite2D:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/Sprite2D:hframes")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [120]
 }
 
 [sub_resource type="Animation" id="Animation_5bydj"]
@@ -269,6 +306,42 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(-519.9999, 421)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Sprite2D:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/Sprite2D:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(10, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimationPlayer/Sprite2D:hframes")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [120]
+}
 
 [sub_resource type="Animation" id="Animation_x1j5q"]
 resource_name = "new_animation"
@@ -323,7 +396,10 @@ libraries/ = SubResource("AnimationLibrary_cdns1")
 [node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer" unique_id=2072102090]
 position = Vector2(-836.99994, 414)
 rotation = -1.43117
-texture = ExtResource("16_0ys5k")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("16_acw65")
+hframes = 120
+frame = 10
 
 [node name="Camera2D" type="Camera2D" parent="AnimationPlayer" unique_id=625790111]
 position = Vector2(-519.9999, 421)
