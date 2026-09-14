@@ -1,21 +1,6 @@
 [gd_scene format=3 uid="uid://pj4m7i7wbmm8"]
 
-[ext_resource type="Script" uid="uid://cdmdy2m6p3i2y" path="res://scripts/ui/ui_inventario.gd" id="1_h6jsg"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu62x"]
-bg_color = Color(1, 1, 1, 1)
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.5370113, 0.5370113, 0.5370113, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-corner_detail = 16
-anti_aliasing = false
+[ext_resource type="Script" uid="uid://cdmdy2m6p3i2y" path="res://scripts/ui/inventario/ui_inventario.gd" id="1_h6jsg"]
 
 [sub_resource type="Animation" id="Animation_h6jsg"]
 length = 0.001
@@ -62,6 +47,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h6jsg")
+debug = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=50882955]
 layout_mode = 1
@@ -72,48 +58,6 @@ offset_left = 212.0
 offset_top = 30.296
 offset_right = 244.0799
 offset_bottom = 134.296
-
-[node name="slot_1" type="Panel" parent="VBoxContainer" unique_id=649815277]
-custom_minimum_size = Vector2(32, 32)
-custom_maximum_size = Vector2(32, 32)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fu62x")
-
-[node name="textura_item" type="TextureRect" parent="VBoxContainer/slot_1" unique_id=1063718834]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 37.0
-offset_bottom = 37.0
-scale = Vector2(0.7, 0.7)
-
-[node name="slot_2" type="Panel" parent="VBoxContainer" unique_id=1455157636]
-custom_minimum_size = Vector2(32, 32)
-custom_maximum_size = Vector2(32, 32)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fu62x")
-
-[node name="textura_item" type="TextureRect" parent="VBoxContainer/slot_2" unique_id=1376288147]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 37.0
-offset_bottom = 37.0
-scale = Vector2(0.7, 0.7)
-
-[node name="slot_3" type="Panel" parent="VBoxContainer" unique_id=1751692298]
-custom_minimum_size = Vector2(32, 32)
-custom_maximum_size = Vector2(32, 32)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fu62x")
-
-[node name="textura_item" type="TextureRect" parent="VBoxContainer/slot_3" unique_id=2099146108]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 37.0
-offset_bottom = 37.0
-scale = Vector2(0.7, 0.7)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=531149725]
 libraries/ = SubResource("AnimationLibrary_5aoik")

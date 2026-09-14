@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@onready var interaction_area : InteractionArea = $InteractionArea
+@onready var interaction_area : AreaInteracao = $InteractionArea
 
 # [cristal_sprite, prato_sprite, suporte_sprite, manivela_sprite]
 @onready var array_sprites : Array = $Sprites.get_children()

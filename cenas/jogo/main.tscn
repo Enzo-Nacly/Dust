@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bs84j0skadns7" path="res://cenas/objetos/tableta.tscn" id="4_6hhvf"]
 [ext_resource type="Texture2D" uid="uid://b8cv0h2duu03l" path="res://assets/sprites/quinoyd.png" id="5_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ddpbjdxd4p07n" path="res://cenas/componentes/area_dialogo.tscn" id="6_pitpt"]
-[ext_resource type="Script" uid="uid://cqpy6dko08c5i" path="res://scripts/resources/resource_dialogo_export.gd" id="7_ahwvi"]
+[ext_resource type="Script" uid="uid://cqpy6dko08c5i" path="res://scripts/resources/dialogo/resource_dialogo_export.gd" id="7_ahwvi"]
 [ext_resource type="Texture2D" uid="uid://d7oy5nvtq810" path="res://assets/sprites/entidades/quinoyds/falando/piscando.png" id="8_e1ykf"]
-[ext_resource type="Script" uid="uid://uaam2kd3rb80" path="res://scripts/resources/resource_funcao_dialogo.gd" id="8_l7l8e"]
-[ext_resource type="Script" uid="uid://cw4wljefn5n1m" path="res://scripts/resources/resource_escolha_dialogo.gd" id="10_5qnmo"]
+[ext_resource type="Script" uid="uid://uaam2kd3rb80" path="res://scripts/resources/dialogo/resource_funcao_dialogo.gd" id="8_l7l8e"]
+[ext_resource type="Script" uid="uid://cw4wljefn5n1m" path="res://scripts/resources/dialogo/resource_escolha_dialogo.gd" id="10_5qnmo"]
 [ext_resource type="Texture2D" uid="uid://duptog1g3ii20" path="res://assets/sprites/entidades/quinoyds/falando/padrao.png" id="11_qabof"]
-[ext_resource type="Script" uid="uid://dfje3vb4ru0hm" path="res://scripts/resources/resource_texto_dialogo.gd" id="12_e1ykf"]
+[ext_resource type="Script" uid="uid://dfje3vb4ru0hm" path="res://scripts/resources/dialogo/resource_texto_dialogo.gd" id="12_e1ykf"]
 [ext_resource type="Texture2D" uid="uid://cnxm6jpgvsg8s" path="res://assets/sprites/entidades/quinoyds/falando/tontinho.png" id="13_acw65"]
 [ext_resource type="AudioStream" uid="uid://dcpwdu5khsn5v" path="res://assets/audio/sfx/talk.wav" id="13_qabof"]
 
@@ -84,7 +84,9 @@ script = ExtResource("12_e1ykf")
 imagem_falante = ExtResource("8_e1ykf")
 qtd_frames_falante = 4
 frame_falante_terminou = 3
-texto = "Estamos passando fome, árvores indo para a sombra"
+texto = "[rainbow][wave amp=50.0 freq=5.0][shake rate=20.0 level=5 connected=1]ME AJUDA TENHO FOME![/shake][/wave][/rainbow]
+
+"
 velocidade_texto = 18.0
 som_texto = ExtResource("13_qabof")
 volume_texto_db = -8

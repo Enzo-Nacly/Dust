@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var interaction_area: InteractionArea = $InteractionArea
+@onready var interaction_area: AreaInteracao = $InteractionArea
 @onready var tableta_animation_player: AnimationPlayer = $tableta_animation_player
 @onready var tela_animation_player: AnimationPlayer = $tela_animation_player
 @onready var tela_sprite: Sprite2D = $InteractionArea/CanvasLayer/tableta_tela_sprite

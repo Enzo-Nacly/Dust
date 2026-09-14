@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Inventario" format=3 uid="uid://bplavfkvwy75c"]
 
-[ext_resource type="Script" uid="uid://b6qx5su7evvqt" path="res://scripts/resources/item_inventario.gd" id="1_gepj4"]
+[ext_resource type="Script" uid="uid://b6qx5su7evvqt" path="res://scripts/resources/inventario/item_inventario.gd" id="1_gepj4"]
 [ext_resource type="Resource" uid="uid://cnar03g04wq47" path="res://resources/semente_arvore_tuberculo.tres" id="2_3sciq"]
-[ext_resource type="Script" uid="uid://b73rol7dxeyu0" path="res://scripts/resources/inventario.gd" id="3_xkmxj"]
+[ext_resource type="Script" uid="uid://b73rol7dxeyu0" path="res://scripts/resources/inventario/inventario.gd" id="3_xkmxj"]
 
 [resource]
 script = ExtResource("3_xkmxj")

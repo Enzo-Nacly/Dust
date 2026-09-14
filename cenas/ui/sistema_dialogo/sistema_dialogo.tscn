@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0751b0lhdvhf"]
 
 [ext_resource type="FontFile" uid="uid://di5t1fmy4grs5" path="res://assets/fontes/PixelOperator-Bold.ttf" id="1_1lmju"]
-[ext_resource type="Script" uid="uid://dqqvyktndxa87" path="res://scripts/ui/sistema_dialogo.gd" id="1_ogyxe"]
+[ext_resource type="Script" uid="uid://dqqvyktndxa87" path="res://scripts/ui/dialogo/sistema_dialogo.gd" id="1_ogyxe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ptcv"]
 bg_color = Color(0.12156863, 0.0627451, 0.16470589, 1)
@@ -19,6 +19,7 @@ corner_detail = 10
 [node name="Sistema_dialogo" type="Control" unique_id=1636047625]
 z_index = 2048
 layout_mode = 3
+anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5

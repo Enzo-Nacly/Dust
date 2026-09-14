@@ -25,8 +25,9 @@ buses/default_bus_layout="res://assets/audio/default_bus_layout.tres"
 
 [autoload]
 
-InteractionManager="*uid://b5v60bh8mc13q"
+GerenciadorInteracao="*uid://b5v60bh8mc13q"
 Game_Manager="*uid://b11wc06ldfudx"
+GerenciadorInventario="*uid://cjg1sav2nqm7u"
 
 [dotnet]
 

@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://dhm6j02iw2vrm" path="res://scripts/componentes/componente_movimento.gd" id="5_6ql6w"]
 [ext_resource type="Script" uid="uid://bi44habvi5v0" path="res://scripts/componentes/componente_pulo.gd" id="6_55ggn"]
 [ext_resource type="Script" uid="uid://camujvpkdi7li" path="res://scripts/componentes/componente_gravidade.gd" id="6_lxx67"]
-[ext_resource type="Script" uid="uid://ce2b6jkmre41" path="res://scripts/componentes/componente_inventario.gd" id="7_6ql6w"]
 [ext_resource type="PackedScene" uid="uid://pj4m7i7wbmm8" path="res://cenas/ui/inventario/ui_inventario.tscn" id="8_55ggn"]
 [ext_resource type="Resource" uid="uid://bplavfkvwy75c" path="res://resources/player_inventario.tres" id="8_jgxua"]
 
@@ -17,6 +16,7 @@ size = Vector2(2.4615388, 4.1538467)
 z_index = 5
 collision_layer = 3
 script = ExtResource("1_uuqyi")
+inventario = ExtResource("8_jgxua")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=747360896]
 position = Vector2(-1, 0)
@@ -50,12 +50,6 @@ metadata/_custom_type_script = "uid://dhm6j02iw2vrm"
 [node name="ComponentePulo" type="Node" parent="Componentes" unique_id=940256515]
 script = ExtResource("6_55ggn")
 metadata/_custom_type_script = "uid://bi44habvi5v0"
-
-[node name="ComponenteInventario" type="Node" parent="Componentes" unique_id=851335859 node_paths=PackedStringArray("ui_inventario")]
-script = ExtResource("7_6ql6w")
-inventario = ExtResource("8_jgxua")
-ui_inventario = NodePath("../../ui_inventario")
-metadata/_custom_type_script = "uid://ce2b6jkmre41"
 
 [node name="ui_inventario" parent="." unique_id=34154311 instance=ExtResource("8_55ggn")]
 offset_left = -71.0
