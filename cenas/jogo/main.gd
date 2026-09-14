@@ -14,7 +14,7 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	pass
 	_criar_fade()
-#
+	
 	#
 	#
 	$AnimationPlayer.play("CutsceneDescida")

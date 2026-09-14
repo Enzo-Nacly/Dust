@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm1rrig30cw1b"
-path="res://.godot/imported/explorer.png-9b234b389e8f17aa7586e85623cc7d39.ctex"
+uid="uid://b3qv6rntt6fsl"
+path="res://.godot/imported/playerAndandoSpriteSheet.png-16be154084bf9003f945203ba698befe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/explorer.png"
-dest_files=["res://.godot/imported/explorer.png-9b234b389e8f17aa7586e85623cc7d39.ctex"]
+source_file="res://assets/sprites/Explorer/playerAndandoSpriteSheet.png"
+dest_files=["res://.godot/imported/playerAndandoSpriteSheet.png-16be154084bf9003f945203ba698befe.ctex"]
 
 [params]
 

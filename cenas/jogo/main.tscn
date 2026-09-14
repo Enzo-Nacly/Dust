@@ -357,7 +357,7 @@ _data = {
 script = ExtResource("1_acw65")
 
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
-position = Vector2(-496, 288)
+position = Vector2(-485, 223)
 
 [node name="CavernaPuzzleCompleto" parent="." unique_id=1511786806 instance=ExtResource("1_munf6")]
 position = Vector2(0, -18)

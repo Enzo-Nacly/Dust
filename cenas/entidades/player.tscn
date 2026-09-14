@@ -1,11 +1,103 @@
 [gd_scene format=3 uid="uid://ux0228ttqf7j"]
 
 [ext_resource type="Script" uid="uid://dcjuqywql3jc4" path="res://scripts/entidades/player.gd" id="1_uuqyi"]
-[ext_resource type="Texture2D" uid="uid://dm1rrig30cw1b" path="res://assets/sprites/explorer.png" id="2_hlp2g"]
+[ext_resource type="Texture2D" uid="uid://b3qv6rntt6fsl" path="res://assets/sprites/Explorer/playerAndandoSpriteSheet.png" id="2_6ql6w"]
+[ext_resource type="Texture2D" uid="uid://dm1rrig30cw1b" path="res://assets/sprites/Explorer/explorer.png" id="2_hlp2g"]
+[ext_resource type="Script" uid="uid://6exgibwtdyrb" path="res://assets/Maquina de Estados/state_machine.gd" id="4_55ggn"]
 [ext_resource type="Script" uid="uid://h6wfdw1onmno" path="res://scripts/componentes/componente_rotacao.gd" id="4_lxx67"]
 [ext_resource type="Script" uid="uid://dhm6j02iw2vrm" path="res://scripts/componentes/componente_movimento.gd" id="5_6ql6w"]
 [ext_resource type="Script" uid="uid://bi44habvi5v0" path="res://scripts/componentes/componente_pulo.gd" id="6_55ggn"]
 [ext_resource type="Script" uid="uid://camujvpkdi7li" path="res://scripts/componentes/componente_gravidade.gd" id="6_lxx67"]
+
+[sub_resource type="Animation" id="Animation_6ql6w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MaquinaEstados/andando-Sheet:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MaquinaEstados/andando-Sheet:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_55ggn"]
+resource_name = "andando"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../MaquinaEstados/andando-Sheet:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../MaquinaEstados/andando-Sheet:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 0.11265645),
+"update": 0,
+"values": [0, 6]
+}
+
+[sub_resource type="Animation" id="Animation_jgxua"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.10000001),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jgxua"]
+_data = {
+&"RESET": SubResource("Animation_6ql6w"),
+&"andando": SubResource("Animation_55ggn"),
+&"idle": SubResource("Animation_jgxua")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlp2g"]
 size = Vector2(2.4615388, 4.1538467)
@@ -15,20 +107,36 @@ z_index = 5
 collision_layer = 3
 script = ExtResource("1_uuqyi")
 
+[node name="MaquinaEstados" type="Node2D" parent="." unique_id=386155842]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MaquinaEstados" unique_id=380044828]
+root_node = NodePath("../../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_jgxua")
+
+[node name="andando-Sheet" type="Sprite2D" parent="MaquinaEstados" unique_id=36681063]
+position = Vector2(1, -1)
+texture = ExtResource("2_6ql6w")
+hframes = 7
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=747360896]
-position = Vector2(-1, 0)
+visible = false
+position = Vector2(1, -1)
 texture = ExtResource("2_hlp2g")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1914463975]
+position = Vector2(0, -29)
 ignore_rotation = false
 zoom = Vector2(3, 3)
 position_smoothing_speed = 0.1
 rotation_smoothing_speed = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1715437799]
-position = Vector2(1.000001, 2.499998)
+position = Vector2(0, -9.536743e-07)
 scale = Vector2(6.5, 6.5)
 shape = SubResource("RectangleShape2D_hlp2g")
+
+[node name="Maquina de estados" type="Node" parent="." unique_id=2086861060]
+script = ExtResource("4_55ggn")
 
 [node name="Componentes" type="Node" parent="." unique_id=813608034]
 
