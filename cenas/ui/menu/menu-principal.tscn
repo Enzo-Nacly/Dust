@@ -20,6 +20,18 @@ font_size = 100
 
 [sub_resource type="Animation" id="Animation_0b1un"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Titulo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(63, 112)]
+}
 
 [sub_resource type="Animation" id="Animation_r5lko"]
 resource_name = "fade_out"
@@ -36,10 +48,26 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_bdt03"]
+resource_name = "mexendo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Titulo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(63, 112), Vector2(73, 293)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fi1mq"]
 _data = {
 &"RESET": SubResource("Animation_0b1un"),
-&"fade_out": SubResource("Animation_r5lko")
+&"fade_out": SubResource("Animation_r5lko"),
+&"mexendo": SubResource("Animation_bdt03")
 }
 
 [node name="MenuPrincipal" type="Control" unique_id=1666496725]
@@ -60,24 +88,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_r5lko")
-
-[node name="Titulo" type="Label" parent="sistema_solar/espaco" unique_id=2030299959]
-modulate = Color(1, 1, 1, 0)
-z_index = 5
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -513.0
-offset_top = -212.0
-offset_right = -281.0
-offset_bottom = -91.99982
-grow_horizontal = 2
-grow_vertical = 2
-text = "DUST"
-label_settings = SubResource("LabelSettings_06q5q")
 
 [node name="sol" type="TextureRect" parent="sistema_solar" unique_id=1028810613]
 offset_left = 412.0
@@ -129,6 +139,24 @@ offset_top = 7.0
 offset_right = 236.0
 offset_bottom = 167.0
 texture = ExtResource("9_gx11c")
+
+[node name="Titulo" type="Label" parent="." unique_id=2030299959]
+modulate = Color(1, 1, 1, 0)
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.063
+anchor_top = 0.123
+anchor_right = 0.47300002
+anchor_bottom = 0.637
+offset_left = -9.576004
+offset_top = 32.295998
+offset_right = -249.89594
+offset_bottom = -180.77539
+grow_horizontal = 2
+grow_vertical = 2
+text = "DUST"
+label_settings = SubResource("LabelSettings_06q5q")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1659512766]
 z_index = 7
