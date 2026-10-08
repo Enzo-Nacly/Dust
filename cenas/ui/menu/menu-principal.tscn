@@ -4,11 +4,9 @@
 [ext_resource type="FontFile" uid="uid://dsn0sg2somd7d" path="res://assets/fontes/PixelifySans-Regular.ttf" id="2_25x7m"]
 [ext_resource type="Texture2D" uid="uid://cs4s4y17jkxth" path="res://assets/sprites/menu/espaco.png" id="2_r5lko"]
 [ext_resource type="Texture2D" uid="uid://c41siiwajmhck" path="res://assets/sprites/menu/sol_icone.png" id="3_bdt03"]
-[ext_resource type="Texture2D" uid="uid://bk03nwpm2jg54" path="res://assets/fontes/bot-jogar.png" id="3_fi1mq"]
-[ext_resource type="Script" uid="uid://bxlpna6ha1h6v" path="res://scripts/texture_button.gd" id="4_0uah4"]
+[ext_resource type="Script" uid="uid://bxlpna6ha1h6v" path="res://scripts/botaos_menu.gd" id="4_0uah4"]
 [ext_resource type="Texture2D" uid="uid://w3wgkshwwmc8" path="res://assets/sprites/menu/mercurio/planeta_cinza.png" id="4_k6orm"]
 [ext_resource type="Texture2D" uid="uid://xoqs5wbaycid" path="res://assets/sprites/menu/poroso/planeta_roxo.png" id="5_5cehq"]
-[ext_resource type="Texture2D" uid="uid://dghkquspy086s" path="res://assets/fontes/bot-sair.png" id="5_jakpw"]
 [ext_resource type="Texture2D" uid="uid://dpnf8d85uh46c" path="res://assets/sprites/menu/poroso/atmosfera.png" id="6_g7pof"]
 [ext_resource type="Texture2D" uid="uid://bam2wh7q6c60m" path="res://assets/sprites/menu/colosso/planeta_verde.png" id="7_8oso1"]
 [ext_resource type="Texture2D" uid="uid://butya1cw7t5i3" path="res://assets/sprites/menu/siameses/planeta_azul.png" id="8_jckp1"]
@@ -17,20 +15,27 @@
 [sub_resource type="LabelSettings" id="LabelSettings_06q5q"]
 font = ExtResource("2_25x7m")
 font_size = 100
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.5019608)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5lko"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ptcv"]
 
 [sub_resource type="Animation" id="Animation_0b1un"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Titulo:position")
+tracks/0/path = NodePath("sistema_solar/mercurio:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(63, 112)]
+"values": [Vector2(572, 436)]
 }
 
 [sub_resource type="Animation" id="Animation_r5lko"]
@@ -50,17 +55,18 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_bdt03"]
 resource_name = "mexendo"
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Titulo:position")
-tracks/0/interp = 1
+tracks/0/path = NodePath("sistema_solar/mercurio:position")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(1, 0),
 "update": 0,
-"values": [Vector2(63, 112), Vector2(73, 293)]
+"values": [Vector2(572, 436), Vector2(572, 428)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fi1mq"]
@@ -79,9 +85,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_25x7m")
 
-[node name="sistema_solar" type="Node" parent="." unique_id=71825282]
+[node name="sistema_solar" type="Control" parent="." unique_id=1016840198]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="espaco" type="TextureRect" parent="sistema_solar" unique_id=2019994807]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -90,6 +103,7 @@ grow_vertical = 2
 texture = ExtResource("2_r5lko")
 
 [node name="sol" type="TextureRect" parent="sistema_solar" unique_id=1028810613]
+layout_mode = 0
 offset_left = 412.0
 offset_top = 28.0
 offset_right = 924.0
@@ -97,13 +111,16 @@ offset_bottom = 540.0
 texture = ExtResource("3_bdt03")
 
 [node name="mercurio" type="TextureRect" parent="sistema_solar" unique_id=1581825990]
+layout_mode = 0
 offset_left = 572.0
-offset_top = 433.0
-offset_right = 656.0
-offset_bottom = 518.0
+offset_top = 436.0
+offset_right = 593.0
+offset_bottom = 457.00003
+scale = Vector2(4, 4)
 texture = ExtResource("4_k6orm")
 
 [node name="poroso" type="TextureRect" parent="sistema_solar" unique_id=1396743479]
+layout_mode = 0
 offset_left = 836.0
 offset_top = 404.0
 offset_right = 976.0
@@ -119,6 +136,7 @@ offset_bottom = 148.0
 texture = ExtResource("6_g7pof")
 
 [node name="colosso" type="TextureRect" parent="sistema_solar" unique_id=1477998064]
+layout_mode = 0
 offset_left = 936.0
 offset_top = 128.0
 offset_right = 1137.0
@@ -126,39 +144,24 @@ offset_bottom = 328.0
 texture = ExtResource("7_8oso1")
 
 [node name="siameses" type="TextureRect" parent="sistema_solar" unique_id=580742864]
+layout_mode = 0
 offset_left = 292.0
 offset_top = 420.0
-offset_right = 534.74286
-offset_bottom = 600.0
+offset_right = 351.0
+offset_bottom = 465.0
+scale = Vector2(4, 4)
 texture = ExtResource("8_jckp1")
 
 [node name="asteroides" type="TextureRect" parent="sistema_solar/siameses" unique_id=256077704]
 layout_mode = 0
-offset_left = -14.0
-offset_top = 7.0
-offset_right = 236.0
-offset_bottom = 167.0
+offset_left = -4.5
+offset_top = 3.25
+offset_right = 58.5
+offset_bottom = 41.25
 texture = ExtResource("9_gx11c")
 
-[node name="Titulo" type="Label" parent="." unique_id=2030299959]
-modulate = Color(1, 1, 1, 0)
-z_index = 5
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.063
-anchor_top = 0.123
-anchor_right = 0.47300002
-anchor_bottom = 0.637
-offset_left = -9.576004
-offset_top = 32.295998
-offset_right = -249.89594
-offset_bottom = -180.77539
-grow_horizontal = 2
-grow_vertical = 2
-text = "DUST"
-label_settings = SubResource("LabelSettings_06q5q")
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1659512766]
+visible = false
 z_index = 7
 layout_mode = 1
 anchors_preset = 15
@@ -168,47 +171,60 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.12156863, 0.0627451, 0.16470589, 1)
 
+[node name="Titulo" type="Label" parent="." unique_id=2030299959]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 0.17300001
+anchor_right = 0.25
+anchor_bottom = 0.358
+offset_left = -0.25600052
+offset_top = -0.104003906
+offset_bottom = 0.015991211
+text = "DUST"
+label_settings = SubResource("LabelSettings_06q5q")
+horizontal_alignment = 1
+
 [node name="Container-botao" type="VBoxContainer" parent="." unique_id=1269638660]
-modulate = Color(1, 1, 1, 0)
 z_index = 5
 propagate_maximum_size = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -513.0
-offset_top = -212.0
-offset_right = -281.0
-offset_bottom = -91.99982
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 0.395
+anchor_right = 0.25
+anchor_bottom = 0.63900006
+offset_left = -0.25600052
+offset_top = 0.039993286
+offset_bottom = -0.072052
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
 mouse_filter = 2
 
-[node name="Jogar" type="TextureButton" parent="Container-botao" unique_id=1676482754]
-custom_minimum_size = Vector2(270, 90)
+[node name="jogar" type="Button" parent="Container-botao" unique_id=1357362875]
 layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("3_fi1mq")
-ignore_texture_size = true
-stretch_mode = 0
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r5lko")
+text = "Jogar"
 script = ExtResource("4_0uah4")
 
-[node name="Sair" type="TextureButton" parent="Container-botao" unique_id=646899266]
-custom_minimum_size = Vector2(270, 90)
+[node name="sair" type="Button" parent="Container-botao" unique_id=72694271]
 layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("5_jakpw")
-ignore_texture_size = true
-stretch_mode = 0
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4ptcv")
+text = "Sair
+
+"
 script = ExtResource("4_0uah4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1979086348]
 physics_interpolation_mode = 2
 libraries/ = SubResource("AnimationLibrary_fi1mq")
 
-[connection signal="pressed" from="Container-botao/Jogar" to="." method="_on_jogar_pressed"]
-[connection signal="pressed" from="Container-botao/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="Container-botao/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Container-botao/sair" to="." method="_on_sair_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
