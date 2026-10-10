@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqfe8uswv28nq"]
 
-[ext_resource type="Script" uid="uid://dlbsgfu702u8i" path="res://cenas/ui/menu/menu_principal.gd" id="1_25x7m"]
+[ext_resource type="Script" uid="uid://dlbsgfu702u8i" path="res://scripts/ui/menu_principal.gd" id="1_25x7m"]
 [ext_resource type="FontFile" uid="uid://dsn0sg2somd7d" path="res://assets/fontes/PixelifySans-Regular.ttf" id="2_25x7m"]
 [ext_resource type="Texture2D" uid="uid://cs4s4y17jkxth" path="res://assets/sprites/menu/espaco.png" id="2_r5lko"]
 [ext_resource type="Texture2D" uid="uid://c41siiwajmhck" path="res://assets/sprites/menu/sol_icone.png" id="3_bdt03"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bam2wh7q6c60m" path="res://assets/sprites/menu/colosso/planeta_verde.png" id="7_8oso1"]
 [ext_resource type="Texture2D" uid="uid://butya1cw7t5i3" path="res://assets/sprites/menu/siameses/planeta_azul.png" id="8_jckp1"]
 [ext_resource type="Texture2D" uid="uid://8fbefdkatvd8" path="res://assets/sprites/menu/siameses/asteroides.png" id="9_gx11c"]
+[ext_resource type="AudioStream" uid="uid://cmbgfyrk3eqlh" path="res://assets/sonoro/musica/musica_menu_principal.wav" id="13_r5lko"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_06q5q"]
 font = ExtResource("2_25x7m")
@@ -22,13 +23,78 @@ shadow_offset = Vector2(0, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5lko"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdiyx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdt03"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6orm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5cehq"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ptcv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7pof"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8oso1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jckp1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gx11c"]
 
 [sub_resource type="Animation" id="Animation_0b1un"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Titulo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container-botao:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
-[sub_resource type="Animation" id="Animation_r5lko"]
-resource_name = "fade_out"
+[sub_resource type="Animation" id="Animation_bdt03"]
+resource_name = "fade_in"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,21 +102,74 @@ tracks/0/path = NodePath("ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 2.5),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [0.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_jdiyx"]
+resource_name = "fade_in_botoes"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Titulo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container-botao:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r5lko"]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_bdt03"]
-resource_name = "mexendo"
-loop_mode = 2
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fi1mq"]
 _data = {
 &"RESET": SubResource("Animation_0b1un"),
-&"fade_out": SubResource("Animation_r5lko"),
-&"mexendo": SubResource("Animation_bdt03")
+&"fade_in": SubResource("Animation_bdt03"),
+&"fade_in_botoes": SubResource("Animation_jdiyx"),
+&"fade_out": SubResource("Animation_r5lko")
 }
 
 [node name="MenuPrincipal" type="Control" unique_id=1666496725]
@@ -86,6 +205,9 @@ offset_top = 28.0
 offset_right = 924.0
 offset_bottom = 540.0
 texture = ExtResource("3_bdt03")
+script = ExtResource("5_jdiyx")
+amplitude = 0.5
+velocidade = 1.0
 
 [node name="mercurio" type="TextureRect" parent="sistema_solar" unique_id=1581825990]
 layout_mode = 0
@@ -148,6 +270,7 @@ offset_bottom = 41.25
 texture = ExtResource("9_gx11c")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1659512766]
+modulate = Color(1, 1, 1, 0)
 z_index = 7
 layout_mode = 1
 anchors_preset = 15
@@ -158,6 +281,7 @@ grow_vertical = 2
 color = Color(0.12156863, 0.0627451, 0.16470589, 1)
 
 [node name="Titulo" type="Label" parent="." unique_id=2030299959]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
@@ -173,46 +297,80 @@ label_settings = SubResource("LabelSettings_06q5q")
 horizontal_alignment = 1
 
 [node name="Container-botao" type="VBoxContainer" parent="." unique_id=1269638660]
+modulate = Color(1, 1, 1, 0)
 z_index = 5
 propagate_maximum_size = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.028
-anchor_top = 0.395
-anchor_right = 0.25
-anchor_bottom = 0.63900006
-offset_left = -0.25600052
-offset_top = 0.039993286
-offset_bottom = -0.072052
+anchor_top = 0.40600002
+anchor_right = 0.27800003
+anchor_bottom = 0.70400006
+offset_left = -0.256
+offset_top = -0.5880127
+offset_right = -0.25604248
+offset_bottom = 117.30795
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
 mouse_filter = 2
+theme_override_constants/separation = 40
 
 [node name="jogar" type="Button" parent="Container-botao" unique_id=1357362875]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_25x7m")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_r5lko")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jdiyx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bdt03")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_k6orm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5cehq")
 text = "Jogar"
 script = ExtResource("4_0uah4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Container-botao/jogar" unique_id=1217351127]
+
+[node name="opcoes" type="Button" parent="Container-botao" unique_id=343210514]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r5lko")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jdiyx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bdt03")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_k6orm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5cehq")
+text = "Opções"
+script = ExtResource("4_0uah4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Container-botao/opcoes" unique_id=1386774723]
 
 [node name="sair" type="Button" parent="Container-botao" unique_id=72694271]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_25x7m")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4ptcv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g7pof")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8oso1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jckp1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gx11c")
 text = "Sair
 
 "
 script = ExtResource("4_0uah4")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Container-botao/sair" unique_id=1467721295]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1979086348]
 physics_interpolation_mode = 2
 libraries/ = SubResource("AnimationLibrary_fi1mq")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=853484674]
+stream = ExtResource("13_r5lko")
+bus = &"Musica"
+
 [connection signal="pressed" from="Container-botao/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="Container-botao/sair" to="." method="_on_sair_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

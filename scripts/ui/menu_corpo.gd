@@ -11,7 +11,6 @@ var operador: int = 1
 
 func _ready() -> void:
 	amplitude *= MULTIPLICADOR
-	print(amplitude)
 
 func _process(delta: float) -> void:
 	if not pode_mover: return
@@ -20,11 +19,11 @@ func _process(delta: float) -> void:
 
 	if tempo >= TAU:
 		tempo = TAU
-		operador = -1.0
+		operador = -1
 		
 	elif tempo <= 0.0:
 		tempo = 0.0
-		operador = 1.0
+		operador = 1
 		
 	_movimento_sinoidal()
 

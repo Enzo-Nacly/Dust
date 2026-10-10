@@ -1,26 +1,47 @@
 extends Button
 
-@export var escala_hover: float = 1.15
-@export var duracao: float = 0.02 #isso aq vai mudar o quao rapido ele faz a animacao de hover
+const SOM_HOVER: AudioStream = preload("res://assets/sonoro/sfx/hover_botao.wav")
+
+@export var variacao_pitch: float = 0.3
+@export var aumento_x_y: float = 1.2
+
+@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+var tween_selecao: Tween
+var scale_original: Vector2 = Vector2.ONE
+var scale_hover: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
-	pivot_offset = size / 2
-	resized.connect(func(): pivot_offset = size / 2)
-	mouse_entered.connect(_atualizar_estado)
-	mouse_exited.connect(_atualizar_estado)
-	focus_entered.connect(_atualizar_estado)
-	focus_exited.connect(_atualizar_estado)
-	pressed.connect(_pressionado)
+	scale_hover = Vector2(aumento_x_y, aumento_x_y)
+	self.scale = scale_original
 	
-func _atualizar_estado() -> void:
-	var ativo := is_hovered() or has_focus() 
-	var alvo := Vector2(escala_hover, escala_hover) if ativo else Vector2.ONE
-	create_tween().tween_property(self, "scale", alvo, duracao)
+	pivot_offset = size / 2.0
+	# Garante que o pivô atualize se o botão mudar de tamanho dinamicamente
+	resized.connect(func(): pivot_offset = size / 2.0)
 	
-func _pressionado() -> void:
-	create_tween().tween_property(self, "scale", Vector2(0.95, 0.95), 0.000001)
-	modulate = Color(0.71, 0.79, 0.77) # muda a cor do botao qnd apertado
-	await get_tree().create_timer(0.15).timeout
-	create_tween().tween_property(self, "scale", Vector2(escala_hover, escala_hover), 0.000001)
-	modulate = Color.WHITE
+	audio_stream_player.stream = SOM_HOVER
 	
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+
+func _on_mouse_entered() -> void:
+	if self.disabled: return
+	
+	var acrescimo_variacao_pitch: float = randf_range(-variacao_pitch, variacao_pitch)
+	
+	audio_stream_player.pitch_scale = (1 + acrescimo_variacao_pitch)
+	audio_stream_player.play()
+	_anima_scale(scale_hover)
+
+func _on_mouse_exited() -> void:
+	if self.disabled: return
+	
+	_anima_scale(scale_original)
+
+func _anima_scale(target_scale: Vector2) -> void:
+	if tween_selecao and tween_selecao.is_running():
+		tween_selecao.kill()
+		
+	# Cria a animação suave de transição
+	tween_selecao = create_tween().set_ease(tween_selecao.EASE_OUT).set_trans(tween_selecao.TRANS_QUAD)
+	tween_selecao.tween_property(self, "scale", target_scale, 0.15)

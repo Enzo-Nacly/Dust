@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://duptog1g3ii20" path="res://assets/sprites/entidades/quinoyds/falando/padrao.png" id="11_qabof"]
 [ext_resource type="Script" uid="uid://dfje3vb4ru0hm" path="res://scripts/resources/resource_texto_dialogo.gd" id="12_e1ykf"]
 [ext_resource type="Texture2D" uid="uid://cnxm6jpgvsg8s" path="res://assets/sprites/entidades/quinoyds/falando/tontinho.png" id="13_acw65"]
-[ext_resource type="AudioStream" uid="uid://dcpwdu5khsn5v" path="res://assets/audio/sfx/talk.wav" id="13_qabof"]
+[ext_resource type="AudioStream" uid="uid://dcpwdu5khsn5v" path="res://assets/sonoro/sfx/talk.wav" id="13_qabof"]
 
 [sub_resource type="Animation" id="Animation_pitpt"]
 length = 0.001
