@@ -28,6 +28,11 @@ buses/default_bus_layout="res://assets/sonoro/default_bus_layout.tres"
 InteractionManager="*uid://b5v60bh8mc13q"
 Game_Manager="*uid://b11wc06ldfudx"
 
+[display]
+
+window/subwindows/embed_subwindows=false
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="Dust"

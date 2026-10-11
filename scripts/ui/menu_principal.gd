@@ -2,14 +2,18 @@ extends Control
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var panel_opcoes: Panel = $panel_opcoes
 
 var botoes: Array[Button] = []
 
 func _ready() -> void:
 	for botao in $"Container-botao".get_children():
 		if botao is not Button: continue
-		botao.disabled = true 
 		botoes.append(botao)
+	
+	_desabilitar_botoes(true)
+	
+	panel_opcoes.visible = false
 	
 	audio_stream_player.play()
 	animation_player.play("fade_out")
@@ -31,10 +35,22 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		animation_player.play("fade_in_botoes")
 	
 	elif anim_name == "fade_in_botoes":
-		for botao in botoes:
-			botao.disabled = false
+		$Titulo.clicavel = true
+		_desabilitar_botoes(false)
 	
-
 
 func _on_audio_stream_player_2d_finished() -> void:
 	audio_stream_player.play()
+
+func _desabilitar_botoes(valor: bool) -> void:
+	for botao in botoes:
+		botao.disabled = valor 
+
+func _on_opcoes_pressed() -> void:
+	_desabilitar_botoes(true)
+	panel_opcoes.visible = true
+
+func _on_voltar_pressed() -> void:
+	panel_opcoes.visible = false
+	_desabilitar_botoes(false)
+	

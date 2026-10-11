@@ -12,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://bam2wh7q6c60m" path="res://assets/sprites/menu/colosso/planeta_verde.png" id="7_8oso1"]
 [ext_resource type="Texture2D" uid="uid://butya1cw7t5i3" path="res://assets/sprites/menu/siameses/planeta_azul.png" id="8_jckp1"]
 [ext_resource type="Texture2D" uid="uid://8fbefdkatvd8" path="res://assets/sprites/menu/siameses/asteroides.png" id="9_gx11c"]
+[ext_resource type="Script" uid="uid://bxuumuv7tougr" path="res://scripts/ui/titulo.gd" id="12_bdt03"]
 [ext_resource type="AudioStream" uid="uid://cmbgfyrk3eqlh" path="res://assets/sonoro/musica/musica_menu_principal.wav" id="13_r5lko"]
+[ext_resource type="Script" uid="uid://bf4upctec2twb" path="res://scripts/ui/janela_cheia.gd" id="14_5cehq"]
+[ext_resource type="Script" uid="uid://b2gadqs1nhtno" path="res://scripts/ui/h_slider.gd" id="14_k6orm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_06q5q"]
 font = ExtResource("2_25x7m")
@@ -40,6 +43,30 @@ shadow_offset = Vector2(0, 0)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jckp1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gx11c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3c2fn"]
+bg_color = Color(0.12156863, 0.0627451, 0.16470589, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_fdm2o"]
+font = ExtResource("2_25x7m")
+font_size = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8oso1"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7pof"]
+bg_color = Color(0.22783303, 0.14130998, 0.9999009, 1)
 
 [sub_resource type="Animation" id="Animation_0b1un"]
 length = 0.001
@@ -278,6 +305,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.12156863, 0.0627451, 0.16470589, 1)
 
 [node name="Titulo" type="Label" parent="." unique_id=2030299959]
@@ -292,9 +320,13 @@ anchor_bottom = 0.358
 offset_left = -0.25600052
 offset_top = -0.104003906
 offset_bottom = 0.015991211
+mouse_filter = 0
 text = "DUST"
 label_settings = SubResource("LabelSettings_06q5q")
 horizontal_alignment = 1
+script = ExtResource("12_bdt03")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Titulo" unique_id=1098855021]
 
 [node name="Container-botao" type="VBoxContainer" parent="." unique_id=1269638660]
 modulate = Color(1, 1, 1, 0)
@@ -329,6 +361,7 @@ text = "Jogar"
 script = ExtResource("4_0uah4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Container-botao/jogar" unique_id=1217351127]
+bus = &"SFX"
 
 [node name="opcoes" type="Button" parent="Container-botao" unique_id=343210514]
 layout_mode = 2
@@ -344,6 +377,7 @@ text = "Opções"
 script = ExtResource("4_0uah4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Container-botao/opcoes" unique_id=1386774723]
+bus = &"SFX"
 
 [node name="sair" type="Button" parent="Container-botao" unique_id=72694271]
 layout_mode = 2
@@ -362,6 +396,126 @@ script = ExtResource("4_0uah4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Container-botao/sair" unique_id=1467721295]
 
+[node name="panel_opcoes" type="Panel" parent="." unique_id=1599886752]
+visible = false
+custom_minimum_size = Vector2(640, 512)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27800003
+anchor_top = 0.105000004
+anchor_right = 0.72200006
+anchor_bottom = 0.89500004
+offset_left = 235.74396
+offset_top = 235.95999
+offset_right = -235.74408
+offset_bottom = -235.96002
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3c2fn")
+
+[node name="MarginContainer" type="MarginContainer" parent="panel_opcoes" unique_id=987667101]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="panel_opcoes/MarginContainer" unique_id=1313666143]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="label_opcoes" type="Label" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=1303275313]
+layout_mode = 2
+text = "Opções"
+label_settings = SubResource("LabelSettings_fdm2o")
+horizontal_alignment = 1
+
+[node name="janela_cheia" type="CheckButton" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=569001638]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 32
+text = "Janela cheia"
+alignment = 1
+script = ExtResource("14_5cehq")
+
+[node name="geral_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=2084645320]
+custom_minimum_size = Vector2(320, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_8oso1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g7pof")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g7pof")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("14_k6orm")
+nome_audio_bus = "Master"
+
+[node name="musica_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=686186926]
+custom_minimum_size = Vector2(320, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_8oso1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g7pof")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g7pof")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("14_k6orm")
+nome_audio_bus = "Musica"
+
+[node name="dialogo_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=100435454]
+custom_minimum_size = Vector2(320, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_8oso1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g7pof")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g7pof")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("14_k6orm")
+nome_audio_bus = "Dialogo"
+
+[node name="sfx_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=324009556]
+custom_minimum_size = Vector2(320, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_8oso1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g7pof")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g7pof")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("14_k6orm")
+nome_audio_bus = "SFX"
+
+[node name="voltar" type="Button" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=748706232]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r5lko")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jdiyx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bdt03")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_k6orm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5cehq")
+text = "Voltar"
+script = ExtResource("4_0uah4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="panel_opcoes/MarginContainer/VBoxContainer/voltar" unique_id=2018807821]
+bus = &"SFX"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1979086348]
 physics_interpolation_mode = 2
 libraries/ = SubResource("AnimationLibrary_fi1mq")
@@ -370,7 +524,15 @@ libraries/ = SubResource("AnimationLibrary_fi1mq")
 stream = ExtResource("13_r5lko")
 bus = &"Musica"
 
+[connection signal="gui_input" from="Titulo" to="Titulo" method="_on_gui_input"]
 [connection signal="pressed" from="Container-botao/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Container-botao/opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="Container-botao/sair" to="." method="_on_sair_pressed"]
+[connection signal="toggled" from="panel_opcoes/MarginContainer/VBoxContainer/janela_cheia" to="panel_opcoes/MarginContainer/VBoxContainer/janela_cheia" method="_on_toggled"]
+[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/geral_barra" to="panel_opcoes/MarginContainer/VBoxContainer/geral_barra" method="_on_value_changed"]
+[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/musica_barra" to="panel_opcoes/MarginContainer/VBoxContainer/musica_barra" method="_on_value_changed"]
+[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/dialogo_barra" to="panel_opcoes/MarginContainer/VBoxContainer/dialogo_barra" method="_on_value_changed"]
+[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/sfx_barra" to="panel_opcoes/MarginContainer/VBoxContainer/sfx_barra" method="_on_value_changed"]
+[connection signal="pressed" from="panel_opcoes/MarginContainer/VBoxContainer/voltar" to="." method="_on_voltar_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

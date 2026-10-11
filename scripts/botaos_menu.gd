@@ -1,6 +1,7 @@
 extends Button
 
 const SOM_HOVER: AudioStream = preload("res://assets/sonoro/sfx/hover_botao.wav")
+const DURACAO_ANIMACAO: float = 0.15
 
 @export var variacao_pitch: float = 0.3
 @export var aumento_x_y: float = 1.2
@@ -27,10 +28,7 @@ func _ready() -> void:
 func _on_mouse_entered() -> void:
 	if self.disabled: return
 	
-	var acrescimo_variacao_pitch: float = randf_range(-variacao_pitch, variacao_pitch)
-	
-	audio_stream_player.pitch_scale = (1 + acrescimo_variacao_pitch)
-	audio_stream_player.play()
+	_tocar_audio()
 	_anima_scale(scale_hover)
 
 func _on_mouse_exited() -> void:
@@ -38,10 +36,16 @@ func _on_mouse_exited() -> void:
 	
 	_anima_scale(scale_original)
 
+func _tocar_audio(inicio: float = 0.0) -> void:
+	var acrescimo_variacao_pitch: float = randf_range(-variacao_pitch, variacao_pitch)
+	
+	audio_stream_player.pitch_scale = (1 + acrescimo_variacao_pitch)
+	audio_stream_player.play(inicio)
+
 func _anima_scale(target_scale: Vector2) -> void:
 	if tween_selecao and tween_selecao.is_running():
 		tween_selecao.kill()
 		
 	# Cria a animação suave de transição
 	tween_selecao = create_tween().set_ease(tween_selecao.EASE_OUT).set_trans(tween_selecao.TRANS_QUAD)
-	tween_selecao.tween_property(self, "scale", target_scale, 0.15)
+	tween_selecao.tween_property(self, "scale", target_scale, DURACAO_ANIMACAO)
