@@ -64,9 +64,17 @@ font_size = 48
 content_margin_top = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7pof"]
-bg_color = Color(0.22783303, 0.14130998, 0.9999009, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cehq"]
+bg_color = Color(0.9181669, 0.78592604, 3.85046e-07, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [sub_resource type="Animation" id="Animation_0b1un"]
 length = 0.001
@@ -297,6 +305,7 @@ offset_bottom = 41.25
 texture = ExtResource("9_gx11c")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1659512766]
+visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 7
 layout_mode = 1
@@ -431,7 +440,6 @@ theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="panel_opcoes/MarginContainer" unique_id=1313666143]
 layout_mode = 2
-theme_override_constants/separation = 8
 
 [node name="label_opcoes" type="Label" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=1303275313]
 layout_mode = 2
@@ -448,52 +456,113 @@ text = "Janela cheia"
 alignment = 1
 script = ExtResource("14_5cehq")
 
-[node name="geral_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=2084645320]
-custom_minimum_size = Vector2(320, 64)
+[node name="volume_geral" type="MarginContainer" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=783663369]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_geral" unique_id=742899056]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="volume_geral" type="Label" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_geral/HBoxContainer" unique_id=1664827403]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 32
+text = "Volume geral"
+
+[node name="geral_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_geral/HBoxContainer" unique_id=2084645320]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/slider = SubResource("StyleBoxFlat_8oso1")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g7pof")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g7pof")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5cehq")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5cehq")
 max_value = 1.0
 step = 0.05
 value = 1.0
 script = ExtResource("14_k6orm")
 nome_audio_bus = "Master"
 
-[node name="musica_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=686186926]
-custom_minimum_size = Vector2(320, 64)
+[node name="volume_musica" type="MarginContainer" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=398262000]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_musica" unique_id=1968630728]
+layout_mode = 2
+theme_override_constants/separation = 57
+
+[node name="volume_musica" type="Label" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_musica/HBoxContainer" unique_id=1555507820]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 32
+text = "Volume da musica"
+
+[node name="musica_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_musica/HBoxContainer" unique_id=686186926]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/slider = SubResource("StyleBoxFlat_8oso1")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g7pof")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g7pof")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5cehq")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5cehq")
 max_value = 1.0
 step = 0.05
 value = 1.0
 script = ExtResource("14_k6orm")
 nome_audio_bus = "Musica"
 
-[node name="dialogo_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=100435454]
-custom_minimum_size = Vector2(320, 64)
+[node name="volume_dialogo" type="MarginContainer" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=249820322]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_dialogo" unique_id=1116604612]
+layout_mode = 2
+theme_override_constants/separation = 59
+
+[node name="label_volume_dialogo" type="Label" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_dialogo/HBoxContainer" unique_id=2086645642]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 32
+text = "Volume do dialogo"
+
+[node name="dialogo_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_dialogo/HBoxContainer" unique_id=1684516692]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/slider = SubResource("StyleBoxFlat_8oso1")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g7pof")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g7pof")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5cehq")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5cehq")
 max_value = 1.0
 step = 0.05
 value = 1.0
 script = ExtResource("14_k6orm")
 nome_audio_bus = "Dialogo"
 
-[node name="sfx_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=324009556]
-custom_minimum_size = Vector2(320, 64)
+[node name="volume_sfx" type="MarginContainer" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=918052232]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_sfx" unique_id=107716703]
+layout_mode = 2
+theme_override_constants/separation = 112
+
+[node name="label_volume_sfx" type="Label" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_sfx/HBoxContainer" unique_id=2054687802]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 32
+text = "Volume do SFX"
+
+[node name="sfx_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_sfx/HBoxContainer" unique_id=324009556]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_styles/slider = SubResource("StyleBoxFlat_8oso1")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_g7pof")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_g7pof")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5cehq")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5cehq")
 max_value = 1.0
 step = 0.05
 value = 1.0
@@ -529,10 +598,10 @@ bus = &"Musica"
 [connection signal="pressed" from="Container-botao/opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="Container-botao/sair" to="." method="_on_sair_pressed"]
 [connection signal="toggled" from="panel_opcoes/MarginContainer/VBoxContainer/janela_cheia" to="panel_opcoes/MarginContainer/VBoxContainer/janela_cheia" method="_on_toggled"]
-[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/geral_barra" to="panel_opcoes/MarginContainer/VBoxContainer/geral_barra" method="_on_value_changed"]
-[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/musica_barra" to="panel_opcoes/MarginContainer/VBoxContainer/musica_barra" method="_on_value_changed"]
-[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/dialogo_barra" to="panel_opcoes/MarginContainer/VBoxContainer/dialogo_barra" method="_on_value_changed"]
-[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/sfx_barra" to="panel_opcoes/MarginContainer/VBoxContainer/sfx_barra" method="_on_value_changed"]
+[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/volume_geral/HBoxContainer/geral_barra" to="panel_opcoes/MarginContainer/VBoxContainer/volume_geral/HBoxContainer/geral_barra" method="_on_value_changed"]
+[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/volume_musica/HBoxContainer/musica_barra" to="panel_opcoes/MarginContainer/VBoxContainer/volume_musica/HBoxContainer/musica_barra" method="_on_value_changed"]
+[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/volume_dialogo/HBoxContainer/dialogo_barra" to="panel_opcoes/MarginContainer/VBoxContainer/volume_dialogo/HBoxContainer/dialogo_barra" method="_on_value_changed"]
+[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/volume_sfx/HBoxContainer/sfx_barra" to="panel_opcoes/MarginContainer/VBoxContainer/volume_sfx/HBoxContainer/sfx_barra" method="_on_value_changed"]
 [connection signal="pressed" from="panel_opcoes/MarginContainer/VBoxContainer/voltar" to="." method="_on_voltar_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
