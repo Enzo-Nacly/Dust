@@ -263,7 +263,7 @@ offset_right = 976.0
 offset_bottom = 560.0
 texture = ExtResource("5_5cehq")
 script = ExtResource("5_jdiyx")
-amplitude = 4.0
+amplitude = 3.0
 velocidade = 3.0
 
 [node name="atmosfera" type="TextureRect" parent="sistema_solar/poroso" unique_id=108423619]
@@ -283,7 +283,7 @@ offset_bottom = 328.0
 texture = ExtResource("7_8oso1")
 script = ExtResource("5_jdiyx")
 amplitude = 1.0
-velocidade = 1.0
+velocidade = 1.5
 
 [node name="siameses" type="TextureRect" parent="sistema_solar" unique_id=580742864]
 layout_mode = 0
