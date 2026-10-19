@@ -6,7 +6,7 @@ extends Node
 
 const MULTIPLICADOR_VELOCIDADE: float = 100.0
 const VELOCIDADE_ANGULAR: float = 1.0 / 30.0
-const ATRITO: float = 500.0
+const ATRITO: float = 750.0
 const ACELERACAO: float = 500.0
 
 func mover(delta: float, direcao: int) -> void:
