@@ -1,8 +1,6 @@
 class_name ComponenteAnimacao
 extends Node
 
-#@export var animation_player: AnimationPlayer
-#@export var sprite: Sprite2D
 @export var sprite: AnimatedSprite2D
 
 @onready var entidade: CharacterBody2D = self.owner
