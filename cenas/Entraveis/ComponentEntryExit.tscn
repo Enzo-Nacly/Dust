@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dglppci8t1o2l"]
+
+[ext_resource type="Script" uid="uid://de4mwd7wryhdq" path="res://scripts/componentes/component_entry_exit.gd" id="1_afidu"]
+
+[node name="ComponentEntryExit" type="Area2D" unique_id=425402362]
+script = ExtResource("1_afidu")

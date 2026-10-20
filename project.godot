@@ -37,6 +37,7 @@ project/assembly_name="Dust"
 folder_colors={
 "res://assets/Maquina de Estados/": "red",
 "res://assets/sprites/Explorer/": "teal",
+"res://cenas/Entraveis/": "yellow",
 "res://cenas/planetas/": "teal"
 }
 
