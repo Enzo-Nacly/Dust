@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://cl00mqd61sonf" path="res://cenas/objetos/Planeta1/area_2d.gd" id="11_b3xe4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k41lo"]
-size = Vector2(73, 89)
+size = Vector2(103, 89)
 
 [node name="Caverna" type="Node2D" unique_id=1780107482]
 
@@ -39,10 +39,15 @@ texture = ExtResource("6_km038")
 texture = ExtResource("7_ha7ln")
 
 [node name="Tableta" parent="." unique_id=427427135 instance=ExtResource("8_e1jw5")]
-position = Vector2(51, 102)
+position = Vector2(50, 102)
 
-[node name="CavernaForaDentro" type="Sprite2D" parent="." unique_id=2082020978]
+[node name="Parede Caverna Por Fora" type="StaticBody2D" parent="." unique_id=1619772441]
+
+[node name="CavernaForaDentro" type="Sprite2D" parent="Parede Caverna Por Fora" unique_id=2082020978]
 texture = ExtResource("8_7eiki")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Parede Caverna Por Fora" unique_id=1490199125]
+polygon = PackedVector2Array(104, 114, 161, 114, 139, 49, 136, 33, 121, 11, 104, -52, 89, -69, 70, -78, 63, -90, 50, -98, 36, -129, 34, -134, -2, -165, -35, -156, -43, -133, -83, -95, -84, -89, -92, -79, -103, -62, -113, -49, -115, -13, -134, 2, -152, 58, -173, 73, -177, 93, -189, 113, -109, 116, -116, 86, -122, 77, -121, 58, -114, 54, -107, 35, -107, 10, -91, -14, -85, -34, -77, -61, -74, -70, -63, -83, 32, -86, 65, -53, 74, -41, 87, -31, 91, -5, 93, 1, 99, 6, 113, 41, 120, 63, 118, 73, 114, 83, 112, 90, 110, 102)
 
 [node name="PedraNoCaminho" type="StaticBody2D" parent="." unique_id=1483271884]
 
@@ -53,11 +58,17 @@ polygon = PackedVector2Array(-26, 88, -23, 94, 33, 95, 34, 83, 20, 60, 15, 43, 1
 texture = ExtResource("9_ocy8p")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=111876934]
+visible = false
 script = ExtResource("11_b3xe4")
 
 [node name="CavernaForaFora" type="Sprite2D" parent="Area2D" unique_id=120324807]
 texture = ExtResource("10_4s1ku")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=685662959]
-position = Vector2(-28, 51)
+position = Vector2(-25.5, 51)
 shape = SubResource("RectangleShape2D_k41lo")
+
+[node name="Camera2D" type="Camera2D" parent="Area2D" unique_id=1908347959]
+position = Vector2(-4, 38)
+ignore_rotation = false
+zoom = Vector2(4, 4)

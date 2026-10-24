@@ -1,9 +1,12 @@
 extends Area2D
+class_name Entrada
 
+@onready var camera: Camera2D = $Camera2D 
 var dentro = false
-
+var tween: Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	camera.enabled = false
 	body_entered.connect(_on_player_entrou)
 
 
@@ -14,13 +17,21 @@ func _process(delta: float) -> void:
 	
 func _on_player_entrou(body: Node2D) -> void:
 	if body.is_in_group("player") or body.name == "Player":
-		if !dentro:
-			print("player Entrou")
-			dentro = true
-			for filho in get_children():
-				filho.visible = false
+		
+		if tween: tween.kill()
+		tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	
+		dentro = !dentro
+		
+		if dentro:
+			camera.enabled = true
+			camera.make_current()
+
+			print("Player Entrou")
+			tween.tween_property(self, "modulate:a", 0.0, 0.5)
 		else:
-			print("player saiu")
-			dentro = false
-			for filho in get_children():
-				filho.visible = true
+			print("Player Saiu")
+			camera.enabled = false
+			camera.make_current()
+			tween.tween_property(self, "modulate:a", 1.0, 0.5)
+					
