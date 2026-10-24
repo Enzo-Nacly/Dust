@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cnxm6jpgvsg8s" path="res://assets/sprites/entidades/quinoyds/falando/tontinho.png" id="13_acw65"]
 [ext_resource type="AudioStream" uid="uid://dcpwdu5khsn5v" path="res://assets/sonoro/sfx/talk.wav" id="13_qabof"]
 [ext_resource type="PackedScene" uid="uid://j23ojn6bq4ch" path="res://cenas/objetos/Planeta1/Cidade Quinoyd/CasaQuinoyd_1.tscn" id="15_qabof"]
+[ext_resource type="PackedScene" uid="uid://dhqkejaqlrrec" path="res://cenas/objetos/Planeta1/Caverna.tscn" id="16_acw65"]
 
 [sub_resource type="Animation" id="Animation_pitpt"]
 length = 0.001
@@ -152,11 +153,14 @@ rotation = -1.0681415
 [node name="CavernaPuzzleCompleto" parent="." unique_id=1511786806 instance=ExtResource("1_munf6")]
 position = Vector2(0, -18)
 
+[node name="Caverna" parent="." unique_id=1780107482 instance=ExtResource("16_acw65")]
+position = Vector2(-18, -118)
+
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
 position = Vector2(-485, 186)
 
 [node name="tableta" parent="." unique_id=427427135 instance=ExtResource("4_6hhvf")]
-position = Vector2(-224.00002, 32)
+position = Vector2(-256, 32)
 rotation = -0.40142572
 
 [node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("3_pitpt")]
