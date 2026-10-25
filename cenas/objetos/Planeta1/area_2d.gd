@@ -10,11 +10,6 @@ func _ready() -> void:
 	body_entered.connect(_on_player_entrou)
 	alternar_colisoes_vizinhas(true)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 func _on_player_entrou(body: Node2D) -> void:
 	if body.is_in_group("player") or body.name == "Player":
 		

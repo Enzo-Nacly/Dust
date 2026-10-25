@@ -25,16 +25,22 @@ func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 
+func _on_focus_entered() -> void:
+	pass # Replace with function body.
+
 func _on_mouse_entered() -> void:
 	if self.disabled: return
 	
-	_tocar_audio()
-	_anima_scale(scale_hover)
+	_hover_botao()
 
 func _on_mouse_exited() -> void:
 	if self.disabled: return
 	
 	_anima_scale(scale_original)
+
+func _hover_botao() -> void:
+	_tocar_audio()
+	_anima_scale(scale_hover)
 
 func _tocar_audio(inicio: float = 0.0) -> void:
 	var acrescimo_variacao_pitch: float = randf_range(-variacao_pitch, variacao_pitch)

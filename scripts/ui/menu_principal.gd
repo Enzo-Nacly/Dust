@@ -40,7 +40,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	elif anim_name == "fade_in_botoes":
 		$Titulo.clicavel = true
 		_desabilitar_botoes(false)
-	
 
 func _on_audio_stream_player_2d_finished() -> void:
 	audio_stream_player.play()

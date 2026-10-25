@@ -595,6 +595,7 @@ bus = &"Musica"
 
 [connection signal="gui_input" from="Titulo" to="Titulo" method="_on_gui_input"]
 [connection signal="pressed" from="Container-botao/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="focus_entered" from="Container-botao/opcoes" to="Container-botao/opcoes" method="_on_focus_entered"]
 [connection signal="pressed" from="Container-botao/opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="Container-botao/sair" to="." method="_on_sair_pressed"]
 [connection signal="toggled" from="panel_opcoes/MarginContainer/VBoxContainer/janela_cheia" to="panel_opcoes/MarginContainer/VBoxContainer/janela_cheia" method="_on_toggled"]
