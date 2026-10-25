@@ -8,7 +8,7 @@ var tween: Tween
 func _ready() -> void:
 	camera.enabled = false
 	body_entered.connect(_on_player_entrou)
-
+	alternar_colisoes_vizinhas(true)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,9 +29,32 @@ func _on_player_entrou(body: Node2D) -> void:
 
 			print("Player Entrou")
 			tween.tween_property(self, "modulate:a", 0.0, 0.5)
+			
+			alternar_colisoes_vizinhas(false)
 		else:
 			print("Player Saiu")
 			camera.enabled = false
 			camera.make_current()
 			tween.tween_property(self, "modulate:a", 1.0, 0.5)
+			
+			alternar_colisoes_vizinhas(true)
+			
+			
+func alternar_colisoes_vizinhas(deve_desativar: bool) -> void:
+	var nos_para_checar: Array = []
+	
+	for irmao in get_parent().get_children():
+		if irmao != self:
+			nos_para_checar.append(irmao)
+	
+	while nos_para_checar.size() > 0:
+		var no_atual = nos_para_checar.pop_front()
+		
+		if no_atual is CollisionShape2D or no_atual is CollisionPolygon2D:
+			no_atual.set_deferred("disabled", deve_desativar)
+		
+		for filho in no_atual.get_children():
+			nos_para_checar.append(filho)
+
+
 					

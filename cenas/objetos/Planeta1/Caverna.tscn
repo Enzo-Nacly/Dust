@@ -49,16 +49,15 @@ texture = ExtResource("8_7eiki")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Parede Caverna Por Fora" unique_id=1490199125]
 polygon = PackedVector2Array(104, 114, 161, 114, 139, 49, 136, 33, 121, 11, 104, -52, 89, -69, 70, -78, 63, -90, 50, -98, 36, -129, 34, -134, -2, -165, -35, -156, -43, -133, -83, -95, -84, -89, -92, -79, -103, -62, -113, -49, -115, -13, -134, 2, -152, 58, -173, 73, -177, 93, -189, 113, -109, 116, -116, 86, -122, 77, -121, 58, -114, 54, -107, 35, -107, 10, -91, -14, -85, -34, -77, -61, -74, -70, -63, -83, 32, -86, 65, -53, 74, -41, 87, -31, 91, -5, 93, 1, 99, 6, 113, 41, 120, 63, 118, 73, 114, 83, 112, 90, 110, 102)
 
-[node name="PedraNoCaminho" type="StaticBody2D" parent="." unique_id=1483271884]
+[node name="PedraNoCaminho" type="StaticBody2D" parent="Parede Caverna Por Fora" unique_id=1483271884]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PedraNoCaminho" unique_id=1845427985]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Parede Caverna Por Fora/PedraNoCaminho" unique_id=1845427985]
 polygon = PackedVector2Array(-26, 88, -23, 94, 33, 95, 34, 83, 20, 60, 15, 43, 10, 32, 4, 32, 1, 41, -5, 41, -8, 58, -13, 70, -20, 75, -21, 84)
 
-[node name="Pedra no Caminho" type="Sprite2D" parent="PedraNoCaminho" unique_id=579329219]
+[node name="Pedra no Caminho" type="Sprite2D" parent="Parede Caverna Por Fora/PedraNoCaminho" unique_id=579329219]
 texture = ExtResource("9_ocy8p")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=111876934]
-visible = false
 script = ExtResource("11_b3xe4")
 
 [node name="CavernaForaFora" type="Sprite2D" parent="Area2D" unique_id=120324807]
