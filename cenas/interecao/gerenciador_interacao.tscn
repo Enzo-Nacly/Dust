@@ -3,10 +3,16 @@
 [ext_resource type="Script" uid="uid://cqd3exaj1nrqy" path="res://scripts/gerenciadores/gerenciador_interacao.gd" id="1_0v2vh"]
 [ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://cenas/componentes/gravity_rotation_component_objects.tscn" id="2_v7jy8"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_bm62i"]
+
 [node name="InteractionManager" type="Node2D" unique_id=954890886]
 script = ExtResource("1_0v2vh")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=167492383]
+
 [node name="Label" type="Label" parent="." unique_id=1870105083]
+z_index = 4096
+z_as_relative = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -15,6 +21,7 @@ offset_right = 65.0
 offset_bottom = 26.0
 grow_horizontal = 2
 text = "[E] para interagir"
+label_settings = SubResource("LabelSettings_bm62i")
 horizontal_alignment = 1
 vertical_alignment = 1
 

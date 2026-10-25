@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8cv0h2duu03l"
-path="res://.godot/imported/quinoyd.png-ef69b0b29b7f7142215f33b2c31e93a1.ctex"
+uid="uid://dolhsm6nyx1va"
+path="res://.godot/imported/CavernaForaFora.png-f988372366eb77135e30ac0570afbb26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/quinoyd.png"
-dest_files=["res://.godot/imported/quinoyd.png-ef69b0b29b7f7142215f33b2c31e93a1.ctex"]
+source_file="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna fora/CavernaForaFora.png"
+dest_files=["res://.godot/imported/CavernaForaFora.png-f988372366eb77135e30ac0570afbb26.ctex"]
 
 [params]
 

@@ -1,0 +1,101 @@
+ assets/{audio => sonoro}/default_bus_layout.tres   |   0
+ assets/sonoro/musica/musica_menu_principal.wav     | Bin [31m0[m -> [32m9408244[m bytes
+ .../sonoro/musica/musica_menu_principal.wav.import |  24 [32m+[m
+ assets/sonoro/sfx/hover_botao.wav                  | Bin [31m0[m -> [32m88244[m bytes
+ assets/sonoro/sfx/hover_botao.wav.import           |  24 [32m+[m
+ assets/{audio => sonoro}/sfx/talk.wav              | Bin
+ assets/{audio => sonoro}/sfx/talk.wav.import       |   6 [32m+[m[31m-[m
+ .../Caverna Dentro/Caverna Dentro fora.png"        | Bin [31m0[m -> [32m19090[m bytes
+ .../Caverna Dentro/Caverna Dentro fora.png.import" |  40 [32m++[m
+ .../Caverna Dentro/Escada.png"                     | Bin [31m0[m -> [32m1046[m bytes
+ .../Caverna Dentro/Escada.png.import"              |  40 [32m++[m
+ .../Caverna Dentro/FundoFundo.png"                 | Bin [31m0[m -> [32m17681[m bytes
+ .../Caverna Dentro/FundoFundo.png.import"          |  40 [32m++[m
+ .../Caverna Dentro/Varanda.png"                    | Bin [31m0[m -> [32m6367[m bytes
+ .../Caverna Dentro/Varanda.png.import"             |  40 [32m++[m
+ .../Caverna Dentro/caverna dentro dentro.png"      | Bin [31m0[m -> [32m14687[m bytes
+ .../caverna dentro dentro.png.import"              |  40 [32m++[m
+ .../Caverna fora/CavernaForaDentro.png"            | Bin [31m0[m -> [32m10393[m bytes
+ .../Caverna fora/CavernaForaDentro.png.import"     |  40 [32m++[m
+ .../Caverna fora/CavernaForaFora.png"              | Bin [31m0[m -> [32m14546[m bytes
+ .../Caverna fora/CavernaForaFora.png.import"       |  40 [32m++[m
+ .../Ver\303\247\303\243o 3/Caverna fora/Fundo.png" | Bin [31m0[m -> [32m11557[m bytes
+ .../Caverna fora/Fundo.png.import"                 |  40 [32m++[m
+ .../Caverna fora/PedraNoCaminho.png"               | Bin [31m0[m -> [32m5065[m bytes
+ .../Caverna fora/PedraNoCaminho.png.import"        |  40 [32m++[m
+ .../Ver\303\247\303\243o 3/Caverna fora/Porta.png" | Bin [31m0[m -> [32m4671[m bytes
+ .../Caverna fora/Porta.png.import"                 |  40 [32m++[m
+ .../CavernaVercao3.0.aseprite"                     | Bin [31m0[m -> [32m66677[m bytes
+ .../Cidade Quinoyd/Casas/CasaQuinoyd2Fora.png      | Bin [31m0[m -> [32m7232[m bytes
+ .../Casas/CasaQuinoyd2Fora.png.import              |  40 [32m++[m
+ assets/sprites/UI/eparainetragir-Sheet.png         | Bin [31m0[m -> [32m316[m bytes
+ assets/sprites/UI/eparainetragir-Sheet.png.import  |  40 [32m++[m
+ .../animacoes/explorer_berna 31.08-Sheet.png       | Bin [31m0[m -> [32m3990[m bytes
+ .../explorer_berna 31.08-Sheet.png.import          |  40 [32m++[m
+ assets/sprites/entidades/quinoyds/quinoyd.png      | Bin [31m0[m -> [32m918[m bytes
+ .../{ => entidades/quinoyds}/quinoyd.png.import    |   6 [32m+[m[31m-[m
+ .../sprites/entidades/quinoyds/quinoyd_concept.png | Bin [31m0[m -> [32m324[m bytes
+ .../entidades/quinoyds/quinoyd_concept.png.import  |  40 [32m++[m
+ assets/sprites/menu/colosso/planeta_verde.png      | Bin [31m0[m -> [32m1172[m bytes
+ .../sprites/menu/colosso/planeta_verde.png.import  |  40 [32m++[m
+ assets/sprites/menu/espaco.png                     | Bin [31m0[m -> [32m13266[m bytes
+ assets/sprites/menu/espaco.png.import              |  40 [32m++[m
+ assets/sprites/menu/menu_principal.aseprite        | Bin [31m0[m -> [32m25675[m bytes
+ assets/sprites/menu/menu_principal.png             | Bin [31m0[m -> [32m27152[m bytes
+ assets/sprites/menu/menu_principal.png.import      |  40 [32m++[m
+ assets/sprites/menu/mercurio/planeta_cinza.png     | Bin [31m0[m -> [32m357[m bytes
+ .../sprites/menu/mercurio/planeta_cinza.png.import |  40 [32m++[m
+ assets/sprites/menu/poroso/atmosfera.png           | Bin [31m0[m -> [32m465[m bytes
+ assets/sprites/menu/poroso/atmosfera.png.import    |  40 [32m++[m
+ assets/sprites/menu/poroso/planeta_roxo.png        | Bin [31m0[m -> [32m736[m bytes
+ assets/sprites/menu/poroso/planeta_roxo.png.import |  40 [32m++[m
+ assets/sprites/menu/segurador_h_slider.png         | Bin [31m0[m -> [32m221[m bytes
+ assets/sprites/menu/segurador_h_slider.png.import  |  40 [32m++[m
+ assets/sprites/menu/siameses/asteroides.png        | Bin [31m0[m -> [32m577[m bytes
+ assets/sprites/menu/siameses/asteroides.png.import |  40 [32m++[m
+ assets/sprites/menu/siameses/planeta_azul.png      | Bin [31m0[m -> [32m1149[m bytes
+ .../sprites/menu/siameses/planeta_azul.png.import  |  40 [32m++[m
+ assets/sprites/menu/sol_icone.png                  | Bin [31m0[m -> [32m9741[m bytes
+ assets/sprites/menu/sol_icone.png.import           |  40 [32m++[m
+ assets/sprites/quinoyd.png                         | Bin [31m724[m -> [32m0[m bytes
+ cenas/entidades/player.tscn                        |  84 [32m++[m[31m-[m
+ cenas/interaction/Entrada.tscn                     |   7 [32m+[m
+ cenas/interaction/InteractionManager.tscn          |   7 [32m+[m
+ cenas/interaction/porta.tscn                       |   7 [32m+[m
+ cenas/jogo/main.tscn                               |  25 [32m+[m[31m-[m
+ cenas/objetos/Planeta1/Caverna.tscn                | 100 [32m++++[m
+ cenas/objetos/Planeta1/Caverna/CavernaPuzzle.tscn  |  10 [31m-[m
+ .../Planeta1/Caverna/CavernaPuzzleCompleto.tscn    |  39 [31m--[m
+ .../Planeta1/Cidade Quinoyd/CasaQuinoyd_1.tscn     |  11 [32m+[m
+ cenas/objetos/Planeta1/Entrada.gd                  |  76 [32m+++[m
+ cenas/objetos/Planeta1/Entrada.gd.uid              |   1 [32m+[m
+ cenas/objetos/Planeta1/porta.gd                    |  36 [32m++[m
+ cenas/objetos/Planeta1/porta.gd.uid                |   1 [32m+[m
+ cenas/ui/menu/menu-principal.tscn                  | 576 [32m++++++++++++++++++[m[31m---[m
+ cenas/ui/menu/menu_principal.gd                    |  12 [31m-[m
+ cenas/ui/sistema_dialogo/sistema_dialogo.tscn      |   1 [32m+[m
+ project.godot                                      |  19 [32m+[m[31m-[m
+ scripts/InteractionManager.gd                      |   5 [32m+[m[31m-[m
+ scripts/botaos_menu.gd                             |  67 [32m+++[m
+ .../{texture_button.gd.uid => botaos_menu.gd.uid}  |   0
+ scripts/componentes/componente_animacao.gd         |  14 [32m+[m
+ scripts/componentes/componente_animacao.gd.uid     |   1 [32m+[m
+ scripts/componentes/componente_movimento.gd        |   2 [32m+[m[31m-[m
+ scripts/entidades/player.gd                        |  22 [32m+[m[31m-[m
+ scripts/game_manager.gd                            |   3 [32m+[m
+ scripts/tableta/tableta.gd                         |  10 [32m+[m[31m-[m
+ scripts/tableta/tableta_tela.gd                    |   2 [32m+[m
+ scripts/texture_button.gd                          |  24 [31m-[m
+ scripts/ui/h_slider.gd                             |  13 [32m+[m
+ scripts/ui/h_slider.gd.uid                         |   1 [32m+[m
+ scripts/ui/janela_cheia.gd                         |   7 [32m+[m
+ scripts/ui/janela_cheia.gd.uid                     |   1 [32m+[m
+ scripts/ui/menu_corpo.gd                           |  32 [32m++[m
+ scripts/ui/menu_corpo.gd.uid                       |   1 [32m+[m
+ scripts/ui/menu_principal.gd                       |  79 [32m+++[m
+ .../ui/menu => scripts/ui}/menu_principal.gd.uid   |   0
+ scripts/ui/secreto.gd                              |  63 [32m+++[m
+ scripts/ui/secreto.gd.uid                          |   1 [32m+[m
+ scripts/ui/titulo.gd                               |  68 [32m+++[m
+ scripts/ui/titulo.gd.uid                           |   1 [32m+[m
+ 100 files changed, 2249 insertions(+), 200 deletions(-)

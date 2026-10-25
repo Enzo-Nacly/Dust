@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://j23ojn6bq4ch"]
+
+[ext_resource type="Texture2D" uid="uid://s5af26bb2dlt" path="res://assets/sprites/Planeta1/Cidade Quinoyd/Casas/CasaQuinoyd2Fora.png" id="1_gpdca"]
+[ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://cenas/componentes/gravity_rotation_component_objects.tscn" id="2_2oept"]
+
+[node name="Casa1" type="Node2D" unique_id=2038346081]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1431597880]
+texture = ExtResource("1_gpdca")
+
+[node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("2_2oept")]

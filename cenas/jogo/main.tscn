@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://c5a31mfdo1ppc"]
 
-[ext_resource type="PackedScene" uid="uid://dly62qyss7gmo" path="res://cenas/objetos/Planeta1/Caverna/CavernaPuzzleCompleto.tscn" id="1_munf6"]
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://cenas/entidades/player.tscn" id="2_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://cenas/planetas/planeta_roxo.tscn" id="3_pitpt"]
 [ext_resource type="PackedScene" uid="uid://bs84j0skadns7" path="res://cenas/objetos/tableta.tscn" id="4_6hhvf"]
-[ext_resource type="Texture2D" uid="uid://b8cv0h2duu03l" path="res://assets/sprites/quinoyd.png" id="5_h2r2o"]
+[ext_resource type="Texture2D" uid="uid://b8cv0h2duu03l" path="res://assets/sprites/entidades/quinoyds/quinoyd.png" id="5_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ddpbjdxd4p07n" path="res://cenas/componentes/area_dialogo.tscn" id="6_pitpt"]
 [ext_resource type="Script" uid="uid://cqpy6dko08c5i" path="res://scripts/resources/dialogo/resource_dialogo_export.gd" id="7_ahwvi"]
 [ext_resource type="Texture2D" uid="uid://d7oy5nvtq810" path="res://assets/sprites/entidades/quinoyds/falando/piscando.png" id="8_e1ykf"]
@@ -13,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://duptog1g3ii20" path="res://assets/sprites/entidades/quinoyds/falando/padrao.png" id="11_qabof"]
 [ext_resource type="Script" uid="uid://dfje3vb4ru0hm" path="res://scripts/resources/dialogo/resource_texto_dialogo.gd" id="12_e1ykf"]
 [ext_resource type="Texture2D" uid="uid://cnxm6jpgvsg8s" path="res://assets/sprites/entidades/quinoyds/falando/tontinho.png" id="13_acw65"]
-[ext_resource type="AudioStream" uid="uid://dcpwdu5khsn5v" path="res://assets/audio/sfx/talk.wav" id="13_qabof"]
+[ext_resource type="AudioStream" uid="uid://dcpwdu5khsn5v" path="res://assets/sonoro/sfx/talk.wav" id="13_qabof"]
+[ext_resource type="PackedScene" uid="uid://j23ojn6bq4ch" path="res://cenas/objetos/Planeta1/Cidade Quinoyd/CasaQuinoyd_1.tscn" id="15_qabof"]
+[ext_resource type="PackedScene" uid="uid://dhqkejaqlrrec" path="res://cenas/objetos/Planeta1/Caverna.tscn" id="16_acw65"]
 
 [sub_resource type="Animation" id="Animation_pitpt"]
 length = 0.001
@@ -146,18 +147,19 @@ radius = 30.149628
 
 [node name="Main" type="Node2D" unique_id=522489995]
 
-[node name="CavernaPuzzleCompleto" parent="." unique_id=1511786806 instance=ExtResource("1_munf6")]
-position = Vector2(0, -18)
+[node name="Caverna" parent="." unique_id=1780107482 instance=ExtResource("16_acw65")]
+position = Vector2(-18, -118)
 
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
 position = Vector2(-485, 186)
 
 [node name="tableta" parent="." unique_id=427427135 instance=ExtResource("4_6hhvf")]
-position = Vector2(-224.00002, 32)
+position = Vector2(-256, 32)
 rotation = -0.40142572
 
-[node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("3_pitpt")]
-position = Vector2(0, 473)
+[node name="casas_quinoyd" type="Node" parent="." unique_id=937083720]
+
+[node name="quinoyds" type="Node" parent="." unique_id=1164597543]
 
 [node name="quinoyd" type="Sprite2D" parent="." unique_id=1290611076]
 position = Vector2(-366, 104.999985)
@@ -179,3 +181,10 @@ shape = SubResource("CircleShape2D_fu62x")
 debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=687282447 groups=["ui"]]
+
+[node name="Casa1" parent="." unique_id=2038346081 instance=ExtResource("15_qabof")]
+position = Vector2(-489, 198.00003)
+rotation = -1.0681415
+
+[node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("3_pitpt")]
+position = Vector2(0, 473)

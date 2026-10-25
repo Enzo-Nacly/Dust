@@ -41,13 +41,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 	print("Player entrou")
 
-	# Evita reiniciar a sequência caso ela já esteja ligada
-	if tableta_animation_player.current_animation in [
-		"ligando",
-		"inicializar_tela",
-		"ligada"
-	]:
-		return
+
 
 	tableta_animation_player.play("ligando")
 
@@ -70,8 +64,6 @@ func InteracaoTablet1() -> void:
 	if !player_perto:
 		return
 
-	if tableta_animation_player.current_animation != "ligada":
-		return
 
 	if !tela_sprite.visible:
 		tela_sprite.visible = true

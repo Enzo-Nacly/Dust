@@ -1,34 +1,101 @@
 [gd_scene format=3 uid="uid://dqfe8uswv28nq"]
 
-[ext_resource type="Texture2D" uid="uid://b864qpfv2k2lu" path="res://assets/sprites/back.png" id="1_0b1un"]
-[ext_resource type="Script" uid="uid://dlbsgfu702u8i" path="res://scripts/ui/menus/menu_principal.gd" id="1_25x7m"]
+[ext_resource type="Script" uid="uid://dlbsgfu702u8i" path="res://scripts/ui/menu_principal.gd" id="1_25x7m"]
 [ext_resource type="FontFile" uid="uid://dsn0sg2somd7d" path="res://assets/fontes/PixelifySans-Regular.ttf" id="2_25x7m"]
-[ext_resource type="Texture2D" uid="uid://bk03nwpm2jg54" path="res://assets/fontes/bot-jogar.png" id="3_fi1mq"]
-[ext_resource type="Script" uid="uid://bxlpna6ha1h6v" path="res://scripts/texture_button.gd" id="4_0uah4"]
-[ext_resource type="Texture2D" uid="uid://dghkquspy086s" path="res://assets/fontes/bot-sair.png" id="5_jakpw"]
+[ext_resource type="Texture2D" uid="uid://cs4s4y17jkxth" path="res://assets/sprites/menu/espaco.png" id="2_r5lko"]
+[ext_resource type="Texture2D" uid="uid://c41siiwajmhck" path="res://assets/sprites/menu/sol_icone.png" id="3_bdt03"]
+[ext_resource type="Script" uid="uid://bxlpna6ha1h6v" path="res://scripts/botaos_menu.gd" id="4_0uah4"]
+[ext_resource type="Texture2D" uid="uid://w3wgkshwwmc8" path="res://assets/sprites/menu/mercurio/planeta_cinza.png" id="4_k6orm"]
+[ext_resource type="Texture2D" uid="uid://xoqs5wbaycid" path="res://assets/sprites/menu/poroso/planeta_roxo.png" id="5_5cehq"]
+[ext_resource type="Script" uid="uid://b6own4n1h2uur" path="res://scripts/ui/menu_corpo.gd" id="5_jdiyx"]
+[ext_resource type="Texture2D" uid="uid://dpnf8d85uh46c" path="res://assets/sprites/menu/poroso/atmosfera.png" id="6_g7pof"]
+[ext_resource type="Texture2D" uid="uid://bam2wh7q6c60m" path="res://assets/sprites/menu/colosso/planeta_verde.png" id="7_8oso1"]
+[ext_resource type="Texture2D" uid="uid://butya1cw7t5i3" path="res://assets/sprites/menu/siameses/planeta_azul.png" id="8_jckp1"]
+[ext_resource type="Texture2D" uid="uid://8fbefdkatvd8" path="res://assets/sprites/menu/siameses/asteroides.png" id="9_gx11c"]
+[ext_resource type="Script" uid="uid://bxuumuv7tougr" path="res://scripts/ui/titulo.gd" id="12_bdt03"]
+[ext_resource type="AudioStream" uid="uid://cmbgfyrk3eqlh" path="res://assets/sonoro/musica/musica_menu_principal.wav" id="13_r5lko"]
+[ext_resource type="Script" uid="uid://bf4upctec2twb" path="res://scripts/ui/janela_cheia.gd" id="14_5cehq"]
+[ext_resource type="Script" uid="uid://b2gadqs1nhtno" path="res://scripts/ui/h_slider.gd" id="14_k6orm"]
+[ext_resource type="Texture2D" uid="uid://cwrwparcfno80" path="res://assets/sprites/entidades/quinoyds/quinoyd_concept.png" id="17_8oso1"]
+[ext_resource type="Script" uid="uid://r5pi1v11ywat" path="res://scripts/ui/secreto.gd" id="18_jckp1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_06q5q"]
 font = ExtResource("2_25x7m")
 font_size = 100
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.5019608)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5lko"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdiyx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdt03"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6orm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5cehq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ptcv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7pof"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8oso1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jckp1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gx11c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3c2fn"]
+bg_color = Color(0.12156863, 0.0627451, 0.16470589, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_fdm2o"]
+font = ExtResource("2_25x7m")
+font_size = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8oso1"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cehq"]
+bg_color = Color(0.9181669, 0.78592604, 3.85046e-07, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [sub_resource type="Animation" id="Animation_0b1un"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Titulo:position")
+tracks/0/path = NodePath("Titulo:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(460, 264)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Titulo:modulate")
+tracks/1/path = NodePath("Container-botao:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -40,7 +107,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Container-botao:modulate")
+tracks/2/path = NodePath("ColorRect:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -52,72 +119,94 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Container-botao:position")
+tracks/3/path = NodePath("AudioStreamPlayer2D:volume_db")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(391, 232)]
+"values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_25x7m"]
-resource_name = "intro"
+[sub_resource type="Animation" id="Animation_bdt03"]
+resource_name = "fade_in"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Titulo:position")
-tracks/0/interp = 2
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(460, 264), Vector2(460, 264), Vector2(460, 24)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Titulo:modulate")
+tracks/1/path = NodePath("AudioStreamPlayer2D:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [0.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_jdiyx"]
+resource_name = "fade_in_botoes"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Titulo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(3, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Container-botao:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1.15, 2),
-"transitions": PackedFloat32Array(1, 1),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container-botao:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(3, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Container-botao:position")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1.1, 1.25),
-"transitions": PackedFloat32Array(1, 1),
+
+[sub_resource type="Animation" id="Animation_r5lko"]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2, 1),
 "update": 0,
-"values": [Vector2(391, 232), Vector2(441, 232)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fi1mq"]
 _data = {
 &"RESET": SubResource("Animation_0b1un"),
-&"intro": SubResource("Animation_25x7m")
+&"fade_in": SubResource("Animation_bdt03"),
+&"fade_in_botoes": SubResource("Animation_jdiyx"),
+&"fade_out": SubResource("Animation_r5lko")
 }
 
 [node name="MenuPrincipal" type="Control" unique_id=1666496725]
@@ -129,67 +218,404 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_25x7m")
 
-[node name="Img_fundo" type="TextureRect" parent="." unique_id=2019994807]
+[node name="sistema_solar" type="Control" parent="." unique_id=1016840198]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_0b1un")
+
+[node name="espaco" type="TextureRect" parent="sistema_solar" unique_id=2019994807]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r5lko")
+
+[node name="sol" type="TextureRect" parent="sistema_solar" unique_id=1028810613]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 28.0
+offset_right = 924.0
+offset_bottom = 540.0
+texture = ExtResource("3_bdt03")
+script = ExtResource("5_jdiyx")
+amplitude = 0.5
+velocidade = 1.0
+
+[node name="mercurio" type="TextureRect" parent="sistema_solar" unique_id=1581825990]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 436.0
+offset_right = 593.0
+offset_bottom = 457.00003
+scale = Vector2(4, 4)
+texture = ExtResource("4_k6orm")
+script = ExtResource("5_jdiyx")
+velocidade = 4.0
+
+[node name="poroso" type="TextureRect" parent="sistema_solar" unique_id=1396743479]
+layout_mode = 0
+offset_left = 836.0
+offset_top = 404.0
+offset_right = 976.0
+offset_bottom = 560.0
+texture = ExtResource("5_5cehq")
+script = ExtResource("5_jdiyx")
+amplitude = 3.0
+velocidade = 3.0
+
+[node name="atmosfera" type="TextureRect" parent="sistema_solar/poroso" unique_id=108423619]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -8.0
+offset_right = 152.0
+offset_bottom = 148.0
+texture = ExtResource("6_g7pof")
+
+[node name="colosso" type="TextureRect" parent="sistema_solar" unique_id=1477998064]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 128.0
+offset_right = 1137.0
+offset_bottom = 328.0
+texture = ExtResource("7_8oso1")
+script = ExtResource("5_jdiyx")
+amplitude = 1.0
+velocidade = 1.5
+
+[node name="siameses" type="TextureRect" parent="sistema_solar" unique_id=580742864]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 420.0
+offset_right = 351.0
+offset_bottom = 465.0
+scale = Vector2(4, 4)
+texture = ExtResource("8_jckp1")
+script = ExtResource("5_jdiyx")
+velocidade = 2.0
+
+[node name="asteroides" type="TextureRect" parent="sistema_solar/siameses" unique_id=256077704]
+layout_mode = 0
+offset_left = -4.5
+offset_top = 3.25
+offset_right = 58.5
+offset_bottom = 41.25
+texture = ExtResource("9_gx11c")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1659512766]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 7
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.12156863, 0.0627451, 0.16470589, 1)
 
 [node name="Titulo" type="Label" parent="." unique_id=2030299959]
 modulate = Color(1, 1, 1, 0)
+z_index = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -116.0
-offset_top = -60.0
-offset_right = 116.0
-offset_bottom = 60.000122
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 0.17300001
+anchor_right = 0.25
+anchor_bottom = 0.358
+offset_left = -0.25600052
+offset_top = -0.104003906
+offset_bottom = 0.015991211
+mouse_filter = 0
 text = "DUST"
 label_settings = SubResource("LabelSettings_06q5q")
+horizontal_alignment = 1
+script = ExtResource("12_bdt03")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Titulo" unique_id=1098855021]
 
 [node name="Container-botao" type="VBoxContainer" parent="." unique_id=1269638660]
 modulate = Color(1, 1, 1, 0)
+z_index = 5
+propagate_maximum_size = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -185.0
-offset_top = -92.0
-offset_right = 85.00006
-offset_bottom = 92.0
+anchors_preset = -1
+anchor_top = 0.40600002
+anchor_right = 0.27800003
+anchor_bottom = 0.70400006
+offset_left = -0.256
+offset_top = -0.5880127
+offset_right = -0.25604248
+offset_bottom = 117.30795
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 40
 
-[node name="Jogar" type="TextureButton" parent="Container-botao" unique_id=1676482754]
-custom_minimum_size = Vector2(270, 90)
+[node name="jogar" type="Button" parent="Container-botao" unique_id=1357362875]
 layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("3_fi1mq")
-ignore_texture_size = true
-stretch_mode = 0
+focus_neighbor_top = NodePath("../sair")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r5lko")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jdiyx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bdt03")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_k6orm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5cehq")
+text = "Jogar"
 script = ExtResource("4_0uah4")
 
-[node name="Sair" type="TextureButton" parent="Container-botao" unique_id=646899266]
-custom_minimum_size = Vector2(270, 90)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Container-botao/jogar" unique_id=1217351127]
+bus = &"SFX"
+
+[node name="opcoes" type="Button" parent="Container-botao" unique_id=343210514]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r5lko")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jdiyx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bdt03")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_k6orm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5cehq")
+text = "Opções"
+script = ExtResource("4_0uah4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Container-botao/opcoes" unique_id=1386774723]
+bus = &"SFX"
+
+[node name="sair" type="Button" parent="Container-botao" unique_id=72694271]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../jogar")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4ptcv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g7pof")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8oso1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jckp1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gx11c")
+text = "Sair
+
+"
+script = ExtResource("4_0uah4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Container-botao/sair" unique_id=1467721295]
+
+[node name="panel_opcoes" type="Panel" parent="." unique_id=1599886752]
+visible = false
+custom_minimum_size = Vector2(640, 512)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27800003
+anchor_top = 0.105000004
+anchor_right = 0.72200006
+anchor_bottom = 0.89500004
+offset_left = 235.74396
+offset_top = 235.95999
+offset_right = -235.74408
+offset_bottom = -235.96002
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3c2fn")
+
+[node name="MarginContainer" type="MarginContainer" parent="panel_opcoes" unique_id=987667101]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="panel_opcoes/MarginContainer" unique_id=1313666143]
+layout_mode = 2
+
+[node name="label_opcoes" type="Label" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=1303275313]
+layout_mode = 2
+text = "Opções"
+label_settings = SubResource("LabelSettings_fdm2o")
+horizontal_alignment = 1
+
+[node name="janela_cheia" type="CheckButton" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=569001638]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("5_jakpw")
-ignore_texture_size = true
-stretch_mode = 0
+focus_neighbor_top = NodePath("../voltar")
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 32
+text = "Janela cheia"
+alignment = 1
+script = ExtResource("14_5cehq")
+
+[node name="volume_geral" type="MarginContainer" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=783663369]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_geral" unique_id=742899056]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="volume_geral" type="Label" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_geral/HBoxContainer" unique_id=1664827403]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 32
+text = "Volume geral"
+
+[node name="geral_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_geral/HBoxContainer" unique_id=2084645320]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxFlat_8oso1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5cehq")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5cehq")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("14_k6orm")
+nome_audio_bus = "Master"
+
+[node name="volume_musica" type="MarginContainer" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=398262000]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_musica" unique_id=1968630728]
+layout_mode = 2
+theme_override_constants/separation = 57
+
+[node name="volume_musica" type="Label" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_musica/HBoxContainer" unique_id=1555507820]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 32
+text = "Volume da musica"
+
+[node name="musica_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_musica/HBoxContainer" unique_id=686186926]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxFlat_8oso1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5cehq")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5cehq")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("14_k6orm")
+nome_audio_bus = "Musica"
+
+[node name="volume_dialogo" type="MarginContainer" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=249820322]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_dialogo" unique_id=1116604612]
+layout_mode = 2
+theme_override_constants/separation = 59
+
+[node name="label_volume_dialogo" type="Label" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_dialogo/HBoxContainer" unique_id=2086645642]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 32
+text = "Volume do dialogo"
+
+[node name="dialogo_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_dialogo/HBoxContainer" unique_id=1684516692]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxFlat_8oso1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5cehq")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5cehq")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("14_k6orm")
+nome_audio_bus = "Dialogo"
+
+[node name="volume_sfx" type="MarginContainer" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=918052232]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_sfx" unique_id=107716703]
+layout_mode = 2
+theme_override_constants/separation = 112
+
+[node name="label_volume_sfx" type="Label" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_sfx/HBoxContainer" unique_id=2054687802]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 32
+text = "Volume do SFX"
+
+[node name="sfx_barra" type="HSlider" parent="panel_opcoes/MarginContainer/VBoxContainer/volume_sfx/HBoxContainer" unique_id=324009556]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxFlat_8oso1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_5cehq")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5cehq")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("14_k6orm")
+nome_audio_bus = "SFX"
+
+[node name="voltar" type="Button" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=748706232]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../janela_cheia")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_25x7m")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r5lko")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jdiyx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bdt03")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_k6orm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5cehq")
+text = "Voltar"
 script = ExtResource("4_0uah4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="panel_opcoes/MarginContainer/VBoxContainer/voltar" unique_id=2018807821]
+bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1979086348]
+physics_interpolation_mode = 2
 libraries/ = SubResource("AnimationLibrary_fi1mq")
 
-[connection signal="pressed" from="Container-botao/Jogar" to="." method="_on_jogar_pressed"]
-[connection signal="pressed" from="Container-botao/Sair" to="." method="_on_sair_pressed"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=853484674]
+stream = ExtResource("13_r5lko")
+bus = &"Musica"
+
+[node name="secreto" type="TextureRect" parent="." unique_id=237217012]
+layout_mode = 0
+offset_left = -40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("17_8oso1")
+script = ExtResource("18_jckp1")
+
+[connection signal="gui_input" from="Titulo" to="Titulo" method="_on_gui_input"]
+[connection signal="pressed" from="Container-botao/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Container-botao/opcoes" to="." method="_on_opcoes_pressed"]
+[connection signal="pressed" from="Container-botao/sair" to="." method="_on_sair_pressed"]
+[connection signal="toggled" from="panel_opcoes/MarginContainer/VBoxContainer/janela_cheia" to="panel_opcoes/MarginContainer/VBoxContainer/janela_cheia" method="_on_toggled"]
+[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/volume_geral/HBoxContainer/geral_barra" to="panel_opcoes/MarginContainer/VBoxContainer/volume_geral/HBoxContainer/geral_barra" method="_on_value_changed"]
+[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/volume_musica/HBoxContainer/musica_barra" to="panel_opcoes/MarginContainer/VBoxContainer/volume_musica/HBoxContainer/musica_barra" method="_on_value_changed"]
+[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/volume_dialogo/HBoxContainer/dialogo_barra" to="panel_opcoes/MarginContainer/VBoxContainer/volume_dialogo/HBoxContainer/dialogo_barra" method="_on_value_changed"]
+[connection signal="value_changed" from="panel_opcoes/MarginContainer/VBoxContainer/volume_sfx/HBoxContainer/sfx_barra" to="panel_opcoes/MarginContainer/VBoxContainer/volume_sfx/HBoxContainer/sfx_barra" method="_on_value_changed"]
+[connection signal="pressed" from="panel_opcoes/MarginContainer/VBoxContainer/voltar" to="." method="_on_voltar_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
