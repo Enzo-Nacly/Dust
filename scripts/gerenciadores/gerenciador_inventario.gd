@@ -18,7 +18,7 @@ func _temporazicao_visualizao(delta: float) -> void:
 	if (Input.is_action_just_pressed("cima_inventario") or Input.is_action_just_pressed("baixo_inventario")) and Game_Manager.can_move:
 		ui_inventario.aparecendo = true
 		tempo_espera = TEMPO_TOTAL_ESPERA
-		print("mostra")
+		#print("mostra")
 	
 	elif tempo_espera != 0.0:
 		tempo_espera -= delta
