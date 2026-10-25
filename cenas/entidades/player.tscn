@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcjuqywql3jc4" path="res://scripts/entidades/player.gd" id="1_uuqyi"]
 [ext_resource type="Texture2D" uid="uid://jlhgfnpfr3p7" path="res://assets/sprites/animacoes/explorer_berna 31.08-Sheet.png" id="2_6ql6w"]
+[ext_resource type="Resource" uid="uid://bplavfkvwy75c" path="res://resources/player_inventario.tres" id="2_55ggn"]
 [ext_resource type="Script" uid="uid://h6wfdw1onmno" path="res://scripts/componentes/componente_rotacao.gd" id="4_lxx67"]
 [ext_resource type="Script" uid="uid://dhm6j02iw2vrm" path="res://scripts/componentes/componente_movimento.gd" id="5_6ql6w"]
 [ext_resource type="Script" uid="uid://bi44habvi5v0" path="res://scripts/componentes/componente_pulo.gd" id="6_55ggn"]
@@ -84,6 +85,7 @@ size = Vector2(2.4615388, 4.1538467)
 z_index = 5
 collision_layer = 3
 script = ExtResource("1_uuqyi")
+inventario = ExtResource("2_55ggn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=763007227]
 sprite_frames = SubResource("SpriteFrames_fu62x")
