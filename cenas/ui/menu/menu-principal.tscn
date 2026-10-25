@@ -16,6 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://cmbgfyrk3eqlh" path="res://assets/sonoro/musica/musica_menu_principal.wav" id="13_r5lko"]
 [ext_resource type="Script" uid="uid://bf4upctec2twb" path="res://scripts/ui/janela_cheia.gd" id="14_5cehq"]
 [ext_resource type="Script" uid="uid://b2gadqs1nhtno" path="res://scripts/ui/h_slider.gd" id="14_k6orm"]
+[ext_resource type="Texture2D" uid="uid://cwrwparcfno80" path="res://assets/sprites/entidades/quinoyds/quinoyd_concept.png" id="17_8oso1"]
+[ext_resource type="Script" uid="uid://r5pi1v11ywat" path="res://scripts/ui/secreto.gd" id="18_jckp1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_06q5q"]
 font = ExtResource("2_25x7m")
@@ -358,6 +360,7 @@ theme_override_constants/separation = 40
 
 [node name="jogar" type="Button" parent="Container-botao" unique_id=1357362875]
 layout_mode = 2
+focus_neighbor_top = NodePath("../sair")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_25x7m")
 theme_override_font_sizes/font_size = 48
@@ -390,6 +393,7 @@ bus = &"SFX"
 
 [node name="sair" type="Button" parent="Container-botao" unique_id=72694271]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../jogar")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_25x7m")
 theme_override_font_sizes/font_size = 48
@@ -450,6 +454,7 @@ horizontal_alignment = 1
 [node name="janela_cheia" type="CheckButton" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=569001638]
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../voltar")
 theme_override_fonts/font = ExtResource("2_25x7m")
 theme_override_font_sizes/font_size = 32
 text = "Janela cheia"
@@ -571,6 +576,7 @@ nome_audio_bus = "SFX"
 
 [node name="voltar" type="Button" parent="panel_opcoes/MarginContainer/VBoxContainer" unique_id=748706232]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../janela_cheia")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_25x7m")
 theme_override_font_sizes/font_size = 48
@@ -593,9 +599,16 @@ libraries/ = SubResource("AnimationLibrary_fi1mq")
 stream = ExtResource("13_r5lko")
 bus = &"Musica"
 
+[node name="secreto" type="TextureRect" parent="." unique_id=237217012]
+layout_mode = 0
+offset_left = -40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("17_8oso1")
+script = ExtResource("18_jckp1")
+
 [connection signal="gui_input" from="Titulo" to="Titulo" method="_on_gui_input"]
 [connection signal="pressed" from="Container-botao/jogar" to="." method="_on_jogar_pressed"]
-[connection signal="focus_entered" from="Container-botao/opcoes" to="Container-botao/opcoes" method="_on_focus_entered"]
 [connection signal="pressed" from="Container-botao/opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="Container-botao/sair" to="." method="_on_sair_pressed"]
 [connection signal="toggled" from="panel_opcoes/MarginContainer/VBoxContainer/janela_cheia" to="panel_opcoes/MarginContainer/VBoxContainer/janela_cheia" method="_on_toggled"]

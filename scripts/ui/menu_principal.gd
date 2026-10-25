@@ -22,12 +22,15 @@ func _ready() -> void:
 	animation_player.play("fade_out")
 
 func _on_jogar_pressed() -> void:
+	_desabilitar_botoes(true)
+	
 	await get_tree().process_frame
 	
 	animation_player.play("fade_in")
 	await animation_player.animation_finished
 	
-	get_tree().change_scene_to_file("res://cenas/jogo/main.tscn")
+	if is_inside_tree() and get_tree() != null:
+		get_tree().change_scene_to_file("res://cenas/jogo/main.tscn")
 
 func _on_sair_pressed() -> void:
 	await get_tree().process_frame
@@ -40,6 +43,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	elif anim_name == "fade_in_botoes":
 		$Titulo.clicavel = true
 		_desabilitar_botoes(false)
+	
+	$"Container-botao/jogar".grab_focus()
 
 func _on_audio_stream_player_2d_finished() -> void:
 	audio_stream_player.play()
@@ -71,3 +76,4 @@ func _on_voltar_pressed() -> void:
 	panel_opcoes.visible = false
 	_desabilitar_botoes(false)
 	
+	$"Container-botao/opcoes".grab_focus()

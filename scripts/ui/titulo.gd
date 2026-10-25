@@ -3,6 +3,8 @@ extends Label
 const SOM_CLICK: AudioStream = preload("res://assets/sonoro/sfx/hover_botao.wav")
 const DURACAO_ANIMACAO: float = 0.1
 
+const QTD_CLIQUES_SECRETO: int = 10
+
 @export var variacao_pitch: float = 0.3
 @export var dimunuicao_x_y: float = 0.7
 
@@ -11,6 +13,9 @@ const DURACAO_ANIMACAO: float = 0.1
 var clicavel: bool = false
 var scale_original: Vector2 = Vector2.ONE
 var scale_dimunuido: Vector2 = Vector2.ZERO
+
+var contar_cliques: bool = true
+var qtd_cliques: int = 0
 
 func _ready() -> void:
 	scale_dimunuido = Vector2(dimunuicao_x_y, dimunuicao_x_y)
@@ -49,3 +54,15 @@ func _on_gui_input(event: InputEvent) -> void:
 	
 	_tocar_audio()
 	_animar_bowing()
+	
+	if contar_cliques:
+		qtd_cliques += 1
+		_secreto(qtd_cliques)
+
+func _secreto(qtd: int) -> void:
+	if qtd != QTD_CLIQUES_SECRETO: return
+	
+	contar_cliques = false
+	
+	$"../secreto".iniciar_animacao_curva()
+	
