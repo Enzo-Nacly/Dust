@@ -1,7 +1,6 @@
 extends Area2D
 class_name Entrada
 
-# No Inspector da Entrada2, selecione a Entrada (1) aqui. Na Entrada (1) deixe vazio.
 @export var anterior: Entrada
 
 @onready var camera: Camera2D = $Camera2D 
@@ -37,15 +36,12 @@ func _on_player_entrou(body: Node2D) -> void:
 			
 			alternar_colisoes_vizinhas(true)
 			
-			# Quem tem anterior (Entrada2) devolve os colisores dos descendentes
-			# e depois a anterior reaplica o que faz quando o player entra nela
 			if anterior:
 				alternar_colisoes_descendentes(false)
 				anterior.aplicar_colisoes_de_entrada()
 			else:
 				alternar_colisoes_descendentes(true)
 
-# O que esta Entrada faz com os colisores quando o player entra nela
 func aplicar_colisoes_de_entrada() -> void:
 	alternar_colisoes_vizinhas(false)
 	alternar_colisoes_descendentes(true)
@@ -63,7 +59,6 @@ func alternar_colisoes_descendentes(deve_desativar: bool) -> void:
 	var nos_para_checar: Array = []
 	
 	for filho in get_children():
-		# pula o colisor da própria Entrada, senão ela deixa de detectar o player
 		if filho is CollisionShape2D or filho is CollisionPolygon2D:
 			continue
 		nos_para_checar.append(filho)

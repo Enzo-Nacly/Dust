@@ -18,9 +18,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k41lo"]
 size = Vector2(103, 89)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ungyi"]
-size = Vector2(35, 71)
-
 [node name="Caverna" type="Node2D" unique_id=1780107482]
 
 [node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("1_e1jw5")]
@@ -94,8 +91,7 @@ ignore_rotation = false
 zoom = Vector2(4, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada2" unique_id=419294867]
-position = Vector2(86.5, 79.5)
-shape = SubResource("RectangleShape2D_ungyi")
+position = Vector2(98.5, 76.75)
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="Entrada2" unique_id=1443595181]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://gpqcqbyba8a7"]
+
+[ext_resource type="Script" uid="uid://bglxa15v7rj1m" path="res://cenas/objetos/Planeta1/porta.gd" id="1_bm62i"]
+
+[node name="Porta" type="StaticBody2D" unique_id=486812185]
+script = ExtResource("1_bm62i")
+metadata/_custom_type_script = "uid://bglxa15v7rj1m"

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c7y2ssvgk0mef"]
+
+[ext_resource type="Script" uid="uid://cl00mqd61sonf" path="res://cenas/objetos/Planeta1/Entrada.gd" id="1_31gds"]
+
+[node name="Entrada" type="Area2D" unique_id=780711883]
+script = ExtResource("1_31gds")
+metadata/_custom_type_script = "uid://cl00mqd61sonf"
