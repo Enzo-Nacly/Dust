@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bi44habvi5v0" path="res://scripts/componentes/componente_pulo.gd" id="6_55ggn"]
 [ext_resource type="Script" uid="uid://camujvpkdi7li" path="res://scripts/componentes/componente_gravidade.gd" id="6_lxx67"]
 [ext_resource type="Script" uid="uid://idpvhq8hfapr" path="res://scripts/componentes/componente_animacao.gd" id="7_6ql6w"]
+[ext_resource type="PackedScene" uid="uid://pj4m7i7wbmm8" path="res://cenas/ui/inventario/ui_inventario.tscn" id="9_jgxua"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55ggn"]
 atlas = ExtResource("2_6ql6w")
@@ -125,3 +126,9 @@ metadata/_custom_type_script = "uid://bi44habvi5v0"
 script = ExtResource("7_6ql6w")
 sprite = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://idpvhq8hfapr"
+
+[node name="ui_inventario" parent="." unique_id=34154311 instance=ExtResource("9_jgxua")]
+offset_left = -71.0
+offset_top = -81.0
+offset_right = -71.0
+offset_bottom = -81.0
