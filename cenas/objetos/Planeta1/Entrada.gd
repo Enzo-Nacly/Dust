@@ -1,10 +1,12 @@
 extends Area2D
 class_name Entrada
 
+@export var anterior: Entrada
+
 @onready var camera: Camera2D = $Camera2D 
 var dentro = false
 var tween: Tween
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	camera.enabled = false
 	body_entered.connect(_on_player_entrou)
@@ -25,7 +27,7 @@ func _on_player_entrou(body: Node2D) -> void:
 			print("Player Entrou")
 			tween.tween_property(self, "modulate:a", 0.0, 0.5)
 			
-			alternar_colisoes_vizinhas(false)
+			aplicar_colisoes_de_entrada()
 		else:
 			print("Player Saiu")
 			camera.enabled = false
@@ -34,7 +36,16 @@ func _on_player_entrou(body: Node2D) -> void:
 			
 			alternar_colisoes_vizinhas(true)
 			
-			
+			if anterior:
+				alternar_colisoes_descendentes(false)
+				anterior.aplicar_colisoes_de_entrada()
+			else:
+				alternar_colisoes_descendentes(true)
+
+func aplicar_colisoes_de_entrada() -> void:
+	alternar_colisoes_vizinhas(false)
+	alternar_colisoes_descendentes(true)
+
 func alternar_colisoes_vizinhas(deve_desativar: bool) -> void:
 	var nos_para_checar: Array = []
 	
@@ -42,6 +53,19 @@ func alternar_colisoes_vizinhas(deve_desativar: bool) -> void:
 		if irmao != self:
 			nos_para_checar.append(irmao)
 	
+	_aplicar(nos_para_checar, deve_desativar)
+
+func alternar_colisoes_descendentes(deve_desativar: bool) -> void:
+	var nos_para_checar: Array = []
+	
+	for filho in get_children():
+		if filho is CollisionShape2D or filho is CollisionPolygon2D:
+			continue
+		nos_para_checar.append(filho)
+	
+	_aplicar(nos_para_checar, deve_desativar)
+
+func _aplicar(nos_para_checar: Array, deve_desativar: bool) -> void:
 	while nos_para_checar.size() > 0:
 		var no_atual = nos_para_checar.pop_front()
 		
@@ -50,6 +74,3 @@ func alternar_colisoes_vizinhas(deve_desativar: bool) -> void:
 		
 		for filho in no_atual.get_children():
 			nos_para_checar.append(filho)
-
-
-					

@@ -22,10 +22,11 @@ func unregister_area(area: InteractionArea):
 func _process(_delta):
 	if active_areas.size() > 0 && can_interact == true:
 		active_areas.sort_custom(_sort_by_distance_to_player)
+		var area = active_areas[0]
 		label.text = base_text + active_areas[0].action_name
 		label.global_position = active_areas[0].global_position
-		label.global_position.y -= 5
-		label.global_position.x -= label.size.x/2
+		label.global_position = area.global_position + area.global_transform.y * -80
+		label.global_position.x -= label.size.x / 2
 		label.rotation = active_areas[0].global_rotation
 		label.show()
 	else:

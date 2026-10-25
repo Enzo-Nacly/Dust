@@ -41,7 +41,9 @@ project/assembly_name="Dust"
 
 folder_colors={
 "res://assets/sprites/Planeta1/Caverna/NovaVerção/": "red",
+"res://assets/sprites/UI/": "teal",
 "res://assets/sprites/entidades/quinoyds/": "green",
+"res://cenas/jogo/": "green",
 "res://cenas/objetos/Planeta1/Cidade Quinoyd/": "orange"
 }
 
