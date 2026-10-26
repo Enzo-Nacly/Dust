@@ -2,18 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bmrhwgqqhoblv" path="res://scripts/planeta_roxo.gd" id="1_ynegy"]
 [ext_resource type="Resource" uid="uid://b8four6xjwy3o" path="res://resources/planeta_roxo.tres" id="2_64omq"]
-[ext_resource type="Texture2D" uid="uid://bbhe8bqn64vof" path="res://assets/sprites/Planeta1/Planeta/planeta1roxo.png" id="3_2jy7m"]
+[ext_resource type="Texture2D" uid="uid://ca527grqnpvav" path="res://assets/sprites/Planeta1/Planeta/planeta1roxoPronto.png" id="3_mtoiq"]
 [ext_resource type="PackedScene" uid="uid://bv78xgcw66cj4" path="res://cenas/componentes/componente_gravidade.tscn" id="3_ynegy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2jy7m"]
-radius = 100.0
+radius = 359.00558
 
 [node name="PlanetaRoxo" type="StaticBody2D" unique_id=201800473 groups=["planets"]]
 script = ExtResource("1_ynegy")
 planeta_status = ExtResource("2_64omq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=961972085]
-texture = ExtResource("3_2jy7m")
+scale = Vector2(2, 2)
+texture = ExtResource("3_mtoiq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1661092387]
 shape = SubResource("CircleShape2D_2jy7m")

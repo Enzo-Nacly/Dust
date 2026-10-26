@@ -142,22 +142,23 @@ chamada_funcoes_escolha = Array[ExtResource("8_l7l8e")]([SubResource("Resource_e
 metadata/_custom_type_script = "uid://cw4wljefn5n1m"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
-radius = 30.149628
+radius = 27.658634
 
 [node name="Main" type="Node2D" unique_id=522489995]
 
 [node name="Caverna" parent="." unique_id=1780107482 instance=ExtResource("16_acw65")]
-position = Vector2(-18, -118)
+position = Vector2(-852.00006, 1081)
+rotation = 3.9409535
 
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
-position = Vector2(-485, 186)
+position = Vector2(-989, 86)
 
 [node name="casas_quinoyd" type="Node" parent="." unique_id=937083720]
 
 [node name="quinoyds" type="Node" parent="." unique_id=1164597543]
 
 [node name="quinoyd" type="Sprite2D" parent="." unique_id=1290611076]
-position = Vector2(-366, 104.999985)
+position = Vector2(828.99994, -193.00002)
 rotation = -0.76009536
 texture = ExtResource("5_h2r2o")
 
@@ -165,21 +166,21 @@ texture = ExtResource("5_h2r2o")
 libraries/ = SubResource("AnimationLibrary_5f6nu")
 
 [node name="area_dialogo" parent="." unique_id=843434367 instance=ExtResource("6_pitpt")]
-position = Vector2(-365, 107)
+position = Vector2(2455, 769)
 ativar_instantaneamente = true
 ativar_one_shot = true
 dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_qabof"), SubResource("Resource_ahwvi"), SubResource("Resource_l7l8e"), SubResource("Resource_5qnmo"), SubResource("Resource_kemws")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_dialogo" unique_id=85451978]
-position = Vector2(1, 0)
+position = Vector2(-1629, -959)
 shape = SubResource("CircleShape2D_fu62x")
 debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=687282447 groups=["ui"]]
 
 [node name="Casa1" parent="." unique_id=2038346081 instance=ExtResource("15_qabof")]
-position = Vector2(-489, 198.00003)
-rotation = -1.0681415
+position = Vector2(928, -111)
+rotation = 1.0524335
 
 [node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("3_pitpt")]
-position = Vector2(0, 473)
+position = Vector2(-1, 399)

@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://br743hdrfh8ay" path="res://cenas/objetos/Planeta1/Caverna/Puzzle/conjunto_cristal_manivela.tscn" id="3_km038"]
 [ext_resource type="Texture2D" uid="uid://cwkxf2uohs7gt" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna Dentro/caverna dentro dentro.png" id="4_b3xe4"]
 [ext_resource type="Texture2D" uid="uid://c48nfpld0dmn8" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna Dentro/Caverna Dentro fora.png" id="5_ldxle"]
+[ext_resource type="Script" uid="uid://hoihbrjjn8d2" path="res://cenas/objetos/Planeta1/varanda.gd" id="5_ocy8p"]
+[ext_resource type="PackedScene" uid="uid://b2d48mie45mch" path="res://cenas/interecao/PontoEscada.tscn" id="6_7eiki"]
 [ext_resource type="Texture2D" uid="uid://cju5be2sf01jo" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna fora/Porta.png" id="6_km038"]
 [ext_resource type="PackedScene" uid="uid://c7y2ssvgk0mef" path="res://cenas/interecao/Entrada.tscn" id="7_7eiki"]
 [ext_resource type="Texture2D" uid="uid://col1nrn8yu1il" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna fora/Fundo.png" id="7_ha7ln"]
@@ -15,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://bs84j0skadns7" path="res://cenas/objetos/tableta.tscn" id="8_e1jw5"]
 [ext_resource type="Texture2D" uid="uid://cwthuopbbefpj" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna fora/PedraNoCaminho.png" id="9_ocy8p"]
 [ext_resource type="Texture2D" uid="uid://dolhsm6nyx1va" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna fora/CavernaForaFora.png" id="10_4s1ku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ungyi"]
+size = Vector2(283, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k41lo"]
 size = Vector2(102, 46.5)
@@ -33,8 +38,27 @@ metadata/_custom_type_script = "uid://b4w8vqilqwd2x"
 [node name="conjunto_cristal_manivela" parent="." unique_id=219770914 instance=ExtResource("3_km038")]
 position = Vector2(70, -69)
 
-[node name="Varanda" type="Sprite2D" parent="." unique_id=909410212]
+[node name="Varanda" type="StaticBody2D" parent="." unique_id=2108305771]
+z_as_relative = false
+script = ExtResource("5_ocy8p")
+
+[node name="Varanda" type="Sprite2D" parent="Varanda" unique_id=909410212]
 texture = ExtResource("3_e1jw5")
+
+[node name="Varanda2" type="Sprite2D" parent="Varanda" unique_id=1023905957]
+texture = ExtResource("3_e1jw5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Varanda" unique_id=2051688882]
+position = Vector2(61.5, -29)
+shape = SubResource("RectangleShape2D_ungyi")
+
+[node name="PontoEscada" parent="." unique_id=111667606 node_paths=PackedStringArray("destino") instance=ExtResource("6_7eiki")]
+position = Vector2(135, 83)
+destino = NodePath("../PontoEscada2")
+
+[node name="PontoEscada2" parent="." unique_id=2008939066 node_paths=PackedStringArray("destino") instance=ExtResource("6_7eiki")]
+position = Vector2(125, -52)
+destino = NodePath("../PontoEscada")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=977084860]
 

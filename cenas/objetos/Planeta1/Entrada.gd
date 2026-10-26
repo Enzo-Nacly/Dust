@@ -13,7 +13,6 @@ var dentro = false
 var tween: Tween
 var esperando_w = false
 
-const ANIM_ENTRAR := "EInteracao"
 const ANIM_SAIR := "Interação Saida"
 
 func _ready() -> void:
