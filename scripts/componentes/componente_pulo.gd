@@ -1,7 +1,7 @@
 class_name ComponentePulo
 extends Node
 
-@export var forca_pulo: int = 250
+@export var forca_pulo: int = 280
 @onready var entidade: Node2D = self.owner
 @onready var componente_gravidade: ComponenteGravidade = get_node("../ComponenteGravidade")
 

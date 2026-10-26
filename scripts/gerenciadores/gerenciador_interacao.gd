@@ -33,6 +33,9 @@ func _process(_delta):
 
 		if area != area_atual or not icone.visible:
 			area_atual = area
+			
+			
+			
 			icone.show()
 			animacao.play("EInteracao")
 	else:
