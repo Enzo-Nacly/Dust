@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cq6t4tfit13js"]
+
+[ext_resource type="Texture2D" uid="uid://bf858720tadwh" path="res://assets/sprites/Planeta1/pedra.png" id="1_0q7v1"]
+[ext_resource type="Script" uid="uid://cajn6cq3texlp" path="res://scripts/entidades/movel.gd" id="1_yagw3"]
+[ext_resource type="Script" uid="uid://camujvpkdi7li" path="res://scripts/componentes/componente_gravidade.gd" id="2_dom8a"]
+[ext_resource type="Script" uid="uid://h6wfdw1onmno" path="res://scripts/componentes/componente_rotacao.gd" id="3_dom8a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysqms"]
+size = Vector2(25, 21)
+
+[node name="pedra" type="CharacterBody2D" unique_id=441279537 groups=["empurravel"]]
+script = ExtResource("1_yagw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=51497674]
+texture = ExtResource("1_0q7v1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057880713]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_ysqms")
+
+[node name="Componentes" type="Node" parent="." unique_id=1601176106]
+
+[node name="ComponenteGravidade" type="Node" parent="Componentes" unique_id=160990742]
+script = ExtResource("2_dom8a")
+metadata/_custom_type_script = "uid://camujvpkdi7li"
+
+[node name="ComponenteRotacao" type="Node" parent="Componentes" unique_id=2086013099]
+script = ExtResource("3_dom8a")
+metadata/_custom_type_script = "uid://h6wfdw1onmno"

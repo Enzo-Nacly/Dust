@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://camujvpkdi7li" path="res://scripts/componentes/componente_gravidade.gd" id="6_lxx67"]
 [ext_resource type="Script" uid="uid://idpvhq8hfapr" path="res://scripts/componentes/componente_animacao.gd" id="7_6ql6w"]
 [ext_resource type="PackedScene" uid="uid://pj4m7i7wbmm8" path="res://cenas/ui/inventario/ui_inventario.tscn" id="9_jgxua"]
+[ext_resource type="Script" uid="uid://bg4ebvcb8sy36" path="res://scripts/componentes/componente_empurrar.gd" id="9_k6ct6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55ggn"]
 atlas = ExtResource("2_6ql6w")
@@ -127,8 +128,22 @@ script = ExtResource("7_6ql6w")
 sprite = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://idpvhq8hfapr"
 
+[node name="ComponenteEmpurrar" type="Node" parent="Componentes" unique_id=1580197428 node_paths=PackedStringArray("seta_objeto", "seta_empurro")]
+script = ExtResource("9_k6ct6")
+seta_objeto = NodePath("../../seta_objeto")
+seta_empurro = NodePath("../../seta_empurro")
+metadata/_custom_type_script = "uid://bg4ebvcb8sy36"
+
 [node name="ui_inventario" parent="." unique_id=34154311 instance=ExtResource("9_jgxua")]
 offset_left = -71.0
 offset_top = -81.0
 offset_right = -71.0
 offset_bottom = -81.0
+
+[node name="seta_empurro" type="RayCast2D" parent="." unique_id=1680456720]
+position = Vector2(0, 3)
+target_position = Vector2(16, 0)
+
+[node name="seta_objeto" type="RayCast2D" parent="." unique_id=1515950696]
+position = Vector2(0, 3)
+target_position = Vector2(19, 0)

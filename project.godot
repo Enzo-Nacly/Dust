@@ -52,6 +52,7 @@ folder_colors={
 
 player="Grupo do Jogador principal"
 ui="canvas_layer |  ui de qualquer scene,  planeta, caverna, casa,  etc..."
+empurravel="é afetado pelo componente  empurrar  puxar"
 
 [gui]
 
