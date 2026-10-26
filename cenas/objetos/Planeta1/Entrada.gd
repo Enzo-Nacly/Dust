@@ -5,6 +5,8 @@ class_name Entrada
 
 @onready var animacao: AnimationPlayer = get_node_or_null("AnimationPlayer")
 @onready var sprite: Sprite2D = get_node_or_null("AnimationPlayer/Sprite2D")
+var posicao = 0
+
 
 @onready var camera: Camera2D = $Camera2D
 var dentro = false
@@ -19,12 +21,17 @@ func _ready() -> void:
 	body_entered.connect(_on_player_entrou)
 	body_exited.connect(_on_player_saiu)
 	alternar_colisoes_vizinhas(true)
-
+	for filho in get_children():
+		if filho is CollisionShape2D or filho is CollisionPolygon2D:
+			posicao = filho.global_position
+		
+	
+	
 	if sprite:
 		sprite.visible = false
 		sprite.z_as_relative = false
 		sprite.z_index = 4096
-		sprite.global_position = global_position + global_transform.y * -80
+		sprite.global_position = posicao + global_transform.y * -30
 		sprite.global_rotation = global_rotation
 
 func _mostrar_icone() -> void:
