@@ -3,7 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://ducm57nikiwij" path="res://cenas/componentes/gravity_rotation_component_objects.tscn" id="1_e1jw5"]
 [ext_resource type="Texture2D" uid="uid://dmsqtvj8pt07k" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna Dentro/FundoFundo.png" id="2_s51jx"]
 [ext_resource type="Texture2D" uid="uid://rlntn2i8ww44" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna Dentro/Varanda.png" id="3_e1jw5"]
-[ext_resource type="PackedScene" uid="uid://br743hdrfh8ay" path="res://cenas/objetos/Planeta1/Caverna/Puzzle/conjunto_cristal_manivela.tscn" id="3_km038"]
+[ext_resource type="PackedScene" uid="uid://bqk4sejfo27ot" path="res://cenas/objetos/puzzle_cristal.tscn" id="3_ha7ln"]
+[ext_resource type="PackedScene" uid="uid://dnd1k0rbyh1e3" path="res://cenas/objetos/planta.tscn" id="4_7eiki"]
 [ext_resource type="Texture2D" uid="uid://cwkxf2uohs7gt" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna Dentro/caverna dentro dentro.png" id="4_b3xe4"]
 [ext_resource type="Texture2D" uid="uid://c48nfpld0dmn8" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna Dentro/Caverna Dentro fora.png" id="5_ldxle"]
 [ext_resource type="Texture2D" uid="uid://cju5be2sf01jo" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna fora/Porta.png" id="6_km038"]
@@ -25,8 +26,14 @@ size = Vector2(103, 89)
 [node name="FundoFundo" type="Sprite2D" parent="." unique_id=499142689]
 texture = ExtResource("2_s51jx")
 
-[node name="conjunto_cristal_manivela" parent="." unique_id=219770914 instance=ExtResource("3_km038")]
-position = Vector2(70, -69)
+[node name="Puzzle_cristal" parent="." unique_id=444991581 node_paths=PackedStringArray("plantas") instance=ExtResource("3_ha7ln")]
+z_index = -2
+position = Vector2(60, -65)
+plantas = [NodePath("../planta")]
+
+[node name="planta" parent="." unique_id=1265906810 instance=ExtResource("4_7eiki")]
+position = Vector2(57, 91)
+debug = true
 
 [node name="Varanda" type="Sprite2D" parent="." unique_id=909410212]
 texture = ExtResource("3_e1jw5")

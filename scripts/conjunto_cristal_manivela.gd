@@ -5,7 +5,7 @@ signal cor_alterada(cor: Color)
 
 @export var cores: Array[Color] = []
 
-@onready var interaction_area: InteractionArea = $InteractionArea
+@onready var interaction_area: AreaInteracao = $InteractionArea
 @onready var cristal_sprite: Sprite2D = $Sprites/cristal_sprite
 @onready var manivela_sprite: Sprite2D = $Sprites/manivela_sprite
 

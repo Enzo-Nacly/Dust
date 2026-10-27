@@ -1,7 +1,9 @@
 class_name Lupa
 extends Node2D
 
-@onready var interaction_area: InteractionArea = $InteractionArea
+const ACRESIMO_RADIANOS_ROTACAO_FEIXE: float = deg_to_rad(55.0)
+
+@onready var interaction_area: AreaInteracao = $InteractionArea
 @onready var luz_feixe: PointLight2D = $luz_feixe
 
 var plantas: Array[Planta] = []
@@ -50,6 +52,6 @@ func _apontar_para_planta() -> void:
 	var planta: Planta = plantas[indice_planta]
 	
 	var direcao: Vector2 = planta.global_position - luz_feixe.global_position
-	luz_feixe.rotation = direcao.angle() + deg_to_rad(55.0) + PI / 2.0
+	luz_feixe.rotation = direcao.angle() + ACRESIMO_RADIANOS_ROTACAO_FEIXE + PI / 2.0
 	
 	planta.receber_luz(cor_luz)
