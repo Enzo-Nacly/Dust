@@ -29,16 +29,25 @@ size = Vector2(102, 46.5)
 [node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("1_e1jw5")]
 
 [node name="FundoFundo" type="Sprite2D" parent="." unique_id=499142689]
+z_index = -1
 texture = ExtResource("2_s51jx")
 
 [node name="Puzzle_cristal" parent="." unique_id=444991581 node_paths=PackedStringArray("plantas") instance=ExtResource("3_ha7ln")]
 z_index = -2
 position = Vector2(60, -65)
-plantas = [NodePath("../planta")]
+plantas = [NodePath("../planta"), NodePath("../planta2"), NodePath("../planta3")]
 
 [node name="planta" parent="." unique_id=1265906810 instance=ExtResource("4_7eiki")]
 position = Vector2(57, 91)
-debug = true
+luz_crescimento = Color(1, 0, 0, 1)
+
+[node name="planta2" parent="." unique_id=1568853375 instance=ExtResource("4_7eiki")]
+position = Vector2(-9, 92)
+luz_crescimento = Color(0, 0, 1, 1)
+
+[node name="planta3" parent="." unique_id=1540792086 instance=ExtResource("4_7eiki")]
+position = Vector2(109, 94)
+luz_crescimento = Color(0, 1, 0, 1)
 
 [node name="Varanda" type="StaticBody2D" parent="." unique_id=2108305771]
 z_as_relative = false

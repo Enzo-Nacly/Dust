@@ -150,6 +150,9 @@ metadata/_custom_type_script = "uid://cw4wljefn5n1m"
 [sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
 radius = 27.658634
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pi0el"]
+polygon = PackedVector2Array(-901, 833, -887, 863, -868, 895, -847, 930, -817, 976, -799, 998, -776, 1029, -755, 1054, -731, 1080, -715, 1098, -692, 1075, -892, 822)
+
 [node name="Main" type="Node2D" unique_id=522489995]
 
 [node name="Caverna" parent="." unique_id=1780107482 instance=ExtResource("16_acw65")]
@@ -157,7 +160,7 @@ position = Vector2(-852.00006, 1081)
 rotation = 3.9409535
 
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
-position = Vector2(-859, -228)
+position = Vector2(-652, 1203)
 
 [node name="casas_quinoyd" type="Node" parent="." unique_id=937083720]
 
@@ -381,3 +384,6 @@ position = Vector2(766.99994, -275)
 rotation = 1.0629056
 scale = Vector2(1.2261153, 1.2261153)
 texture = ExtResource("20_x1j5q")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=568977251]
+occluder = SubResource("OccluderPolygon2D_pi0el")

@@ -9,6 +9,7 @@ script = ExtResource("1_3lalb")
 
 [node name="conjunto_cristal_manivela" parent="." unique_id=1036634973 instance=ExtResource("2_5o7k4")]
 z_index = 0
+cores = Array[Color]([Color(1, 0, 0, 1), Color(0, 0, 1, 1), Color(0, 1, 0, 1)])
 
 [node name="lupa" parent="." unique_id=343239108 instance=ExtResource("3_0qqp8")]
 z_index = 1

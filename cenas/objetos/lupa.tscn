@@ -21,6 +21,7 @@ radius = 16.03122
 
 [node name="lupa" type="Node2D" unique_id=343239108]
 script = ExtResource("1_dnll5")
+ajuste_rotacao_feixe_graus = 90.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=933036095]
 texture = ExtResource("1_oieql")
