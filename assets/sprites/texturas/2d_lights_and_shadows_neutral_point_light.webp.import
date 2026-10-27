@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0x7m7ovsusw6"
-path="res://.godot/imported/cone_d_blur.png-42bbf938354e2a7c26ce8ab9fadbb72f.ctex"
+uid="uid://udn1v25vklho"
+path="res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-377903dc35672692c414a48aafce3ac9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cone_d_blur.png"
-dest_files=["res://.godot/imported/cone_d_blur.png-42bbf938354e2a7c26ce8ab9fadbb72f.ctex"]
+source_file="res://assets/sprites/texturas/2d_lights_and_shadows_neutral_point_light.webp"
+dest_files=["res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-377903dc35672692c414a48aafce3ac9.ctex"]
 
 [params]
 

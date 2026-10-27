@@ -17,18 +17,20 @@
 [ext_resource type="PackedScene" uid="uid://bs84j0skadns7" path="res://cenas/objetos/tableta.tscn" id="8_e1jw5"]
 [ext_resource type="Texture2D" uid="uid://cwthuopbbefpj" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna fora/PedraNoCaminho.png" id="9_ocy8p"]
 [ext_resource type="Texture2D" uid="uid://dolhsm6nyx1va" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna fora/CavernaForaFora.png" id="10_4s1ku"]
+[ext_resource type="Texture2D" uid="uid://udn1v25vklho" path="res://assets/sprites/texturas/2d_lights_and_shadows_neutral_point_light.webp" id="17_4s1ku"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ungyi"]
 size = Vector2(283, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k41lo"]
-size = Vector2(102, 46.5)
+size = Vector2(54, 46.5)
 
 [node name="Caverna" type="Node2D" unique_id=1780107482]
 
 [node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("1_e1jw5")]
 
 [node name="FundoFundo" type="Sprite2D" parent="." unique_id=499142689]
+light_mask = 2
 texture = ExtResource("2_s51jx")
 
 [node name="Puzzle_cristal" parent="." unique_id=444991581 node_paths=PackedStringArray("plantas") instance=ExtResource("3_ha7ln")]
@@ -76,10 +78,20 @@ anterior = NodePath("Entrada")
 [node name="CavernaDentroFora" type="Sprite2D" parent="Entrada3" unique_id=1881607259]
 texture = ExtResource("5_ldxle")
 
+[node name="PointLight2D2" type="PointLight2D" parent="Entrada3" unique_id=1871803140]
+z_index = 7
+position = Vector2(94.19141, 87.00001)
+scale = Vector2(0.21243282, 0.4140625)
+energy = 4.3
+range_item_cull_mask = 2
+shadow_enabled = true
+texture = ExtResource("17_4s1ku")
+
 [node name="Porta" type="StaticBody2D" parent="Entrada3" unique_id=748752576]
 script = ExtResource("7_ldxle")
 
 [node name="Porta" type="Sprite2D" parent="Entrada3/Porta" unique_id=186972452]
+position = Vector2(-2, 0)
 texture = ExtResource("6_km038")
 
 [node name="Fundo" type="Sprite2D" parent="Entrada3" unique_id=1177841471]
@@ -104,13 +116,20 @@ polygon = PackedVector2Array(-26, 88, -23, 94, 33, 95, 34, 83, 20, 60, 15, 43, 1
 [node name="Pedra no Caminho" type="Sprite2D" parent="Entrada3/Parede Caverna Por Fora/PedraNoCaminho" unique_id=579329219]
 texture = ExtResource("9_ocy8p")
 
+[node name="PointLight2D" type="PointLight2D" parent="Entrada3" unique_id=1229591881]
+position = Vector2(-25, 58)
+scale = Vector2(0.4453125, 0.546875)
+shadow_enabled = true
+texture = ExtResource("17_4s1ku")
+
 [node name="Entrada" parent="Entrada3" unique_id=471330420 instance=ExtResource("7_7eiki")]
 
 [node name="CavernaForaFora" type="Sprite2D" parent="Entrada3/Entrada" unique_id=120324807]
+light_mask = 16
 texture = ExtResource("10_4s1ku")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada3/Entrada" unique_id=685662959]
-position = Vector2(-26, 72.25)
+position = Vector2(-44, 72)
 shape = SubResource("RectangleShape2D_k41lo")
 
 [node name="Camera2D" type="Camera2D" parent="Entrada3/Entrada" unique_id=1908347959]
@@ -126,3 +145,6 @@ disabled = true
 position = Vector2(66, 27)
 ignore_rotation = false
 zoom = Vector2(2.5, 2.5)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=767042989]
+color = Color(0.9691369, 0.9691369, 0.9691368, 1)
