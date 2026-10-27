@@ -16,7 +16,9 @@ var cor_luz: Color = Color.WHITE
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "mudar_direcao")
-
+	luz_feixe.range_item_cull_mask = 1 << 1
+	
+	
 func configurar_plantas(novas_plantas: Array[Planta]) -> void:
 	plantas = novas_plantas
 	

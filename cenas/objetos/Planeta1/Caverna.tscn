@@ -17,18 +17,20 @@
 [ext_resource type="PackedScene" uid="uid://bs84j0skadns7" path="res://cenas/objetos/tableta.tscn" id="8_e1jw5"]
 [ext_resource type="Texture2D" uid="uid://cwthuopbbefpj" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna fora/PedraNoCaminho.png" id="9_ocy8p"]
 [ext_resource type="Texture2D" uid="uid://dolhsm6nyx1va" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna fora/CavernaForaFora.png" id="10_4s1ku"]
+[ext_resource type="Texture2D" uid="uid://udn1v25vklho" path="res://assets/sprites/texturas/2d_lights_and_shadows_neutral_point_light.webp" id="18_4s1ku"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ungyi"]
 size = Vector2(283, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k41lo"]
-size = Vector2(102, 46.5)
+size = Vector2(66, 46.5)
 
 [node name="Caverna" type="Node2D" unique_id=1780107482]
 
 [node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("1_e1jw5")]
 
 [node name="FundoFundo" type="Sprite2D" parent="." unique_id=499142689]
+light_mask = 14
 z_index = -1
 texture = ExtResource("2_s51jx")
 
@@ -38,14 +40,17 @@ position = Vector2(60, -65)
 plantas = [NodePath("../planta"), NodePath("../planta2"), NodePath("../planta3")]
 
 [node name="planta" parent="." unique_id=1265906810 instance=ExtResource("4_7eiki")]
+light_mask = 2
 position = Vector2(57, 91)
 luz_crescimento = Color(1, 0, 0, 1)
 
 [node name="planta2" parent="." unique_id=1568853375 instance=ExtResource("4_7eiki")]
+light_mask = 2
 position = Vector2(-9, 92)
 luz_crescimento = Color(0, 0, 1, 1)
 
 [node name="planta3" parent="." unique_id=1540792086 instance=ExtResource("4_7eiki")]
+light_mask = 2
 position = Vector2(109, 94)
 luz_crescimento = Color(0, 1, 0, 1)
 
@@ -54,9 +59,11 @@ z_as_relative = false
 script = ExtResource("5_ocy8p")
 
 [node name="Varanda" type="Sprite2D" parent="Varanda" unique_id=909410212]
+light_mask = 3
 texture = ExtResource("3_e1jw5")
 
 [node name="Varanda2" type="Sprite2D" parent="Varanda" unique_id=1023905957]
+light_mask = 3
 texture = ExtResource("3_e1jw5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Varanda" unique_id=2051688882]
@@ -108,9 +115,12 @@ polygon = PackedVector2Array(104, 114, 161, 114, 139, 49, 136, 33, 121, 11, 104,
 [node name="PedraNoCaminho" type="StaticBody2D" parent="Entrada3/Parede Caverna Por Fora" unique_id=1483271884]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Entrada3/Parede Caverna Por Fora/PedraNoCaminho" unique_id=1845427985]
+position = Vector2(-2, 16)
 polygon = PackedVector2Array(-26, 88, -23, 94, 33, 95, 34, 83, 20, 60, 15, 43, 10, 32, 4, 32, 1, 41, -5, 41, -8, 58, -13, 70, -20, 75, -21, 84)
 
 [node name="Pedra no Caminho" type="Sprite2D" parent="Entrada3/Parede Caverna Por Fora/PedraNoCaminho" unique_id=579329219]
+light_mask = 2
+position = Vector2(-1, 16)
 texture = ExtResource("9_ocy8p")
 
 [node name="Entrada" parent="Entrada3" unique_id=471330420 instance=ExtResource("7_7eiki")]
@@ -119,7 +129,7 @@ texture = ExtResource("9_ocy8p")
 texture = ExtResource("10_4s1ku")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada3/Entrada" unique_id=685662959]
-position = Vector2(-26, 72.25)
+position = Vector2(-44, 72.25)
 shape = SubResource("RectangleShape2D_k41lo")
 
 [node name="Camera2D" type="Camera2D" parent="Entrada3/Entrada" unique_id=1908347959]
@@ -135,3 +145,16 @@ disabled = true
 position = Vector2(66, 27)
 ignore_rotation = false
 zoom = Vector2(2.5, 2.5)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2031117191]
+position = Vector2(95, 79)
+scale = Vector2(0.19824216, 0.40136716)
+energy = 5.0
+range_item_cull_mask = 30
+texture = ExtResource("18_4s1ku")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=230186595]
+position = Vector2(-26, 63.99997)
+scale = Vector2(0.4885254, 0.5632289)
+energy = 1.45
+texture = ExtResource("18_4s1ku")

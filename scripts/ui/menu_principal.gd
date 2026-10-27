@@ -30,6 +30,8 @@ func _on_jogar_pressed() -> void:
 	await animation_player.animation_finished
 	
 	if is_inside_tree() and get_tree() != null:
+		animation_player.play("cena1")
+		await animation_player.animation_finished
 		get_tree().change_scene_to_file("res://cenas/jogo/main.tscn")
 
 func _on_sair_pressed() -> void:

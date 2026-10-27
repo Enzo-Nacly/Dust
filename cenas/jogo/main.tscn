@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bqoc51lt4q3e" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente1.png" id="16_0ys5k"]
 [ext_resource type="Texture2D" uid="uid://bdppo2ps2rsxi" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente3.png" id="16_5bydj"]
 [ext_resource type="PackedScene" uid="uid://dhqkejaqlrrec" path="res://cenas/objetos/Planeta1/Caverna.tscn" id="16_acw65"]
+[ext_resource type="Texture2D" uid="uid://8664nr8mejyn" path="res://assets/sprites/animacoes/fishiShip3d-QuebrandoSheet.png" id="16_xnaut"]
 [ext_resource type="Texture2D" uid="uid://c5y0f0yj0je6f" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente2.png" id="16_ysqms"]
 [ext_resource type="Texture2D" uid="uid://b47b0ynbsk175" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente4.png" id="17_x1j5q"]
 [ext_resource type="Texture2D" uid="uid://benli3tdqbp4h" path="res://assets/sprites/Planeta1/Cidade Quinoyd/Casas/casa_quinoyd_generica.png" id="20_x1j5q"]
@@ -91,7 +92,7 @@ script = ExtResource("12_e1ykf")
 imagem_falante = ExtResource("8_e1ykf")
 qtd_frames_falante = 4
 frame_falante_terminou = 3
-texto = "[rainbow][wave amp=50.0 freq=5.0][shake rate=20.0 level=5 connected=1]ME AJUDA TENHO FOME![/shake][/wave][/rainbow]
+texto = "Oi, então você deve ser o homem que caiu do céu  agora pouco
 
 "
 velocidade_texto = 18.0
@@ -102,12 +103,15 @@ metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
 [sub_resource type="Resource" id="Resource_ahwvi"]
 script = ExtResource("12_e1ykf")
 imagem_falante = ExtResource("13_acw65")
-texto = "Aqui, tome a semente de nossa árvore..."
-velocidade_texto = 5.0
+texto = "Já deve ter conhecido meus amigos, bem..."
+velocidade_texto = 18.1
 som_texto = ExtResource("13_qabof")
 volume_texto_pitch_min = 0.5
 volume_texto_pitch_max = 3.0
 metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
+radius = 637.5304
 
 [sub_resource type="Resource" id="Resource_l7l8e"]
 script = ExtResource("8_l7l8e")
@@ -148,27 +152,69 @@ texto_escolha = Array[String](["Acho que sim", "Tô nem aí"])
 chamada_funcoes_escolha = Array[ExtResource("8_l7l8e")]([SubResource("Resource_e1ykf"), null])
 metadata/_custom_type_script = "uid://cw4wljefn5n1m"
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
-radius = 27.658634
-
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pi0el"]
 polygon = PackedVector2Array(-901, 833, -887, 863, -868, 895, -847, 930, -817, 976, -799, 998, -776, 1029, -755, 1054, -731, 1080, -715, 1098, -692, 1075, -892, 822)
 
+[sub_resource type="Resource" id="Resource_qfvoi"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("8_e1ykf")
+qtd_frames_falante = 4
+texto = "Não sei dizer se posso chama-los de amigos..."
+velocidade_texto = 18.0
+som_texto = ExtResource("13_qabof")
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_1tpdm"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("8_e1ykf")
+qtd_frames_falante = 4
+texto = "Eles me baniram, dizem que eu sou LOUCO, louco são eles, não acreditam em mim"
+velocidade_texto = 18.3
+som_texto = ExtResource("13_qabof")
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_d58d7"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("8_e1ykf")
+qtd_frames_falante = 4
+texto = "Mas bem, eu tenho certeza que essa vida é algo além de pedras, pedras e pedras..."
+velocidade_texto = 18.200000000000003
+som_texto = ExtResource("13_qabof")
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_a0ts5"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("13_acw65")
+texto = "Aqui perto tem uma caverna bem estranha, não consigo entrar lá, mas acho que você devia tentar."
+velocidade_texto = 18.0
+som_texto = ExtResource("13_qabof")
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_g1ftk"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("13_acw65")
+texto = "Boa sorte amigo!!!!"
+velocidade_texto = 3.0
+som_texto = ExtResource("13_qabof")
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
 [node name="Main" type="Node2D" unique_id=522489995]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1297750057]
-offset_left = -2001.0
-offset_top = -1148.0
-offset_right = 2025.0
-offset_bottom = 2039.0
-color = Color(0.8665256, 0.42226568, 0.32961398, 0.85882354)
+[node name="ColorRect" type="ColorRect" parent="." unique_id=583502706]
+z_index = -12
+z_as_relative = false
+offset_left = -4356.0
+offset_top = -2160.0
+offset_right = 4657.417
+offset_bottom = 3396.0
+color = Color(0.9994791, 0.6009047, 0.3784448, 1)
 
 [node name="Caverna" parent="." unique_id=1780107482 instance=ExtResource("16_acw65")]
 position = Vector2(-852.00006, 1081)
 rotation = 3.9409535
 
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
-position = Vector2(-652, 1203)
+position = Vector2(-877, -132)
 
 [node name="casas_quinoyd" type="Node" parent="." unique_id=937083720]
 
@@ -182,14 +228,47 @@ texture = ExtResource("5_h2r2o")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="quinoyd" unique_id=1965227920]
 libraries/ = SubResource("AnimationLibrary_5f6nu")
 
-[node name="area_dialogo" parent="." unique_id=843434367 instance=ExtResource("6_pitpt")]
+[node name="quinoyd3" type="Sprite2D" parent="." unique_id=1959082492]
+position = Vector2(1002.00006, 223)
+rotation = 1.6165065
+scale = Vector2(0.99999976, 0.99999976)
+texture = ExtResource("5_h2r2o")
+
+[node name="area_dialogo2" parent="." unique_id=843434367 instance=ExtResource("6_pitpt")]
+position = Vector2(5595, 1452)
+scale = Vector2(0.99999994, 0.99999994)
+ativar_instantaneamente = true
+ativar_one_shot = true
+dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_qabof"), SubResource("Resource_ahwvi")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_dialogo2" unique_id=660268538]
+position = Vector2(-4599.0005, -1227)
+rotation = 0.08671384
+scale = Vector2(0.09778228, 0.08494876)
+shape = SubResource("CircleShape2D_fu62x")
+debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
+
+[node name="quinoyd2" type="Sprite2D" parent="." unique_id=2141596391]
+position = Vector2(702.00006, -335)
+rotation = 0.6867547
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_h2r2o")
+
+[node name="quinoyd2" type="Sprite2D" parent="quinoyd2" unique_id=419484479]
+position = Vector2(403.91663, 118.845764)
+rotation = 0.68752736
+scale = Vector2(0.9476436, 0.8835675)
+texture = ExtResource("5_h2r2o")
+
+[node name="area_dialogo" parent="." unique_id=1334098430 instance=ExtResource("6_pitpt")]
 position = Vector2(2455, 766)
 ativar_instantaneamente = true
 ativar_one_shot = true
 dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_qabof"), SubResource("Resource_ahwvi"), SubResource("Resource_l7l8e"), SubResource("Resource_5qnmo"), SubResource("Resource_kemws")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_dialogo" unique_id=85451978]
-position = Vector2(-1629, -960)
+position = Vector2(-1613, -960)
+scale = Vector2(0.07086741, 0.07704576)
 shape = SubResource("CircleShape2D_fu62x")
 debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
 
@@ -211,8 +290,14 @@ scale = Vector2(1.1194181, 1.225867)
 texture = ExtResource("15_acw65")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroid" unique_id=1932902933]
-visible = false
 polygon = PackedVector2Array(-951, 73, -875, 228, -933, 725, -1232, 676, -1238, 659, -1261, 664, -1397, 601, -1315, 354, -1267, 347, -1234, 227, -1249, 195, -1029, 40)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=687764021]
+position = Vector2(-971.0001, 41.000015)
+rotation = -0.12915435
+scale = Vector2(3.8341794, 3.8341794)
+texture = ExtResource("16_xnaut")
+hframes = 240
 
 [node name="Coisas Na frente" type="Node2D" parent="." unique_id=1891143024]
 z_index = 4096
@@ -487,8 +572,8 @@ scale = Vector2(1.2261153, 1.2261153)
 texture = ExtResource("20_x1j5q")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1799286594]
-visible = false
-position = Vector2(43, -42.000004)
+position = Vector2(42, -55)
+rotation = -0.005727444
 scale = Vector2(17.869627, 17.869627)
 color = Color(1, 0, 1, 1)
 energy = 1.2
@@ -502,3 +587,35 @@ texture = ExtResource("21_cdns1")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=568977251]
 occluder = SubResource("OccluderPolygon2D_pi0el")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2051599869]
+color = Color(0.7543648, 0.6334469, 0.7568533, 1)
+
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=1036757368]
+visible = false
+position = Vector2(25, 63.999996)
+scale = Vector2(19.170897, 19.170897)
+color = Color(0.8039216, 0.1764706, 0.7294118, 1)
+texture = ExtResource("21_cdns1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1723649827]
+
+[node name="quinoyd4" type="Sprite2D" parent="." unique_id=1916963621]
+position = Vector2(141.99998, 1403.0001)
+rotation = 3.1612244
+scale = Vector2(0.99999976, 0.99999976)
+texture = ExtResource("5_h2r2o")
+
+[node name="area_dialogo3" parent="." unique_id=326181060 instance=ExtResource("6_pitpt")]
+position = Vector2(4753, 2649)
+scale = Vector2(0.99999994, 0.99999994)
+ativar_instantaneamente = true
+ativar_one_shot = true
+dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_qabof"), SubResource("Resource_ahwvi"), SubResource("Resource_qfvoi"), SubResource("Resource_1tpdm"), SubResource("Resource_d58d7"), SubResource("Resource_a0ts5"), SubResource("Resource_g1ftk")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_dialogo3" unique_id=52647716]
+position = Vector2(-4599.0005, -1227)
+rotation = 0.08671384
+scale = Vector2(0.09778228, 0.08494876)
+shape = SubResource("CircleShape2D_fu62x")
+debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
