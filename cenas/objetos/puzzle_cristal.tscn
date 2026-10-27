@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bqk4sejfo27ot"]
+
+[ext_resource type="Script" uid="uid://x0lq8wiow5xe" path="res://scripts/puzzle_cristal.gd" id="1_3lalb"]
+[ext_resource type="PackedScene" uid="uid://br743hdrfh8ay" path="res://cenas/objetos/Planeta1/Caverna/Puzzle/conjunto_cristal_manivela.tscn" id="2_5o7k4"]
+[ext_resource type="PackedScene" uid="uid://cct036hg0dkb0" path="res://cenas/objetos/lupa.tscn" id="3_0qqp8"]
+
+[node name="Puzzle_cristal" type="Node2D" unique_id=444991581]
+script = ExtResource("1_3lalb")
+
+[node name="conjunto_cristal_manivela" parent="." unique_id=1036634973 instance=ExtResource("2_5o7k4")]
+
+[node name="lupa" parent="." unique_id=343239108 instance=ExtResource("3_0qqp8")]
+position = Vector2(-22, 11)
