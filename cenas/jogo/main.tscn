@@ -23,6 +23,70 @@
 [ext_resource type="Texture2D" uid="uid://benli3tdqbp4h" path="res://assets/sprites/Planeta1/Cidade Quinoyd/Casas/casa_quinoyd_generica.png" id="20_x1j5q"]
 [ext_resource type="Texture2D" uid="uid://udn1v25vklho" path="res://assets/sprites/texturas/2d_lights_and_shadows_neutral_point_light.webp" id="21_cdns1"]
 
+[sub_resource type="Resource" id="Resource_qabof"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("8_e1ykf")
+qtd_frames_falante = 4
+frame_falante_terminou = 3
+texto = "Oi, então você deve ser o homem que caiu do céu  agora pouco
+
+"
+velocidade_texto = 18.0
+som_texto = ExtResource("13_qabof")
+volume_texto_db = -8
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_ahwvi"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("13_acw65")
+texto = "Já deve ter conhecido meus amigos, bem..."
+velocidade_texto = 18.1
+som_texto = ExtResource("13_qabof")
+volume_texto_pitch_min = 0.5
+volume_texto_pitch_max = 3.0
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_l7l8e"]
+script = ExtResource("8_l7l8e")
+caminho_node_com_funcao = NodePath("../AnimationPlayer")
+nome_funcao = "play"
+parametros_funcao = ["teste"]
+esconder_caixa_dialogo = true
+esperar_sinal_para_continuar = "animation_finished"
+metadata/_custom_type_script = "uid://uaam2kd3rb80"
+
+[sub_resource type="Resource" id="Resource_5qnmo"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("8_e1ykf")
+qtd_frames_falante = 4
+frame_falante_terminou = 4
+texto = "Nós adoramos pedras que são legais!!!"
+velocidade_texto = 20.0
+som_texto = ExtResource("13_qabof")
+volume_texto_db = -8
+volume_texto_pitch_min = 0.5
+volume_texto_pitch_max = 1.0
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_e1ykf"]
+script = ExtResource("8_l7l8e")
+caminho_node_com_funcao = NodePath("../AnimationPlayer")
+nome_funcao = "play"
+parametros_funcao = ["wow"]
+esperar_sinal_para_continuar = "animation_finished"
+metadata/_custom_type_script = "uid://uaam2kd3rb80"
+
+[sub_resource type="Resource" id="Resource_kemws"]
+script = ExtResource("10_5qnmo")
+nome_falante = "quinoyd"
+imagem_falante = ExtResource("11_qabof")
+texto = "Você vai conseguir nos ajudar?"
+texto_escolha = Array[String](["Acho que sim", "Tô nem aí"])
+chamada_funcoes_escolha = Array[ExtResource("8_l7l8e")]([SubResource("Resource_e1ykf"), null])
+metadata/_custom_type_script = "uid://cw4wljefn5n1m"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_skikl"]
+
 [sub_resource type="Animation" id="Animation_pitpt"]
 length = 0.001
 tracks/0/type = "value"
@@ -87,70 +151,8 @@ _data = {
 &"wow": SubResource("Animation_acw65")
 }
 
-[sub_resource type="Resource" id="Resource_qabof"]
-script = ExtResource("12_e1ykf")
-imagem_falante = ExtResource("8_e1ykf")
-qtd_frames_falante = 4
-frame_falante_terminou = 3
-texto = "Oi, então você deve ser o homem que caiu do céu  agora pouco
-
-"
-velocidade_texto = 18.0
-som_texto = ExtResource("13_qabof")
-volume_texto_db = -8
-metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
-
-[sub_resource type="Resource" id="Resource_ahwvi"]
-script = ExtResource("12_e1ykf")
-imagem_falante = ExtResource("13_acw65")
-texto = "Já deve ter conhecido meus amigos, bem..."
-velocidade_texto = 18.1
-som_texto = ExtResource("13_qabof")
-volume_texto_pitch_min = 0.5
-volume_texto_pitch_max = 3.0
-metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
-radius = 637.5304
-
-[sub_resource type="Resource" id="Resource_l7l8e"]
-script = ExtResource("8_l7l8e")
-caminho_node_com_funcao = NodePath("../quinoyd/AnimationPlayer")
-nome_funcao = "play"
-parametros_funcao = ["teste"]
-esconder_caixa_dialogo = true
-esperar_sinal_para_continuar = "animation_finished"
-metadata/_custom_type_script = "uid://uaam2kd3rb80"
-
-[sub_resource type="Resource" id="Resource_5qnmo"]
-script = ExtResource("12_e1ykf")
-imagem_falante = ExtResource("8_e1ykf")
-qtd_frames_falante = 4
-frame_falante_terminou = 4
-texto = "Nós adoramos pedras que são legais!!!"
-velocidade_texto = 20.0
-som_texto = ExtResource("13_qabof")
-volume_texto_db = -8
-volume_texto_pitch_min = 0.5
-volume_texto_pitch_max = 1.0
-metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
-
-[sub_resource type="Resource" id="Resource_e1ykf"]
-script = ExtResource("8_l7l8e")
-caminho_node_com_funcao = NodePath("../quinoyd/AnimationPlayer")
-nome_funcao = "play"
-parametros_funcao = ["wow"]
-esperar_sinal_para_continuar = "animation_finished"
-metadata/_custom_type_script = "uid://uaam2kd3rb80"
-
-[sub_resource type="Resource" id="Resource_kemws"]
-script = ExtResource("10_5qnmo")
-nome_falante = "quinoyd"
-imagem_falante = ExtResource("11_qabof")
-texto = "Você vai conseguir nos ajudar?"
-texto_escolha = Array[String](["Acho que sim", "Tô nem aí"])
-chamada_funcoes_escolha = Array[ExtResource("8_l7l8e")]([SubResource("Resource_e1ykf"), null])
-metadata/_custom_type_script = "uid://cw4wljefn5n1m"
+radius = 399.52
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pi0el"]
 polygon = PackedVector2Array(-901, 833, -887, 863, -868, 895, -847, 930, -817, 976, -799, 998, -776, 1029, -755, 1054, -731, 1080, -715, 1098, -692, 1075, -892, 822)
@@ -200,7 +202,9 @@ metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
 
 [node name="Main" type="Node2D" unique_id=522489995]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=583502706]
+[node name="UI_dialogo" type="CanvasLayer" parent="." unique_id=687282447 groups=["ui"]]
+
+[node name="ceu" type="ColorRect" parent="." unique_id=583502706]
 z_index = -12
 z_as_relative = false
 offset_left = -4356.0
@@ -216,14 +220,23 @@ rotation = 3.9409535
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
 position = Vector2(-877, -132)
 
-[node name="casas_quinoyd" type="Node" parent="." unique_id=937083720]
-
-[node name="quinoyds" type="Node" parent="." unique_id=1164597543]
-
 [node name="quinoyd" type="Sprite2D" parent="." unique_id=1290611076]
 position = Vector2(829.00006, -190.99998)
 rotation = -0.76009536
 texture = ExtResource("5_h2r2o")
+
+[node name="area_dialogo" parent="quinoyd" unique_id=1334098430 instance=ExtResource("6_pitpt")]
+position = Vector2(519.11255, 1813.9039)
+rotation = 0.76009536
+ativar_instantaneamente = true
+ativar_one_shot = true
+dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_qabof"), SubResource("Resource_ahwvi"), SubResource("Resource_l7l8e"), SubResource("Resource_5qnmo"), SubResource("Resource_kemws")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="quinoyd/area_dialogo" unique_id=85451978]
+position = Vector2(-1613, -960)
+scale = Vector2(0.07086741, 0.07704576)
+shape = SubResource("CircleShape2D_skikl")
+debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="quinoyd" unique_id=1965227920]
 libraries/ = SubResource("AnimationLibrary_5f6nu")
@@ -259,20 +272,6 @@ position = Vector2(403.91663, 118.845764)
 rotation = 0.68752736
 scale = Vector2(0.9476436, 0.8835675)
 texture = ExtResource("5_h2r2o")
-
-[node name="area_dialogo" parent="." unique_id=1334098430 instance=ExtResource("6_pitpt")]
-position = Vector2(2455, 766)
-ativar_instantaneamente = true
-ativar_one_shot = true
-dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_qabof"), SubResource("Resource_ahwvi"), SubResource("Resource_l7l8e"), SubResource("Resource_5qnmo"), SubResource("Resource_kemws")])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area_dialogo" unique_id=85451978]
-position = Vector2(-1613, -960)
-scale = Vector2(0.07086741, 0.07704576)
-shape = SubResource("CircleShape2D_fu62x")
-debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
-
-[node name="UI" type="CanvasLayer" parent="." unique_id=687282447 groups=["ui"]]
 
 [node name="Casa1" parent="." unique_id=2038346081 instance=ExtResource("15_qabof")]
 position = Vector2(928, -111)
@@ -563,9 +562,9 @@ rotation = 1.5254178
 scale = Vector2(1.2261153, 1.2261153)
 texture = ExtResource("20_x1j5q")
 
-[node name="CasaFrente2" type="StaticBody2D" parent="Coisas Na frente/CasaFrente" unique_id=1698013656]
+[node name="CasaFrente2" type="StaticBody2D" parent="Coisas Na frente" unique_id=1698013656]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/CasaFrente/CasaFrente2" unique_id=1304357399]
+[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/CasaFrente2" unique_id=1304357399]
 position = Vector2(766.99994, -275)
 rotation = 1.0629056
 scale = Vector2(1.2261153, 1.2261153)
@@ -597,8 +596,6 @@ position = Vector2(25, 63.999996)
 scale = Vector2(19.170897, 19.170897)
 color = Color(0.8039216, 0.1764706, 0.7294118, 1)
 texture = ExtResource("21_cdns1")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1723649827]
 
 [node name="quinoyd4" type="Sprite2D" parent="." unique_id=1916963621]
 position = Vector2(141.99998, 1403.0001)
