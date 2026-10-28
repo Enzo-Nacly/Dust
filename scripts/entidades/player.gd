@@ -17,22 +17,23 @@ func _ready() -> void:
 	_setar_inventario_gerenciador()
 
 func _pegando_direcao() -> int:
-	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
-		var direcao: int = int(Input.get_axis("left", "right"))
-		if direcao < 0: sprite.flip_h = true
-		else: sprite.flip_h = false
-		return direcao
-	else:
-		return 0
+	var direcao: int = int(Input.get_axis("left", "right"))
+	return direcao
+
 
 func _physics_process(delta: float) -> void:
 	if Game_Manager.can_move == false: return
 	
 	var direcao = _pegando_direcao()
+	componente_animacao.mudar_direcao_sprite(direcao)
 	componente_animacao.animar(direcao)
+	
 	componente_movimento.mover(delta, direcao)
+	
 	processar_fisica_basica(delta)
+	
 	componente_pulo.pular()
+	
 	finalizar_fisica()
 
 func _setar_inventario_gerenciador() -> void:

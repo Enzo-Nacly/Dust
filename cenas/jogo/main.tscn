@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b47b0ynbsk175" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente4.png" id="17_x1j5q"]
 [ext_resource type="Texture2D" uid="uid://benli3tdqbp4h" path="res://assets/sprites/Planeta1/Cidade Quinoyd/Casas/casa_quinoyd_generica.png" id="20_x1j5q"]
 [ext_resource type="Texture2D" uid="uid://udn1v25vklho" path="res://assets/sprites/texturas/2d_lights_and_shadows_neutral_point_light.webp" id="21_cdns1"]
+[ext_resource type="PackedScene" uid="uid://cxa7nhc84kxt" path="res://cenas/entidades/quinoyd.tscn" id="23_qfvoi"]
 
 [sub_resource type="Resource" id="Resource_qabof"]
 script = ExtResource("12_e1ykf")
@@ -197,6 +198,14 @@ script = ExtResource("12_e1ykf")
 imagem_falante = ExtResource("13_acw65")
 texto = "Boa sorte amigo!!!!"
 velocidade_texto = 3.0
+som_texto = ExtResource("13_qabof")
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_37ysa"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("13_acw65")
+texto = "falaeeeeeee"
+velocidade_texto = 2.0
 som_texto = ExtResource("13_qabof")
 metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
 
@@ -616,3 +625,8 @@ rotation = 0.08671384
 scale = Vector2(0.09778228, 0.08494876)
 shape = SubResource("CircleShape2D_fu62x")
 debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
+
+[node name="quinoyd5" parent="." unique_id=1192443979 instance=ExtResource("23_qfvoi")]
+position = Vector2(-744, -334)
+ativar_one_shot = true
+dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_37ysa")])

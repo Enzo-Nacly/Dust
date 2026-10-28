@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cxa7nhc84kxt"]
+
+[ext_resource type="Script" uid="uid://tb6xnv7msfo6" path="res://scripts/entidades/quinoyd.gd" id="1_24ap5"]
+[ext_resource type="Texture2D" uid="uid://b8cv0h2duu03l" path="res://assets/sprites/entidades/quinoyds/quinoyd.png" id="1_mlb7l"]
+[ext_resource type="Script" uid="uid://camujvpkdi7li" path="res://scripts/componentes/componente_gravidade.gd" id="3_qx0va"]
+[ext_resource type="Script" uid="uid://h6wfdw1onmno" path="res://scripts/componentes/componente_rotacao.gd" id="4_5p2ye"]
+[ext_resource type="Script" uid="uid://dhm6j02iw2vrm" path="res://scripts/componentes/componente_movimento.gd" id="5_5p2ye"]
+[ext_resource type="Script" uid="uid://idpvhq8hfapr" path="res://scripts/componentes/componente_animacao.gd" id="6_kqu61"]
+[ext_resource type="PackedScene" uid="uid://bus45pdjp8fas" path="res://cenas/componentes/area_dialogo_quinoyd.tscn" id="7_37ysa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24ap5"]
+atlas = ExtResource("1_mlb7l")
+region = Rect2(0, 0, 37, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fu62x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24ap5")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fu62x"]
+size = Vector2(15, 34)
+
+[node name="quinoyd" type="CharacterBody2D" unique_id=1192443979]
+script = ExtResource("1_24ap5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1479813398]
+sprite_frames = SubResource("SpriteFrames_fu62x")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=631122305]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_fu62x")
+
+[node name="Componentes" type="Node" parent="." unique_id=2023491824]
+
+[node name="ComponenteGravidade" type="Node" parent="Componentes" unique_id=2145876411]
+script = ExtResource("3_qx0va")
+metadata/_custom_type_script = "uid://camujvpkdi7li"
+
+[node name="ComponenteRotacao" type="Node" parent="Componentes" unique_id=1229786258]
+script = ExtResource("4_5p2ye")
+metadata/_custom_type_script = "uid://h6wfdw1onmno"
+
+[node name="ComponenteMovimento" type="Node" parent="Componentes" unique_id=1519320585]
+script = ExtResource("5_5p2ye")
+metadata/_custom_type_script = "uid://dhm6j02iw2vrm"
+
+[node name="ComponenteAnimacao" type="Node" parent="Componentes" unique_id=190737385 node_paths=PackedStringArray("sprite")]
+script = ExtResource("6_kqu61")
+sprite_olhando_esquerda = true
+sprite = NodePath("../../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://idpvhq8hfapr"
+
+[node name="area_dialogo_quinoyd" parent="." unique_id=2074360717 instance=ExtResource("7_37ysa")]
