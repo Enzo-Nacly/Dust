@@ -16,8 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://j23ojn6bq4ch" path="res://cenas/objetos/Planeta1/Cidade Quinoyd/CasaQuinoyd_1.tscn" id="15_qabof"]
 [ext_resource type="Texture2D" uid="uid://bqoc51lt4q3e" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente1.png" id="16_0ys5k"]
 [ext_resource type="Texture2D" uid="uid://bdppo2ps2rsxi" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente3.png" id="16_5bydj"]
-[ext_resource type="PackedScene" uid="uid://dhqkejaqlrrec" path="res://cenas/objetos/Planeta1/Caverna.tscn" id="16_acw65"]
-[ext_resource type="Texture2D" uid="uid://8664nr8mejyn" path="res://assets/sprites/animacoes/fishiShip3d-QuebrandoSheet.png" id="16_xnaut"]
+[ext_resource type="PackedScene" uid="uid://dhqkejaqlrrec" path="res://cenas/objetos/Planeta1/caverna.tscn" id="16_acw65"]
 [ext_resource type="Texture2D" uid="uid://c5y0f0yj0je6f" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente2.png" id="16_ysqms"]
 [ext_resource type="Texture2D" uid="uid://b47b0ynbsk175" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente4.png" id="17_x1j5q"]
 [ext_resource type="Texture2D" uid="uid://benli3tdqbp4h" path="res://assets/sprites/Planeta1/Cidade Quinoyd/Casas/casa_quinoyd_generica.png" id="20_x1j5q"]
@@ -152,62 +151,8 @@ _data = {
 &"wow": SubResource("Animation_acw65")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
-radius = 399.52
-
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pi0el"]
 polygon = PackedVector2Array(-901, 833, -887, 863, -868, 895, -847, 930, -817, 976, -799, 998, -776, 1029, -755, 1054, -731, 1080, -715, 1098, -692, 1075, -892, 822)
-
-[sub_resource type="Resource" id="Resource_qfvoi"]
-script = ExtResource("12_e1ykf")
-imagem_falante = ExtResource("8_e1ykf")
-qtd_frames_falante = 4
-texto = "Não sei dizer se posso chama-los de amigos..."
-velocidade_texto = 18.0
-som_texto = ExtResource("13_qabof")
-metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
-
-[sub_resource type="Resource" id="Resource_1tpdm"]
-script = ExtResource("12_e1ykf")
-imagem_falante = ExtResource("8_e1ykf")
-qtd_frames_falante = 4
-texto = "Eles me baniram, dizem que eu sou LOUCO, louco são eles, não acreditam em mim"
-velocidade_texto = 18.3
-som_texto = ExtResource("13_qabof")
-metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
-
-[sub_resource type="Resource" id="Resource_d58d7"]
-script = ExtResource("12_e1ykf")
-imagem_falante = ExtResource("8_e1ykf")
-qtd_frames_falante = 4
-texto = "Mas bem, eu tenho certeza que essa vida é algo além de pedras, pedras e pedras..."
-velocidade_texto = 18.200000000000003
-som_texto = ExtResource("13_qabof")
-metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
-
-[sub_resource type="Resource" id="Resource_a0ts5"]
-script = ExtResource("12_e1ykf")
-imagem_falante = ExtResource("13_acw65")
-texto = "Aqui perto tem uma caverna bem estranha, não consigo entrar lá, mas acho que você devia tentar."
-velocidade_texto = 18.0
-som_texto = ExtResource("13_qabof")
-metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
-
-[sub_resource type="Resource" id="Resource_g1ftk"]
-script = ExtResource("12_e1ykf")
-imagem_falante = ExtResource("13_acw65")
-texto = "Boa sorte amigo!!!!"
-velocidade_texto = 3.0
-som_texto = ExtResource("13_qabof")
-metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
-
-[sub_resource type="Resource" id="Resource_37ysa"]
-script = ExtResource("12_e1ykf")
-imagem_falante = ExtResource("13_acw65")
-texto = "falaeeeeeee"
-velocidade_texto = 2.0
-som_texto = ExtResource("13_qabof")
-metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
 
 [node name="Main" type="Node2D" unique_id=522489995]
 
@@ -222,71 +167,42 @@ offset_right = 4657.417
 offset_bottom = 3396.0
 color = Color(0.9994791, 0.6009047, 0.3784448, 1)
 
-[node name="Caverna" parent="." unique_id=1780107482 instance=ExtResource("16_acw65")]
+[node name="cor_geral" type="CanvasModulate" parent="." unique_id=2051599869]
+color = Color(0.7543648, 0.6334469, 0.7568533, 1)
+
+[node name="caverna" parent="." unique_id=1780107482 instance=ExtResource("16_acw65")]
 position = Vector2(-852.00006, 1081)
 rotation = 3.9409535
 
-[node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
+[node name="player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
 position = Vector2(-877, -132)
 
-[node name="quinoyd" type="Sprite2D" parent="." unique_id=1290611076]
+[node name="quinoyd_antigo" type="Sprite2D" parent="." unique_id=1290611076]
 position = Vector2(829.00006, -190.99998)
 rotation = -0.76009536
 texture = ExtResource("5_h2r2o")
 
-[node name="area_dialogo" parent="quinoyd" unique_id=1334098430 instance=ExtResource("6_pitpt")]
+[node name="area_dialogo" parent="quinoyd_antigo" unique_id=1334098430 instance=ExtResource("6_pitpt")]
 position = Vector2(519.11255, 1813.9039)
 rotation = 0.76009536
 ativar_instantaneamente = true
 ativar_one_shot = true
 dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_qabof"), SubResource("Resource_ahwvi"), SubResource("Resource_l7l8e"), SubResource("Resource_5qnmo"), SubResource("Resource_kemws")])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="quinoyd/area_dialogo" unique_id=85451978]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="quinoyd_antigo/area_dialogo" unique_id=85451978]
 position = Vector2(-1613, -960)
 scale = Vector2(0.07086741, 0.07704576)
 shape = SubResource("CircleShape2D_skikl")
 debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="quinoyd" unique_id=1965227920]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="quinoyd_antigo" unique_id=1965227920]
 libraries/ = SubResource("AnimationLibrary_5f6nu")
-
-[node name="quinoyd3" type="Sprite2D" parent="." unique_id=1959082492]
-position = Vector2(1002.00006, 223)
-rotation = 1.6165065
-scale = Vector2(0.99999976, 0.99999976)
-texture = ExtResource("5_h2r2o")
-
-[node name="area_dialogo2" parent="." unique_id=843434367 instance=ExtResource("6_pitpt")]
-position = Vector2(5595, 1452)
-scale = Vector2(0.99999994, 0.99999994)
-ativar_instantaneamente = true
-ativar_one_shot = true
-dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_qabof"), SubResource("Resource_ahwvi")])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area_dialogo2" unique_id=660268538]
-position = Vector2(-4599.0005, -1227)
-rotation = 0.08671384
-scale = Vector2(0.09778228, 0.08494876)
-shape = SubResource("CircleShape2D_fu62x")
-debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
-
-[node name="quinoyd2" type="Sprite2D" parent="." unique_id=2141596391]
-position = Vector2(702.00006, -335)
-rotation = 0.6867547
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("5_h2r2o")
-
-[node name="quinoyd2" type="Sprite2D" parent="quinoyd2" unique_id=419484479]
-position = Vector2(403.91663, 118.845764)
-rotation = 0.68752736
-scale = Vector2(0.9476436, 0.8835675)
-texture = ExtResource("5_h2r2o")
 
 [node name="Casa1" parent="." unique_id=2038346081 instance=ExtResource("15_qabof")]
 position = Vector2(928, -111)
 rotation = 1.0524335
 
-[node name="Purple_Planet" parent="." unique_id=1866348177 instance=ExtResource("3_pitpt")]
+[node name="planeta_roxo" parent="." unique_id=1866348177 instance=ExtResource("3_pitpt")]
 position = Vector2(-1, 399)
 
 [node name="Asteroid" type="StaticBody2D" parent="." unique_id=2019705626]
@@ -300,286 +216,290 @@ texture = ExtResource("15_acw65")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Asteroid" unique_id=1932902933]
 polygon = PackedVector2Array(-951, 73, -875, 228, -933, 725, -1232, 676, -1238, 659, -1261, 664, -1397, 601, -1315, 354, -1267, 347, -1234, 227, -1249, 195, -1029, 40)
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=687764021]
-position = Vector2(-971.0001, 41.000015)
-rotation = -0.12915435
-scale = Vector2(3.8341794, 3.8341794)
-texture = ExtResource("16_xnaut")
-hframes = 240
-
-[node name="Coisas Na frente" type="Node2D" parent="." unique_id=1891143024]
+[node name="coisas_na_frente" type="Node2D" parent="." unique_id=1891143024]
 z_index = 4096
 z_as_relative = false
 
-[node name="ArvoreMorta" type="StaticBody2D" parent="Coisas Na frente" unique_id=1761090105]
+[node name="arvore" type="Node2D" parent="coisas_na_frente" unique_id=637747331]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/ArvoreMorta" unique_id=1060523936]
-position = Vector2(-112, -616.99994)
-rotation = -0.08901179
-texture = ExtResource("16_5bydj")
+[node name="arvore13" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1155247627]
 
-[node name="ArvoreMorta2" type="StaticBody2D" parent="Coisas Na frente" unique_id=1553296767]
-
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/ArvoreMorta2" unique_id=1969954429]
-position = Vector2(-168.99998, -629.99994)
-rotation = -0.17802358
-texture = ExtResource("17_x1j5q")
-
-[node name="ArvoreMorta4" type="StaticBody2D" parent="Coisas Na frente" unique_id=703120238]
-
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/ArvoreMorta4" unique_id=719827051]
-position = Vector2(-236.99998, -625)
-rotation = -0.17802358
-texture = ExtResource("16_5bydj")
-
-[node name="ArvoreMorta5" type="StaticBody2D" parent="Coisas Na frente" unique_id=462757646]
-
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/ArvoreMorta5" unique_id=1834600668]
-position = Vector2(-260, -584.99994)
-rotation = -0.17802358
-texture = ExtResource("17_x1j5q")
-
-[node name="ArvoreMorta3" type="StaticBody2D" parent="Coisas Na frente" unique_id=1799381096]
-
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/ArvoreMorta3" unique_id=1659548007]
-position = Vector2(-294, -589.99994)
-rotation = -0.17802358
-texture = ExtResource("16_5bydj")
-
-[node name="ArvoreMorta8" type="StaticBody2D" parent="Coisas Na frente" unique_id=766156333]
-
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/ArvoreMorta8" unique_id=304354753]
-position = Vector2(-352, -597)
-rotation = -0.30194196
-texture = ExtResource("16_5bydj")
-
-[node name="ArvoreMorta7" type="StaticBody2D" parent="Coisas Na frente" unique_id=1281907465]
-
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/ArvoreMorta7" unique_id=300690536]
-position = Vector2(-393, -555)
-rotation = -0.40491638
-texture = ExtResource("16_5bydj")
-
-[node name="ArvoreMorta9" type="StaticBody2D" parent="Coisas Na frente" unique_id=1925612150]
-
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/ArvoreMorta9" unique_id=1883826955]
-position = Vector2(-464, -477)
-rotation = -0.40491638
-texture = ExtResource("16_5bydj")
-
-[node name="ArvoreMorta6" type="StaticBody2D" parent="Coisas Na frente" unique_id=883946468]
-
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/ArvoreMorta6" unique_id=1782525525]
-position = Vector2(-205, -633)
-rotation = -0.17802358
-texture = ExtResource("16_5bydj")
-
-[node name="arvore13" type="StaticBody2D" parent="Coisas Na frente" unique_id=1155247627]
-
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore13" unique_id=1509212497]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore13" unique_id=1509212497]
 position = Vector2(581.99994, -453.99997)
 rotation = 0.6614798
 texture = ExtResource("16_ysqms")
 
-[node name="arvore13" type="StaticBody2D" parent="Coisas Na frente/arvore13" unique_id=1794766444]
+[node name="arvore15" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1794766444]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore13/arvore13" unique_id=958645356]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore15" unique_id=958645356]
 position = Vector2(321, 1397.9999)
 rotation = 2.9136586
 texture = ExtResource("16_ysqms")
 
-[node name="arvore13" type="StaticBody2D" parent="Coisas Na frente/arvore13/arvore13" unique_id=1740275552]
+[node name="arvore16" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1740275552]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore13/arvore13/arvore13" unique_id=1885278546]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore16" unique_id=1885278546]
 position = Vector2(686.00006, 1160)
 rotation = -3.8649144
 texture = ExtResource("16_ysqms")
 
-[node name="arvore13" type="StaticBody2D" parent="Coisas Na frente/arvore13/arvore13/arvore13" unique_id=22341418]
+[node name="arvore17" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=22341418]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13" unique_id=267244144]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore17" unique_id=267244144]
 position = Vector2(589.00006, 1239.0001)
 rotation = 2.5367389
 texture = ExtResource("16_ysqms")
 
-[node name="arvore13" type="StaticBody2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13" unique_id=1014628515]
+[node name="arvore18" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1014628515]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=62345375]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore18" unique_id=62345375]
 position = Vector2(447.99994, 1323.9999)
 rotation = 2.7613337
 texture = ExtResource("16_ysqms")
 
-[node name="arvore13" type="StaticBody2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=1684482702]
+[node name="arvore19" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1684482702]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=288748171]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore19" unique_id=288748171]
 position = Vector2(399.9999, 1361.0001)
 rotation = 2.9009326
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore13" type="StaticBody2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=1273757041]
+[node name="arvore20" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1273757041]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=63167960]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore20" unique_id=63167960]
 position = Vector2(237.00003, 1404.0001)
 rotation = 2.9418778
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore13" type="StaticBody2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=928433989]
+[node name="arvore21" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=928433989]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=1993798294]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore21" unique_id=1993798294]
 position = Vector2(518.99994, 1276)
 rotation = 2.5712683
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore13" type="StaticBody2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=46655571]
+[node name="arvore22" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=46655571]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=383194105]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore22" unique_id=383194105]
 position = Vector2(615, 1206.9999)
 rotation = 2.5116665
 scale = Vector2(0.83945286, 1.1733459)
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore13" type="StaticBody2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=2054056776]
+[node name="arvore23" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=2054056776]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=13839282]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore23" unique_id=13839282]
 position = Vector2(716.99994, 1144.9999)
 rotation = 2.4649806
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore13" type="StaticBody2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=111272166]
+[node name="arvore24" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=111272166]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13/arvore13" unique_id=1740040386]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore24" unique_id=1740040386]
 position = Vector2(761.00006, 1066)
 rotation = 2.3457224
 scale = Vector2(1.0020146, 0.9181669)
 texture = ExtResource("16_ysqms")
 
-[node name="arvore12" type="StaticBody2D" parent="Coisas Na frente" unique_id=586902238]
+[node name="arvore12" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=586902238]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore12" unique_id=1207268305]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore12" unique_id=1207268305]
 position = Vector2(521, -502)
 rotation = 0.41364303
 texture = ExtResource("16_ysqms")
 
-[node name="arvore11" type="StaticBody2D" parent="Coisas Na frente" unique_id=1379221216]
+[node name="arvore11" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1379221216]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore11" unique_id=1178411897]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore11" unique_id=1178411897]
 position = Vector2(123.99997, -617)
 rotation = 0.16580628
 texture = ExtResource("16_ysqms")
 
-[node name="arvore3" type="StaticBody2D" parent="Coisas Na frente" unique_id=1537670483]
+[node name="arvore3" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1537670483]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore3" unique_id=1260585333]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore3" unique_id=1260585333]
 position = Vector2(264, -566)
 rotation = 0.24783675
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore2" type="StaticBody2D" parent="Coisas Na frente" unique_id=1811889957]
+[node name="arvore2" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1811889957]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore2" unique_id=1560234414]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore2" unique_id=1560234414]
 position = Vector2(94, -652)
 texture = ExtResource("16_ysqms")
 
-[node name="arvore1" type="StaticBody2D" parent="Coisas Na frente" unique_id=1565698391]
+[node name="arvore1" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1565698391]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore1" unique_id=1377430523]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore1" unique_id=1377430523]
 position = Vector2(424, -525)
 rotation = 0.37175512
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore4" type="StaticBody2D" parent="Coisas Na frente" unique_id=1000179201]
+[node name="arvore4" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1000179201]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore4" unique_id=1506907889]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore4" unique_id=1506907889]
 position = Vector2(197, -622.00006)
 rotation = 0.20594884
 texture = ExtResource("16_ysqms")
 
-[node name="arvore5" type="StaticBody2D" parent="Coisas Na frente" unique_id=1762682492]
+[node name="arvore5" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1762682492]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore5" unique_id=2091706910]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore5" unique_id=2091706910]
 position = Vector2(368, -582.99994)
 rotation = 0.37175512
 texture = ExtResource("16_ysqms")
 
-[node name="arvore6" type="StaticBody2D" parent="Coisas Na frente" unique_id=1532246223]
+[node name="arvore6" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1532246223]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore6" unique_id=137030584]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore6" unique_id=137030584]
 position = Vector2(245, -625)
 rotation = 0.16580628
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore7" type="StaticBody2D" parent="Coisas Na frente" unique_id=1618479205]
+[node name="arvore7" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1618479205]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore7" unique_id=2104779087]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore7" unique_id=2104779087]
 position = Vector2(94, -652)
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore8" type="StaticBody2D" parent="Coisas Na frente" unique_id=1862339851]
+[node name="arvore8" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1862339851]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore8" unique_id=1865250141]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore8" unique_id=1865250141]
 position = Vector2(466.99997, -532)
 rotation = 0.37175512
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore9" type="StaticBody2D" parent="Coisas Na frente" unique_id=1837652359]
+[node name="arvore9" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=1837652359]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore9" unique_id=478067172]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore9" unique_id=478067172]
 position = Vector2(39, -635.00006)
 rotation = -0.0837758
 texture = ExtResource("16_ysqms")
 
-[node name="arvore10" type="StaticBody2D" parent="Coisas Na frente" unique_id=717165470]
+[node name="arvore10" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=717165470]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore10" unique_id=861756088]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore10" unique_id=861756088]
 position = Vector2(296.99988, -600.99994)
 rotation = 0.16580628
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore14" type="StaticBody2D" parent="Coisas Na frente" unique_id=648928369]
+[node name="arvore14" type="StaticBody2D" parent="coisas_na_frente/arvore" unique_id=648928369]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore14" unique_id=762513793]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore14" unique_id=762513793]
 position = Vector2(-25, -652)
 rotation = -0.082030475
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore14" type="StaticBody2D" parent="Coisas Na frente/arvore14" unique_id=1586233886]
+[node name="arvore14" type="StaticBody2D" parent="coisas_na_frente/arvore/arvore14" unique_id=1586233886]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore14/arvore14" unique_id=673495815]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore14/arvore14" unique_id=673495815]
 position = Vector2(1008.0001, 684.00006)
 rotation = 1.7941985
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore15" type="StaticBody2D" parent="Coisas Na frente/arvore14" unique_id=33038600]
+[node name="arvore15" type="StaticBody2D" parent="coisas_na_frente/arvore/arvore14" unique_id=33038600]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore14/arvore15" unique_id=416477110]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore14/arvore15" unique_id=416477110]
 position = Vector2(957, 799.99994)
 rotation = 2.1345377
 texture = ExtResource("16_0ys5k")
 
-[node name="arvore14" type="StaticBody2D" parent="Coisas Na frente/arvore14/arvore15" unique_id=1125701060]
+[node name="arvore16" type="StaticBody2D" parent="coisas_na_frente/arvore/arvore14" unique_id=1125701060]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/arvore14/arvore15/arvore14" unique_id=532806784]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore/arvore14/arvore16" unique_id=532806784]
 position = Vector2(1008.0001, 684.00006)
 rotation = 1.7941985
 texture = ExtResource("16_0ys5k")
 
-[node name="CasaFrente" type="StaticBody2D" parent="Coisas Na frente" unique_id=1629633488]
+[node name="arvore_morta" type="Node2D" parent="coisas_na_frente" unique_id=2110692105]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/CasaFrente" unique_id=1540269152]
+[node name="ArvoreMorta" type="StaticBody2D" parent="coisas_na_frente/arvore_morta" unique_id=1761090105]
+
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore_morta/ArvoreMorta" unique_id=1060523936]
+position = Vector2(-112, -616.99994)
+rotation = -0.08901179
+texture = ExtResource("16_5bydj")
+
+[node name="ArvoreMorta2" type="StaticBody2D" parent="coisas_na_frente/arvore_morta" unique_id=1553296767]
+
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore_morta/ArvoreMorta2" unique_id=1969954429]
+position = Vector2(-168.99998, -629.99994)
+rotation = -0.17802358
+texture = ExtResource("17_x1j5q")
+
+[node name="ArvoreMorta4" type="StaticBody2D" parent="coisas_na_frente/arvore_morta" unique_id=703120238]
+
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore_morta/ArvoreMorta4" unique_id=719827051]
+position = Vector2(-236.99998, -625)
+rotation = -0.17802358
+texture = ExtResource("16_5bydj")
+
+[node name="ArvoreMorta5" type="StaticBody2D" parent="coisas_na_frente/arvore_morta" unique_id=462757646]
+
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore_morta/ArvoreMorta5" unique_id=1834600668]
+position = Vector2(-260, -584.99994)
+rotation = -0.17802358
+texture = ExtResource("17_x1j5q")
+
+[node name="ArvoreMorta3" type="StaticBody2D" parent="coisas_na_frente/arvore_morta" unique_id=1799381096]
+
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore_morta/ArvoreMorta3" unique_id=1659548007]
+position = Vector2(-294, -589.99994)
+rotation = -0.17802358
+texture = ExtResource("16_5bydj")
+
+[node name="ArvoreMorta8" type="StaticBody2D" parent="coisas_na_frente/arvore_morta" unique_id=766156333]
+
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore_morta/ArvoreMorta8" unique_id=304354753]
+position = Vector2(-352, -597)
+rotation = -0.30194196
+texture = ExtResource("16_5bydj")
+
+[node name="ArvoreMorta7" type="StaticBody2D" parent="coisas_na_frente/arvore_morta" unique_id=1281907465]
+
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore_morta/ArvoreMorta7" unique_id=300690536]
+position = Vector2(-393, -555)
+rotation = -0.40491638
+texture = ExtResource("16_5bydj")
+
+[node name="ArvoreMorta9" type="StaticBody2D" parent="coisas_na_frente/arvore_morta" unique_id=1925612150]
+
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore_morta/ArvoreMorta9" unique_id=1883826955]
+position = Vector2(-464, -477)
+rotation = -0.40491638
+texture = ExtResource("16_5bydj")
+
+[node name="ArvoreMorta6" type="StaticBody2D" parent="coisas_na_frente/arvore_morta" unique_id=883946468]
+
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/arvore_morta/ArvoreMorta6" unique_id=1782525525]
+position = Vector2(-205, -633)
+rotation = -0.17802358
+texture = ExtResource("16_5bydj")
+
+[node name="casas" type="Node2D" parent="coisas_na_frente" unique_id=264579395]
+
+[node name="CasaFrente" type="StaticBody2D" parent="coisas_na_frente/casas" unique_id=1629633488]
+
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/casas/CasaFrente" unique_id=1540269152]
 position = Vector2(964.621, 82.08003)
 rotation = 1.5254178
 scale = Vector2(1.2261153, 1.2261153)
 texture = ExtResource("20_x1j5q")
 
-[node name="CasaFrente2" type="StaticBody2D" parent="Coisas Na frente" unique_id=1698013656]
+[node name="CasaFrente2" type="StaticBody2D" parent="coisas_na_frente/casas" unique_id=1698013656]
 
-[node name="Sprite2D" type="Sprite2D" parent="Coisas Na frente/CasaFrente2" unique_id=1304357399]
+[node name="Sprite2D" type="Sprite2D" parent="coisas_na_frente/casas/CasaFrente2" unique_id=1304357399]
 position = Vector2(766.99994, -275)
 rotation = 1.0629056
 scale = Vector2(1.2261153, 1.2261153)
 texture = ExtResource("20_x1j5q")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1799286594]
+[node name="quinoyd_novo" parent="." unique_id=1192443979 instance=ExtResource("23_qfvoi")]
+position = Vector2(-744, -334)
+
+[node name="luzes" type="Node" parent="." unique_id=804867410]
+
+[node name="luz_no_planeta" type="PointLight2D" parent="luzes" unique_id=1799286594]
 position = Vector2(42, -55)
 rotation = -0.005727444
 scale = Vector2(17.869627, 17.869627)
@@ -587,46 +507,11 @@ color = Color(1, 0, 1, 1)
 energy = 1.2
 texture = ExtResource("21_cdns1")
 
-[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1776960154]
+[node name="luz_janela_casa" type="PointLight2D" parent="luzes" unique_id=1776960154]
 position = Vector2(883.46875, -120.34375)
 scale = Vector2(0.2932129, 0.3308105)
 energy = 0.05
 texture = ExtResource("21_cdns1")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=568977251]
+[node name="colisao_com_luz_caverna" type="LightOccluder2D" parent="luzes" unique_id=568977251]
 occluder = SubResource("OccluderPolygon2D_pi0el")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2051599869]
-color = Color(0.7543648, 0.6334469, 0.7568533, 1)
-
-[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=1036757368]
-visible = false
-position = Vector2(25, 63.999996)
-scale = Vector2(19.170897, 19.170897)
-color = Color(0.8039216, 0.1764706, 0.7294118, 1)
-texture = ExtResource("21_cdns1")
-
-[node name="quinoyd4" type="Sprite2D" parent="." unique_id=1916963621]
-position = Vector2(141.99998, 1403.0001)
-rotation = 3.1612244
-scale = Vector2(0.99999976, 0.99999976)
-texture = ExtResource("5_h2r2o")
-
-[node name="area_dialogo3" parent="." unique_id=326181060 instance=ExtResource("6_pitpt")]
-position = Vector2(4753, 2649)
-scale = Vector2(0.99999994, 0.99999994)
-ativar_instantaneamente = true
-ativar_one_shot = true
-dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_qabof"), SubResource("Resource_ahwvi"), SubResource("Resource_qfvoi"), SubResource("Resource_1tpdm"), SubResource("Resource_d58d7"), SubResource("Resource_a0ts5"), SubResource("Resource_g1ftk")])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area_dialogo3" unique_id=52647716]
-position = Vector2(-4599.0005, -1227)
-rotation = 0.08671384
-scale = Vector2(0.09778228, 0.08494876)
-shape = SubResource("CircleShape2D_fu62x")
-debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
-
-[node name="quinoyd5" parent="." unique_id=1192443979 instance=ExtResource("23_qfvoi")]
-position = Vector2(-744, -334)
-ativar_one_shot = true
-dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_37ysa")])

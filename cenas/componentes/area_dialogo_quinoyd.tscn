@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://bus45pdjp8fas"]
-
-[ext_resource type="Script" uid="uid://bqlyu4g3ebhn5" path="res://scripts/ui/dialogo/area_dialogo_quinoyd.gd" id="1_o31rx"]
-
-[node name="area_dialogo_quinoyd" type="Area2D" unique_id=2074360717]
-script = ExtResource("1_o31rx")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]

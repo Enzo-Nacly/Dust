@@ -17,7 +17,7 @@ func _ready() -> void:
 	_setar_inventario_gerenciador()
 
 func _pegando_direcao() -> int:
-	var direcao: int = int(Input.get_axis("left", "right"))
+	var direcao: int = int(Input.get_axis("esquerda", "direita"))
 	return direcao
 
 

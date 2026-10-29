@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://h6wfdw1onmno" path="res://scripts/componentes/componente_rotacao.gd" id="4_5p2ye"]
 [ext_resource type="Script" uid="uid://dhm6j02iw2vrm" path="res://scripts/componentes/componente_movimento.gd" id="5_5p2ye"]
 [ext_resource type="Script" uid="uid://idpvhq8hfapr" path="res://scripts/componentes/componente_animacao.gd" id="6_kqu61"]
-[ext_resource type="PackedScene" uid="uid://bus45pdjp8fas" path="res://cenas/componentes/area_dialogo_quinoyd.tscn" id="7_37ysa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24ap5"]
 atlas = ExtResource("1_mlb7l")
@@ -24,9 +23,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fu62x"]
-size = Vector2(15, 34)
+size = Vector2(6, 34)
 
 [node name="quinoyd" type="CharacterBody2D" unique_id=1192443979]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_24ap5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1479813398]
@@ -56,5 +57,3 @@ script = ExtResource("6_kqu61")
 sprite_olhando_esquerda = true
 sprite = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://idpvhq8hfapr"
-
-[node name="area_dialogo_quinoyd" parent="." unique_id=2074360717 instance=ExtResource("7_37ysa")]

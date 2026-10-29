@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dnd1k0rbyh1e3" path="res://cenas/objetos/planta.tscn" id="4_7eiki"]
 [ext_resource type="Texture2D" uid="uid://cwkxf2uohs7gt" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna Dentro/caverna dentro dentro.png" id="4_b3xe4"]
 [ext_resource type="Texture2D" uid="uid://c48nfpld0dmn8" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna Dentro/Caverna Dentro fora.png" id="5_ldxle"]
-[ext_resource type="Script" uid="uid://hoihbrjjn8d2" path="res://cenas/objetos/Planeta1/varanda.gd" id="5_ocy8p"]
 [ext_resource type="PackedScene" uid="uid://b2d48mie45mch" path="res://cenas/interecao/PontoEscada.tscn" id="6_7eiki"]
 [ext_resource type="Texture2D" uid="uid://cju5be2sf01jo" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna fora/Porta.png" id="6_km038"]
 [ext_resource type="PackedScene" uid="uid://c7y2ssvgk0mef" path="res://cenas/interecao/Entrada.tscn" id="7_7eiki"]
@@ -25,7 +24,7 @@ size = Vector2(283, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k41lo"]
 size = Vector2(66, 46.5)
 
-[node name="Caverna" type="Node2D" unique_id=1780107482]
+[node name="caverna" type="Node2D" unique_id=1780107482]
 
 [node name="GravityRotationComponentObjects" parent="." unique_id=374240960 instance=ExtResource("1_e1jw5")]
 
@@ -56,7 +55,6 @@ luz_crescimento = Color(0, 1, 0, 1)
 
 [node name="Varanda" type="StaticBody2D" parent="." unique_id=2108305771]
 z_as_relative = false
-script = ExtResource("5_ocy8p")
 
 [node name="Varanda" type="Sprite2D" parent="Varanda" unique_id=909410212]
 light_mask = 3
