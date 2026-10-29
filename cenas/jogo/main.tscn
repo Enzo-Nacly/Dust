@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://cenas/entidades/player.tscn" id="2_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://cenas/planetas/planeta_roxo.tscn" id="3_pitpt"]
-[ext_resource type="Texture2D" uid="uid://b8cv0h2duu03l" path="res://assets/sprites/entidades/quinoyds/quinoyd.png" id="5_h2r2o"]
+[ext_resource type="Texture2D" uid="uid://dykyx2adq2mh" path="res://assets/sprites/entidades/quinoyds/quinoyd.png" id="5_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ddpbjdxd4p07n" path="res://cenas/componentes/area_dialogo.tscn" id="6_pitpt"]
 [ext_resource type="Script" uid="uid://cqpy6dko08c5i" path="res://scripts/resources/dialogo/resource_dialogo_export.gd" id="7_ahwvi"]
 [ext_resource type="Texture2D" uid="uid://d7oy5nvtq810" path="res://assets/sprites/entidades/quinoyds/falando/piscando.png" id="8_e1ykf"]
@@ -16,12 +16,15 @@
 [ext_resource type="PackedScene" uid="uid://j23ojn6bq4ch" path="res://cenas/objetos/Planeta1/Cidade Quinoyd/CasaQuinoyd_1.tscn" id="15_qabof"]
 [ext_resource type="Texture2D" uid="uid://bqoc51lt4q3e" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente1.png" id="16_0ys5k"]
 [ext_resource type="Texture2D" uid="uid://bdppo2ps2rsxi" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente3.png" id="16_5bydj"]
-[ext_resource type="PackedScene" uid="uid://dhqkejaqlrrec" path="res://cenas/objetos/Planeta1/caverna.tscn" id="16_acw65"]
+[ext_resource type="PackedScene" uid="uid://dhqkejaqlrrec" path="res://cenas/objetos/Planeta1/Caverna.tscn" id="16_acw65"]
 [ext_resource type="Texture2D" uid="uid://c5y0f0yj0je6f" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente2.png" id="16_ysqms"]
 [ext_resource type="Texture2D" uid="uid://b47b0ynbsk175" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente4.png" id="17_x1j5q"]
 [ext_resource type="Texture2D" uid="uid://benli3tdqbp4h" path="res://assets/sprites/Planeta1/Cidade Quinoyd/Casas/casa_quinoyd_generica.png" id="20_x1j5q"]
 [ext_resource type="Texture2D" uid="uid://udn1v25vklho" path="res://assets/sprites/texturas/2d_lights_and_shadows_neutral_point_light.webp" id="21_cdns1"]
 [ext_resource type="PackedScene" uid="uid://cxa7nhc84kxt" path="res://cenas/entidades/quinoyd.tscn" id="23_qfvoi"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pi0el"]
+polygon = PackedVector2Array(-901, 833, -887, 863, -868, 895, -847, 930, -817, 976, -799, 998, -776, 1029, -755, 1054, -731, 1080, -715, 1098, -692, 1075, -892, 822)
 
 [sub_resource type="Resource" id="Resource_qabof"]
 script = ExtResource("12_e1ykf")
@@ -151,9 +154,6 @@ _data = {
 &"wow": SubResource("Animation_acw65")
 }
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pi0el"]
-polygon = PackedVector2Array(-901, 833, -887, 863, -868, 895, -847, 930, -817, 976, -799, 998, -776, 1029, -755, 1054, -731, 1080, -715, 1098, -692, 1075, -892, 822)
-
 [node name="Main" type="Node2D" unique_id=522489995]
 
 [node name="UI_dialogo" type="CanvasLayer" parent="." unique_id=687282447 groups=["ui"]]
@@ -170,12 +170,34 @@ color = Color(0.9994791, 0.6009047, 0.3784448, 1)
 [node name="cor_geral" type="CanvasModulate" parent="." unique_id=2051599869]
 color = Color(0.7543648, 0.6334469, 0.7568533, 1)
 
+[node name="luzes" type="Node" parent="." unique_id=804867410]
+
+[node name="luz_no_planeta" type="PointLight2D" parent="luzes" unique_id=1799286594]
+position = Vector2(42, -55)
+rotation = -0.005727444
+scale = Vector2(17.869627, 17.869627)
+color = Color(1, 0, 1, 1)
+energy = 1.2
+texture = ExtResource("21_cdns1")
+
+[node name="luz_janela_casa" type="PointLight2D" parent="luzes" unique_id=1776960154]
+position = Vector2(883.46875, -120.34375)
+scale = Vector2(0.2932129, 0.3308105)
+energy = 0.05
+texture = ExtResource("21_cdns1")
+
+[node name="colisao_com_luz_caverna" type="LightOccluder2D" parent="luzes" unique_id=568977251]
+occluder = SubResource("OccluderPolygon2D_pi0el")
+
 [node name="caverna" parent="." unique_id=1780107482 instance=ExtResource("16_acw65")]
 position = Vector2(-852.00006, 1081)
 rotation = 3.9409535
 
 [node name="player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
 position = Vector2(-877, -132)
+
+[node name="quinoyd_novo" parent="." unique_id=1192443979 instance=ExtResource("23_qfvoi")]
+position = Vector2(-744, -334)
 
 [node name="quinoyd_antigo" type="Sprite2D" parent="." unique_id=1290611076]
 position = Vector2(829.00006, -190.99998)
@@ -493,25 +515,3 @@ position = Vector2(766.99994, -275)
 rotation = 1.0629056
 scale = Vector2(1.2261153, 1.2261153)
 texture = ExtResource("20_x1j5q")
-
-[node name="quinoyd_novo" parent="." unique_id=1192443979 instance=ExtResource("23_qfvoi")]
-position = Vector2(-744, -334)
-
-[node name="luzes" type="Node" parent="." unique_id=804867410]
-
-[node name="luz_no_planeta" type="PointLight2D" parent="luzes" unique_id=1799286594]
-position = Vector2(42, -55)
-rotation = -0.005727444
-scale = Vector2(17.869627, 17.869627)
-color = Color(1, 0, 1, 1)
-energy = 1.2
-texture = ExtResource("21_cdns1")
-
-[node name="luz_janela_casa" type="PointLight2D" parent="luzes" unique_id=1776960154]
-position = Vector2(883.46875, -120.34375)
-scale = Vector2(0.2932129, 0.3308105)
-energy = 0.05
-texture = ExtResource("21_cdns1")
-
-[node name="colisao_com_luz_caverna" type="LightOccluder2D" parent="luzes" unique_id=568977251]
-occluder = SubResource("OccluderPolygon2D_pi0el")
