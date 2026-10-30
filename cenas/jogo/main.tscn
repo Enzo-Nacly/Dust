@@ -197,7 +197,7 @@ rotation = 3.9409535
 position = Vector2(-877, -132)
 
 [node name="quinoyd_novo" parent="." unique_id=1192443979 instance=ExtResource("23_qfvoi")]
-position = Vector2(-744, -334)
+position = Vector2(-843, -195)
 
 [node name="quinoyd_antigo" type="Sprite2D" parent="." unique_id=1290611076]
 position = Vector2(829.00006, -190.99998)
