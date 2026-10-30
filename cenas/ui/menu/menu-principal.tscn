@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dlbsgfu702u8i" path="res://scripts/ui/menu_principal.gd" id="1_25x7m"]
 [ext_resource type="FontFile" uid="uid://dsn0sg2somd7d" path="res://assets/fontes/PixelifySans-Regular.ttf" id="2_25x7m"]
+[ext_resource type="PackedScene" uid="uid://dpv2crtxxge4f" path="res://cenas/ui/ponteiro_mouse.tscn" id="2_jckp1"]
 [ext_resource type="Texture2D" uid="uid://cs4s4y17jkxth" path="res://assets/sprites/menu/espaco.png" id="2_r5lko"]
 [ext_resource type="Texture2D" uid="uid://c41siiwajmhck" path="res://assets/sprites/menu/sol_icone.png" id="3_bdt03"]
 [ext_resource type="Script" uid="uid://bxlpna6ha1h6v" path="res://scripts/botaos_menu.gd" id="4_0uah4"]
@@ -18,7 +19,6 @@
 [ext_resource type="Script" uid="uid://b2gadqs1nhtno" path="res://scripts/ui/h_slider.gd" id="14_k6orm"]
 [ext_resource type="Texture2D" uid="uid://cwrwparcfno80" path="res://assets/sprites/entidades/quinoyds/quinoyd_concept.png" id="17_8oso1"]
 [ext_resource type="Script" uid="uid://r5pi1v11ywat" path="res://scripts/ui/secreto.gd" id="18_jckp1"]
-[ext_resource type="Texture2D" uid="uid://8664nr8mejyn" path="res://assets/sprites/animacoes/fishiShip3d-QuebrandoSheet.png" id="19_jckp1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_06q5q"]
 font = ExtResource("2_25x7m")
@@ -132,46 +132,22 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Nave:frame")
+tracks/4/path = NodePath("Camera2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(576, 324)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Nave:position")
+tracks/5/path = NodePath("Camera2D:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-43.000015, 358)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Camera2D:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(576, 324)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Camera2D:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -184,46 +160,22 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Nave:frame")
+tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0, 100]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Nave:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335, 1.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-43.000015, 358), Vector2(859.0001, 461)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Camera2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(576, 324)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Camera2D:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -319,6 +271,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_25x7m")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=356307331]
+layer = 128
+
+[node name="ponteiro_mouse" parent="UI" unique_id=1959304517 instance=ExtResource("2_jckp1")]
 
 [node name="sistema_solar" type="Control" parent="." unique_id=1016840198]
 layout_mode = 1
@@ -711,12 +668,6 @@ offset_bottom = 40.0
 pivot_offset = Vector2(20, 20)
 texture = ExtResource("17_8oso1")
 script = ExtResource("18_jckp1")
-
-[node name="Nave" type="Sprite2D" parent="." unique_id=2051211754]
-position = Vector2(-43.000015, 358)
-rotation = 0.050016325
-texture = ExtResource("19_jckp1")
-hframes = 240
 
 [connection signal="gui_input" from="Titulo" to="Titulo" method="_on_gui_input"]
 [connection signal="pressed" from="Container-botao/jogar" to="." method="_on_jogar_pressed"]

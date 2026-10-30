@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dpv2crtxxge4f"]
+
+[ext_resource type="Texture2D" uid="uid://bmu6tjoip6tv5" path="res://assets/sprites/UI/ponteiro_mouse.png" id="1_l80py"]
+[ext_resource type="Script" uid="uid://ctm7lvbaqufy8" path="res://scripts/ui/ponteiro_mouse.gd" id="2_1vna6"]
+
+[node name="ponteiro_mouse" type="Sprite2D" unique_id=1959304517]
+z_index = 4096
+texture = ExtResource("1_l80py")
+offset = Vector2(15, 19.5)
+script = ExtResource("2_1vna6")

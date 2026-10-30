@@ -156,7 +156,7 @@ _data = {
 
 [node name="Main" type="Node2D" unique_id=522489995]
 
-[node name="UI_dialogo" type="CanvasLayer" parent="." unique_id=687282447 groups=["ui"]]
+[node name="UI" type="CanvasLayer" parent="." unique_id=687282447 groups=["ui"]]
 
 [node name="ceu" type="ColorRect" parent="." unique_id=583502706]
 z_index = -12
