@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dlbsgfu702u8i" path="res://scripts/ui/menu_principal.gd" id="1_25x7m"]
 [ext_resource type="FontFile" uid="uid://dsn0sg2somd7d" path="res://assets/fontes/PixelifySans-Regular.ttf" id="2_25x7m"]
+[ext_resource type="PackedScene" uid="uid://dpv2crtxxge4f" path="res://cenas/ui/ponteiro_mouse.tscn" id="2_gx11c"]
 [ext_resource type="Texture2D" uid="uid://cs4s4y17jkxth" path="res://assets/sprites/menu/espaco.png" id="2_r5lko"]
 [ext_resource type="Texture2D" uid="uid://c41siiwajmhck" path="res://assets/sprites/menu/sol_icone.png" id="3_bdt03"]
 [ext_resource type="Script" uid="uid://bxlpna6ha1h6v" path="res://scripts/botaos_menu.gd" id="4_0uah4"]
@@ -319,6 +320,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_25x7m")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1198516101 groups=["ui"]]
+
+[node name="ponteiro_mouse" parent="UI" unique_id=1075770505 instance=ExtResource("2_gx11c")]
 
 [node name="sistema_solar" type="Control" parent="." unique_id=1016840198]
 layout_mode = 1
