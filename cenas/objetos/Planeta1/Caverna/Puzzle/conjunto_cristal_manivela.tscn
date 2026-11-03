@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://br743hdrfh8ay"]
 
 [ext_resource type="Script" uid="uid://cbw66y7fov4mt" path="res://scripts/conjunto_cristal_manivela.gd" id="1_bp1ow"]
-[ext_resource type="Texture2D" uid="uid://3da4eadvfvmq" path="res://assets/sprites/puzzle_cristal/cristal_grande-Sheet.png" id="2_45iwv"]
+[ext_resource type="Texture2D" uid="uid://b33hfxolbpifk" path="res://assets/sprites/puzzle_cristal/cristal-Sheet.png" id="2_axox0"]
 [ext_resource type="Texture2D" uid="uid://c1r3ioq4rtobg" path="res://assets/sprites/prato_cristal_grande.png" id="3_1114y"]
 [ext_resource type="Texture2D" uid="uid://du6jh8xqvcs5c" path="res://assets/sprites/suporte_manivela.png" id="3_bp1ow"]
 [ext_resource type="Texture2D" uid="uid://c3dejxb27s8es" path="res://assets/sprites/manivela.png" id="4_dk4im"]
@@ -20,8 +20,8 @@ cores = Array[Color]([Color(1, 0, 0, 1), Color(0, 0, 1, 1)])
 [node name="cristal_sprite" type="Sprite2D" parent="Sprites" unique_id=130814089]
 z_index = 1
 position = Vector2(0, -7)
-texture = ExtResource("2_45iwv")
-hframes = 3
+texture = ExtResource("2_axox0")
+hframes = 8
 
 [node name="prato_sprite" type="Sprite2D" parent="Sprites" unique_id=1216165718]
 z_index = 1

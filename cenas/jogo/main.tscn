@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c5a31mfdo1ppc"]
 
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://cenas/entidades/player.tscn" id="2_h2r2o"]
+[ext_resource type="PackedScene" uid="uid://dhqkejaqlrrec" path="res://cenas/objetos/Planeta1/caverna.tscn" id="2_x1j5q"]
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://cenas/planetas/planeta_roxo.tscn" id="3_pitpt"]
 [ext_resource type="Texture2D" uid="uid://b8cv0h2duu03l" path="res://assets/sprites/entidades/quinoyds/quinoyd.png" id="5_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ddpbjdxd4p07n" path="res://cenas/componentes/area_dialogo.tscn" id="6_pitpt"]
@@ -14,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://j23ojn6bq4ch" path="res://cenas/objetos/Planeta1/Cidade Quinoyd/CasaQuinoyd_1.tscn" id="15_qabof"]
 [ext_resource type="Texture2D" uid="uid://bqoc51lt4q3e" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente1.png" id="16_0ys5k"]
 [ext_resource type="Texture2D" uid="uid://bdppo2ps2rsxi" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente3.png" id="16_5bydj"]
-[ext_resource type="PackedScene" uid="uid://dhqkejaqlrrec" path="res://cenas/objetos/Planeta1/Caverna.tscn" id="16_acw65"]
 [ext_resource type="Texture2D" uid="uid://8664nr8mejyn" path="res://assets/sprites/animacoes/fishiShip3d-QuebrandoSheet.png" id="16_xnaut"]
 [ext_resource type="Texture2D" uid="uid://c5y0f0yj0je6f" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente2.png" id="16_ysqms"]
 [ext_resource type="Texture2D" uid="uid://b47b0ynbsk175" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente4.png" id="17_x1j5q"]
@@ -147,8 +147,8 @@ texture = ExtResource("21_cdns1")
 [node name="colisao_luz_caverna" type="LightOccluder2D" parent="luzes" unique_id=568977251]
 occluder = SubResource("OccluderPolygon2D_pi0el")
 
-[node name="Caverna" parent="." unique_id=1780107482 instance=ExtResource("16_acw65")]
-position = Vector2(-852.00006, 1081)
+[node name="caverna" parent="." unique_id=1780107482 instance=ExtResource("2_x1j5q")]
+position = Vector2(-852, 1081)
 rotation = 3.9409535
 
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
