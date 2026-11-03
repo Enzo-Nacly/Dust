@@ -2,8 +2,8 @@ extends Area2D
 
 const sistema_dialogo_preload = preload("res://cenas/ui/sistema_dialogo/sistema_dialogo.tscn")
 
-@export var ativar_instantaneamente: bool
-@export var ativar_one_shot: bool
+@export var ativar_instantaneamente: bool = true
+@export var ativar_one_shot: bool = true
 @export var dialogo: Array[DialogoExport]
 
 var player_dentro: bool = false

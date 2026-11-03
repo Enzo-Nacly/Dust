@@ -5,8 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://b8cv0h2duu03l" path="res://assets/sprites/entidades/quinoyds/quinoyd.png" id="5_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ddpbjdxd4p07n" path="res://cenas/componentes/area_dialogo.tscn" id="6_pitpt"]
 [ext_resource type="Script" uid="uid://cqpy6dko08c5i" path="res://scripts/resources/dialogo/resource_dialogo_export.gd" id="7_ahwvi"]
+[ext_resource type="Script" uid="uid://uaam2kd3rb80" path="res://scripts/resources/dialogo/resource_funcao_dialogo.gd" id="8_l7l8e"]
 [ext_resource type="Texture2D" uid="uid://duptog1g3ii20" path="res://assets/sprites/entidades/quinoyds/falando/padrao.png" id="11_qabof"]
 [ext_resource type="Script" uid="uid://dfje3vb4ru0hm" path="res://scripts/resources/dialogo/resource_texto_dialogo.gd" id="12_e1ykf"]
+[ext_resource type="Texture2D" uid="uid://cnxm6jpgvsg8s" path="res://assets/sprites/entidades/quinoyds/falando/tontinho.png" id="13_acw65"]
 [ext_resource type="AudioStream" uid="uid://dcpwdu5khsn5v" path="res://assets/sonoro/sfx/talk.wav" id="13_qabof"]
 [ext_resource type="Texture2D" uid="uid://v2yybyc5m1py" path="res://assets/sprites/Planeta1/PedraAsteroid.png" id="15_acw65"]
 [ext_resource type="PackedScene" uid="uid://j23ojn6bq4ch" path="res://cenas/objetos/Planeta1/Cidade Quinoyd/CasaQuinoyd_1.tscn" id="15_qabof"]
@@ -21,17 +23,6 @@
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pi0el"]
 polygon = PackedVector2Array(-901, 833, -887, 863, -868, 895, -847, 930, -817, 976, -799, 998, -776, 1029, -755, 1054, -731, 1080, -715, 1098, -692, 1075, -892, 822)
-
-[sub_resource type="Resource" id="Resource_ocy8p"]
-script = ExtResource("12_e1ykf")
-imagem_falante = ExtResource("11_qabof")
-texto = "cara, eu sou o quinoyd antigo"
-velocidade_texto = 15.0
-som_texto = ExtResource("13_qabof")
-metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
-radius = 277.15
 
 [sub_resource type="Animation" id="Animation_pitpt"]
 length = 0.001
@@ -97,6 +88,30 @@ _data = {
 &"wow": SubResource("Animation_acw65")
 }
 
+[sub_resource type="Resource" id="Resource_ocy8p"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("11_qabof")
+texto = "cara, eu sou o quinoyd antigo"
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_ysqms"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("13_acw65")
+texto = "eu sei que vai dar tudo [wave amp=50.0 freq=5.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8]certo![/rainbow][/wave]
+"
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_5bydj"]
+script = ExtResource("8_l7l8e")
+caminho_node_com_funcao = NodePath("../quinoyd_antigo/AnimationPlayer")
+nome_funcao = "play"
+parametros_funcao = ["wow"]
+esconder_caixa_dialogo = true
+metadata/_custom_type_script = "uid://uaam2kd3rb80"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
+radius = 277.15
+
 [node name="main" type="Node2D" unique_id=522489995]
 
 [node name="UI_dialogo" type="CanvasLayer" parent="." unique_id=687282447 groups=["ui"]]
@@ -144,22 +159,20 @@ position = Vector2(-635, -397)
 rotation = -0.76009536
 texture = ExtResource("5_h2r2o")
 
-[node name="area_dialogo" parent="quinoyd_antigo" unique_id=1334098430 instance=ExtResource("6_pitpt")]
-position = Vector2(508.27686, 1804.9828)
-rotation = 0.76009536
-ativar_instantaneamente = true
-ativar_one_shot = true
-dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_ocy8p")])
+[node name="AnimationPlayer" type="AnimationPlayer" parent="quinoyd_antigo" unique_id=1965227920]
+libraries/ = SubResource("AnimationLibrary_5f6nu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="quinoyd_antigo/area_dialogo" unique_id=85451978]
+[node name="area_dialogo" parent="." unique_id=1334098430 instance=ExtResource("6_pitpt")]
+position = Vector2(977, 560.99994)
+scale = Vector2(0.99999994, 0.99999994)
+dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_ocy8p"), SubResource("Resource_ysqms"), SubResource("Resource_5bydj")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_dialogo" unique_id=85451978]
 position = Vector2(-1610.9998, -956.99994)
 rotation = 2.4836035
 scale = Vector2(0.07086741, 0.07704576)
 shape = SubResource("CircleShape2D_fu62x")
 debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="quinoyd_antigo" unique_id=1965227920]
-libraries/ = SubResource("AnimationLibrary_5f6nu")
 
 [node name="Casa1" parent="." unique_id=2038346081 instance=ExtResource("15_qabof")]
 position = Vector2(928, -111)
