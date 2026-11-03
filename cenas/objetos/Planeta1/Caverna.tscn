@@ -41,17 +41,17 @@ plantas = [NodePath("../planta"), NodePath("../planta2"), NodePath("../planta3")
 [node name="planta" parent="." unique_id=1265906810 instance=ExtResource("4_5nl1m")]
 light_mask = 2
 position = Vector2(57, 91)
-luz_crescimento = Color(1, 0, 0, 1)
+luz_escolhida = "Ciano"
 
 [node name="planta2" parent="." unique_id=1568853375 instance=ExtResource("4_5nl1m")]
 light_mask = 2
 position = Vector2(-9, 92)
-luz_crescimento = Color(0, 0, 1, 1)
+luz_escolhida = "Amarelo"
 
 [node name="planta3" parent="." unique_id=1540792086 instance=ExtResource("4_5nl1m")]
 light_mask = 2
 position = Vector2(109, 94)
-luz_crescimento = Color(0, 1, 0, 1)
+luz_escolhida = "Verde"
 
 [node name="Varanda" type="StaticBody2D" parent="." unique_id=2108305771]
 z_as_relative = false

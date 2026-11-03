@@ -13,7 +13,6 @@ radius = 13.038404
 [node name="conjunto_cristal_manivela" type="Node2D" unique_id=1036634973]
 z_index = 1
 script = ExtResource("1_bp1ow")
-cores = Array[Color]([Color(1, 0, 0, 1), Color(0, 0, 1, 1)])
 
 [node name="Sprites" type="Node2D" parent="." unique_id=1494409334]
 

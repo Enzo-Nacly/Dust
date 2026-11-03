@@ -9,6 +9,8 @@
 radius = 359.00558
 
 [node name="planeta_roxo" type="StaticBody2D" unique_id=201800473 groups=["planets"]]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_ynegy")
 planeta_status = ExtResource("2_64omq")
 

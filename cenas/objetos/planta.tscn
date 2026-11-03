@@ -42,7 +42,6 @@ _data = {
 
 [node name="planta" type="Node2D" unique_id=1265906810 groups=["plantas"]]
 script = ExtResource("1_3jxlo")
-velocidade_decrescimento = 0.8
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=764194849]
 position = Vector2(0, -13)

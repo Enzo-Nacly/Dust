@@ -3,7 +3,13 @@ extends Node2D
 
 signal cor_alterada(cor: Color)
 
-@export var cores: Array[Color] = []
+const NUM_FRAMES_CRISTAL: int = 8
+
+@export var cores: Array[Color] = [Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW,
+								   Color.PURPLE, Color.ORANGE, Color.CYAN, Color.DARK_SALMON]:
+	set(novo_array):
+		novo_array.resize(NUM_FRAMES_CRISTAL)
+		cores = novo_array
 
 @onready var interaction_area: AreaInteracao = $InteractionArea
 @onready var cristal_sprite: Sprite2D = $Sprites/cristal_sprite
