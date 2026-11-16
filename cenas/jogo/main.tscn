@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b8cv0h2duu03l" path="res://assets/sprites/entidades/quinoyds/quinoyd.png" id="5_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ddpbjdxd4p07n" path="res://cenas/componentes/area_dialogo.tscn" id="6_pitpt"]
 [ext_resource type="Script" uid="uid://cqpy6dko08c5i" path="res://scripts/resources/dialogo/resource_dialogo_export.gd" id="7_ahwvi"]
-[ext_resource type="Script" uid="uid://uaam2kd3rb80" path="res://scripts/resources/dialogo/resource_funcao_dialogo.gd" id="8_l7l8e"]
 [ext_resource type="Texture2D" uid="uid://duptog1g3ii20" path="res://assets/sprites/entidades/quinoyds/falando/padrao.png" id="11_qabof"]
+[ext_resource type="Texture2D" uid="uid://cyfna5lsc7t2c" path="res://assets/sprites/entidades/quinoyds/quinoyd_isolado.png" id="11_x1j5q"]
 [ext_resource type="Script" uid="uid://dfje3vb4ru0hm" path="res://scripts/resources/dialogo/resource_texto_dialogo.gd" id="12_e1ykf"]
 [ext_resource type="Texture2D" uid="uid://cnxm6jpgvsg8s" path="res://assets/sprites/entidades/quinoyds/falando/tontinho.png" id="13_acw65"]
 [ext_resource type="AudioStream" uid="uid://dcpwdu5khsn5v" path="res://assets/sonoro/sfx/talk.wav" id="13_qabof"]
@@ -20,98 +20,97 @@
 [ext_resource type="Texture2D" uid="uid://b47b0ynbsk175" path="res://assets/sprites/Planeta1/Arvores/arvoresnafrente4.png" id="17_x1j5q"]
 [ext_resource type="Texture2D" uid="uid://benli3tdqbp4h" path="res://assets/sprites/Planeta1/Cidade Quinoyd/Casas/casa_quinoyd_generica.png" id="20_x1j5q"]
 [ext_resource type="Texture2D" uid="uid://udn1v25vklho" path="res://assets/sprites/texturas/2d_lights_and_shadows_neutral_point_light.webp" id="21_cdns1"]
-[ext_resource type="PackedScene" uid="uid://cxa7nhc84kxt" path="res://cenas/entidades/quinoyd.tscn" id="21_xnaut"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pi0el"]
 polygon = PackedVector2Array(-901, 833, -887, 863, -868, 895, -847, 930, -817, 976, -799, 998, -776, 1029, -755, 1054, -731, 1080, -715, 1098, -692, 1075, -892, 822)
 
-[sub_resource type="Animation" id="Animation_pitpt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.76009536]
-}
-
-[sub_resource type="Animation" id="Animation_6hhvf"]
-resource_name = "teste"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.74, 1),
-"transitions": PackedFloat32Array(1, 0.15932018, 3.8637452, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(0.6078244, 1), Vector2(0.6078244, 1.4227815), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_acw65"]
-resource_name = "wow"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.22, 0.62, 1),
-"transitions": PackedFloat32Array(1, 5.656855, 1, 1),
-"update": 0,
-"values": [-0.76009536, -0.014481604, -3.8049068, -0.8088381]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5f6nu"]
-_data = {
-&"RESET": SubResource("Animation_pitpt"),
-&"teste": SubResource("Animation_6hhvf"),
-&"wow": SubResource("Animation_acw65")
-}
-
 [sub_resource type="Resource" id="Resource_ocy8p"]
 script = ExtResource("12_e1ykf")
 imagem_falante = ExtResource("11_qabof")
-texto = "cara, eu sou o quinoyd antigo"
+texto = "Quem é você que caiu do céu??!!"
 metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
 
 [sub_resource type="Resource" id="Resource_ysqms"]
 script = ExtResource("12_e1ykf")
 imagem_falante = ExtResource("13_acw65")
-texto = "eu sei que vai dar tudo [wave amp=50.0 freq=5.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8]certo![/rainbow][/wave]
-"
+texto = "Você caindo do céu assim..."
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_cdns1"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("11_qabof")
+texto = "Destruiu [wave amp=50.0 freq=5.0 connected=1]pedra sagrada[/wave]!!"
+velocidade_texto = 25.0
+volume_texto_pitch_min = 0.8
+volume_texto_pitch_max = 1.0
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_xnaut"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("13_acw65")
+texto = "Você terá que nos ajudar com o nosso problema de [wave amp=50.0 freq=5.0 connected=1]fome[/wave] para retribuir"
+velocidade_texto = 12.0
+volume_texto_pitch_min = 0.8
+volume_texto_pitch_max = 1.0
 metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
 
 [sub_resource type="Resource" id="Resource_5bydj"]
-script = ExtResource("8_l7l8e")
-caminho_node_com_funcao = NodePath("../quinoyd_antigo/AnimationPlayer")
-nome_funcao = "play"
-parametros_funcao = ["wow"]
-esconder_caixa_dialogo = true
-metadata/_custom_type_script = "uid://uaam2kd3rb80"
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("11_qabof")
+texto = "Nossas árvores começaram a morrer e assim não temos o fruto para nos alimentarmos..."
+volume_texto_pitch_min = 1.2
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_x1j5q"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("11_qabof")
+texto = "Então vá, nos ajude se não vamos te [wave amp=50.0 freq=5.0 connected=1]matar[/wave] por destruído nosso local..."
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_qfvoi"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("13_acw65")
+texto = "... seu quinoyd esquisito"
+velocidade_texto = 12.0
+volume_texto_pitch_min = 1.5
+volume_texto_pitch_max = 2.0
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
 radius = 277.15
+
+[sub_resource type="Resource" id="Resource_bpkxn"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("11_qabof")
+texto = "Espere, quem é você? Veio me visitar?"
+velocidade_texto = 12.0
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_y8wp5"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("11_qabof")
+texto = "Eu fui exilado por não acreditar no que eles acreditam sobre pedras..."
+velocidade_texto = 10.0
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_csn7r"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("11_qabof")
+texto = "A seguir tem uma estrutura estranha que claramente não é da nossa civilização"
+velocidade_texto = 12.0
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="Resource" id="Resource_0yrx2"]
+script = ExtResource("12_e1ykf")
+imagem_falante = ExtResource("11_qabof")
+texto = "Não vou te impedir... É bom ter visitas de vez em nunca..."
+velocidade_texto = 10.0
+volume_texto_pitch_min = 0.7
+volume_texto_pitch_max = 1.0
+metadata/_custom_type_script = "uid://dfje3vb4ru0hm"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pi0el"]
+radius = 50.0
 
 [node name="main" type="Node2D" unique_id=522489995]
 
@@ -153,27 +152,70 @@ position = Vector2(-852, 1081)
 rotation = 3.9409535
 
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
-position = Vector2(-877, -132)
+position = Vector2(-920.99994, -61.99997)
+rotation = -1.1140895
 
-[node name="quinoyd_antigo" type="Sprite2D" parent="." unique_id=1290611076]
-position = Vector2(-635, -397)
+[node name="quinoyds_" type="Node2D" parent="." unique_id=24572618]
+
+[node name="quinoyd_antigo" type="Sprite2D" parent="quinoyds_" unique_id=1290611076]
+position = Vector2(-791.9999, -240.99998)
 rotation = -0.76009536
+scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("5_h2r2o")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="quinoyd_antigo" unique_id=1965227920]
-libraries/ = SubResource("AnimationLibrary_5f6nu")
-
-[node name="area_dialogo" parent="." unique_id=1334098430 instance=ExtResource("6_pitpt")]
-position = Vector2(977, 560.99994)
+[node name="area_dialogo" parent="quinoyds_" unique_id=1334098430 instance=ExtResource("6_pitpt")]
+position = Vector2(1023.33624, 223.33621)
+rotation = -0.28501716
 scale = Vector2(0.99999994, 0.99999994)
-dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_ocy8p"), SubResource("Resource_ysqms"), SubResource("Resource_5bydj")])
+dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_ocy8p"), SubResource("Resource_ysqms"), SubResource("Resource_cdns1"), SubResource("Resource_xnaut"), SubResource("Resource_5bydj"), SubResource("Resource_x1j5q"), SubResource("Resource_qfvoi")])
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area_dialogo" unique_id=85451978]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="quinoyds_/area_dialogo" unique_id=85451978]
 position = Vector2(-1610.9998, -956.99994)
 rotation = 2.4836035
 scale = Vector2(0.07086741, 0.07704576)
 shape = SubResource("CircleShape2D_fu62x")
 debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
+
+[node name="quinoyd_antigo2" type="Sprite2D" parent="quinoyds_" unique_id=586588215]
+z_index = -1
+position = Vector2(-781, -252.99994)
+rotation = -0.76009536
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_h2r2o")
+
+[node name="quinoyd_antigo3" type="Sprite2D" parent="quinoyds_" unique_id=1574092307]
+z_index = -1
+position = Vector2(-801, -229)
+rotation = -0.83317137
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_h2r2o")
+
+[node name="quinoyd_antigo4" type="Sprite2D" parent="quinoyds_" unique_id=2033572868]
+z_index = -2
+position = Vector2(-770, -266)
+rotation = -0.76009536
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_h2r2o")
+
+[node name="quinoyd_antigo5" type="Sprite2D" parent="quinoyds_" unique_id=1231802864]
+z_index = -2
+position = Vector2(-788, -250.00003)
+rotation = -0.76009536
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_h2r2o")
+
+[node name="quinoyd_antigo6" type="Sprite2D" parent="quinoyds_" unique_id=776247407]
+position = Vector2(-513.99994, 1278)
+rotation = -2.5823193
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("11_x1j5q")
+
+[node name="area_dialogo2" parent="quinoyds_" unique_id=843434367 instance=ExtResource("6_pitpt")]
+dialogo = Array[ExtResource("7_ahwvi")]([SubResource("Resource_bpkxn"), SubResource("Resource_y8wp5"), SubResource("Resource_csn7r"), SubResource("Resource_0yrx2")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="quinoyds_/area_dialogo2" unique_id=970384016]
+position = Vector2(-508, 1302)
+shape = SubResource("CircleShape2D_pi0el")
 
 [node name="Casa1" parent="." unique_id=2038346081 instance=ExtResource("15_qabof")]
 position = Vector2(928, -111)
@@ -477,6 +519,3 @@ position = Vector2(766.99994, -275)
 rotation = 1.0629056
 scale = Vector2(1.2261153, 1.2261153)
 texture = ExtResource("20_x1j5q")
-
-[node name="quinoyd_novo" parent="." unique_id=1744073481 instance=ExtResource("21_xnaut")]
-position = Vector2(-841, -187)
