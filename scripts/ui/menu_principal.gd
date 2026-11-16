@@ -3,10 +3,16 @@ extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var panel_opcoes: Panel = $panel_opcoes
+@onready var camera_2d: Camera2D = $Camera2D
 
 var botoes: Array[Button] = []
 
 func _ready() -> void:
+	camera_2d.enabled = false
+
+	animation_player.animation_started.connect(_on_animation_started)
+	animation_player.animation_finished.connect(_on_animation_finished)
+	
 	$ColorRect.visible = true
 	
 	for botao in $"Container-botao".get_children():
@@ -21,17 +27,31 @@ func _ready() -> void:
 	audio_stream_player.play()
 	animation_player.play("fade_out")
 
+
+func _on_animation_started(anim_name: StringName) -> void:
+	if anim_name == &"cena1":
+		camera_2d.enabled = true
+
+func _on_animation_finished(anim_name: StringName) -> void:
+	if anim_name == &"cena1":
+		camera_2d.enabled = false
+		
+	
 func _on_jogar_pressed() -> void:
 	_desabilitar_botoes(true)
+	for botao in botoes:
+		botao.visible = false
 	
 	await get_tree().process_frame
+	animation_player.play("cena1")
+	await animation_player.animation_finished
 	
 	animation_player.play("fade_in")
 	await animation_player.animation_finished
 	
+
+	
 	if is_inside_tree() and get_tree() != null:
-		animation_player.play("cena1")
-		await animation_player.animation_finished
 		get_tree().change_scene_to_file("res://cenas/jogo/main.tscn")
 
 func _on_sair_pressed() -> void:
@@ -53,7 +73,8 @@ func _on_audio_stream_player_2d_finished() -> void:
 
 func _desabilitar_botoes(valor: bool) -> void:
 	for botao in botoes:
-		botao.disabled = valor 
+		botao.disabled = valor
+
 
 func _on_opcoes_pressed() -> void:
 	_desabilitar_botoes(true)

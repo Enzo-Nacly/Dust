@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://b2gadqs1nhtno" path="res://scripts/ui/h_slider.gd" id="14_k6orm"]
 [ext_resource type="Texture2D" uid="uid://cwrwparcfno80" path="res://assets/sprites/entidades/quinoyds/quinoyd_concept.png" id="17_8oso1"]
 [ext_resource type="Script" uid="uid://r5pi1v11ywat" path="res://scripts/ui/secreto.gd" id="18_jckp1"]
-[ext_resource type="Texture2D" uid="uid://8664nr8mejyn" path="res://assets/sprites/animacoes/fishiShip3d-QuebrandoSheet.png" id="19_jckp1"]
+[ext_resource type="Texture2D" uid="uid://t31ioairgvls" path="res://assets/sprites/fishiShip3d-SheetRecolorizacaoAndando.png" id="21_eaxgc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_06q5q"]
 font = ExtResource("2_25x7m")
@@ -133,102 +133,198 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("nave:frame")
+tracks/4/path = NodePath("Sprite2D:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("nave:position")
+tracks/5/path = NodePath("Sprite2D:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-43.000015, 358)]
+"values": [0.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Camera2D:position")
+tracks/6/path = NodePath("Sprite2D:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(576, 324)]
+"values": [Vector2(-138, 362)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Camera2D:scale")
+tracks/7/path = NodePath("Sprite2D:frame")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [125]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sprite2D:vframes")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Camera2D:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-118, 366)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Camera2D:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Camera2D:zoom")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_gx11c"]
 resource_name = "cena1"
-length = 2.0
+length = 2.7333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("nave:frame")
+tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.9),
+"times": PackedFloat32Array(2, 2.7333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0, 100]
+"values": [Vector2(1, 1), Vector2(0.05, 0.05)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("nave:position")
+tracks/1/path = NodePath("Sprite2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335, 1.9),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(2.7333336),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-43.000015, 358), Vector2(859.0001, 461)]
+"values": [0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Camera2D:position")
+tracks/2/path = NodePath("Sprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2.7333336),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(576, 324)]
+"values": [Vector2(-138, 362), Vector2(839, 446)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Camera2D:scale")
+tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1, 115]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.7333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-118, 366), Vector2(842, 447)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera2D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera2D:zoom")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.0043988),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2.5, 2.5)]
 }
 
 [sub_resource type="Animation" id="Animation_bdt03"]
@@ -341,6 +437,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_r5lko")
+
+[node name="espaco" type="TextureRect" parent="sistema_solar/espaco" unique_id=1289242030]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1151.0
+offset_top = 2.0
+offset_right = -1151.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r5lko")
+flip_h = true
 
 [node name="sol" type="TextureRect" parent="sistema_solar" unique_id=1028810613]
 layout_mode = 0
@@ -702,9 +812,6 @@ bus = &"SFX"
 physics_interpolation_mode = 2
 libraries/ = SubResource("AnimationLibrary_fi1mq")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1161907374]
-position = Vector2(576, 324)
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=853484674]
 stream = ExtResource("13_r5lko")
 bus = &"Musica"
@@ -717,11 +824,18 @@ pivot_offset = Vector2(20, 20)
 texture = ExtResource("17_8oso1")
 script = ExtResource("18_jckp1")
 
-[node name="nave" type="Sprite2D" parent="." unique_id=2051211754]
-position = Vector2(-43.000015, 358)
-rotation = 0.050016325
-texture = ExtResource("19_jckp1")
-hframes = 240
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1391736604]
+position = Vector2(-138, 362)
+texture = ExtResource("21_eaxgc")
+hframes = 116
+frame = 115
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1459675854]
+position = Vector2(-118, 366)
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(2, 2)
+process_callback = 0
+limit_enabled = false
 
 [connection signal="gui_input" from="Titulo" to="Titulo" method="_on_gui_input"]
 [connection signal="pressed" from="Container-botao/jogar" to="." method="_on_jogar_pressed"]
