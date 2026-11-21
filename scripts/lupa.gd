@@ -2,12 +2,15 @@ class_name Lupa
 extends Node2D
 
 const ACRESIMO_RADIANOS_ROTACAO_FEIXE: float = deg_to_rad(55.0)
+const PITCH_MINIMO: float =  0.8
+const PITCH_MAXIMO: float = 1.5
 
 @export_range(-180.0, 180.0, 1.0)
 var ajuste_rotacao_feixe_graus: float = 0.0
 
 @onready var interaction_area: AreaInteracao = $InteractionArea
 @onready var luz_feixe: PointLight2D = $luz_feixe
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var plantas: Array[Planta] = []
 var indice_planta: int = 0
@@ -50,6 +53,7 @@ func mudar_direcao() -> void:
 	if indice_planta >= plantas.size():
 		indice_planta = 0
 	
+	_tocar_sfx()
 	_apontar_para_planta()
 
 
@@ -74,3 +78,11 @@ func _apontar_para_planta() -> void:
 	)
 
 	planta.receber_luz(cor_luz)
+
+func _tocar_sfx() -> void:
+	audio_player.pitch_scale = _pitch_som()
+	audio_player.play()
+
+func _pitch_som() -> float:
+	var valor = randf_range(PITCH_MINIMO, PITCH_MAXIMO)
+	return snappedf(valor, 0.1)

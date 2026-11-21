@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://du6jh8xqvcs5c" path="res://assets/sprites/suporte_manivela.png" id="3_bp1ow"]
 [ext_resource type="Texture2D" uid="uid://c3dejxb27s8es" path="res://assets/sprites/manivela.png" id="4_dk4im"]
 [ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://cenas/interecao/area_interacao.tscn" id="6_624ap"]
+[ext_resource type="AudioStream" uid="uid://budrfbbk0tsfv" path="res://assets/sonoro/sfx/empurrada/stone_push_short.wav" id="7_5hmp4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk4im"]
 radius = 13.038404
@@ -44,3 +45,8 @@ action_name = "girar a manivela"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=489906981]
 position = Vector2(32, 8)
 shape = SubResource("CircleShape2D_dk4im")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1027726487]
+stream = ExtResource("7_5hmp4")
+volume_db = -5.0
+bus = &"SFX"

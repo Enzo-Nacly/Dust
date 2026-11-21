@@ -1,13 +1,14 @@
 class_name ComponenteMovimento
 extends Node  
 
-@export var proporcao_velocidade: float = 3.0
-@onready var entidade: CharacterBody2D = self.owner
-
 const MULTIPLICADOR_VELOCIDADE: float = 100.0
 const VELOCIDADE_ANGULAR: float = 1.0 / 30.0
 const ATRITO: float = 750.0
 const ACELERACAO: float = 500.0
+
+@export var proporcao_velocidade: float = 3.0
+
+@onready var entidade: CharacterBody2D = self.owner
 
 func mover(delta: float, direcao: int) -> void:
 	if entidade.motion_mode == CharacterBody2D.MOTION_MODE_FLOATING:

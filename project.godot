@@ -41,11 +41,38 @@ project/assembly_name="Dust"
 [file_customization]
 
 folder_colors={
+"res://assets/": "red",
+"res://assets/fontes/": "gray",
+"res://assets/sonoro/": "blue",
+"res://assets/sonoro/musica/": "orange",
+"res://assets/sonoro/musica/planeta_roxo/": "purple",
+"res://assets/sonoro/sfx/": "yellow",
+"res://assets/sonoro/sfx/ganho_item/": "teal",
+"res://assets/sonoro/sfx/passos_pes/": "gray",
+"res://assets/sonoro/sfx/puzzle/": "pink",
 "res://assets/sprites/Planeta1/Caverna/NovaVerção/": "red",
 "res://assets/sprites/UI/": "teal",
+"res://assets/sprites/entidades/": "teal",
 "res://assets/sprites/entidades/quinoyds/": "green",
-"res://cenas/jogo/": "green",
-"res://cenas/objetos/Planeta1/Cidade Quinoyd/": "orange"
+"res://assets/sprites/menu/": "teal",
+"res://cenas/": "orange",
+"res://cenas/componentes/": "yellow",
+"res://cenas/entidades/": "teal",
+"res://cenas/interecao/": "green",
+"res://cenas/jogo/": "pink",
+"res://cenas/objetos/": "blue",
+"res://cenas/objetos/Planeta1/Cidade Quinoyd/": "purple",
+"res://cenas/ui/": "teal",
+"res://cenas/ui/inventario/": "teal",
+"res://resources/": "blue",
+"res://scripts/": "pink",
+"res://scripts/componentes/": "yellow",
+"res://scripts/entidades/": "teal",
+"res://scripts/gerenciadores/": "gray",
+"res://scripts/maquina_estado_finito/": "gray",
+"res://scripts/resources/": "blue",
+"res://scripts/ui/": "teal",
+"res://scripts/ui/dialogo/": "blue"
 }
 
 [global_group]

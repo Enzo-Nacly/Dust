@@ -56,6 +56,7 @@ metadata/_custom_type_script = "uid://dhm6j02iw2vrm"
 
 [node name="ComponenteAnimacao" type="Node" parent="Componentes" unique_id=1639664255 node_paths=PackedStringArray("sprite")]
 script = ExtResource("6_xik5l")
+tem_componente_sonoro = false
 sprite_olhando_esquerda = true
 sprite = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://idpvhq8hfapr"

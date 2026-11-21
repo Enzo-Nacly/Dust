@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c5a31mfdo1ppc"]
 
+[ext_resource type="AudioStream" uid="uid://dv0y5jqon8wga" path="res://assets/sonoro/musica/planeta_roxo/ambiente.wav" id="1_qfvoi"]
+[ext_resource type="Script" uid="uid://b77e64cx0tirm" path="res://scripts/musica_ambiente.gd" id="2_bpkxn"]
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://cenas/entidades/player.tscn" id="2_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://dhqkejaqlrrec" path="res://cenas/objetos/Planeta1/caverna.tscn" id="2_x1j5q"]
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://cenas/planetas/planeta_roxo.tscn" id="3_pitpt"]
@@ -115,6 +117,12 @@ radius = 277.15
 
 [node name="main" type="Node2D" unique_id=522489995]
 
+[node name="musica_ambiente" type="AudioStreamPlayer2D" parent="." unique_id=1750106189]
+stream = ExtResource("1_qfvoi")
+volume_db = -5.0
+bus = &"Musica"
+script = ExtResource("2_bpkxn")
+
 [node name="UI_dialogo" type="CanvasLayer" parent="." unique_id=687282447 groups=["ui"]]
 
 [node name="ceu" type="ColorRect" parent="." unique_id=583502706]
@@ -153,7 +161,7 @@ position = Vector2(-852, 1081)
 rotation = 3.9409535
 
 [node name="Player" parent="." unique_id=440483443 instance=ExtResource("2_h2r2o")]
-position = Vector2(-877, -132)
+position = Vector2(-640, 1209)
 
 [node name="quinoyd_antigo" type="Sprite2D" parent="." unique_id=1290611076]
 position = Vector2(-635, -397)

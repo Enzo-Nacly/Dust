@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://xpuh0j5cd7wp" path="res://scripts/lupa.gd" id="1_dnll5"]
 [ext_resource type="Texture2D" uid="uid://dkaen55l7caxx" path="res://assets/sprites/lupa_varanda.png" id="1_oieql"]
 [ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://cenas/interecao/area_interacao.tscn" id="3_8xe5e"]
+[ext_resource type="AudioStream" uid="uid://dn4bpi5y77mp4" path="res://assets/sonoro/sfx/puzzle/lupa_trocando_direcao.wav" id="4_8xe5e"]
 
 [sub_resource type="Gradient" id="Gradient_dnll5"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -48,3 +49,8 @@ action_name = "mudar direcao"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1331037849]
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_fu62x")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1596177405]
+stream = ExtResource("4_8xe5e")
+volume_db = -10.0
+bus = &"SFX"

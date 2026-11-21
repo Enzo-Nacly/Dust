@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://camujvpkdi7li" path="res://scripts/componentes/componente_gravidade.gd" id="6_lxx67"]
 [ext_resource type="Script" uid="uid://idpvhq8hfapr" path="res://scripts/componentes/componente_animacao.gd" id="7_6ql6w"]
 [ext_resource type="PackedScene" uid="uid://pj4m7i7wbmm8" path="res://cenas/ui/inventario/ui_inventario.tscn" id="9_jgxua"]
+[ext_resource type="Script" uid="uid://h8qc31o42xwr" path="res://scripts/componentes/componente_sonoro.gd" id="9_k6ct6"]
+[ext_resource type="AudioStream" uid="uid://ikdop4ex8rav" path="res://assets/sonoro/sfx/passos_pes/passo_pe_terra_2.wav" id="11_olhkd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55ggn"]
 atlas = ExtResource("2_6ql6w")
@@ -90,8 +92,7 @@ inventario = ExtResource("2_55ggn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=763007227]
 sprite_frames = SubResource("SpriteFrames_fu62x")
-animation = &"idle"
-frame_progress = 0.06999861
+animation = &"andando"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1914463975]
 ignore_rotation = false
@@ -124,11 +125,21 @@ metadata/_custom_type_script = "uid://bi44habvi5v0"
 
 [node name="ComponenteAnimacao" type="Node" parent="Componentes" unique_id=1053922751 node_paths=PackedStringArray("sprite")]
 script = ExtResource("7_6ql6w")
+index_sprite_pe_chao = Array[int]([1, 4])
 sprite = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://idpvhq8hfapr"
+
+[node name="ComponenteSonoro" type="Node" parent="Componentes" unique_id=1756421898]
+script = ExtResource("9_k6ct6")
+metadata/_custom_type_script = "uid://h8qc31o42xwr"
 
 [node name="ui_inventario" parent="." unique_id=34154311 instance=ExtResource("9_jgxua")]
 offset_left = -71.0
 offset_top = -81.0
 offset_right = -71.0
 offset_bottom = -81.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1758184157]
+stream = ExtResource("11_olhkd")
+volume_db = -5.0
+bus = &"SFX"

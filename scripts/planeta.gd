@@ -2,7 +2,8 @@ class_name Planeta
 extends StaticBody2D
 
 @export var planeta_status: PlanetaStatus
-	
+@export var sfx_entidades: SFXEntidades
+
 var componente_gravidade: ComponenteCampoGravitacional
 var forma_colisao: CollisionShape2D
 var sprite: Sprite2D
