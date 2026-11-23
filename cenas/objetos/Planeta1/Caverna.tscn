@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmsqtvj8pt07k" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna Dentro/FundoFundo.png" id="2_6x7an"]
 [ext_resource type="PackedScene" uid="uid://bqk4sejfo27ot" path="res://cenas/objetos/puzzle_cristal.tscn" id="3_8yo8r"]
 [ext_resource type="PackedScene" uid="uid://dnd1k0rbyh1e3" path="res://cenas/objetos/planta.tscn" id="4_5nl1m"]
+[ext_resource type="PackedScene" uid="uid://dwngqkh4a40if" path="res://cenas/objetos/local_brotar.tscn" id="5_6x7an"]
 [ext_resource type="Texture2D" uid="uid://rlntn2i8ww44" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna Dentro/Varanda.png" id="5_bwehl"]
 [ext_resource type="PackedScene" uid="uid://b2d48mie45mch" path="res://cenas/interecao/PontoEscada.tscn" id="6_haigg"]
 [ext_resource type="Texture2D" uid="uid://cwkxf2uohs7gt" path="res://assets/sprites/Planeta1/Caverna/NovaVerção/Verção 3/Caverna Dentro/caverna dentro dentro.png" id="7_ovnt6"]
@@ -52,6 +53,11 @@ luz_escolhida = "Amarelo"
 light_mask = 2
 position = Vector2(109, 94)
 luz_escolhida = "Verde"
+
+[node name="local_brotar" parent="." unique_id=851365371 instance=ExtResource("5_6x7an")]
+z_index = 2
+position = Vector2(-32.000004, 91)
+rotation = -0.032553114
 
 [node name="Varanda" type="StaticBody2D" parent="." unique_id=2108305771]
 z_as_relative = false

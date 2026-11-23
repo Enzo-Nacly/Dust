@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dwngqkh4a40if"]
+
+[ext_resource type="Script" uid="uid://d1lrbbfv8f7jd" path="res://scripts/local_brotar.gd" id="1_fbikv"]
+[ext_resource type="Texture2D" uid="uid://bac7w8ohtcrxs" path="res://assets/sprites/local_brotar.png" id="1_oa7m8"]
+[ext_resource type="PackedScene" uid="uid://eapo0u5is86q" path="res://cenas/interecao/area_interacao.tscn" id="2_oa7m8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fu62x"]
+radius = 15.0
+
+[node name="local_brotar" type="Node2D" unique_id=851365371]
+script = ExtResource("1_fbikv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1889302991]
+texture = ExtResource("1_oa7m8")
+
+[node name="InteractionArea" parent="." unique_id=591702249 instance=ExtResource("2_oa7m8")]
+action_name = "plantar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=628305187]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_fu62x")
