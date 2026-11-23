@@ -1,0 +1,21 @@
+{
+  "asset": { "version": "2.0" },
+  "scene": 0,
+  "scenes": [{ "nodes": [0] }],
+  "nodes": [{"mesh":0}],
+  "meshes": [{"primitives":[{"attributes":{"POSITION":0,"TEXCOORD_0":1},"indices":2,"material":0}]}],
+  "materials": [{
+    "name" : "Planet",
+    "pbrMetallicRoughness": {
+      "baseColorTexture": { "index": 0 },
+      "metallicFactor": 0.0,
+      "roughnessFactor": 1.0
+    }
+  }],
+  "samplers": [{ "magFilter": 9728, "minFilter": 9728 }],
+  "textures": [{ "source": 0, "sampler": 0 }],
+  "images": [{ "uri": "Planet.png" }],
+  "accessors": [{"bufferView":0,"byteOffset":0,"componentType":5126,"count":756,"type":"VEC3","min":[-2.9431724,-1.48713066,-3.09886207],"max":[2.9431724,4.74693828,3.09886207]},{"bufferView":1,"byteOffset":0,"componentType":5126,"count":756,"type":"VEC2"},{"bufferView":2,"byteOffset":0,"componentType":5123,"count":756,"type":"SCALAR"}],
+  "bufferViews": [{"buffer":0,"byteOffset":0,"byteLength":9072,"target":34962},{"buffer":0,"byteOffset":9072,"byteLength":6048,"target":34962},{"buffer":0,"byteOffset":15120,"byteLength":1512,"target":34963}],
+  "buffers": [{ "uri": "Planet.bin", "byteLength": 16632 }]
+}

@@ -45,7 +45,7 @@ func iniciar_animacao_curva() -> void:
 			rotation = (TAU * voltas) * t
 			
 			# D. A MÁGICA: Atualiza o pivot_offset em tempo real baseado no tamanho atualizado
-			pivot_offset = tamanho_original / 2.0
+			pivot_offset = scale / 2.0
 			
 			# E. Ajusta a posição global compensando o pivô para ele não orbitar
 			global_position = centro_atual - (pivot_offset * escala_atual),

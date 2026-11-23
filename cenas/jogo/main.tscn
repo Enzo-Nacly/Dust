@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5a31mfdo1ppc"]
 
 [ext_resource type="PackedScene" uid="uid://ux0228ttqf7j" path="res://cenas/entidades/player.tscn" id="2_h2r2o"]
-[ext_resource type="PackedScene" uid="uid://dhqkejaqlrrec" path="res://cenas/objetos/Planeta1/caverna.tscn" id="2_x1j5q"]
+[ext_resource type="PackedScene" uid="uid://dhqkejaqlrrec" path="res://cenas/objetos/Planeta1/Caverna.tscn" id="2_x1j5q"]
 [ext_resource type="PackedScene" uid="uid://ckratrq8jvnm8" path="res://cenas/planetas/planeta_roxo.tscn" id="3_pitpt"]
 [ext_resource type="Texture2D" uid="uid://b8cv0h2duu03l" path="res://assets/sprites/entidades/quinoyds/quinoyd.png" id="5_h2r2o"]
 [ext_resource type="PackedScene" uid="uid://ddpbjdxd4p07n" path="res://cenas/componentes/area_dialogo.tscn" id="6_pitpt"]
@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://benli3tdqbp4h" path="res://assets/sprites/Planeta1/Cidade Quinoyd/Casas/casa_quinoyd_generica.png" id="20_x1j5q"]
 [ext_resource type="Texture2D" uid="uid://udn1v25vklho" path="res://assets/sprites/texturas/2d_lights_and_shadows_neutral_point_light.webp" id="21_cdns1"]
 [ext_resource type="PackedScene" uid="uid://cxa7nhc84kxt" path="res://cenas/entidades/quinoyd.tscn" id="21_xnaut"]
+[ext_resource type="PackedScene" uid="uid://brkdrvknhipp0" path="res://assets/3D/CasaGrande.gltf" id="22_xnaut"]
+[ext_resource type="PackedScene" uid="uid://imoc6uupegq6" path="res://assets/3D/Casamedia.gltf" id="23_bpkxn"]
+[ext_resource type="PackedScene" uid="uid://dpv2crtxxge4f" path="res://cenas/ui/ponteiro_mouse.tscn" id="23_qfvoi"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pi0el"]
 polygon = PackedVector2Array(-901, 833, -887, 863, -868, 895, -847, 930, -817, 976, -799, 998, -776, 1029, -755, 1054, -731, 1080, -715, 1098, -692, 1075, -892, 822)
@@ -178,6 +181,25 @@ debug_color = Color(0.7791123, 0.42960393, 0.24263477, 0.41960785)
 [node name="Casa1" parent="." unique_id=2038346081 instance=ExtResource("15_qabof")]
 position = Vector2(928, -111)
 rotation = 1.0524335
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1218180735]
+offset_left = 985.00006
+offset_top = -253.00006
+offset_right = 1497.0
+offset_bottom = 258.99994
+rotation = 1.0253506
+scale = Vector2(0.40657356, 0.40657356)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1075015012]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="CasaGrande" parent="SubViewportContainer/SubViewport" unique_id=1081651192 instance=ExtResource("22_xnaut")]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/CasaGrande" unique_id=1523595115]
+transform = Transform3D(-0.9998924, -2.8337258e-10, 0.0146697825, -0.004834405, 0.94413865, -0.32951304, -0.013850308, -0.32954848, -0.9440371, 0.30680883, 0.23479629, -5.7492733)
+fov = 60.835434
 
 [node name="planeta_roxo" parent="." unique_id=1866348177 instance=ExtResource("3_pitpt")]
 position = Vector2(-1, 399)
@@ -480,3 +502,45 @@ texture = ExtResource("20_x1j5q")
 
 [node name="quinoyd_novo" parent="." unique_id=1744073481 instance=ExtResource("21_xnaut")]
 position = Vector2(-841, -187)
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="." unique_id=846365619]
+offset_left = 848.00006
+offset_top = -252.00003
+offset_right = 1360.0
+offset_bottom = 259.99997
+rotation = 1.0253506
+scale = Vector2(0.40657356, 0.40657356)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer2" unique_id=1510024704]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Casamedia" parent="SubViewportContainer2/SubViewport" unique_id=1193433261 instance=ExtResource("23_bpkxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.193153, 0.41460896, 0)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer2/SubViewport" unique_id=1627708397]
+transform = Transform3D(-0.9998924, -1.2405573e-09, 0.014669783, 0.0049406616, 0.94157916, 0.3367556, -0.013812763, 0.33679184, -0.94147784, 15.758244, 3.8948739, -5.7613535)
+fov = 60.835434
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer2/SubViewport" unique_id=1994408720]
+transform = Transform3D(-0.32446763, 0.91680974, 0.23276767, 0.90184647, 0.22562252, 0.3684664, 0.28529593, 0.32947612, -0.90002877, 18.08683, 3.2194142, -9.948746)
+light_energy = 0.5
+shadow_enabled = true
+shadow_bias = 0.0
+directional_shadow_split_1 = 0.11
+directional_shadow_max_distance = 100.8
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=793969497 groups=["ui"]]
+
+[node name="ponteiro_mouse" parent="UI" unique_id=1075770505 instance=ExtResource("23_qfvoi")]
+position = Vector2(1, 0)
+
+[node name="SubViewportContainer3" type="SubViewportContainer" parent="." unique_id=771760886]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport2" type="SubViewport" parent="SubViewportContainer3" unique_id=698654819]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4

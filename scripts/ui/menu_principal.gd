@@ -46,8 +46,6 @@ func _on_jogar_pressed() -> void:
 	animation_player.play("cena1")
 	await animation_player.animation_finished
 	
-	animation_player.play("fade_in")
-	await animation_player.animation_finished
 	
 
 	

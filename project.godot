@@ -41,6 +41,7 @@ project/assembly_name="Dust"
 [file_customization]
 
 folder_colors={
+"res://assets/3D/": "blue",
 "res://assets/sprites/Planeta1/Caverna/NovaVerção/": "red",
 "res://assets/sprites/UI/": "teal",
 "res://assets/sprites/entidades/quinoyds/": "green",

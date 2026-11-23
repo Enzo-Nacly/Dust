@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cs4s4y17jkxth" path="res://assets/sprites/menu/espaco.png" id="2_r5lko"]
 [ext_resource type="Texture2D" uid="uid://c41siiwajmhck" path="res://assets/sprites/menu/sol_icone.png" id="3_bdt03"]
 [ext_resource type="Script" uid="uid://bxlpna6ha1h6v" path="res://scripts/botaos_menu.gd" id="4_0uah4"]
+[ext_resource type="Texture2D" uid="uid://c4n1nu5dcsds" path="res://assets/sprites/menu/espaco2.png" id="4_eaxgc"]
 [ext_resource type="Texture2D" uid="uid://w3wgkshwwmc8" path="res://assets/sprites/menu/mercurio/planeta_cinza.png" id="4_k6orm"]
 [ext_resource type="Texture2D" uid="uid://xoqs5wbaycid" path="res://assets/sprites/menu/poroso/planeta_roxo.png" id="5_5cehq"]
 [ext_resource type="Script" uid="uid://b6own4n1h2uur" path="res://scripts/ui/menu_corpo.gd" id="5_jdiyx"]
@@ -229,7 +230,7 @@ tracks/11/keys = {
 
 [sub_resource type="Animation" id="Animation_gx11c"]
 resource_name = "cena1"
-length = 2.7333333
+length = 2.9333334
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -237,7 +238,7 @@ tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2, 2.7333333),
+"times": PackedFloat32Array(2, 2.8999996),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.05, 0.05)]
@@ -249,7 +250,7 @@ tracks/1/path = NodePath("Sprite2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.7333336),
+"times": PackedFloat32Array(2.8999996),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
@@ -261,10 +262,10 @@ tracks/2/path = NodePath("Sprite2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.7333336),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.86952156, 2.8999996),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-138, 362), Vector2(839, 446)]
+"values": [Vector2(-1251, 457), Vector2(-871, 300), Vector2(839, 446)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -273,7 +274,7 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.6666667),
+"times": PackedFloat32Array(0, 2.833333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1, 115]
@@ -297,10 +298,10 @@ tracks/5/path = NodePath("Camera2D:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 2.7333333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.87682843, 2.8999996),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-118, 366), Vector2(842, 447)]
+"values": [Vector2(-1099, 442), Vector2(-809, 299), Vector2(842, 447)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -420,6 +421,7 @@ script = ExtResource("1_25x7m")
 [node name="UI" type="CanvasLayer" parent="." unique_id=1198516101 groups=["ui"]]
 
 [node name="ponteiro_mouse" parent="UI" unique_id=1075770505 instance=ExtResource("2_gx11c")]
+position = Vector2(1, 0)
 
 [node name="sistema_solar" type="Control" parent="." unique_id=1016840198]
 layout_mode = 1
@@ -438,18 +440,13 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_r5lko")
 
-[node name="espaco" type="TextureRect" parent="sistema_solar/espaco" unique_id=1289242030]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1151.0
-offset_top = 2.0
-offset_right = -1151.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_r5lko")
+[node name="TextureRect" type="TextureRect" parent="sistema_solar/espaco" unique_id=232546630]
+layout_mode = 0
+offset_left = -1390.0
+offset_top = -89.0
+offset_right = 0.22216797
+offset_bottom = 693.0
+texture = ExtResource("4_eaxgc")
 flip_h = true
 
 [node name="sol" type="TextureRect" parent="sistema_solar" unique_id=1028810613]
@@ -828,7 +825,7 @@ script = ExtResource("18_jckp1")
 position = Vector2(-138, 362)
 texture = ExtResource("21_eaxgc")
 hframes = 116
-frame = 115
+frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1459675854]
 position = Vector2(-118, 366)
